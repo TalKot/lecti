@@ -1,0 +1,19 @@
+{
+  "name": "lecti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalKot/lecti.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TalKot/lecti/issues"
+  },
+  "homepage": "https://github.com/TalKot/lecti#readme"
+}
