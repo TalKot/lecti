@@ -27,16 +27,20 @@ passport.use(
         //will be called when the auth flow is complete
         async (accessToken, refreshToken, profile, done) => {
 
-            const existingUser = await User.findOne({Id: profile.id});
+            const {displayName, id, gender} = profile;
+
+            let existingUser = await User.findOne({email: profile.emails[0].value});
+            existingUser = existingUser.toObject();
+
             if (existingUser) {
                 //user is already in the DB
                 return done(null, existingUser);
             }
             //new user - should be save to the DB
             const user = new User({
-                Id: profile.id,
-                displayName: profile.displayName,
-                gender: profile.gender,
+                Id: id,
+                displayName,
+                gender: gender,
                 email: profile.emails[0].value,
                 photoURL: profile.photos[0].value
             })
@@ -57,9 +61,10 @@ passport.use(new FacebookStrategy({
     //will be called when the auth flow is complete
     async (accessToken, refreshToken, profile, done) => {
 
-        let {first_name, last_name, gender, email} = profile._json;
+        const {first_name, last_name, gender, email} = profile._json;
 
-        const existingUser = await User.findOne({Id: profile.id});
+        let existingUser = await User.findOne({email});
+        existingUser = existingUser.toObject();
 
         if (existingUser) {
             return done(null, existingUser)
@@ -68,10 +73,10 @@ passport.use(new FacebookStrategy({
         const user = new User({
             Id: profile.id,
             displayName: `${first_name} ${last_name}`,
-            gender,
-            email,
+            gender: gender,
+            email: profile._json.email,
             photoURL: profile.photos[0].value
-        })
+        });
         await user.save();
         done(null, user);
     }

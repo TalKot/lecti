@@ -30,16 +30,18 @@ passport.use(new GoogleStrategy({
 }, 
 //will be called when the auth flow is complete
 (accessToken, refreshToken, profile, done) => __awaiter(this, void 0, void 0, function* () {
-    const existingUser = yield User.findOne({ Id: profile.id });
+    const { displayName, id, gender } = profile;
+    let existingUser = yield User.findOne({ email: profile.emails[0].value });
+    existingUser = existingUser.toObject();
     if (existingUser) {
         //user is already in the DB
         return done(null, existingUser);
     }
     //new user - should be save to the DB
     const user = new User({
-        Id: profile.id,
-        displayName: profile.displayName,
-        gender: profile.gender,
+        Id: id,
+        displayName,
+        gender: gender,
         email: profile.emails[0].value,
         photoURL: profile.photos[0].value
     });
@@ -55,16 +57,17 @@ passport.use(new FacebookStrategy({
 }, 
 //will be called when the auth flow is complete
 (accessToken, refreshToken, profile, done) => __awaiter(this, void 0, void 0, function* () {
-    let { first_name, last_name, gender, email } = profile._json;
-    const existingUser = yield User.findOne({ Id: profile.id });
+    const { first_name, last_name, gender, email } = profile._json;
+    let existingUser = yield User.findOne({ email });
+    existingUser = existingUser.toObject();
     if (existingUser) {
         return done(null, existingUser);
     }
     const user = new User({
         Id: profile.id,
         displayName: `${first_name} ${last_name}`,
-        gender,
-        email,
+        gender: gender,
+        email: profile._json.email,
         photoURL: profile.photos[0].value
     });
     yield user.save();
