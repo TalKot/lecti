@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "lib": [ "ES2015" ],
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "baseUrl": "server",
+    "paths": {
+      "enums": ["common/enums"],
+      "errors": ["common/errors"],
+      "interfaces": ["common/interfaces"],
+      "types": ["common/types"]
+    }
+  }
+}

@@ -8,7 +8,9 @@
     "npm": "5.0.3"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "test": "NODE_ENV=development nodemon --exec 'mocha -R min'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,35 @@
   },
   "homepage": "https://github.com/TalKot/lecti#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "concurrently": "^3.5.0",
+    "cookie-session": "^2.0.0-beta.3",
+    "expect": "^22.1.0",
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "localtunnel": "^1.8.3",
+    "lodash": "^4.17.4",
+    "mocha": "^4.1.0",
+    "mongodb": "^3.0.1",
+    "mongoose": "^4.12.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.11",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^2.0.2",
+    "react-sparklines": "^1.7.0",
+    "request": "^2.83.0",
+    "sendgrid": "^5.2.3",
+    "should": "^13.2.1",
+    "sinon": "^4.2.1",
+    "stripe": "^4.25.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.46",
+    "tslib": "^1.2.0"
   }
 }
