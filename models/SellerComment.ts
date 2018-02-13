@@ -1,4 +1,5 @@
 import mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
@@ -7,10 +8,10 @@ const CommentSchema = new Schema({
     rating: Number,
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'user'
     }
 });
 
-const Comment = mongoose.model('comments', CommentSchema);
+const Comment = mongoose.model('sellerComment', CommentSchema);
 
 module.exports = Comment;
