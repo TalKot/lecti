@@ -10,7 +10,10 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "test": "NODE_ENV=development nodemon --exec 'mocha -R min'"
+    "test": "NODE_ENV=development nodemon --exec 'mocha -R min'",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\""
+
   },
   "repository": {
     "type": "git",

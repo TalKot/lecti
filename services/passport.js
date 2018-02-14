@@ -32,14 +32,14 @@ passport.use(new GoogleStrategy({
 (accessToken, refreshToken, profile, done) => __awaiter(this, void 0, void 0, function* () {
     const { displayName, id, gender } = profile;
     let existingUser = yield User.findOne({ email: profile.emails[0].value });
-    existingUser = existingUser.toObject();
     if (existingUser) {
         //user is already in the DB
+        // existingUser = existingUser.toObject();
         return done(null, existingUser);
     }
     //new user - should be save to the DB
     const user = new User({
-        Id: id,
+        AuthId: id,
         displayName,
         gender: gender,
         email: profile.emails[0].value,
@@ -59,12 +59,12 @@ passport.use(new FacebookStrategy({
 (accessToken, refreshToken, profile, done) => __awaiter(this, void 0, void 0, function* () {
     const { first_name, last_name, gender, email } = profile._json;
     let existingUser = yield User.findOne({ email });
-    existingUser = existingUser.toObject();
     if (existingUser) {
+        // existingUser = existingUser.toObject();
         return done(null, existingUser);
     }
     const user = new User({
-        Id: profile.id,
+        AuthId: profile.id,
         displayName: `${first_name} ${last_name}`,
         gender: gender,
         email: profile._json.email,
