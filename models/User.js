@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const userSchema = new mongoose.Schema({
-    Id: String,
+    AuthId: String,
     displayName: String,
     gender: String,
     email: String,

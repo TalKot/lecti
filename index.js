@@ -26,6 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 //setting up routes
 require('./routes/authRoutes')(app);
+require('./routes/purchaseGroupRoutes')(app);
 //setting up port with Heroku and locally
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
