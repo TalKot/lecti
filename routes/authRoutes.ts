@@ -1,6 +1,4 @@
 import passport = require('passport');
-// const FacebookStrategy = require('passport-facebook').Strategy;
-// const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 module.exports = (app) => {
     app.get('/auth/google', passport.authenticate('google', {
@@ -11,7 +9,7 @@ module.exports = (app) => {
     app.get(
         '/auth/google/callback',
         passport.authenticate('google'), (req, res) => {
-            console.log('loggedIn by google');
+            // console.log('loggedIn by google');
             res.redirect('/');
         }
     );
@@ -27,7 +25,7 @@ module.exports = (app) => {
 
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook'), (req, res) => {
-            console.log('loggedIn by facebook');
+            // console.log('loggedIn by facebook');
             res.redirect('/');
         });
 

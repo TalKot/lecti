@@ -1,4 +1,5 @@
 import purchaseGroupManager from '../managers/purchaseGroupManager';
+import httpResponse from '../common/httpResponse'
 
 export default class purchaseGroupController {
 
@@ -6,23 +7,43 @@ export default class purchaseGroupController {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let purchaseGroups = await purchaseGroupManagerInstance.getAllPurchaseGroups();
-            purchaseGroups ? this.sendOk(res, purchaseGroups) : this.sendError(res);
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
-        catch(e){
-            this.sendError(res,e);
+        catch (e) {
+            httpResponse.sendError(res, e);
         }
     }
 
-    private sendOk(res, data?: any) {
-        res.status(200).json(data);
+    async getPurchaseGroupById(res, id) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupById(id);
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
     }
 
-    private sendError(res, error?, code?) {
-        res.status(500).json({
-            status: 500,
-            statusText: "Internal Server Error",
-            error: error ? error.toString() : "",
-            code: code
-        });
+    async getPurchaseGroupByType(res, type) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async getPurchaseGroupsByUserId(res, userId) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByUserId(userId);
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
     }
 }

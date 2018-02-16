@@ -11,6 +11,24 @@ class purchaseGroupManager {
             return purchaseGroupType ? purchaseGroupType : null;
         });
     }
+    getPurchaseGroupById(id) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const purchaseGroup = yield PurchaseGroup.findById(id);
+            return purchaseGroup ? purchaseGroup : null;
+        });
+    }
+    getPurchaseGroupsByType(type) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const purchaseGroup = yield PurchaseGroup.find({ type });
+            return purchaseGroup ? purchaseGroup : null;
+        });
+    }
+    getPurchaseGroupsByUserId(userId) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const { cart } = yield User.findById(userId);
+            return cart ? cart : null;
+        });
+    }
 }
 exports.default = purchaseGroupManager;
 //# sourceMappingURL=purchaseGroupManager.js.map
