@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 
@@ -16,7 +17,16 @@ export default class purchaseGroupManager {
     }
 
     async getPurchaseGroupsByType(type) {
-        const purchaseGroup = await PurchaseGroup.find({type});
+        const purchaseGroup = await PurchaseGroup.find({type}, {
+            name: 1,
+            picture: 1,
+            priceForGroup: 1,
+            originalPrice: 1,
+            totalAmount: 1,
+            seller: 1,
+            totalSales: 1,
+            type: 1
+        });
         return purchaseGroup ? purchaseGroup : null;
     }
 

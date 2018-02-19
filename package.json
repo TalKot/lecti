@@ -12,8 +12,8 @@
     "server": "nodemon index.js",
     "test": "NODE_ENV=development nodemon --exec 'mocha -R min'",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\""
-
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -50,6 +50,7 @@
     "should": "^13.2.1",
     "sinon": "^4.2.1",
     "stripe": "^4.25.0",
+    "sweetalert": "^2.1.0",
     "tsc": "^1.20150623.0",
     "typescript": "^2.7.1"
   },

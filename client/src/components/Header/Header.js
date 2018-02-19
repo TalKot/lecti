@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import Payments from '../Payments/Payments';
 
 class Header extends Component {
 
@@ -15,10 +16,15 @@ class Header extends Component {
                 ];
             default:
                 return [
-                    <li key="5"><Link to={'/surveys'}>Surveys</Link></li>,
-                    <li key="6"><Link to={'/history'}>History</Link></li>,
-                    <li key="4"><Link to={'/profile'}>Profile</Link></li>,
-                    <li key="2"><a href="/api/logout">Logout</a></li>
+                    <li key="2" style={{margin: '0 10px'}}>
+                        Credits: {this.props.auth.credits}
+                    </li>,
+                    <li key="3"><Link to={'/surveys'}>Surveys</Link></li>,
+                    <li key="4"><Link to={'/history'}>History</Link></li>,
+                    <li key="5"><Link to={'/profile'}>Profile</Link></li>,
+                    <li key="6"><Link to={'/cart'}><i className="material-icons">shopping_cart</i></Link></li>,
+                    <li key="1"><Payments /></li>,
+                    <li key="7"><a href="/api/logout">Logout</a></li>,
                 ];
         }
     }
@@ -28,26 +34,26 @@ class Header extends Component {
         return (
             <nav className="nav-extended">
                 <div className="nav-wrapper">
-                    <Link to='/'  className="left brand-logo" style={{marginLeft: "7px"}}>Lecti</Link>
+                    <Link to='/' className="left brand-logo" style={{marginLeft: "7px"}}>Lecti</Link>
                     <ul className="right">
                         {this.renderContent()}
                     </ul>
                 </div>
-                {/*<div className="nav-content">*/}
-                    {/*<ul className="tabs tabs-transparent">*/}
-                        {/*<li className="tab"><Link to={'/salesitems/computers'}>Computers</Link></li>*/}
-                        {/*<li className="tab"><Link to={'/salesitems/shoes'}>Shoes</Link></li>*/}
-                        {/*<li className="tab"><Link to={'/salesitems/shirts'}>Shirts</Link></li>*/}
-                    {/*</ul>*/}
-                {/*</div>*/}
+                <div className="nav-content">
+                    <ul className="tabs tabs-transparent">
+                        <li className="tab"><Link to={'/purchasegroups/computers'}>Computers</Link></li>
+                        <li className="tab"><Link to={'/purchasegroups/shoes'}>Shoes</Link></li>
+                        <li className="tab"><Link to={'/purchasegroups/shirts'}>Shirts</Link></li>
+                    </ul>
+                </div>
             </nav>
         );
     }
 }
 
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps({auth}) {
+    return {auth};
 }
 
 export default connect(mapStateToProps)(Header);

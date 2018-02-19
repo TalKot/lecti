@@ -5,7 +5,7 @@ export default () => {
         <footer className="page-footer">
             <div className="footer-copyright">
                 <div className="container">
-                    © 2017 Copyright Text
+                    © 2018 Copyright Text
                 </div>
             </div>
         </footer>

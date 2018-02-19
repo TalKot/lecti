@@ -4,6 +4,8 @@ export = {
     facebookClientID: '570985869929043',
     facebookClientSecret: 'eb635e9bcc052aed50fd165bc89df6df',
     mongoURI: 'mongodb://lectiManagerUser:abc123@ds229438.mlab.com:29438/lecti-dev',
-    cookieKey: 'lectiisthebestshoppingwebsiteintheworld'
+    cookieKey: 'lectiisthebestshoppingwebsiteintheworld',
+    stripePublishKey: 'pk_test_8v6e5rUXIo1rEKmllTAf3IKZ',
+    stripeSecretKey: 'sk_test_eHmcfB4pY5UkSabCMaZ0hzIR'
 };
 

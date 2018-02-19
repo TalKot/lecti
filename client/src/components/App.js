@@ -7,14 +7,17 @@ import Header from './Header/Header';
 import Test from './test/test';
 import Footer from './Footer/Footer';
 import Landing from './Landing/Landing';
+import PurchaseGroups from './PurchaseGroups/PurchaseGroups';
+import Payments from './Payments/Payments';
 
 // const Header = () => <h2>Header</h2>;
 // const Landing = () => <h2>Landing</h2>;
 const Surveys = () =>  <h2>Surveys</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
 const History = () => <h2>History</h2>;
-const PurchaseGroups = () => <h2>PurchaseGroups</h2>;
+// const PurchaseGroups = () => <h2>PurchaseGroups</h2>;
 const Profile = () => <h2>Profile</h2>;
+const Cart = () => <h2>Cart</h2>;
 // const Footer = () => <h2>Footer</h2>;
 
 class App extends Component {
@@ -32,8 +35,11 @@ class App extends Component {
                         <Route exact path="/surveys" component={Surveys}/>
                         <Route exact path="/survey/new" component={SurveyNew}/>
                         <Route exact path="/history" component={History}/>
-                        <Route exact path="/purchasegroups" component={PurchaseGroups}/>
+                        {/*<Route exact path="/purchasegroups" component={PurchaseGroups}/>*/}
+                        <Route exact path="/purchasegroups/:item" component={PurchaseGroups}/>
                         <Route exact path="/profile" component={Profile}/>
+                        <Route exact path="/payments" component={Payments}/>
+                        <Route exact path="/Cart" component={Cart}/>
                         <Route exact path="/test" component={Test}/>
                         <Footer/>
                     </div>
