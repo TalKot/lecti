@@ -44,7 +44,6 @@
     "passport-facebook": "^2.1.1",
     "passport-google-oauth20": "^1.0.0",
     "path-parser": "^2.0.2",
-    "react-sparklines": "^1.7.0",
     "request": "^2.83.0",
     "sendgrid": "^5.2.3",
     "should": "^13.2.1",
@@ -52,10 +51,11 @@
     "stripe": "^4.25.0",
     "sweetalert": "^2.1.0",
     "tsc": "^1.20150623.0",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.1",
+    "tslib": "^1.9.0"
   },
   "devDependencies": {
     "@types/node": "^8.0.46",
-    "tslib": "^1.2.0"
+    "tslib": "^1.9.0"
   }
 }
