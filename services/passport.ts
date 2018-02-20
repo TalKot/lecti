@@ -1,9 +1,9 @@
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('../config/keys');
 const mongoose = require('mongoose');
 const User = mongoose.model('users');
+const keys = require('../config/keys');
 
 //how to encrypt userId before sending token it to client's browser
 passport.serializeUser((user, done) => {
