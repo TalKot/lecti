@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="fixing auth loggin to use same email string">
-      <change beforePath="" afterPath="$PROJECT_DIR$/middlewares/requireCredits.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/middlewares/requireLogin.ts" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,7 +19,7 @@
       <file leaf-file-name="User.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1166">
+            <state relative-caret-position="0">
               <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
               <folding />
             </state>
@@ -38,11 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requireCredits.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="requireCredits.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middlewares/requireCredits.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="0">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dev.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/dev.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -51,7 +59,7 @@
       <file leaf-file-name="requireLogin.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middlewares/requireLogin.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="0">
               <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
@@ -61,7 +69,7 @@
       <file leaf-file-name="passport.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/passport.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
+            <state relative-caret-position="0">
               <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
               <folding />
             </state>
@@ -71,7 +79,7 @@
       <file leaf-file-name="purchaseGroupManager.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="0">
               <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
               <folding />
             </state>
@@ -81,11 +89,9 @@
       <file leaf-file-name="purchaseGroupController.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
+            <state relative-caret-position="0">
               <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-              <folding>
-                <marker date="1518894591511" expanded="true" signature="1849:1857" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,7 +99,7 @@
       <file leaf-file-name="purchaseGroupRoutes.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
+            <state relative-caret-position="0">
               <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
@@ -103,18 +109,8 @@
       <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1298">
-              <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -164,7 +160,6 @@
         <option value="$PROJECT_DIR$/models/User.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/routes/authRoutes.js" />
-        <option value="$PROJECT_DIR$/config/dev.ts" />
         <option value="$PROJECT_DIR$/models/PurchaseGroup.ts" />
         <option value="$PROJECT_DIR$/models/Survey.ts" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -192,6 +187,7 @@
         <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/middlewares/requireLogin.ts" />
         <option value="$PROJECT_DIR$/middlewares/requireCredits.ts" />
+        <option value="$PROJECT_DIR$/config/dev.ts" />
       </list>
     </option>
   </component>
@@ -210,12 +206,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/client/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="203" />
     <option name="width" value="1440" />
-    <option name="height" value="797" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -235,6 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -246,20 +243,30 @@
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
               <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="dev.ts" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
               <item name="middlewares" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="com.chrisrm.idea.config" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -276,881 +283,6 @@
       <recent name="$PROJECT_DIR$/routes" />
       <recent name="$PROJECT_DIR$/managers" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/models/User.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/models/User.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/models/User.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/services/passport.ts</PATH>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/controllers/purchaseGroupController.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/controllers/purchaseGroupController.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/controllers/purchaseGroupController.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/managers/purchaseGroupManager.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/managers/purchaseGroupManager.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/managers/purchaseGroupManager.ts</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/purchaseGroupRoutes.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/purchaseGroupRoutes.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/purchaseGroupRoutes.ts</PATH>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1186,6 +318,8 @@
       <updated>1517684656412</updated>
       <workItem from="1517684657916" duration="682000" />
       <workItem from="1518187786274" duration="35926000" />
+      <workItem from="1519046130206" duration="1346000" />
+      <workItem from="1519047772258" duration="3026000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -1219,43 +353,31 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36806000" />
+    <option name="totallyTimeSpent" value="41178000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18816067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2690992" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18561608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27021697" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33010882" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2744861" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26964933" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18604651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35066506" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1277,6 +399,266 @@
         <option value="$PROJECT_DIR$/middlewares/requireCredits.js" />
         <option value="$PROJECT_DIR$/middlewares/requireLogin.js" />
         <option value="$PROJECT_DIR$/middlewares/requireLogin.js.map" />
+        <option value="$PROJECT_DIR$/config/dev.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/common/errors/SSPNotSupportedError.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/bus/publishers/captain.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/bus/publishers/sspReportResultsReadyPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/bus/handlers/getSSPReportMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/bus/handlers/getAllSSPReportMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/managers/ratesManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/managers/sspReportManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/managers/usageManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/managers/playgroundManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/providers/cacheProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/vidazooClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/pubmaticClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/smartClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/rhythmOneClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/appNexusClient.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/lkqdClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/pulsePointClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/appNexusClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/pulseClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/operaClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/gamutClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/rubiconClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/smaatoClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/streamRailClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/brightRollClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/loopMeClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/beachfrontClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/stickyAdsClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/baseClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/sekindoClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/vertaMediaClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/videologyClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/fyberClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/vdopiaClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/genesisMediaClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/improveDigitalClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/tremorHubClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/springServeClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/spotXChangeClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/aolClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/optimaticClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/factories/sspClientFactory.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/common/utils.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/common/aolTimezones.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/common/enums.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/models/ISSPReportRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/models/ICredentials.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/models/ISSPReportRow.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/bus/busProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/app.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/config/modules/modules.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/config/environments/production.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/config/environments/IEnv.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/config/environments/all.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/config/environments/development.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/bootstrap.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/errors/requestError.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/socket/baseSocketManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/socket/baseSocketClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/kafkaOpenRtbMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/kafkaBidderMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/IKafkaMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/kafkaIpsMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/kafkaRecommendationsMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/kafkaPlatformMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/kafkaDisplayMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/kafka/kafkaConnectionsMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/crypto/xorCipher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/crypto/md5.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/crypto/crypto.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/crypto/vCipher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/redisModule.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/redisScript.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/configuration.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/socket.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/oauth.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/ipCountry.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/mailSender.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/pgModule.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/mongo.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/logger.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/mysqlModule.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/modules/geoIp.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/services/messageService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/services/containersCountService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/services/ipService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/services/herokuService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/interfaces/IRsaKey.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/interfaces/IGeoIp.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/cache/memoryCache.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/cache/memoryCache2.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/models/authClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/models/refreshToken.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/models/accessToken.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/models/oAuth.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/controllers/hireFireController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/controllers/monitorController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/controllers/tokenController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/utils/util.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/common/devices.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/common/openRtbCountries.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/common/captainsLogRoutes.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/common/openRtbDevices.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/common/countries.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/common/enums.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_events/IBiEvent.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_events/IBiEventSchema.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_events/biEventUtil.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/detect/detectIp.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/detect/detectUserAgent.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/requestProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/dictionary.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/cacheManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/busProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/calcManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/actionDispatcher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/mailSender.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/eventDispatcher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/pubSubProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/usageManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/classes/captainsLog.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/data/reportingParams.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/data/dataQueryParams.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/middlewares/authenticatedMiddleware.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/middlewares/userRoleMiddleware.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiPlatformMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiOpenRtbMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiRecommendationsMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiConnectionsMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiDisplayMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiBidderMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/bi_messages/IBiIpsMessage.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/resetPassword/resetPasswordController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/resetPassword/resetPasswordManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/resetPassword/resetPasswordInterfaces.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/node_modules/@vidazoo/vidazoo-framework/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/controllers/monitoring/monitorController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-platform-client/app.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/publish/setDSPDuplicateLineItemCompletePublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/publish/deleteDSPCampaignCompletePublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/publish/setDSPCampaignStatusCompletePublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/publish/setDSPCustomActionCompletePublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/publish/setDSPMasterCampaignFieldValueCompletePublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/publish/setDSPCampaignFieldValueCompletePublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/publish/captainsLogPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/handlers/setDSPCustomActionMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/handlers/setDSPCampaignStatusMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/handlers/setDSPMasterCampaignFieldValueMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/handlers/deleteDSPCampaignMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/handlers/setDSPCampaignFieldValueMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/handlers/setDSPDuplicateLineItemMessageHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/response/getDSPDomainListsResponseHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/response/getDSPCampaignCurrentStateResponseHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/response/getDSPCampaignsResponseHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/request/getAllCampaignsRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/request/createAlgoCampaignRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/dspCountriesManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/dspCommandStatusManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/cacheManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/usageManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/networksManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/tokenManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/playgroundManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/managers/commandQueuesManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/pocketMathClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/getIntentClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/turnClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/choozleClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/emerseClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/googleDBMClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/appNexusClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/dataxuClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/goTwoMobiClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/targetooClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/acuityClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/BaseClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/taggifyClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/avazuClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/nuviadClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/mediaMathClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/netadgeClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/buckSenseClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/adformClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/theTradeDeskClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/dsp_clients/platform161Client.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/enums.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/interfaces.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/types.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/mixin.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/BaseCommandHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/setDSPCustomActionCommandHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/deleteDSPCampaignCommandHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/setDSPCampaignStatusCommandHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/setDSPCampaignFieldValueCommandHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/setDSPMasterCampaignFieldValueCommandHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/command_handlers/setDSPDuplicateLineItemCommandHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/services/containersCountService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/factories/dspCommandQueueProviderFactory.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/factories/dspClientFactory.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/middlewares/authMiddleware.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/models/dspCommandStatus.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bus/busProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/config/modules/modules.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/config/environments/production.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/config/environments/all.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/config/environments/development.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/bootstrap.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/app.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/token/tokenController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/token/tokenRoute.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/queue/queueRoute.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/queue/queueController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/monitoring/monitorController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/monitoring/monitoringRoute.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/networks/networksRoute.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/networks/networksController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/commandStatus/commandStatusRoute.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/commandStatus/commandStatusController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/auth/authController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/controllers/auth/authRoute.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/googleDBMCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/platform161CommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/mediaMathCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/avazuCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/adformCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/nuviadCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/emerseCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/goTwoMobiCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/netadgeCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/acuityCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/choozleCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/appNexusCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/beeswaxCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/buckSenseCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/getIntentCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/turnCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/dataxuCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/targetooCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/theTradeDeskCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/BaseCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/taggifyCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/dspCommandQueue/pocketMathCommandQueueProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/cache/cacheProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/providers/request/requestProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/errors/CacheKeyNotExistError.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/errors/HttpError.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/errors/DSPClientNotSupportedError.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/errors/NotImplementedError.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/errors/FieldNotSupportedError.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-dsp-gateway/server/common/errors/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/AdExchangeCSVClient.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/controllers/monitorController.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/controllers/reportsController.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/sspClients/AdExchangeCSVClient.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/controllers/monitorController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/server/controllers/reportsController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-ssp-report-miner/config/express/all.js.map" />
       </list>
     </option>
   </component>
@@ -1417,7 +799,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1298">
+        <state relative-caret-position="885">
           <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
           <folding />
         </state>
@@ -1443,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1465,7 +846,7 @@
     <entry file="file://$PROJECT_DIR$/client/node_modules/materialize-css/dist/css/materialize.min.css" />
     <entry file="file://$PROJECT_DIR$/services/passport.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
+        <state relative-caret-position="0">
           <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
           <folding />
         </state>
@@ -1482,13 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/dev.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="55" lean-forward="false" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1518,7 +892,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="0">
           <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding />
         </state>
@@ -1526,17 +900,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="0">
           <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-          <folding>
-            <marker date="1518894591511" expanded="true" signature="1849:1857" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
+        <state relative-caret-position="0">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
@@ -1544,7 +916,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/User.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
+        <state relative-caret-position="0">
           <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
           <folding />
         </state>
@@ -1552,8 +924,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+        <state relative-caret-position="0">
+          <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1646,9 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="46" column="7" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
-          <folding>
-            <marker date="1518894675640" expanded="true" signature="2421:2429" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1662,7 +1031,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/middlewares/requireLogin.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="0">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
@@ -1670,8 +1039,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/middlewares/requireCredits.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        <state relative-caret-position="0">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/dev.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
           <folding />
         </state>
       </provider>
