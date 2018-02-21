@@ -1,17 +1,12 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-const passport = require('passport');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const passport = require("passport");
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const User = mongoose.model('users');
-const keys = require('../config/keys');
+const { googleClientID, googleClientSecret, facebookClientID, facebookClientSecret } = require('../config/keys');
 //how to encrypt userId before sending token it to client's browser
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -23,13 +18,13 @@ passport.deserializeUser((id, done) => {
     });
 });
 passport.use(new GoogleStrategy({
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleClientSecret,
+    clientID: googleClientID,
+    clientSecret: googleClientSecret,
     callbackURL: '/auth/google/callback',
     proxy: true
 }, 
 //will be called when the auth flow is complete
-(accessToken, refreshToken, profile, done) => __awaiter(this, void 0, void 0, function* () {
+(accessToken, refreshToken, profile, done) => tslib_1.__awaiter(this, void 0, void 0, function* () {
     const { displayName, id, gender } = profile;
     let existingUser = yield User.findOne({ email: profile.emails[0].value });
     if (existingUser) {
@@ -49,14 +44,14 @@ passport.use(new GoogleStrategy({
     done(null, user);
 })));
 passport.use(new FacebookStrategy({
-    clientID: keys.facebookClientID,
-    clientSecret: keys.facebookClientSecret,
+    clientID: facebookClientID,
+    clientSecret: facebookClientSecret,
     callbackURL: '/auth/facebook/callback',
     profileFields: ['email', "id", "birthday", "first_name", "gender", "last_name", "picture.width(400).height(400)"],
     proxy: true
 }, 
 //will be called when the auth flow is complete
-(accessToken, refreshToken, profile, done) => __awaiter(this, void 0, void 0, function* () {
+(accessToken, refreshToken, profile, done) => tslib_1.__awaiter(this, void 0, void 0, function* () {
     const { first_name, last_name, gender, email } = profile._json;
     let existingUser = yield User.findOne({ email });
     if (existingUser) {

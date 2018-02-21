@@ -12,7 +12,6 @@ class PurchaseGroups extends Component {
     render() {
         // console.log(this.props.purchaseGroups);
 
-
         if (!this.props.purchaseGroups.length) {
             return (
                 <div className="progress">
@@ -31,7 +30,7 @@ class PurchaseGroups extends Component {
                     <div className="row">
                         {
                             this.props.purchaseGroups.map(purchaseGroup => {
-                                return <PurchaseGroup key={Math.random()} {...purchaseGroup}/>
+                                return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} onAddPurchaseGroup={this.props.onAddPurchaseGroup}/>
                             })
                         }
                     </div>

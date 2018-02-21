@@ -20,11 +20,13 @@ class Header extends Component {
                         Credits: {this.props.auth.credits}
                     </li>,
                     <li key="3"><Link to={'/surveys'}>Surveys</Link></li>,
-                    <li key="4"><Link to={'/history'}>History</Link></li>,
-                    <li key="5"><Link to={'/profile'}>Profile</Link></li>,
-                    <li key="6"><Link to={'/cart'}><i className="material-icons">shopping_cart</i></Link></li>,
-                    <li key="1"><Payments /></li>,
-                    <li key="7"><a href="/api/logout">Logout</a></li>,
+                    <li key="4"><Link to={'/#'}>Become a seller</Link></li>,
+                    <li key="5"><Link to={'/#'}>Add Group</Link></li>,
+                    <li key="6"><Link to={'/#'}>Statics</Link></li>,
+                    <li key="7"><Link to={'/profile'}>Profile</Link></li>,
+                    <li key="8"><Link to={'/cart'}><i className="material-icons">shopping_cart</i></Link></li>,
+                    <li key="9"><Payments /></li>,
+                    <li key="10"><a href="/api/logout">Logout</a></li>,
                 ];
         }
     }

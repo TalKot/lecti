@@ -1,9 +1,9 @@
-const passport = require('passport');
+import passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const User = mongoose.model('users');
-const keys = require('../config/keys');
+const {googleClientID, googleClientSecret, facebookClientID, facebookClientSecret} = require('../config/keys');
 
 //how to encrypt userId before sending token it to client's browser
 passport.serializeUser((user, done) => {
@@ -19,8 +19,8 @@ passport.deserializeUser((id, done) => {
 passport.use(
     new GoogleStrategy(
         {
-            clientID: keys.googleClientID,
-            clientSecret: keys.googleClientSecret,
+            clientID: googleClientID,
+            clientSecret: googleClientSecret,
             callbackURL: '/auth/google/callback',
             proxy: true
         },
@@ -52,8 +52,8 @@ passport.use(
 
 
 passport.use(new FacebookStrategy({
-        clientID: keys.facebookClientID,
-        clientSecret: keys.facebookClientSecret,
+        clientID: facebookClientID,
+        clientSecret: facebookClientSecret,
         callbackURL: '/auth/facebook/callback',
         profileFields: ['email', "id", "birthday", "first_name", "gender", "last_name", "picture.width(400).height(400)"],
         proxy: true

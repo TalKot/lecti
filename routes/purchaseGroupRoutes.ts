@@ -3,7 +3,7 @@ const Path = require('path-parser');
 const URL = require('url');
 import * as mongoose from 'mongoose';
 import purchaseGroupController from '../controllers/purchaseGroupController'
-// const requireLogin = require('../middlewares/requireLogin');
+const requireLogin = require('../middlewares/requireLogin');
 // import {purchaseGroupType} from '../services/enums';
 
 const PurchaseGroup = mongoose.model('purchaseGroups');
@@ -28,9 +28,16 @@ module.exports = app => {
         await purchaseGroupControllerInstance.getPurchaseGroupByType(res, type);
     });
 
-    app.get('/api/purchaseGroup/getgroup/user/', async (req, res) => {
+    app.get('/api/purchaseGroup/getgroup/user/', requireLogin, async (req, res) => {
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
+    });
+
+    app.post('/api/purchaseGroup/buy/', requireLogin, async (req, res) => {
+        let {purchaseGroupID,amount} = req.body;
+        let userID = req.user.toObject()._id.toString();
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.addPurchaseGroupToUser(res, purchaseGroupID, amount, userID);
     });
 
     // app.post('/purchaseGroup/add', (req, res) => {

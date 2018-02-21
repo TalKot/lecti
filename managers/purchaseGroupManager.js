@@ -4,6 +4,7 @@ const tslib_1 = require("tslib");
 const mongoose = require("mongoose");
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
+const PurchaseGroups = mongoose.model('purchaseGroups');
 class purchaseGroupManager {
     getAllPurchaseGroups() {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
@@ -36,6 +37,22 @@ class purchaseGroupManager {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const { cart } = yield User.findById(userId);
             return cart ? cart : null;
+        });
+    }
+    addPurchaseGroupToUser(purchaseGroupID, amount, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            //TODO : ARE THESE THE ACTIONS SHOULD BE TAKEN?
+            yield PurchaseGroups.findByIdAndUpdate(purchaseGroupID, {
+                $push: {
+                    'potentialBuyers': {
+                        user: userID,
+                        amount: amount
+                    }
+                }
+            });
+            //TODO: WHAT SHOULD RETURNED?
+            const user = yield User.findById(userID);
+            return user ? user : null;
         });
     }
 }

@@ -6,7 +6,7 @@ const Path = require('path-parser');
 const URL = require('url');
 const mongoose = require("mongoose");
 const purchaseGroupController_1 = require("../controllers/purchaseGroupController");
-// const requireLogin = require('../middlewares/requireLogin');
+const requireLogin = require('../middlewares/requireLogin');
 // import {purchaseGroupType} from '../services/enums';
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
@@ -25,9 +25,15 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getPurchaseGroupByType(res, type);
     }));
-    app.get('/api/purchaseGroup/getgroup/user/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+    app.get('/api/purchaseGroup/getgroup/user/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
+    }));
+    app.post('/api/purchaseGroup/buy/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        let { purchaseGroupID, amount } = req.body;
+        let userID = req.user.toObject()._id.toString();
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.addPurchaseGroupToUser(res, purchaseGroupID, amount, userID);
     }));
     // app.post('/purchaseGroup/add', (req, res) => {
     app.get('/api/purchaseGroup/add', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {

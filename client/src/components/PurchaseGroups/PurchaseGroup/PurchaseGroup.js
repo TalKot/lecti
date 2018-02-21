@@ -1,33 +1,34 @@
 import React from 'react';
 
-const PurchaseGroup = (item) => {
-    return (
-        <div className="row">
+const PurchaseGroup = ({purchaseGroup,onAddPurchaseGroup}) => {
+    let amount = 0;
 
-            <div className="col s12 m7" style={{height: '300px', width: '300px'}}>
-                <div className="card small">
-                    <div className="card-image" style={{height: '150px', width: '250px'}}>
-                        <img src={item.picture}/>
-                    </div>
-                    <div className="card-content">
-                        <p>
-                            <b>{item.name}</b>,
-                            originalPrice: {item.originalPrice},
-                            priceForGroup: {item.priceForGroup},
-                            totalAmount: {item.totalAmount}
-                        </p>
-                    </div>
-                    <div className="card-action">
-                        <button className="btn waves-effect waves-light" type="submit" name="action"
-                        onClick={(item)=>{console.log(item)}} >Buy
-                        </button>
-                    </div>
+    return (
+        <div className="col s12 m3">
+            <div className="card small">
+                <div className="card-image">
+                    <img src={purchaseGroup.picture}/>
+                </div>
+                <div className="card-content">
+                    <p>
+                        <b>{purchaseGroup.name}</b>,
+                        originalPrice: {purchaseGroup.originalPrice},
+                        priceForGroup: {purchaseGroup.priceForGroup},
+                        totalAmount: {purchaseGroup.totalAmount}
+                    </p>
+                </div>
+                <div className="card-action">
+                    <label htmlFor="amount">Amount:</label>
+                    <input type="number" onChange={e => amount = e.target.value}/>
+                    <button className="btn waves-effect waves-light" type="submit" name="action"
+                            onClick={() => onAddPurchaseGroup(purchaseGroup._id, amount)}>Buy
+                    </button>
                 </div>
             </div>
         </div>
-
     );
 
 };
 
 export default PurchaseGroup;
+
