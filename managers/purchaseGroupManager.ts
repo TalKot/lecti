@@ -1,8 +1,6 @@
 import * as mongoose from 'mongoose';
-
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
-const PurchaseGroups = mongoose.model('purchaseGroups');
 
 
 export default class purchaseGroupManager {
@@ -38,7 +36,7 @@ export default class purchaseGroupManager {
 
     async addPurchaseGroupToUser(purchaseGroupID, amount, userID) {
         //TODO : ARE THESE THE ACTIONS SHOULD BE TAKEN?
-        await PurchaseGroups.findByIdAndUpdate(purchaseGroupID, {
+        await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
             $push: {
                 'potentialBuyers': {
                     user: userID,
@@ -46,9 +44,5 @@ export default class purchaseGroupManager {
                 }
             }
         });
-        //TODO: WHAT SHOULD RETURNED?
-        const user = await User.findById(userID);
-        return user ? user : null;
-
     }
 }

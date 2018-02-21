@@ -1,4 +1,5 @@
 import purchaseGroupManager from '../managers/purchaseGroupManager';
+import userManager from '../managers/userManager';
 import httpResponse from '../common/httpResponse'
 
 export default class purchaseGroupController {
@@ -50,8 +51,10 @@ export default class purchaseGroupController {
     async addPurchaseGroupToUser(res, purchaseGroupID, amount, userID) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID);
-            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+            await purchaseGroupManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID);
+            let userManagerInstance = new userManager();
+            let user = await userManagerInstance.getUser(userID);
+            user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
         }
         catch (e) {
             httpResponse.sendError(res, e);
