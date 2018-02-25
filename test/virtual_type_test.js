@@ -57,7 +57,7 @@ describe('Virtual types', () => {
             name: 'this is the 3rd purchasGropu of leoMessi'
         });
 
-        const leoMessiwwww = new User({
+        const leoMessi = new User({
             name: 'leoMessi',
             purchaseGroups: [
                 PurchaseGroup1,
@@ -66,7 +66,7 @@ describe('Virtual types', () => {
             ]
         });
 
-        await leoMessiwwww.save();
+        await leoMessi.save();
         let user = await User.findOne({name: 'leoMessi'});
         assert(user.purchaseGroupsCount === 3);
     });

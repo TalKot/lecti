@@ -1,6 +1,7 @@
 import purchaseGroupManager from '../managers/purchaseGroupManager';
 import userManager from '../managers/userManager';
 import httpResponse from '../common/httpResponse'
+import CustomPurchaseGroupSelector from "../services/customPurchaseGropusSelector/customPurchaseGropusSelector";
 
 export default class purchaseGroupController {
 
@@ -15,7 +16,7 @@ export default class purchaseGroupController {
         }
     }
 
-    async getPurchaseGroupById(res, id) {
+    async getPurchaseGroupById(res, id: string) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupById(id);
@@ -26,7 +27,7 @@ export default class purchaseGroupController {
         }
     }
 
-    async getPurchaseGroupByType(res, type) {
+    async getPurchaseGroupByType(res, type: string) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
@@ -37,7 +38,7 @@ export default class purchaseGroupController {
         }
     }
 
-    async getPurchaseGroupsByUserId(res, userId) {
+    async getPurchaseGroupsByUserId(res, userId: string) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByUserId(userId);
@@ -48,11 +49,29 @@ export default class purchaseGroupController {
         }
     }
 
-    async addPurchaseGroupToUser(res, purchaseGroupID, amount, userID) {
+    async getCustomPurchaseGroupsByUserId(res, userId: string) {
+        try {
+            const customPurchaseGroupSelector = new CustomPurchaseGroupSelector();
+            const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsToUser(userId);
+
+            const purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
+
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async buyPurchaseGroup(res, purchaseGroupID: string, amount: number, userID: string) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
-            await purchaseGroupManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID);
             let userManagerInstance = new userManager();
+            await Promise.all([
+                purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroupID, amount, userID),
+                userManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID)
+            ]);
             let user = await userManagerInstance.getUser(userID);
             user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
         }

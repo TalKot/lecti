@@ -7,6 +7,8 @@ module.exports = {
     mongoURI: process.env.MONGO_URI,
     stripePublishKey: process.env.STRIPE_PUBLISH_KEY,
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
-    cookieKey: process.env.COOKIE_KEY
+    cookieKey: process.env.COOKIE_KEY,
+    sendGridKey: process.env.SENDGRID_KEY,
+    redirectedDomain: process.env.REDIRECTED_DOMIN
 };
 //# sourceMappingURL=prod.js.map

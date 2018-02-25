@@ -4,6 +4,7 @@ const tslib_1 = require("tslib");
 const purchaseGroupManager_1 = require("../managers/purchaseGroupManager");
 const userManager_1 = require("../managers/userManager");
 const httpResponse_1 = require("../common/httpResponse");
+const customPurchaseGropusSelector_1 = require("../services/customPurchaseGropusSelector/customPurchaseGropusSelector");
 class purchaseGroupController {
     getAllPurchaseGroups(res) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
@@ -53,12 +54,29 @@ class purchaseGroupController {
             }
         });
     }
-    addPurchaseGroupToUser(res, purchaseGroupID, amount, userID) {
+    getCustomPurchaseGroupsByUserId(res, userId) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const customPurchaseGroupSelector = new customPurchaseGropusSelector_1.default();
+                const type = yield customPurchaseGroupSelector.selectCustomPurchaseGroupsToUser(userId);
+                const purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
+                purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
+    buyPurchaseGroup(res, purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                yield purchaseGroupManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID);
                 let userManagerInstance = new userManager_1.default();
+                yield Promise.all([
+                    purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroupID, amount, userID),
+                    userManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID)
+                ]);
                 let user = yield userManagerInstance.getUser(userID);
                 user ? httpResponse_1.default.sendOk(res, user) : httpResponse_1.default.sendError(res);
             }

@@ -1,15 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const _ = require('lodash');
-const Path = require('path-parser');
-const URL = require('url');
-const mongoose = require("mongoose");
 const purchaseGroupController_1 = require("../controllers/purchaseGroupController");
 const requireLogin = require('../middlewares/requireLogin');
-// import {purchaseGroupType} from '../services/enums';
-const PurchaseGroup = mongoose.model('purchaseGroups');
-const User = mongoose.model('users');
 module.exports = app => {
     app.get('/api/purchaseGroup/getAll', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
@@ -33,21 +26,32 @@ module.exports = app => {
         let { purchaseGroupID, amount } = req.body;
         let userID = req.user.toObject()._id.toString();
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
-        yield purchaseGroupControllerInstance.addPurchaseGroupToUser(res, purchaseGroupID, amount, userID);
+        yield purchaseGroupControllerInstance.buyPurchaseGroup(res, purchaseGroupID, amount, userID);
     }));
-    // app.post('/purchaseGroup/add', (req, res) => {
-    app.get('/api/purchaseGroup/add', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-        let purchaseGroup = new PurchaseGroup({
-            name: 'testing PB2',
-            type: 'computers',
-            picture: 'sapppp'
-        });
-        purchaseGroup = yield purchaseGroup.save();
-        // purchaseGroup = purchaseGroup.toObject();
-        // let user = req.user.toObject();
-        req.user.cart.push(purchaseGroup);
-        yield User.findOneAndUpdate({ email: req.user.email }, req.user);
-        res.send(req.user);
+    app.get('/api/purchaseGroup/getgroup/custom/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        //TODO: COMPOLETE RELEVENT BACKEND
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     }));
+    app.get('/api/purchaseGroup/getcustomgroups/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        //TODO: COMPOLETE RELEVENT BACKEND
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.getCustomPurchaseGroupsAlgoResults(res);
+    }));
+    // // app.post('/purchaseGroup/add', (req, res) => {
+    // app.get('/api/purchaseGroup/add', async (req, res) => {
+    //
+    //     let purchaseGroup = new PurchaseGroup({
+    //         name: 'testing PB2',
+    //         type: 'computers',
+    //         picture: 'sapppp'
+    //     });
+    //     purchaseGroup = await purchaseGroup.save();
+    //     // purchaseGroup = purchaseGroup.toObject();
+    //     // let user = req.user.toObject();
+    //     req.user.cart.push(purchaseGroup);
+    //     await User.findOneAndUpdate({email: req.user.email}, req.user);
+    //     res.send(req.user);
+    // });
 };
 //# sourceMappingURL=purchaseGroupRoutes.js.map

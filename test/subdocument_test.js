@@ -23,7 +23,7 @@ describe('Subdocuments', () => {
         assert(user.purchaseGroups[0].name === 'some testing purchase group');
     });
 
-    it('Can add subdocuments to an existing record', async () => {
+    it('subdocuments can added to a record from DB', async () => {
         //create objects
         const leoMessi = new User({name: 'Jon the man',});
         let leoMessiPurchaseGroup = new PurchaseGroup({name: 'some testing purchase group'});
@@ -33,7 +33,7 @@ describe('Subdocuments', () => {
         //fetch user from DB
         let user = await User.findById({_id: leoMessi.id});
         //change data on instance from DB
-        user.purchaseGroups.push(leoMessiPurchaseGroup);
+        user.purchaseGroupsBought.push(leoMessiPurchaseGroup);
         //save instance again
         await user.save();
         //fetch user once again
@@ -42,7 +42,10 @@ describe('Subdocuments', () => {
                 path: 'purchaseGroups'
             });
         //asserts
-        assert(user.purchaseGroups[0].name === leoMessiPurchaseGroup.name);
+        console.log(user.purchaseGroupsBought[0].name);
+        console.log(leoMessiPurchaseGroup.name);
+
+        assert(user.purchaseGroupsBought[0].name === leoMessiPurchaseGroup.name);
     });
 
 });

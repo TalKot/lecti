@@ -27,7 +27,7 @@ describe('Assocations DB test', () => {
 
         // leoMessiComment.user = leoMessi;
         leoMessiPurchaseGroup.comments.push(leoMessiComment);
-        leoMessi.purchaseGroups.push(leoMessiPurchaseGroup);
+        leoMessi.purchaseGroupsBought.push(leoMessiPurchaseGroup);
         leoMessi.comments.push(leoMessiSellerComment);
         leoMessiComment.user = leoMessi;
 

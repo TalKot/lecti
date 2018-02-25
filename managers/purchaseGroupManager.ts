@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import CustomPurchaseGroupSelector from '../services/customPurchaseGropusSelector/customPurchaseGropusSelector';
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 
@@ -10,12 +11,12 @@ export default class purchaseGroupManager {
         return purchaseGroupType ? purchaseGroupType : null;
     }
 
-    async getPurchaseGroupById(id) {
+    async getPurchaseGroupById(id: string) {
         const purchaseGroup = await PurchaseGroup.findById(id);
         return purchaseGroup ? purchaseGroup : null;
     }
 
-    async getPurchaseGroupsByType(type) {
+    async getPurchaseGroupsByType(type: string) {
         const purchaseGroup = await PurchaseGroup.find({type}, {
             name: 1,
             picture: 1,
@@ -29,13 +30,20 @@ export default class purchaseGroupManager {
         return purchaseGroup ? purchaseGroup : null;
     }
 
-    async getPurchaseGroupsByUserId(userId) {
+    async getPurchaseGroupsByUserId(userId: string) {
         const {cart} = await User.findById(userId);
         return cart ? cart : null;
     }
+    //TODO: SHOULD ERESE THIS?
+    // async getCustomPurchaseGroupsByUserId(userId: string) {
+    //     const customPurchaseGroupSelector =  new CustomPurchaseGroupSelector();
+    //     const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsToUser(userId);
+    //
+    //     let user = await User.findById(userId);
+    //     return user ? user : null;
+    // }
 
-    async addPurchaseGroupToUser(purchaseGroupID, amount, userID) {
-        //TODO : ARE THESE THE ACTIONS SHOULD BE TAKEN?
+    async addUserToPurchaseGroup(purchaseGroupID: string, amount: number, userID: string) {
         await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
             $push: {
                 'potentialBuyers': {

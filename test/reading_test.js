@@ -42,12 +42,12 @@ describe('Reading users out of the database', () => {
     });
 
 
-    xit('find a purchase group by test search', async () => {
+    it.only('find a purchase group by test search', async () => {
         let first = new PurchaseGroup({name: 'first PurchaseGroup'});
         let second = new PurchaseGroup({name: 'second PurchaseGroup'});
         let third = new PurchaseGroup({name: 'third PurchaseGroup'});
         await Promise.all([first.save(), second.save(), third.save()]);
-
+        // let fetchedPurcahseGroup = await PurchaseGroup.find({$text: {$search: 'first'}});
         let fetchedPurcahseGroup = await PurchaseGroup.find({$text: {$search: 'first'}});
         console.log(fetchedPurcahseGroup);
     });

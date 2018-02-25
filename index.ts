@@ -11,10 +11,10 @@ require('./models/Comment');
 require('./models/SellerComment');
 require('./models/PurchaseGroup');
 require('./models/User');
-// require('./models/Survey');
+require('./models/Survey');
 
 //loading passport library to server
-require('./services/passport');
+require('./services/passportLogin/passport');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, {
@@ -44,6 +44,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/purchaseGroupRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 
 if (process.env.NODE_ENV === 'production') {

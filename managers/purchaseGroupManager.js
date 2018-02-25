@@ -38,9 +38,16 @@ class purchaseGroupManager {
             return cart ? cart : null;
         });
     }
-    addPurchaseGroupToUser(purchaseGroupID, amount, userID) {
+    //TODO: SHOULD ERESE THIS?
+    // async getCustomPurchaseGroupsByUserId(userId: string) {
+    //     const customPurchaseGroupSelector =  new CustomPurchaseGroupSelector();
+    //     const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsToUser(userId);
+    //
+    //     let user = await User.findById(userId);
+    //     return user ? user : null;
+    // }
+    addUserToPurchaseGroup(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            //TODO : ARE THESE THE ACTIONS SHOULD BE TAKEN?
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
                     'potentialBuyers': {
