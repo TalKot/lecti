@@ -9,16 +9,12 @@ import Footer from './Footer/Footer';
 import Landing from './Landing/Landing';
 import PurchaseGroups from './PurchaseGroups/PurchaseGroups';
 import Payments from './Payments/Payments';
+import Surveys from './Surveys/Surveys';
+import SurveyNew from './Surveys/SurveyNew';
 
-// const Header = () => <h2>Header</h2>;
-// const Landing = () => <h2>Landing</h2>;
-const Surveys = () =>  <h2>Surveys</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
-const History = () => <h2>History</h2>;
-// const PurchaseGroups = () => <h2>PurchaseGroups</h2>;
 const Profile = () => <h2>Profile</h2>;
 const Cart = () => <h2>Cart</h2>;
-// const Footer = () => <h2>Footer</h2>;
+
 
 class App extends Component {
     componentDidMount() {
@@ -33,8 +29,7 @@ class App extends Component {
                         <Header/>
                         <Route exact path="/" component={Landing}/>
                         <Route exact path="/surveys" component={Surveys}/>
-                        <Route exact path="/survey/new" component={SurveyNew}/>
-                        <Route exact path="/history" component={History}/>
+                        <Route exact path="/surveys/new" component={SurveyNew}/>
                         {/*<Route exact path="/purchasegroups" component={PurchaseGroups}/>*/}
                         <Route exact path="/purchasegroups/:item" component={PurchaseGroups}/>
                         <Route exact path="/profile" component={Profile}/>

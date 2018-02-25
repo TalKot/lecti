@@ -6,32 +6,8 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/SurveyForm.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/SurveyNew.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/Surveys.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/formFields.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/client/src/reducers/customPurchaseGroupsReducer.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/routes/surveyRoutes.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/routes/surveyRoutes.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/routes/surveyRoutes.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/emailsNotifications/Mailer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/services/emailsNotifications/emailTemplates/surveyTemplate.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" afterPath="$PROJECT_DIR$/client/src/actions/index.js" />
@@ -39,39 +15,6 @@
       <change beforePath="$PROJECT_DIR$/client/src/components/App.js" afterPath="$PROJECT_DIR$/client/src/components/App.js" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Landing/Landing.js" afterPath="$PROJECT_DIR$/client/src/components/Landing/Landing.js" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" />
-      <change beforePath="$PROJECT_DIR$/config/dev.js.map" afterPath="$PROJECT_DIR$/config/dev.js.map" />
-      <change beforePath="$PROJECT_DIR$/config/dev.ts" afterPath="$PROJECT_DIR$/config/dev.ts" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" afterPath="$PROJECT_DIR$/config/prod.js" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js.map" afterPath="$PROJECT_DIR$/config/prod.js.map" />
-      <change beforePath="$PROJECT_DIR$/config/prod.ts" afterPath="$PROJECT_DIR$/config/prod.ts" />
-      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js" />
-      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" />
-      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" />
-      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change beforePath="$PROJECT_DIR$/index.js.map" afterPath="$PROJECT_DIR$/index.js.map" />
-      <change beforePath="$PROJECT_DIR$/index.ts" afterPath="$PROJECT_DIR$/index.ts" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" />
-      <change beforePath="$PROJECT_DIR$/managers/userManager.js" afterPath="$PROJECT_DIR$/managers/userManager.js" />
-      <change beforePath="$PROJECT_DIR$/managers/userManager.js.map" afterPath="$PROJECT_DIR$/managers/userManager.js.map" />
-      <change beforePath="$PROJECT_DIR$/managers/userManager.ts" afterPath="$PROJECT_DIR$/managers/userManager.ts" />
-      <change beforePath="$PROJECT_DIR$/models/Survey.js" afterPath="$PROJECT_DIR$/models/Survey.js" />
-      <change beforePath="$PROJECT_DIR$/models/Survey.js.map" afterPath="$PROJECT_DIR$/models/Survey.js.map" />
-      <change beforePath="$PROJECT_DIR$/models/Survey.ts" afterPath="$PROJECT_DIR$/models/Survey.ts" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" afterPath="$PROJECT_DIR$/models/User.js" />
-      <change beforePath="$PROJECT_DIR$/models/User.js.map" afterPath="$PROJECT_DIR$/models/User.js.map" />
-      <change beforePath="$PROJECT_DIR$/models/User.ts" afterPath="$PROJECT_DIR$/models/User.ts" />
-      <change beforePath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js" afterPath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js" />
-      <change beforePath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js.map" afterPath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js.map" />
-      <change beforePath="$PROJECT_DIR$/routes/purchaseGroupRoutes.ts" afterPath="$PROJECT_DIR$/routes/purchaseGroupRoutes.ts" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js" afterPath="$PROJECT_DIR$/services/passportLogin/passport.js" />
-      <change beforePath="$PROJECT_DIR$/services/passport.js.map" afterPath="$PROJECT_DIR$/services/passportLogin/passport.js.map" />
-      <change beforePath="$PROJECT_DIR$/services/passport.ts" afterPath="$PROJECT_DIR$/services/passportLogin/passport.ts" />
-      <change beforePath="$PROJECT_DIR$/test/association_test.js" afterPath="$PROJECT_DIR$/test/association_test.js" />
-      <change beforePath="$PROJECT_DIR$/test/reading_test.js" afterPath="$PROJECT_DIR$/test/reading_test.js" />
-      <change beforePath="$PROJECT_DIR$/test/subdocument_test.js" afterPath="$PROJECT_DIR$/test/subdocument_test.js" />
-      <change beforePath="$PROJECT_DIR$/test/virtual_type_test.js" afterPath="$PROJECT_DIR$/test/virtual_type_test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -529,7 +472,7 @@
       <workItem from="1519046130206" duration="1346000" />
       <workItem from="1519047772258" duration="7615000" />
       <workItem from="1519206418283" duration="461000" />
-      <workItem from="1519209259554" duration="32419000" />
+      <workItem from="1519209259554" duration="32491000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -573,11 +516,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519246130723</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Surveys and CustomGroups response">
+      <created>1519547211353</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1519547211353</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78647000" />
+    <option name="totallyTimeSpent" value="78719000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1105,7 +1055,8 @@
     <MESSAGE value="clientSide implementation" />
     <MESSAGE value="first creation of adding buy purchase group" />
     <MESSAGE value="fixing auth loggin to use same email string - with userController" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing auth loggin to use same email string - with userController" />
+    <MESSAGE value="Surveys and CustomGroups response" />
+    <option name="LAST_COMMIT_MESSAGE" value="Surveys and CustomGroups response" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
