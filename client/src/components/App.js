@@ -4,16 +4,14 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header/Header';
-import Test from './test/test';
 import Footer from './Footer/Footer';
 import Landing from './Landing/Landing';
 import PurchaseGroups from './PurchaseGroups/PurchaseGroups';
 import Payments from './Payments/Payments';
 import Surveys from './Surveys/Surveys';
 import SurveyNew from './Surveys/SurveyNew';
-
-const Profile = () => <h2>Profile</h2>;
-const Cart = () => <h2>Cart</h2>;
+import Profile from './Profile/Profile';
+import Cart from './Cart/Cart';
 
 
 class App extends Component {
@@ -35,7 +33,6 @@ class App extends Component {
                         <Route exact path="/profile" component={Profile}/>
                         <Route exact path="/payments" component={Payments}/>
                         <Route exact path="/Cart" component={Cart}/>
-                        <Route exact path="/test" component={Test}/>
                         <Footer/>
                     </div>
                 </BrowserRouter>

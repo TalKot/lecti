@@ -34,8 +34,12 @@ class purchaseGroupManager {
     }
     getPurchaseGroupsByUserId(userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const { cart } = yield User.findById(userId);
-            return cart ? cart : null;
+            //TODO: USE THIS TO BRING CART DATA
+            const user = yield User.findById(userId);
+            const ids = user.purchaseGroupsBought.map(purchaseGroup => {
+                return purchaseGroup.purchaseGroup.toString();
+            });
+            return yield PurchaseGroup.find({ "_id": { "$in": ids } });
         });
     }
     //TODO: SHOULD ERESE THIS?

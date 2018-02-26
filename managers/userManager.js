@@ -11,14 +11,19 @@ class userManager {
             return user ? user : null;
         });
     }
-    addPurchaseGroupToUser(purchaseGroupID, amount, userID) {
+    //TODO: SHOULD ADD INTERFACE OF PURCHASEGROUP
+    addPurchaseGroupToUser(purchaseGroup, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const cost = amount * purchaseGroup.priceForGroup;
             yield User.findByIdAndUpdate(userID, {
                 $push: {
-                    'purchaseGroupsBought': {
-                        purchaseGroup: purchaseGroupID,
+                    purchaseGroupsBought: {
+                        purchaseGroup: purchaseGroup.id,
                         amount: amount
                     }
+                },
+                $inc: {
+                    credits: -cost
                 }
             });
             // const user = await User.findById(userID);

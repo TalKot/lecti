@@ -31,8 +31,13 @@ export default class purchaseGroupManager {
     }
 
     async getPurchaseGroupsByUserId(userId: string) {
-        const {cart} = await User.findById(userId);
-        return cart ? cart : null;
+        //TODO: USE THIS TO BRING CART DATA
+        const user = await User.findById(userId);
+        const ids = user.purchaseGroupsBought.map(purchaseGroup => {
+            return purchaseGroup.purchaseGroup.toString();
+        });
+        return await PurchaseGroup.find({"_id": {"$in": ids}});
+
     }
     //TODO: SHOULD ERESE THIS?
     // async getCustomPurchaseGroupsByUserId(userId: string) {

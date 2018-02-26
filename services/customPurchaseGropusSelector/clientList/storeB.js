@@ -4,8 +4,9 @@ const baseStore_1 = require("./baseStore");
 class storeB extends baseStore_1.default {
     constructor() {
         super(...arguments);
+        this.STORE = "store B";
         this.notify = (message) => {
-            console.log(`store B! - ${message}`);
+            console.log(`${this.STORE}! - ${message}`);
         };
     }
 }

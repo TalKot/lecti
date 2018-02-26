@@ -4,7 +4,7 @@ class BaseStore {
     constructor() {
         this.notify = (message) => {
             //TODO: SENDING EMAIL TO CLIENT-STORE
-            console.log(`store base - ${message}`);
+            console.log(`store base ${this.STORE} - ${message}`);
         };
     }
 }

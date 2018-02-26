@@ -17,7 +17,7 @@ export const handleToken = (token, amount) => async dispatch => {
     dispatch({type: FETCH_USER, payload: res.data});
 };
 
-//fetch purchaseGropus by type recived from client
+//fetch purchaseGropus by type
 export const fetchPurchaseGroups = (type) => async dispatch => {
     const res = await axios.get(`/api/purchaseGroup/getgroup/type/${type}`);
     dispatch({type: FETCH_PURCHES_GROUPS, payload: res.data});
@@ -36,6 +36,12 @@ export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch =>
 // fetch custom purchase group recommended per user
 export const fetchCustomPurchaseGroups = (purchaseGroupID, amount) => async dispatch => {
     const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
-    console.log(res);
     dispatch({type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data});
+};
+
+//submit a survey
+export const submitSurvey = (values, history) => async dispatch => {
+    const res = await axios.post('/api/surveys', values);
+    history.push('/surveys');
+    dispatch({type: FETCH_USER, payload: res.data});
 };

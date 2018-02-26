@@ -46,7 +46,7 @@ export default class CustomPurchaseGroupsSelector {
         });
 
         this.message.push(`user - ${userId} will need ${resultType}`);
-        await this.notify();
+        // await this.notify();
         return resultType;
     }
 

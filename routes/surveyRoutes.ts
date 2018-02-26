@@ -25,13 +25,13 @@ module.exports = app => {
 
     app.post('/api/surveys', requireLogin, async (req, res) => {
 
-        const {title, subject, body, surveyMailingList} = req.body;
+        const {title, subject, body, recipients} = req.body;
 
         const survey = new Survey({
             title,
             subject,
             body,
-            surveyMailingList: surveyMailingList.split(',').map(email => ({email: email.trim()})),
+            surveyMailingList: recipients.split(',').map(email => ({email: email.trim()})),
             surveyOwner: req.user.id,
             dateSent: Date.now()
         });

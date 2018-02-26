@@ -41,7 +41,7 @@ class CustomPurchaseGroupsSelector {
                 }
             });
             this.message.push(`user - ${userId} will need ${resultType}`);
-            yield this.notify();
+            // await this.notify();
             return resultType;
         });
     }

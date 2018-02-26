@@ -54,6 +54,33 @@ class purchaseGroupController {
             }
         });
     }
+    buyPurchaseGroup(res, purchaseGroupID, amount, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let userManagerInstance = new userManager_1.default();
+                //check available amount for client to purchase
+                const purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+                if (purchaseGroups) {
+                    if (purchaseGroups.totalAmount < amount) {
+                        const error = 'Amount is not available for this purchase group';
+                        httpResponse_1.default.sendError(res, error);
+                    }
+                }
+                // update records values
+                yield Promise.all([
+                    purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroups.id, amount, userID),
+                    userManagerInstance.addPurchaseGroupToUser(purchaseGroups, amount, userID)
+                ]);
+                //return updated user data
+                let user = yield userManagerInstance.getUser(userID);
+                user ? httpResponse_1.default.sendOk(res, user) : httpResponse_1.default.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
     getCustomPurchaseGroupsByUserId(res, userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
@@ -62,23 +89,6 @@ class purchaseGroupController {
                 const purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
                 let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
-            }
-            catch (e) {
-                httpResponse_1.default.sendError(res, e);
-            }
-        });
-    }
-    buyPurchaseGroup(res, purchaseGroupID, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let userManagerInstance = new userManager_1.default();
-                yield Promise.all([
-                    purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroupID, amount, userID),
-                    userManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID)
-                ]);
-                let user = yield userManagerInstance.getUser(userID);
-                user ? httpResponse_1.default.sendOk(res, user) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);

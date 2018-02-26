@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const purchaseGroupController_1 = require("../controllers/purchaseGroupController");
 const requireLogin = require('../middlewares/requireLogin');
+const requireCredits = require('../middlewares/requireCredits');
 module.exports = app => {
     app.get('/api/purchaseGroup/getAll', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
@@ -22,7 +23,7 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
     }));
-    app.post('/api/purchaseGroup/buy/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+    app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let { purchaseGroupID, amount } = req.body;
         let userID = req.user.toObject()._id.toString();
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
@@ -33,11 +34,11 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     }));
-    app.get('/api/purchaseGroup/getcustomgroups/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-        //TODO: COMPOLETE RELEVENT BACKEND
-        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
-        yield purchaseGroupControllerInstance.getCustomPurchaseGroupsAlgoResults(res);
-    }));
+    // app.get('/api/purchaseGroup/getcustomgroups/', requireLogin, async (req, res) => {
+    //     TODO: COMPOLETE RELEVENT BACKEND
+    //         let purchaseGroupControllerInstance = new purchaseGroupController();
+    //     await purchaseGroupControllerInstance.getCustomPurchaseGroupsAlgoResults(res);
+    // });
     // // app.post('/purchaseGroup/add', (req, res) => {
     // app.get('/api/purchaseGroup/add', async (req, res) => {
     //

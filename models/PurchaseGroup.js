@@ -28,6 +28,10 @@ const purchaseGroup = new mongoose.Schema({
     potentialBuyers: [potentialBuyers],
     category: String,
     type: String,
+    isActive: {
+        type: Boolean,
+        default: true
+    },
     totalAmount: Number,
     picture: String,
     salesDay: {

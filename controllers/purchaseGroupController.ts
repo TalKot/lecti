@@ -49,6 +49,35 @@ export default class purchaseGroupController {
         }
     }
 
+    async buyPurchaseGroup(res, purchaseGroupID: string, amount: number, userID: string) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let userManagerInstance = new userManager();
+
+            //check available amount for client to purchase
+            const purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID)
+            if (purchaseGroups) {
+                if (purchaseGroups.totalAmount < amount) {
+                    const error: string = 'Amount is not available for this purchase group';
+                    httpResponse.sendError(res, error);
+                }
+            }
+
+            // update records values
+            await Promise.all([
+                purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroups.id, amount, userID),
+                userManagerInstance.addPurchaseGroupToUser(purchaseGroups, amount, userID)
+            ]);
+
+            //return updated user data
+            let user = await userManagerInstance.getUser(userID);
+            user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
     async getCustomPurchaseGroupsByUserId(res, userId: string) {
         try {
             const customPurchaseGroupSelector = new CustomPurchaseGroupSelector();
@@ -58,22 +87,6 @@ export default class purchaseGroupController {
             let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
 
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
-        }
-        catch (e) {
-            httpResponse.sendError(res, e);
-        }
-    }
-
-    async buyPurchaseGroup(res, purchaseGroupID: string, amount: number, userID: string) {
-        try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let userManagerInstance = new userManager();
-            await Promise.all([
-                purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroupID, amount, userID),
-                userManagerInstance.addPurchaseGroupToUser(purchaseGroupID, amount, userID)
-            ]);
-            let user = await userManagerInstance.getUser(userID);
-            user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
         }
         catch (e) {
             httpResponse.sendError(res, e);

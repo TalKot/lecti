@@ -10,16 +10,22 @@ export default class userManager {
         return user ? user : null;
     }
 
-
-    async addPurchaseGroupToUser(purchaseGroupID: string, amount: number, userID: string) {
+    //TODO: SHOULD ADD INTERFACE OF PURCHASEGROUP
+    async addPurchaseGroupToUser(purchaseGroup, amount: number, userID: string) {
+        const cost = amount * purchaseGroup.priceForGroup;
         await User.findByIdAndUpdate(userID, {
             $push: {
-                'purchaseGroupsBought': {
-                    purchaseGroup: purchaseGroupID,
+                purchaseGroupsBought: {
+                    purchaseGroup: purchaseGroup.id,
                     amount: amount
                 }
+            },
+            $inc: {
+                credits: -cost
             }
         });
+
+
         // const user = await User.findById(userID);
         // return user ? user : null;
     }
