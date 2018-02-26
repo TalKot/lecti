@@ -6,7 +6,7 @@ class Landing extends Component {
 
     componentDidMount() {
         this.props.fetchCustomPurchaseGroups(this.props.auth);
-        console.log(this.props.customPurchaseGroupsPerUser.data)
+        // console.log(this.props.customPurchaseGroupsPerUser.data)
     }
 
 

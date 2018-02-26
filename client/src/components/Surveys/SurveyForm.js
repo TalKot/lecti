@@ -3,6 +3,8 @@ import {reduxForm, Field} from 'redux-form';
 import SurveyField from './SurveyField';
 import formFields from './formFields';
 import { Link } from 'react-router-dom';
+import validateEmails from '../../utils/validateEmails'
+
 
 class SurveyForm extends Component {
     renderFields() {
@@ -22,7 +24,7 @@ class SurveyForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.props.handleSubmit(val=>console.log(val))}>
+                <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
                     {this.renderFields()}
                     <Link to="/surveys" className="red btn-flat white-text">
                         Cancel
@@ -41,16 +43,25 @@ class SurveyForm extends Component {
 function validate(values) {
     const errors = {};
 
+    //validate emails format with regex
+    errors.recipients = validateEmails(values.recipients || '');
+
+    // validate values in form fields
     formFields.forEach(({ name }) => {
         if (!values[name]) {
             errors[name] = 'You must provide a value';
         }
-    });
 
+    });
+    //returns fields errors
     return errors;
 }
 
 export default reduxForm({
     validate,
-    form: 'surveyForm'
+    form: 'surveyForm',
+    destroyOnUnmount: false
+
 })(SurveyForm);
+
+//destroyOnUnmount - when save field values when return to surveyForm

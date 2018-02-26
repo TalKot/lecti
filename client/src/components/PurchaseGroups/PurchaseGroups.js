@@ -30,7 +30,8 @@ class PurchaseGroups extends Component {
                     <div className="row">
                         {
                             this.props.purchaseGroups.map(purchaseGroup => {
-                                return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} onAddPurchaseGroup={this.props.onAddPurchaseGroup}/>
+                                return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}
+                                               onAddPurchaseGroup={this.props.onAddPurchaseGroup}/>
                             })
                         }
                     </div>
