@@ -30,7 +30,6 @@ module.exports = app => {
         yield purchaseGroupControllerInstance.buyPurchaseGroup(res, purchaseGroupID, amount, userID);
     }));
     app.get('/api/purchaseGroup/getgroup/custom/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-        //TODO: COMPOLETE RELEVENT BACKEND
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     }));

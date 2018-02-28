@@ -35,7 +35,6 @@ module.exports = app => {
     });
 
     app.get('/api/purchaseGroup/getgroup/custom/', requireLogin, async (req, res) => {
-        //TODO: COMPOLETE RELEVENT BACKEND
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     });

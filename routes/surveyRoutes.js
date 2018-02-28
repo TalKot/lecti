@@ -38,5 +38,25 @@ module.exports = app => {
             res.status(422).send(err);
         }
     }));
+    //TODO : REMOVE THIS TO A DIFFRENT ROUTE FILE
+    app.post('/api/becomeseller/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const { title, subject, body, recipients } = req.body;
+        const survey = new Survey({
+            title,
+            subject,
+            body,
+            surveyMailingList: recipients.split(',').map(email => ({ email: email.trim() })),
+            surveyOwner: req.user.id,
+            dateSent: Date.now()
+        });
+        try {
+            const mailer = new Mailer(survey, surveyTemplate(survey));
+            yield Promise.all([mailer.send(), survey.save()]);
+            res.send(req.user);
+        }
+        catch (err) {
+            res.status(422).send(err);
+        }
+    }));
 };
 //# sourceMappingURL=surveyRoutes.js.map
