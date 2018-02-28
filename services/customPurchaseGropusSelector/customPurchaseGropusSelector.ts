@@ -1,9 +1,11 @@
 import * as mongoose from 'mongoose';
-import * as Q from 'bluebird';
-
+import * as _ from 'lodash';
+const moment = require('moment');
+import PurchaseGroupManager from '../../managers/purchaseGroupManager'
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const clientNotify = require('./clientList');
+import purchaseGroupsTypesValue = require('./purcahseGroupsTypesValueList');
 
 export default class CustomPurchaseGroupsSelector {
 
@@ -18,36 +20,64 @@ export default class CustomPurchaseGroupsSelector {
     }
 
 
-    public async selectCustomPurchaseGroupsToUser(userId: string) {
+    public async selectCustomPurchaseGroupsTypeForUser(userId: string) {
         const user = await User.findById(userId);
 
-        const ids = user.purchaseGroupsBought.map(purchaseGroup => {
-            return purchaseGroup.purchaseGroup.toString();
-        });
-        const purchaseGroupList = await PurchaseGroup.find({"_id": {"$in": ids}});
+        const purchaseGroupManager = new PurchaseGroupManager();
+        const purchaseGroupsByUser = await purchaseGroupManager.getPurchaseGroupsByUserId(userId);
 
-        let PB = {};
-        let resultType = 'computers';
+        let purchaseGroupsResults = {};
+        let purchaseGroupsTimes = {};
+        let purchaseGroupsPriority = purchaseGroupsTypesValue;
 
-        purchaseGroupList.forEach(purchaseGroup => {
-            const type = purchaseGroup.type;
-            if (!PB[type]) {
-                PB = {
-                    ...PB,
-                    [type]: 1
+        // getting amount of each purchase group type
+        purchaseGroupsByUser.forEach(purchaseGroup => {
+
+            const type = purchaseGroup.data.type;
+
+
+            const timeBought = moment(purchaseGroup.time).unix();
+            const now = moment().unix();
+            const timeDiff = moment.duration(now - timeBought).asSeconds();
+
+            if (purchaseGroupsTimes[type]) {
+                if (purchaseGroupsTimes[type] > timeDiff) {
+                    purchaseGroupsTimes[type] = timeDiff;
                 }
             } else {
-                let value = PB[type] + 1;
-                PB = {
-                    ...PB,
-                    [type]: value
-                }
+                purchaseGroupsTimes[type] = timeDiff;
+            }
+
+            if (purchaseGroupsResults[type]) {
+                const value = purchaseGroupsResults[type] + 1;
+                purchaseGroupsResults[type] = value;
+            } else {
+                purchaseGroupsResults[type] = 1
             }
         });
 
-        this.message.push(`user - ${userId} will need ${resultType}`);
+
+        //calculating all data combined
+        Object.keys(purchaseGroupsResults).forEach(type => {
+
+            if (purchaseGroupsPriority[type]) {
+                purchaseGroupsResults[type] *= purchaseGroupsPriority[type];
+            }
+
+            if (purchaseGroupsTimes[type]) {
+                purchaseGroupsResults[type] /= purchaseGroupsTimes[type];
+            }
+
+        });
+
+        //get result
+        const selectedType = Object.keys(purchaseGroupsResults).reduce((typeA, typeB)=>{
+            return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
+        });
+
+        this.message.push(`${user.displayName}, ${user.email} will need ${selectedType}`);
         // await this.notify();
-        return resultType;
+        return selectedType;
     }
 
     public notify = async () => {

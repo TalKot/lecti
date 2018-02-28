@@ -12,6 +12,7 @@ import Surveys from './Surveys/Surveys';
 import SurveyNew from './Surveys/SurveyNew';
 import Profile from './Profile/Profile';
 import Cart from './Cart/Cart';
+import BecomeSeller from './BecomeSeller/BecomeSeller';
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
                         <Route exact path="/profile" component={Profile}/>
                         <Route exact path="/payments" component={Payments}/>
                         <Route exact path="/Cart" component={Cart}/>
+                        <Route exact path="/becomeseller" component={BecomeSeller}/>
                         <Footer/>
                     </div>
                 </BrowserRouter>

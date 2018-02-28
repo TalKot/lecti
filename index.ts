@@ -44,6 +44,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/purchaseGroupRoutes')(app);
+require('./routes/cartRoutes')(app);
 require('./routes/surveyRoutes')(app);
 
 

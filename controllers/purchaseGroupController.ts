@@ -55,21 +55,20 @@ export default class purchaseGroupController {
             let userManagerInstance = new userManager();
 
             //check available amount for client to purchase
-            const purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID)
-            if (purchaseGroups) {
-                if (purchaseGroups.totalAmount < amount) {
+            const purchaseGroup = await purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+            if (purchaseGroup) {
+                if (purchaseGroup.totalAmount < amount) {
                     const error: string = 'Amount is not available for this purchase group';
                     httpResponse.sendError(res, error);
+                    throw new Error('Amount is not available for this purchase group')
                 }
             }
-
             // update records values
             await Promise.all([
-                purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroups.id, amount, userID),
-                userManagerInstance.addPurchaseGroupToUser(purchaseGroups, amount, userID)
+                purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
             ]);
-
-            //return updated user data
+            //return values
             let user = await userManagerInstance.getUser(userID);
             user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
         }
@@ -81,7 +80,7 @@ export default class purchaseGroupController {
     async getCustomPurchaseGroupsByUserId(res, userId: string) {
         try {
             const customPurchaseGroupSelector = new CustomPurchaseGroupSelector();
-            const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsToUser(userId);
+            const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
 
             const purchaseGroupManagerInstance = new purchaseGroupManager();
             let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);

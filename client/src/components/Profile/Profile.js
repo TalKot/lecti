@@ -81,6 +81,8 @@ class Profile extends Component {
                     <tr>
                         <th>ID</th>
                         <th>name</th>
+                        <th>amount</th>
+                        <th>time</th>
                         <th>originalPrice</th>
                         <th>priceForGroup</th>
                         <th>type</th>
@@ -95,10 +97,12 @@ class Profile extends Component {
                             return (
                                 <tr key={Math.random()}>
                                     <td key={Math.random()}>{purchaseGroup._id}</td>
-                                    <td key={Math.random()}>{purchaseGroup.name}</td>
-                                    <td key={Math.random()}>{purchaseGroup.originalPrice}</td>
-                                    <td key={Math.random()}>{purchaseGroup.priceForGroup}</td>
-                                    <td key={Math.random()}>{purchaseGroup.type}</td>
+                                    <td key={Math.random()}>{purchaseGroup.data.name}</td>
+                                    <td key={Math.random()}>{purchaseGroup.amount}</td>
+                                    <td key={Math.random()}>{purchaseGroup.time}</td>
+                                    <td key={Math.random()}>{purchaseGroup.data.originalPrice}</td>
+                                    <td key={Math.random()}>{purchaseGroup.data.priceForGroup}</td>
+                                    <td key={Math.random()}>{purchaseGroup.data.type}</td>
                                     {this.isActiveButton(purchaseGroup)}
                                 </tr>
                             );

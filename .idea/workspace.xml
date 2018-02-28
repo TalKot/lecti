@@ -2,19 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="fixing auth loggin to use same email string - with userController">
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/SurveyField.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/SurveyForm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/SurveyNew.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Surveys/Surveys.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/reducers/customPurchaseGroupsReducer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/BecomeSeller/BecomeSeller.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/BecomeSeller/FormField.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/src/components/BecomeSeller/formFields.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/controllers/cartController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/controllers/cartController.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/controllers/cartController.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/managers/cartManager.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/managers/cartManager.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/managers/cartManager.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/middlewares/requireAdmin.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/middlewares/requireAdmin.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/middlewares/requireAdmin.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/routes/cartRoutes.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/routes/cartRoutes.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/routes/cartRoutes.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/services/emailsNotifications/emailTemplates/becomeSellerTemplate.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" afterPath="$PROJECT_DIR$/client/src/actions/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" afterPath="$PROJECT_DIR$/client/src/actions/types.js" />
       <change beforePath="$PROJECT_DIR$/client/src/components/App.js" afterPath="$PROJECT_DIR$/client/src/components/App.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Landing/Landing.js" afterPath="$PROJECT_DIR$/client/src/components/Landing/Landing.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.js" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Profile/Profile.js" afterPath="$PROJECT_DIR$/client/src/components/Profile/Profile.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js" afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Surveys/SurveyFormReview.js" afterPath="$PROJECT_DIR$/client/src/components/Surveys/SurveyFormReview.js" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/test/test.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" />
+      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js" />
+      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" />
+      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" />
+      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change beforePath="$PROJECT_DIR$/index.js.map" afterPath="$PROJECT_DIR$/index.js.map" />
+      <change beforePath="$PROJECT_DIR$/index.ts" afterPath="$PROJECT_DIR$/index.ts" />
+      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js" />
+      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" />
+      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" />
+      <change beforePath="$PROJECT_DIR$/models/PurchaseGroup.js" afterPath="$PROJECT_DIR$/models/PurchaseGroup.js" />
+      <change beforePath="$PROJECT_DIR$/models/PurchaseGroup.js.map" afterPath="$PROJECT_DIR$/models/PurchaseGroup.js.map" />
+      <change beforePath="$PROJECT_DIR$/models/PurchaseGroup.ts" afterPath="$PROJECT_DIR$/models/PurchaseGroup.ts" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" afterPath="$PROJECT_DIR$/models/User.js" />
+      <change beforePath="$PROJECT_DIR$/models/User.js.map" afterPath="$PROJECT_DIR$/models/User.js.map" />
+      <change beforePath="$PROJECT_DIR$/models/User.ts" afterPath="$PROJECT_DIR$/models/User.ts" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js" afterPath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js" />
+      <change beforePath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js.map" afterPath="$PROJECT_DIR$/routes/purchaseGroupRoutes.js.map" />
+      <change beforePath="$PROJECT_DIR$/routes/purchaseGroupRoutes.ts" afterPath="$PROJECT_DIR$/routes/purchaseGroupRoutes.ts" />
+      <change beforePath="$PROJECT_DIR$/routes/surveyRoutes.js" afterPath="$PROJECT_DIR$/routes/surveyRoutes.js" />
+      <change beforePath="$PROJECT_DIR$/routes/surveyRoutes.js.map" afterPath="$PROJECT_DIR$/routes/surveyRoutes.js.map" />
+      <change beforePath="$PROJECT_DIR$/routes/surveyRoutes.ts" afterPath="$PROJECT_DIR$/routes/surveyRoutes.ts" />
+      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js" />
+      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js.map" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js.map" />
+      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,12 +72,12 @@
     <favorites_list name="lecti" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="passport.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/passportLogin/passport.ts">
+    <leaf>
+      <file leaf-file-name="purchaseGroupController.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="312">
+              <caret line="87" column="12" lean-forward="false" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -44,8 +86,8 @@
       <file leaf-file-name="customPurchaseGropusSelector.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+            <state relative-caret-position="1000">
+              <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="20" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -56,80 +98,38 @@
       <file leaf-file-name="clientList.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="baseStore.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storeA.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.ts">
+      <file leaf-file-name="purcahseGroupsTypesValueList.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storeB.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts">
+      <file leaf-file-name="purchaseGroupManager.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="205">
+              <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storeC.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.ts">
+      <file leaf-file-name="Profile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Profile/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mailer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/emailsNotifications/Mailer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prod.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/prod.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keys.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/keys.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="141">
+              <caret line="84" column="37" lean-forward="false" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -140,47 +140,47 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/api/purchaseGroup/getgroup/type</find>
-      <find>auth</find>
-      <find>saves a full relation gr</find>
-      <find>Can add subdocuments to an existing rec</find>
-      <find>kes returns numb</find>
-      <find>b</find>
-      <find>potentialBuyers</find>
-      <find>length</find>
-      <find>purchaseGroups</find>
-      <find>search</find>
-      <find>.addPurchaseGroupToUser</find>
-      <find>pop</find>
-      <find>recipientsList</find>
-      <find>popu</find>
-      <find>User</find>
-      <find>api/surveys</find>
-      <find>redirectedDomain</find>
-      <find>'/api/surveys</find>
-      <find>Payments</find>
-      <find>survey/new</find>
-      <find>SurveyNew</find>
-      <find>./SurveyForm</find>
-      <find>submit</find>
+      <find>fetch pu</find>
+      <find>api/purchaseGroup/getgroup/user/</find>
       <find>class</find>
-      <find>.getCustomPurchaseGroupsByUserId</find>
-      <find>api/purchaseGroup/getgroup/custom</find>
-      <find>SurveyForm</find>
-      <find>const ke</find>
-      <find>.split(','</find>
-      <find>selectCustomPurchaseGroupsToUser</find>
+      <find>FETCH_USER</find>
+      <find>console</find>
+      <find>oncanc§</find>
+      <find>recipients</find>
+      <find>api/surveys</find>
+      <find>onSurveySubmit</find>
+      <find>surveyForm</find>
+      <find>history</find>
+      <find>w</find>
+      <find>/api/surveys</find>
+      <find>'/api/surveys</find>
+      <find>validateEmails</find>
+      <find>row</find>
+      <find>onAddPurchaseGroupToCart</find>
+      <find>onAddPurchaseGroup</find>
+      <find>/api/cart/add/</find>
+      <find>cartManager</find>
+      <find>cart</find>
+      <find>api/purchaseGroup/buy</find>
+      <find>buy</find>
+      <find>get</find>
+      <find>custom</find>
+      <find>getPurchaseGroupsByUserId</find>
+      <find>purchaseGropusResults</find>
+      <find>selectCustomPurchaseGroupsTypeForUser</find>
+      <find>getCustomPurchaseGroupsByUserIdgetPurchaseGroupsByUserId</find>
+      <find>purchaseGroupsTypesValue</find>
     </findStrings>
     <replaceStrings>
-      <replace>className</replace>
       <replace>purchaseGroup</replace>
+      <replace>className</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -189,57 +189,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/middlewares/requireCredits.ts" />
-        <option value="$PROJECT_DIR$/client/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
-        <option value="$PROJECT_DIR$/services/passport.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js" />
-        <option value="$PROJECT_DIR$/models/PurchaseGroup.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" />
-        <option value="$PROJECT_DIR$/controllers/userController.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/types.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/purchaseGroupsReducer.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/customPurchaseGroupsReducer.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/index.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Landing/Landing.js" />
-        <option value="$PROJECT_DIR$/test/association_test.js" />
-        <option value="$PROJECT_DIR$/test/subdocument_test.js" />
-        <option value="$PROJECT_DIR$/test/virtual_type_test.js" />
-        <option value="$PROJECT_DIR$/models/User.ts" />
-        <option value="$PROJECT_DIR$/managers/userManager.ts" />
-        <option value="$PROJECT_DIR$/index.ts" />
-        <option value="$PROJECT_DIR$/test/reading_test.js" />
         <option value="$PROJECT_DIR$/models/Survey.ts" />
         <option value="$PROJECT_DIR$/services/Mailer.js" />
         <option value="$PROJECT_DIR$/config/prod.ts" />
         <option value="$PROJECT_DIR$/services/emailTemplates/surveyTemplate.js" />
-        <option value="$PROJECT_DIR$/routes/surveyRoutes.ts" />
         <option value="$PROJECT_DIR$/client/src/components/test/test.js" />
         <option value="$PROJECT_DIR$/client/src/components/Survey/Survey.js" />
         <option value="$PROJECT_DIR$/client/src/components/Surveys/Surveys.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/Surveys/SurveyField.js" />
-        <option value="$PROJECT_DIR$/client/src/components/App.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Surveys/SurveyNew.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Surveys/SurveyForm.js" />
-        <option value="$PROJECT_DIR$/managers/purchaseGroupManager.ts" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector.ts" />
         <option value="$PROJECT_DIR$/config/dev.ts" />
-        <option value="$PROJECT_DIR$/routes/purchaseGroupRoutes.ts" />
-        <option value="$PROJECT_DIR$/controllers/purchaseGroupController.ts" />
-        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" />
         <option value="$PROJECT_DIR$/services/emailsNotifications/Mailer.js" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseClient/baseClient.ts" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseClient/baseStore.ts" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseClient/storeA.ts" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseClient/storeC.ts" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseClient/storeB.ts" />
-        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.ts" />
+        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.ts" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.ts" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts" />
-        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.ts" />
+        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.ts" />
+        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.ts" />
+        <option value="$PROJECT_DIR$/common/httpResponse.ts" />
+        <option value="$PROJECT_DIR$/managers/userManager.ts" />
+        <option value="$PROJECT_DIR$/client/src/components/Cart/Cart.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/validateEmails.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Surveys/SurveyNew.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Surveys/SurveyForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Surveys/SurveyFormReview.js" />
+        <option value="$PROJECT_DIR$/client/src/components/BecomeSeller/formFields.js" />
+        <option value="$PROJECT_DIR$/client/src/components/App.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
+        <option value="$PROJECT_DIR$/services/emailsNotifications/emailTemplates/becomeSellerTemplate.js" />
+        <option value="$PROJECT_DIR$/routes/surveyRoutes.ts" />
+        <option value="$PROJECT_DIR$/client/src/components/BecomeSeller/BecomeSeller.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" />
+        <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js" />
+        <option value="$PROJECT_DIR$/index.ts" />
+        <option value="$PROJECT_DIR$/managers/cartManager.ts" />
+        <option value="$PROJECT_DIR$/routes/cartRoutes.ts" />
+        <option value="$PROJECT_DIR$/controllers/cartController.ts" />
+        <option value="$PROJECT_DIR$/models/User.ts" />
+        <option value="$PROJECT_DIR$/models/PurchaseGroup.ts" />
+        <option value="$PROJECT_DIR$/client/src/components/Profile/Profile.js" />
+        <option value="$PROJECT_DIR$/middlewares/requireAdmin.ts" />
+        <option value="$PROJECT_DIR$/routes/purchaseGroupRoutes.ts" />
+        <option value="$PROJECT_DIR$/controllers/purchaseGroupController.ts" />
+        <option value="$PROJECT_DIR$/managers/purchaseGroupManager.ts" />
+        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.ts" />
+        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" />
       </list>
     </option>
   </component>
@@ -261,11 +261,10 @@
     <handled-path value="$PROJECT_DIR$/client/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1144" />
-    <option name="y" value="-1057" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -317,6 +316,17 @@
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
               <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="moment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -341,64 +351,7 @@
               <item name="lecti" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-              <item name="clientList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-              <item name="clientList" type="462c0819:PsiDirectoryNode" />
-              <item name="baseStore.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-              <item name="clientList" type="462c0819:PsiDirectoryNode" />
-              <item name="storeA.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-              <item name="clientList" type="462c0819:PsiDirectoryNode" />
-              <item name="storeB.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-              <item name="clientList" type="462c0819:PsiDirectoryNode" />
-              <item name="storeC.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-              <item name="clientList.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
               <item name="customPurchaseGropusSelector.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="passportLogin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -412,19 +365,19 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.chrisrm.idea.config" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
-    <property name="SearchEverywhereHistoryKey" value="actions/inde&#9;FILE&#9;file:///Users/talkot/Documents/lecti/client/src/actions/index.js&#10;MODELS&#9;FILE&#9;file:///Users/talkot/Documents/lecti/models&#10;test&#9;FILE&#9;file:///Users/talkot/Documents/lecti/test&#10;header&#9;FILE&#9;file:///Users/talkot/Documents/lecti/client/src/components/Header/Header.js" />
+    <property name="SearchEverywhereHistoryKey" value="profile&#9;FILE&#9;file:///Users/talkot/Documents/lecti/client/src/components/Profile/Profile.js&#10;actions/inde&#9;FILE&#9;file:///Users/talkot/Documents/lecti/client/src/actions/index.js&#10;MODELS&#9;FILE&#9;file:///Users/talkot/Documents/lecti/models&#10;test&#9;FILE&#9;file:///Users/talkot/Documents/lecti/test&#10;header&#9;FILE&#9;file:///Users/talkot/Documents/lecti/client/src/components/Header/Header.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseClient" />
-      <recent name="$PROJECT_DIR$/client/src/components/Surveys" />
-      <recent name="$PROJECT_DIR$/client/src/components" />
-      <recent name="$PROJECT_DIR$/services" />
+      <recent name="$PROJECT_DIR$/services/customPurchaseGropusSelector" />
+      <recent name="$PROJECT_DIR$/middlewares" />
+      <recent name="$PROJECT_DIR$/controllers" />
+      <recent name="$PROJECT_DIR$/managers" />
       <recent name="$PROJECT_DIR$/routes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -472,7 +425,7 @@
       <workItem from="1519046130206" duration="1346000" />
       <workItem from="1519047772258" duration="7615000" />
       <workItem from="1519206418283" duration="461000" />
-      <workItem from="1519209259554" duration="32491000" />
+      <workItem from="1519209259554" duration="63213000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -523,11 +476,32 @@
       <option name="project" value="LOCAL" />
       <updated>1519547211353</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixing auth loggin to use same email string - with userController">
+      <created>1519547258400</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519547258400</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixing auth loggin to use same email string - with userController">
+      <created>1519676117250</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519676117250</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixing auth loggin to use same email string - with userController">
+      <created>1519676139348</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1519676139348</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78719000" />
+    <option name="totallyTimeSpent" value="109441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,21 +513,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1144" y="-1057" width="1920" height="1057" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22037423" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25634825" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16482359" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22057787" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18816067" sideWeight="0.5072202" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28690228" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.286578" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -570,19 +544,19 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22128174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25634825" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18816067" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22057787" sideWeight="0.4927798" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18816067" sideWeight="0.5072202" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3337364" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.286578" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1042,6 +1016,396 @@
         <option value="$PROJECT_DIR$/../ShoppingCollective/test/fakerPurchaseGroups.js" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.js.map" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/server/migration.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/server/models/activity.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bootstrap.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/app.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/request/getAllScheduledReportsRequest/getAllPlatformScheduledReportsRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/request/getAllScheduledReportsRequest/getAllConnectionsScheduledReportsRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/request/getAllScheduledReportsRequest/baseGetAllScheduledReportsRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/request/getAllScheduledReportsRequest/getAllDisplayScheduledReportsRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/request/getAllScheduledReportsRequest/getAllAdvertisersScheduledReportsRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/publisher/scheduledReportNeededPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/publisher/capitan.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/managers/scheduleReportsManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/managers/usageManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/managers/taksManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/managers/playgroundManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/managers/playgroundManager.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/managers/IScheduledReport.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/tasks/getAllAdvertisersScheduledReportsTask.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/tasks/getAllConnectionsScheduledReportsTask.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/tasks/getAllPlatformScheduledReportsTask.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/tasks/getAllDisplayScheduledReportsTask.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/tasks/ITask.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/common/enums.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/server/bus/busProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/config/modules/modules.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/config/environments/all.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports-scheduler/config/environments/IEnv.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/controllers/~test/~testController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bootstrap.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/app.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/publisher/IScheduleReportSentPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/publisher/advertiserScheduleReportSentPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/publisher/capitan.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/publisher/connectionScheduleReportSentPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/publisher/platformScheduleReportSentPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/publisher/displayScheduleReportSentPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/request/getConnectionsReportRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/request/getAdvertiserReportRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/request/getDisplayReportRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/request/getPlatformReportRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/request/IGetReportRequest.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/handler/scheduledReportNeededHandler.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/managers/notificationsManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/managers/usageManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/managers/scheduleReportsManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/utils/utils.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/common/enums.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/models/IScheduledReport.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/models/scheduleReportModel.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/server/bus/busProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/config/modules/modules.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/config/express/all.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/config/environments/all.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-schedule-reports/config/environments/IEnv.js.map" />
+        <option value="$PROJECT_DIR$/routes/cartRoutes.js" />
+        <option value="$PROJECT_DIR$/routes/cartRoutes.js.map" />
+        <option value="$PROJECT_DIR$/managers/cartManager.js.map" />
+        <option value="$PROJECT_DIR$/managers/cartManager.js" />
+        <option value="$PROJECT_DIR$/controllers/cartController.js.map" />
+        <option value="$PROJECT_DIR$/controllers/cartController.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/server/models/activityContext.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/node_modules/@vidazoo/vidazoo-framework/controllers/hireFireController.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/node_modules/@vidazoo/vidazoo-framework/modules/pgModule.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/node_modules/@vidazoo/vidazoo-framework/services/herokuService.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/node_modules/@vidazoo/vidazoo-framework/services/ipService.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/node_modules/@vidazoo/vidazoo-framework/classes/cacheManager.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-api/node_modules/@vidazoo/vidazoo-framework/cache/memoryCache2.js" />
+        <option value="$PROJECT_DIR$/middlewares/requireAdmin.js" />
+        <option value="$PROJECT_DIR$/middlewares/requireAdmin.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDahboardActivity.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardDomainRevenue.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardDeviceRevenue.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardDomainRevenue.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardDeviceRevenue.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardActivityParams.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDahboardActivity.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardActivityParams.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardCountryRevenue.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardActivityResults.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardCountryRevenue.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/dashboard/IDashboardActivityResults.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivity.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivityParams.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivityUI.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivity.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivityResults.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivityUI.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivityResults.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/reporting/IReportingActivityParams.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/mobileWebBadge/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/mobileWebBadge/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/demandPerformance/DemandPerformance.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/demandPerformance/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/demandPerformance/DemandPerformance.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/demandPerformance/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceChart/chartConfig.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceChart/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceChart/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceChart/PerformanceChart.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceChart/chartConfig.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceChart/PerformanceChart.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/inAppBadge/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/inAppBadge/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/domainRevenue/DomainRevenue.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/domainRevenue/DomainRevenue.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/domainRevenue/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/domainRevenue/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/topRevenueDevices/TopRevenueDevices.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/topRevenueDevices/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/topRevenueDevices/TopRevenueDevices.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/topRevenueDevices/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/countryRevenue/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/countryRevenue/CountryRevenue.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/countryRevenue/CountryRevenue.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/countryRevenue/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceSummary/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceSummary/PerformanceSummary.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceSummary/PerformanceSummary.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performanceSummary/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performancePanel/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performancePanel/PerformancePanel.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performancePanel/PerformancePanel.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/performancePanel/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/supplyPerformance/SupplyPerformance.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/supplyPerformance/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/supplyPerformance/SupplyPerformance.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/supplyPerformance/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/financialPerformance/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/financialPerformance/FinancialPerformance.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/financialPerformance/FinancialPerformance.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/financialPerformance/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/desktopBadge/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/desktopBadge/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceBadge/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceBadge/DeviceBadge.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceBadge/DeviceBadge.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceBadge/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceRevenue/DeviceRevenue.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceRevenue/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceRevenue/DeviceRevenue.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/deviceRevenue/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/components/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/profileForm/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/profileForm/ProfileForm.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/profileForm/ProfileForm.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/profileForm/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/passwordForm/PasswordForm.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/passwordForm/PasswordForm.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/passwordForm/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/passwordForm/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/components/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/list/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/list/List.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/list/List.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/list/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/userRow/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/userRow/UserRow.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/userRow/UserRow.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/userRow/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/components/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/labelValuePair/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/labelValuePair/LabelValuePair.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/labelValuePair/LabelValuePair.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/labelValuePair/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/activityForm/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/activityForm/ActivityForm.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/activityForm/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/activityForm/ActivityForm.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/verticalPublishersChips/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/verticalPublishersChips/VerticalPublishersChips.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/verticalPublishersChips/VerticalPublishersChips.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/verticalPublishersChips/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/userForm/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/userForm/UserForm.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/userForm/UserForm.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/userForm/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/addActivityModal/AddActivityModal.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/addActivityModal/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/addActivityModal/AddActivityModal.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/addActivityModal/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/create/CreateUser.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/create/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/create/CreateUser.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/create/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/edit/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/edit/EditUser.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/edit/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/edit/EditUser.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/components/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/tags/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/tags/Tags.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/tags/onDemand.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/tags/Tags.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/tags/onDemand.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/tags/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/Account.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/Account.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/account/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/onDemand.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/Users.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/onDemand.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/users/Users.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/onDemand.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/Dashboard.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/onDemand.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/dashboard/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/reporting/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/reporting/Reporting.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/reporting/onDemand.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/reporting/Reporting.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/reporting/onDemand.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/reporting/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/User.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/onDemand.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/onDemand.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/user/User.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/login/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/login/Login.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/login/Login.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/login/onDemand.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/login/onDemand.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/login/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/root/Root.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/root/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/root/Root.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/root/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/resetPassword/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/resetPassword/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/resetPassword/onDemand.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/resetPassword/ResetPassword.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/resetPassword/ResetPassword.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/resetPassword/onDemand.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/app/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/app/App.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/app/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/app/App.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/chart/Chart.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/chart/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/chart/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/chart/Chart.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/allInViewsLogo/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/allInViewsLogo/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/publishersAllInViewsLogo/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/publishersAllInViewsLogo/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/appHeader/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/appHeader/AppHeader.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/appHeader/AppHeader.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/appHeader/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/authRoute/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/authRoute/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/publishersVidazooLogo/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/publishersVidazooLogo/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/unauthRoute/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/unauthRoute/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/noPermissionRoute/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/noPermissionRoute/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/userScope/UserScope.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/userScope/UserScope.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/userScope/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/userScope/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/base/BaseUserStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/base/BaseUserStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/connections/fields.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/connections/groups.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/connections/fields.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/connections/groups.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/platform/fields.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/platform/groups.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/platform/fields.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/platform/groups.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/open_rtb/fields.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/open_rtb/groups.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/open_rtb/fields.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/open_rtb/groups.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/display/fields.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/display/groups.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/display/fields.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/display/groups.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/authAPI.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/authAPI.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/publishersAPI.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/usersAPI.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/supportAPI.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/supportAPI.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/usersAPI.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/profileAPI.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/profileAPI.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/publishersAPI.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/api/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/containers/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/utils.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/enums.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/groups.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/utils.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/fields.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/groups.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/enums.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/common/fields.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/socketService.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/socketService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/trackingService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/exportToCsvService.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/reportingService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/trackingService.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/exportToCsvService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/storageService.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/reportingService.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/services/storageService.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/RemotePasswordValidator.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/InitialState.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/SupportStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/CreateUserStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/CurrentUserStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/DashboardStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/EditUserStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/ReportingStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/PublishersStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/CurrentUserStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/PublishersStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/ReportingStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/ActivityContext.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/EditUserStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/AccountStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/RemotePasswordValidator.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/SessionStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/CreateUserStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/NavigationStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/InitialState.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/AccountStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/SessionStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/UsersStore.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/DashboardStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/SupportStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/NavigationStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/ActivityContext.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/stores/UsersStore.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IUserNetwork.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IActivity.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IUserNetwork.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IActivityTypeModel.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IActivityTypeModel.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IUser.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IUser.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IActivity.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IPublisher.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/interfaces/IPublisher.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/index.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/components/index.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/bootstrap.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/app.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/bootstrap.js" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/src/app.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/bootstrap.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/app.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/config/modules/modules.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/config/express/all.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/config/environments/production.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/config/environments/IEnv.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/config/environments/all.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/config/environments/development.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/controllers/_auth/authRoutes.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/controllers/_auth/authController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/controllers/monitor/monitorController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/controllers/_password/passwordRoutes.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/controllers/_password/passwordController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/controllers/app/appController.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/managers/resetPasswordManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/managers/usersManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/managers/authManager.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/providers/recaptchaProvider.js.map" />
+        <option value="$PROJECT_DIR$/../vidazoo/vidazoo-publishers-client-v2/server/providers/requestProvider.js.map" />
+        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.js" />
+        <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.js.map" />
       </list>
     </option>
   </component>
@@ -1054,9 +1418,9 @@
     <MESSAGE value="fixing auth loggin to use same email string" />
     <MESSAGE value="clientSide implementation" />
     <MESSAGE value="first creation of adding buy purchase group" />
-    <MESSAGE value="fixing auth loggin to use same email string - with userController" />
     <MESSAGE value="Surveys and CustomGroups response" />
-    <option name="LAST_COMMIT_MESSAGE" value="Surveys and CustomGroups response" />
+    <MESSAGE value="fixing auth loggin to use same email string - with userController" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing auth loggin to use same email string - with userController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1065,12 +1429,6 @@
           <url>file://$PROJECT_DIR$/test/test_helper.js</url>
           <line>5</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/src/actions/index.js</url>
-          <line>39</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test/subdocument_test.js</url>
@@ -1085,405 +1443,84 @@
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/routes/surveyRoutes.ts</url>
+          <line>49</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="122" />
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/purchaseGroupController.ts</url>
+          <line>66</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/purchaseGroupController.ts</url>
+          <line>87</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts</url>
+          <line>79</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="179" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="135" />
+      <option name="time" value="180" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>Object.keys(clientNotify)</expression-string>
+        <expression-string>this.message</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientNotify.keys()</expression-string>
+        <expression-string>user.email</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientNotify</expression-string>
+        <expression-string>user.displayName</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientNotify['clientA']</expression-string>
+        <expression-string>user</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientNotify.key()</expression-string>
+        <expression-string>purchaseGroupsResults</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientNotify.getKeys()</expression-string>
+        <expression-string>now</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientListSlim</expression-string>
+        <expression-string>moment</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientList['clientA']()</expression-string>
+        <expression-string>moment.unix(purchaseGroup.time)</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>clientList['clientA']</expression-string>
+        <expression-string>purchaseGroup.time</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/purchaseGroupsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/registerServiceWorker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Landing/Landing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/virtual_type_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="61" column="29" lean-forward="true" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/subdocument_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/association_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managers/userManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/billingRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/PurchaseGroup.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="52" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/reading_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="39" column="23" lean-forward="true" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Survey.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/emailsNotifications/emailTemplates/surveyTemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-          <folding>
-            <marker date="1519545556473" expanded="true" signature="96:551" ph="..." />
-            <marker date="1519545556473" expanded="true" signature="109:539" ph="..." />
-            <marker date="1519545556473" expanded="false" signature="131:150" ph="..." />
-            <marker date="1519545556473" expanded="true" signature="151:525" ph="..." />
-            <marker date="1519545556473" expanded="true" signature="294:395" ph="..." />
-            <marker date="1519545556473" expanded="true" signature="411:510" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/surveyRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Payments/Payments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/test/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Survey/Survey.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/Survey.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/customPurchaseGroupsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/Surveys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/SurveyField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="75" lean-forward="false" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/SurveyForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="44" column="19" lean-forward="false" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/SurveyNew.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/formFields.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="37" column="67" lean-forward="false" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="53" column="30" lean-forward="false" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#68#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/prod.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/keys.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1492,18 +1529,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/dev.ts">
+    <entry file="file://$PROJECT_DIR$/middlewares/requiredAmountAvailable.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-760">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1516,68 +1545,418 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/passportLogin/passport.ts">
+    <entry file="file://$PROJECT_DIR$/middlewares/requireCredits.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseClient/baseClient.ts">
+    <entry file="file://$PROJECT_DIR$/models/Comment.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/inspector.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="1371" column="25" lean-forward="false" selection-start-line="1371" selection-start-column="25" selection-end-line="1371" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="2" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/validateEmails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Cart/Cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/BecomeSeller/formFields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/formFields.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/SurveyField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/BecomeSeller/FormField.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="22" column="56" lean-forward="false" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/Surveys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/emailsNotifications/emailTemplates/surveyTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding>
+            <marker date="1519545556473" expanded="true" signature="96:551" ph="..." />
+            <marker date="1519545556473" expanded="true" signature="109:539" ph="..." />
+            <marker date="1519545556473" expanded="false" signature="131:150" ph="..." />
+            <marker date="1519545556473" expanded="true" signature="151:525" ph="..." />
+            <marker date="1519545556473" expanded="true" signature="294:395" ph="..." />
+            <marker date="1519545556473" expanded="true" signature="411:510" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/emailsNotifications/emailTemplates/becomeSellerTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="76" />
+          <folding>
+            <marker date="1519754148743" expanded="true" signature="102:533" ph="..." />
+            <marker date="1519754148743" expanded="true" signature="115:521" ph="..." />
+            <marker date="1519754148743" expanded="false" signature="137:156" ph="..." />
+            <marker date="1519754148743" expanded="true" signature="157:507" ph="..." />
+            <marker date="1519754148743" expanded="true" signature="276:377" ph="..." />
+            <marker date="1519754148743" expanded="true" signature="393:492" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/authReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/SurveyFormReview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="40" column="44" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/SurveyForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="64" column="13" lean-forward="false" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/BecomeSeller/BecomeSeller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="65" column="15" lean-forward="false" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Surveys/SurveyNew.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/registerServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/surveyRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="53" column="20" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="35" column="36" lean-forward="false" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/httpResponse.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managers/cartManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managers/userManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managers/cartManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/cartRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cartController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#68#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/User.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/PurchaseGroup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="78" column="29" lean-forward="false" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Profile/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="84" column="37" lean-forward="false" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middlewares/requireLogin.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middlewares/requireAdmin.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="38" column="60" lean-forward="false" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.ts">
+    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/moment/moment.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="87" column="12" lean-forward="false" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+        <state relative-caret-position="1000">
+          <caret line="77" column="8" lean-forward="false" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="20" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>

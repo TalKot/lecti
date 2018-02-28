@@ -4,6 +4,7 @@ const tslib_1 = require("tslib");
 const mongoose = require("mongoose");
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
+const _ = require('lodash');
 class purchaseGroupManager {
     getAllPurchaseGroups() {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
@@ -32,30 +33,49 @@ class purchaseGroupManager {
             return purchaseGroup ? purchaseGroup : null;
         });
     }
+    //user by profile page
     getPurchaseGroupsByUserId(userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            //TODO: USE THIS TO BRING CART DATA
+            //finds the user from the DB
             const user = yield User.findById(userId);
+            //get user purchaseGroups ids
             const ids = user.purchaseGroupsBought.map(purchaseGroup => {
                 return purchaseGroup.purchaseGroup.toString();
             });
-            return yield PurchaseGroup.find({ "_id": { "$in": ids } });
+            // bring purchase groups data from DB
+            let purchaseGroupUserOwn = yield PurchaseGroup.find({ "_id": { "$in": ids } });
+            //index by id
+            let purchaseGroupIndexed = _.keyBy(purchaseGroupUserOwn, 'id');
+            //loop over the id and push
+            const fullPurchaseGroupList = user.purchaseGroupsBought.map(({ time, purchaseGroup, _id, amount }) => {
+                return {
+                    data: purchaseGroupIndexed[purchaseGroup].toObject(),
+                    time,
+                    _id,
+                    amount
+                };
+            });
+            return fullPurchaseGroupList;
         });
     }
-    //TODO: SHOULD ERESE THIS?
-    // async getCustomPurchaseGroupsByUserId(userId: string) {
-    //     const customPurchaseGroupSelector =  new CustomPurchaseGroupSelector();
-    //     const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsToUser(userId);
-    //
-    //     let user = await User.findById(userId);
-    //     return user ? user : null;
-    // }
     addUserToPurchaseGroup(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
                     'potentialBuyers': {
                         user: userID,
+                        amount: amount
+                    }
+                }
+            });
+        });
+    }
+    addToCart(purchaseGroupID, amount, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            yield User.findByIdAndUpdate(userID, {
+                $push: {
+                    cart: {
+                        purchaseGroup: purchaseGroupID,
                         amount: amount
                     }
                 }

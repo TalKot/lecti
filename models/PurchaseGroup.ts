@@ -10,6 +10,10 @@ const potentialBuyers = Schema({
     amount: {
         type: Number,
         default: 1
+    },
+    time:{
+        type: Date,
+        default: Date.now()
     }
 });
 

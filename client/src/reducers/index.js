@@ -8,5 +8,6 @@ export default combineReducers({
     auth: authReducer,
     purchaseGroups: purchaseGroupsReducer,
     customPurchaseGroups: customPurchaseGroupsReducer,
-    form: reduxForm
+    form: reduxForm,
+    becomeSellerForm: reduxForm
 });

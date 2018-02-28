@@ -33,6 +33,16 @@ export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch =>
     dispatch({type: FETCH_USER, payload: res.data});
 };
 
+// buy purchase group to cart
+export const onAddPurchaseGroupToCart = (purchaseGroupID, amount) => async dispatch => {
+    let options = {
+        purchaseGroupID,
+        amount
+    };
+    const res = await axios.post(`/api/cart/add/`, options);
+    dispatch({type: FETCH_USER, payload: res.data});
+};
+
 // fetch custom purchase group recommended per user
 export const fetchCustomPurchaseGroups = (purchaseGroupID, amount) => async dispatch => {
     const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
@@ -43,5 +53,11 @@ export const fetchCustomPurchaseGroups = (purchaseGroupID, amount) => async disp
 export const submitSurvey = (values, history) => async dispatch => {
     const res = await axios.post('/api/surveys', values);
     history.push('/surveys');
+    dispatch({type: FETCH_USER, payload: res.data});
+};
+//submit become a seller form
+export const becomeSellerSubmit = (values) => async dispatch => {
+    const res = await axios.post('/api/becomeseller', values);
+    // history.push('/surveys');
     dispatch({type: FETCH_USER, payload: res.data});
 };
