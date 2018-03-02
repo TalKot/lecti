@@ -2,7 +2,6 @@ const _ = require('lodash');
 const Path = require('path-parser');
 const URL = require('url');
 import * as mongoose from 'mongoose';
-
 const requireLogin = require('../middlewares/requireLogin');
 const Mailer = require('../services/emailsNotifications/Mailer');
 const surveyTemplate = require('../services/emailsNotifications/emailTemplates/surveyTemplate');

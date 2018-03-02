@@ -5,6 +5,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const _ = require('lodash');
 
 //loading all models
 require('./models/Comment');
@@ -12,6 +13,9 @@ require('./models/SellerComment');
 require('./models/PurchaseGroup');
 require('./models/User');
 require('./models/Survey');
+
+//import notify class
+import CustomPurchaseGroupsSelector from './services/customPurchaseGropusSelector/customPurchaseGropusSelector';
 
 //loading passport library to server
 require('./services/passportLogin/passport');
@@ -57,6 +61,14 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
+
+// will call start notify once.
+// _.once(() => {
+//     const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
+//     customPurchaseGroupsSelector.notify();
+// })();
+
+
 
 //setting up port with Heroku and locally
 const PORT = process.env.PORT || 5000;

@@ -59,13 +59,26 @@ class purchaseGroupController {
             try {
                 let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
                 let userManagerInstance = new userManager_1.default();
-                //check available amount for client to purchase
                 const purchaseGroup = yield purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+                // purchase group validation tests
                 if (purchaseGroup) {
+                    // check that group is active
+                    if (!purchaseGroup.isActive) {
+                        const error = 'purchaseGroup is not available';
+                        httpResponse_1.default.sendError(res, error);
+                        throw new Error(error);
+                    }
+                    //check available amount for client to purchase
                     if (purchaseGroup.totalAmount < amount) {
                         const error = 'Amount is not available for this purchase group';
                         httpResponse_1.default.sendError(res, error);
-                        throw new Error('Amount is not available for this purchase group');
+                        throw new Error(error);
+                    }
+                    //check available amount left for client to purchase
+                    if (purchaseGroup.totalAmount < purchaseGroup.sales + Number(amount)) {
+                        const error = 'cannot buy this amount';
+                        httpResponse_1.default.sendError(res, error);
+                        throw new Error(error);
                     }
                 }
                 // update records values
@@ -74,8 +87,7 @@ class purchaseGroupController {
                     userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
                 ]);
                 //return values
-                let user = yield userManagerInstance.getUser(userID);
-                user ? httpResponse_1.default.sendOk(res, user) : httpResponse_1.default.sendError(res);
+                yield this.getPurchaseGroupByType(res, purchaseGroup.type);
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);
@@ -85,7 +97,7 @@ class purchaseGroupController {
     getCustomPurchaseGroupsByUserId(res, userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                const customPurchaseGroupSelector = new customPurchaseGropusSelector_1.default();
+                const customPurchaseGroupSelector = customPurchaseGropusSelector_1.default.Instance;
                 const type = yield customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
                 const purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
                 let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByType(type);

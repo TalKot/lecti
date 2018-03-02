@@ -19,15 +19,14 @@ class userManager {
                 $push: {
                     purchaseGroupsBought: {
                         purchaseGroup: purchaseGroup.id,
-                        amount: amount
+                        amount: amount,
+                        time: Date.now()
                     }
                 },
                 $inc: {
                     credits: -cost
                 }
             });
-            // const user = await User.findById(userID);
-            // return user ? user : null;
         });
     }
 }

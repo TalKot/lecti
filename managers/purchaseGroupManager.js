@@ -20,16 +20,22 @@ class purchaseGroupManager {
     }
     getPurchaseGroupsByType(type) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const purchaseGroup = yield PurchaseGroup.find({ type }, {
-                name: 1,
-                picture: 1,
-                priceForGroup: 1,
-                originalPrice: 1,
-                totalAmount: 1,
-                seller: 1,
-                totalSales: 1,
-                type: 1
-            });
+            //TODO - DO WE NEED THE QUERY BELOW?
+            const purchaseGroup = yield PurchaseGroup.find({ type, isActive: true }
+            // ,
+            //     {
+            //     name: 1,
+            //     picture: 1,
+            //     priceForGroup: 1,
+            //     originalPrice: 1,
+            //     totalAmount: 1,
+            //     seller: 1,
+            //     totalSales: 1,
+            //     type: 1,
+            //     isActive: 1
+            // }
+            );
+            //
             return purchaseGroup ? purchaseGroup : null;
         });
     }
@@ -62,10 +68,13 @@ class purchaseGroupManager {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
-                    'potentialBuyers': {
+                    potentialBuyers: {
                         user: userID,
                         amount: amount
                     }
+                },
+                $inc: {
+                    sales: amount
                 }
             });
         });

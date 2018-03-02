@@ -44,7 +44,7 @@ const userSchema = new mongoose.Schema({
     cart: [PurchaseGroups],
     comments: [{
         type: Schema.Types.ObjectId,
-        ref: 'sellerComment',
+        ref: 'comments',
         default: []
     }]
 });

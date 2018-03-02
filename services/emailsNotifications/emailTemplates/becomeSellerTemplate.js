@@ -1,5 +1,5 @@
 const keys = require('../../../config/keys');
-
+//TODO - NEED TO CHANGE THIS
 module.exports = becomeSeller => {
   return `
     <html>

@@ -29,7 +29,7 @@ module.exports = app => {
 
     app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, async (req, res) => {
         let {purchaseGroupID, amount} = req.body;
-        let userID = req.user.toObject()._id.toString();
+        let userID = req.user._id.toString();
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.buyPurchaseGroup(res, purchaseGroupID, amount, userID);
     });
@@ -38,12 +38,6 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     });
-
-    // app.get('/api/purchaseGroup/getcustomgroups/', requireLogin, async (req, res) => {
-    //     TODO: COMPOLETE RELEVENT BACKEND
-    //         let purchaseGroupControllerInstance = new purchaseGroupController();
-    //     await purchaseGroupControllerInstance.getCustomPurchaseGroupsAlgoResults(res);
-    // });
 
     // // app.post('/purchaseGroup/add', (req, res) => {
     // app.get('/api/purchaseGroup/add', async (req, res) => {

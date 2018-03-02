@@ -54,13 +54,32 @@ export default class purchaseGroupController {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let userManagerInstance = new userManager();
 
-            //check available amount for client to purchase
             const purchaseGroup = await purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+
+            // purchase group validation tests
             if (purchaseGroup) {
+
+                // check that group is active
+                if (!purchaseGroup.isActive) {
+                    const error: string = 'purchaseGroup is not available';
+                    httpResponse.sendError(res, error);
+                    throw new Error(error)
+
+                }
+
+                //check available amount for client to purchase
                 if (purchaseGroup.totalAmount < amount) {
                     const error: string = 'Amount is not available for this purchase group';
                     httpResponse.sendError(res, error);
-                    throw new Error('Amount is not available for this purchase group')
+                    throw new Error(error)
+                }
+
+
+                //check available amount left for client to purchase
+                if (purchaseGroup.totalAmount < purchaseGroup.sales + Number(amount)) {
+                    const error: string = 'cannot buy this amount';
+                    httpResponse.sendError(res, error);
+                    throw new Error(error)
                 }
             }
             // update records values
@@ -68,9 +87,9 @@ export default class purchaseGroupController {
                 purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
                 userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
             ]);
+
             //return values
-            let user = await userManagerInstance.getUser(userID);
-            user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
+            await this.getPurchaseGroupByType(res,purchaseGroup.type);
         }
         catch (e) {
             httpResponse.sendError(res, e);
@@ -79,7 +98,7 @@ export default class purchaseGroupController {
 
     async getCustomPurchaseGroupsByUserId(res, userId: string) {
         try {
-            const customPurchaseGroupSelector = new CustomPurchaseGroupSelector();
+            const customPurchaseGroupSelector = CustomPurchaseGroupSelector.Instance;
             const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
 
             const purchaseGroupManagerInstance = new purchaseGroupManager();

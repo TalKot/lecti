@@ -1,1 +1,1 @@
-{"version":3,"file":"storeC.js","sourceRoot":"","sources":["storeC.ts"],"names":[],"mappings":";;AAAA,2CAAoC;AAEpC,YAA4B,SAAQ,mBAAS;IAA7C;;QACoB,UAAK,GAAW,SAAS,CAAC;IAC9C,CAAC;CAAA;AAFD,yBAEC"}
+{"version":3,"file":"storeC.js","sourceRoot":"","sources":["storeC.ts"],"names":[],"mappings":";;AAAA,2CAAoC;AAEpC,YAA4B,SAAQ,mBAAS;IAA7C;;QACoB,UAAK,GAAW,SAAS,CAAC;QACzB,gBAAW,GAAa,CAAC,qBAAqB,EAAE,oBAAoB,CAAC,CAAE;IAC5F,CAAC;CAAA;AAHD,yBAGC"}
