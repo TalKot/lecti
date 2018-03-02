@@ -21,7 +21,7 @@ class purchaseGroupManager {
     getPurchaseGroupsByType(type) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             //TODO - DO WE NEED THE QUERY BELOW?
-            const purchaseGroup = yield PurchaseGroup.find({ type, isActive: true }
+            const purchaseGroup = yield PurchaseGroup.find({ type }
             // ,
             //     {
             //     name: 1,

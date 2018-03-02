@@ -18,7 +18,7 @@ export default class purchaseGroupManager {
 
     async getPurchaseGroupsByType(type: string) {
         //TODO - DO WE NEED THE QUERY BELOW?
-        const purchaseGroup = await PurchaseGroup.find({type, isActive: true}
+        const purchaseGroup = await PurchaseGroup.find({type}
             // ,
             //     {
             //     name: 1,
