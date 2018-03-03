@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const mongoose = require("mongoose");
+const _ = require("lodash");
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
 class userManager {
@@ -11,7 +12,12 @@ class userManager {
             return user ? user : null;
         });
     }
-    //TODO: SHOULD ADD INTERFACE OF PURCHASEGROUP
+    getPurchaseGroupsBoughtByUserID(userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const { purchaseGroupsBought } = yield User.findById(userID);
+            return purchaseGroupsBought ? purchaseGroupsBought : null;
+        });
+    }
     addPurchaseGroupToUser(purchaseGroup, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const cost = amount * purchaseGroup.priceForGroup;
@@ -27,6 +33,23 @@ class userManager {
                     credits: -cost
                 }
             });
+        });
+    }
+    updatePurchaseGroupToUser(purchaseGroupID, price, amount, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            amount = Number(amount);
+            //fetch user from DB
+            let user = yield this.getUser(userID);
+            // fetch purchase group to change from list
+            const purchaseGroupToChange = _.find(user.purchaseGroupsBought, obj => {
+                return obj.purchaseGroup.toString() === purchaseGroupID;
+            });
+            //update values
+            purchaseGroupToChange.amount += amount;
+            const cost = amount * price;
+            user.credits -= cost;
+            //save record to DB
+            yield user.save();
         });
     }
 }

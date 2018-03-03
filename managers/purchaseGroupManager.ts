@@ -86,4 +86,17 @@ export default class purchaseGroupManager {
             }
         });
     }
+
+    async updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
+        amount = Number(amount);
+
+        let purchaseGroup = await this.getPurchaseGroupById(purchaseGroupID);
+        const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
+            return obj.user.toString() === userID;
+        });
+        purchaseGroup.sales += amount;
+        userFromPotentialBuyers.amount += amount;
+        userFromPotentialBuyers.time = Date.now();
+        await purchaseGroup.save();
+    }
 }

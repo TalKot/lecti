@@ -29,8 +29,12 @@ export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch =>
         purchaseGroupID,
         amount
     };
+
     const res = await axios.post(`/api/purchaseGroup/buy/`, options);
     dispatch({type: FETCH_PURCHES_GROUPS, payload: res.data});
+
+    const resUser = await axios.get('/api/current_user');
+    dispatch({type: FETCH_USER, payload: resUser.data});
 };
 
 // buy purchase group to cart

@@ -5,6 +5,7 @@ const purchaseGroupManager_1 = require("../managers/purchaseGroupManager");
 const userManager_1 = require("../managers/userManager");
 const httpResponse_1 = require("../common/httpResponse");
 const customPurchaseGropusSelector_1 = require("../services/customPurchaseGropusSelector/customPurchaseGropusSelector");
+const _ = require("lodash");
 class purchaseGroupController {
     getAllPurchaseGroups(res) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
@@ -81,11 +82,26 @@ class purchaseGroupController {
                         throw new Error(error);
                     }
                 }
-                // update records values
-                yield Promise.all([
-                    purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                    userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
-                ]);
+                //validate that purchase group is new
+                const purchaseGroupsBought = yield userManagerInstance.getPurchaseGroupsBoughtByUserID(userID);
+                let userPurchaseGroupBoughtList = _.keyBy(purchaseGroupsBought, obj => obj.purchaseGroup.toString());
+                if (userPurchaseGroupBoughtList[purchaseGroupID]) {
+                    //purchase group already in this user list
+                    // in user - need to update user credits and purchaseGroupsBought amount
+                    // in purchase group - need to update sales and potentialBuyers
+                    yield Promise.all([
+                        userManagerInstance.updatePurchaseGroupToUser(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID),
+                        purchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID)
+                    ]);
+                }
+                else {
+                    //new purchase group for this user
+                    // update records values
+                    yield Promise.all([
+                        purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                        userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
+                    ]);
+                }
                 //return values
                 yield this.getPurchaseGroupByType(res, purchaseGroup.type);
             }

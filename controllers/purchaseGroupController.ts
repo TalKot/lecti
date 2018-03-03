@@ -2,6 +2,7 @@ import purchaseGroupManager from '../managers/purchaseGroupManager';
 import userManager from '../managers/userManager';
 import httpResponse from '../common/httpResponse'
 import CustomPurchaseGroupSelector from "../services/customPurchaseGropusSelector/customPurchaseGropusSelector";
+import * as _ from 'lodash';
 
 export default class purchaseGroupController {
 
@@ -82,14 +83,33 @@ export default class purchaseGroupController {
                     throw new Error(error)
                 }
             }
-            // update records values
-            await Promise.all([
-                purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
-            ]);
 
+            //validate that purchase group is new
+            const purchaseGroupsBought = await userManagerInstance.getPurchaseGroupsBoughtByUserID(userID);
+            let userPurchaseGroupBoughtList = _.keyBy(purchaseGroupsBought, obj =>
+                obj.purchaseGroup.toString()
+            );
+
+            if (userPurchaseGroupBoughtList[purchaseGroupID]){
+                //purchase group already in this user list
+                // in user - need to update user credits and purchaseGroupsBought amount
+                // in purchase group - need to update sales and potentialBuyers
+                await Promise.all([
+                    userManagerInstance.updatePurchaseGroupToUser(purchaseGroupID,purchaseGroup.priceForGroup, amount,userID),
+                    purchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID,purchaseGroup.priceForGroup, amount,userID)
+                ])
+
+            }else {
+                //new purchase group for this user
+                // update records values
+                await Promise.all([
+                    purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                    userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
+                ]);
+            }
             //return values
-            await this.getPurchaseGroupByType(res,purchaseGroup.type);
+            await this.getPurchaseGroupByType(res, purchaseGroup.type);
+
         }
         catch (e) {
             httpResponse.sendError(res, e);

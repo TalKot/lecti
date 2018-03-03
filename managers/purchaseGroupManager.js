@@ -91,6 +91,19 @@ class purchaseGroupManager {
             });
         });
     }
+    updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            amount = Number(amount);
+            let purchaseGroup = yield this.getPurchaseGroupById(purchaseGroupID);
+            const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
+                return obj.user.toString() === userID;
+            });
+            purchaseGroup.sales += amount;
+            userFromPotentialBuyers.amount += amount;
+            userFromPotentialBuyers.time = Date.now();
+            yield purchaseGroup.save();
+        });
+    }
 }
 exports.default = purchaseGroupManager;
 //# sourceMappingURL=purchaseGroupManager.js.map
