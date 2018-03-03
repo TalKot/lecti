@@ -52,6 +52,24 @@ class userManager {
             yield user.save();
         });
     }
+    removePurchaseGroupFromUser(userID, purchaseGroupID, amount, price) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            amount = Number(amount);
+            const cost = amount * price;
+            yield User.findByIdAndUpdate(userID, {
+                $pull: {
+                    purchaseGroupsBought: {
+                        purchaseGroup: {
+                            $in: [purchaseGroupID]
+                        }
+                    }
+                },
+                $inc: {
+                    credits: cost
+                }
+            });
+        });
+    }
 }
 exports.default = userManager;
 //# sourceMappingURL=userManager.js.map

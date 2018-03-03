@@ -26,6 +26,13 @@ module.exports = app => {
         await purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
     });
 
+    app.post('/api/purchaseGroup/remove/:ID/', requireLogin, async (req, res) => {
+        const {amount,price} = req.body;
+        const purchaseGroupToRemove = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.removePurchaseGroupsFromUser(res, req.user.id,purchaseGroupToRemove,amount,price);
+    });
+
 
     app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, async (req, res) => {
         let {purchaseGroupID, amount} = req.body;

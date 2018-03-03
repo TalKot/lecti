@@ -75,7 +75,7 @@ export default class purchaseGroupManager {
         });
     }
 
-
+    //TODO - REMOVE THIS TO USER MANAGER
     async addToCart(purchaseGroupID: string, amount: number, userID: string) {
         await User.findByIdAndUpdate(userID, {
             $push: {
@@ -98,5 +98,23 @@ export default class purchaseGroupManager {
         userFromPotentialBuyers.amount += amount;
         userFromPotentialBuyers.time = Date.now();
         await purchaseGroup.save();
+    }
+
+
+    async removeUserFromPurchaseGroup(userID, purchaseGroupID, amount) {
+        amount = Number(amount);
+
+        await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
+            $pull: {
+                potentialBuyers: {
+                    user:{
+                        $in : [userID]
+                    }
+                }
+            },
+            $inc:{
+                sales : -amount
+            }
+        });
     }
 }

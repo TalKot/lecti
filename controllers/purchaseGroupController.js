@@ -124,6 +124,24 @@ class purchaseGroupController {
             }
         });
     }
+    removePurchaseGroupsFromUser(res, userID, purchaseGroupToRemove, amount, price) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let userManagerInstance = new userManager_1.default();
+                // in user - update credits & purchaseGroupsBought
+                // in purchase group - sales & potentialBuyers
+                yield Promise.all([
+                    purchaseGroupManagerInstance.removeUserFromPurchaseGroup(userID, purchaseGroupToRemove, amount),
+                    userManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
+                ]);
+                return yield this.getPurchaseGroupsByUserId(res, userID);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
 }
 exports.default = purchaseGroupController;
 //# sourceMappingURL=purchaseGroupController.js.map

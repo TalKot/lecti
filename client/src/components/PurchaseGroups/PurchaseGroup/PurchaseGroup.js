@@ -1,28 +1,10 @@
 import React from 'react';
 import swal from 'sweetalert';
 import {Link} from 'react-router-dom';
-//
-// const isActiveButton = (purchaseGroup,amount,onAddPurchaseGroup) => {
-//     return purchaseGroup.isActive ?
-//         (<button className="btn waves-effect waves-light left" type="submit" name="action"
-//                  onClick={() => {
-//                      swal("Nice For You!", `You have purchased ${amount} amount of ${purchaseGroup.name}.`, "success");
-//                      onAddPurchaseGroup(purchaseGroup._id, amount);
-//                  }}>Buy
-//             </button>
-//         ) :
-//         (<button className="btn waves-effect waves-light left disabled" type="submit" name="action"
-//                  onClick={() => {
-//                      swal("Nice For You!", `You have purchased ${amount} amount of ${purchaseGroup.name}.`, "success");
-//                      onAddPurchaseGroup(purchaseGroup._id, amount);
-//                  }}>Buy
-//         </button>)
-//
-// };
 
 const PurchaseGroup = ({purchaseGroup, onAddPurchaseGroup, onAddPurchaseGroupToCart}) => {
     let amount = 0;
-    const activeOrDisable = purchaseGroup.isActive? "" : "disabled";
+    const activeOrDisable = purchaseGroup.isActive ? "" : "disabled";
 
     try {
         return (
@@ -67,7 +49,7 @@ const PurchaseGroup = ({purchaseGroup, onAddPurchaseGroup, onAddPurchaseGroupToC
                 </div>
             </div>
         );
-    }catch(e) {
+    } catch (e) {
         throw e;
     }
 

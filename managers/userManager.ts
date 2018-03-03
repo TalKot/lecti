@@ -50,4 +50,22 @@ export default class userManager {
         //save record to DB
         await user.save();
     }
+
+    async removePurchaseGroupFromUser(userID, purchaseGroupID, amount, price) {
+        amount = Number(amount);
+        const cost = amount * price;
+
+        await User.findByIdAndUpdate(userID, {
+            $pull: {
+                purchaseGroupsBought: {
+                    purchaseGroup: {
+                        $in: [purchaseGroupID]
+                    }
+                }
+            },
+            $inc: {
+                credits: cost
+            }
+        });
+    }
 }

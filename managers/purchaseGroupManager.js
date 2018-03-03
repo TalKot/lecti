@@ -79,6 +79,7 @@ class purchaseGroupManager {
             });
         });
     }
+    //TODO - REMOVE THIS TO USER MANAGER
     addToCart(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield User.findByIdAndUpdate(userID, {
@@ -102,6 +103,23 @@ class purchaseGroupManager {
             userFromPotentialBuyers.amount += amount;
             userFromPotentialBuyers.time = Date.now();
             yield purchaseGroup.save();
+        });
+    }
+    removeUserFromPurchaseGroup(userID, purchaseGroupID, amount) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            amount = Number(amount);
+            yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
+                $pull: {
+                    potentialBuyers: {
+                        user: {
+                            $in: [userID]
+                        }
+                    }
+                },
+                $inc: {
+                    sales: -amount
+                }
+            });
         });
     }
 }

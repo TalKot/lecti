@@ -90,16 +90,16 @@ export default class purchaseGroupController {
                 obj.purchaseGroup.toString()
             );
 
-            if (userPurchaseGroupBoughtList[purchaseGroupID]){
+            if (userPurchaseGroupBoughtList[purchaseGroupID]) {
                 //purchase group already in this user list
                 // in user - need to update user credits and purchaseGroupsBought amount
                 // in purchase group - need to update sales and potentialBuyers
                 await Promise.all([
-                    userManagerInstance.updatePurchaseGroupToUser(purchaseGroupID,purchaseGroup.priceForGroup, amount,userID),
-                    purchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID,purchaseGroup.priceForGroup, amount,userID)
+                    userManagerInstance.updatePurchaseGroupToUser(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID),
+                    purchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID)
                 ])
 
-            }else {
+            } else {
                 //new purchase group for this user
                 // update records values
                 await Promise.all([
@@ -125,6 +125,24 @@ export default class purchaseGroupController {
             let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
 
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async removePurchaseGroupsFromUser(res, userID, purchaseGroupToRemove, amount, price) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let userManagerInstance = new userManager();
+
+            // in user - update credits & purchaseGroupsBought
+            // in purchase group - sales & potentialBuyers
+            await Promise.all([
+                purchaseGroupManagerInstance.removeUserFromPurchaseGroup(userID, purchaseGroupToRemove, amount),
+                userManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
+            ])
+            return await this.getPurchaseGroupsByUserId(res, userID);
         }
         catch (e) {
             httpResponse.sendError(res, e);

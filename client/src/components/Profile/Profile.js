@@ -11,20 +11,27 @@ class Profile extends Component {
         this.setState({purchaseGroups: data})
     };
 
-    removePurchaseGroup = (purchaseGroup) => {
+    removePurchaseGroup = async (purchaseGroup,amount,price) => {
         console.log(purchaseGroup);
+        const options = {
+            amount,
+            price
+        };
+        await axios.post(`/api/purchaseGroup/remove/${purchaseGroup.data._id}/`,options);
+        const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
+        this.setState({purchaseGroups: data})
     };
 
-    isActiveButton = (purchaseGroup) => {
-        return purchaseGroup.isActive ?
-            (<td key={Math.random()}>
-                <a className="btn-floating disabled"><i className="material-icons">remove_circle_outline</i></a>
-            </td>) :
+    isActiveButton = (purchaseGroup, amount,price) => {
+        return purchaseGroup.data.isActive ?
             (<td key={Math.random()}>
                 <a className="btn-floating" onClick={() => {
-                    this.removePurchaseGroup(purchaseGroup)
+                    this.removePurchaseGroup(purchaseGroup,amount,price)
                 }}><i
                     className="material-icons">remove_circle_outline</i></a>
+            </td>):
+            (<td key={Math.random()}>
+                <a className="btn-floating disabled"><i className="material-icons">remove_circle_outline</i></a>
             </td>)
 
     };
@@ -96,14 +103,14 @@ class Profile extends Component {
 
                             return (
                                 <tr key={Math.random()}>
-                                    <td key={Math.random()}>{purchaseGroup._id}</td>
-                                    <td key={Math.random()}>{purchaseGroup.data.name}</td>
+                                    <td key={Math.random()}><Link to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup._id}</Link></td>
+                                    <td key={Math.random()}><Link to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup.data.name}</Link></td>
                                     <td key={Math.random()}>{purchaseGroup.amount}</td>
                                     <td key={Math.random()}>{purchaseGroup.time}</td>
                                     <td key={Math.random()}>{purchaseGroup.data.originalPrice}</td>
                                     <td key={Math.random()}>{purchaseGroup.data.priceForGroup}</td>
                                     <td key={Math.random()}>{purchaseGroup.data.type}</td>
-                                    {this.isActiveButton(purchaseGroup)}
+                                    {this.isActiveButton(purchaseGroup,purchaseGroup.amount,purchaseGroup.data.priceForGroup)}
                                 </tr>
                             );
                         })

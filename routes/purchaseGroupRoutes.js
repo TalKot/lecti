@@ -23,6 +23,12 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
     }));
+    app.post('/api/purchaseGroup/remove/:ID/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const { amount, price } = req.body;
+        const purchaseGroupToRemove = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.removePurchaseGroupsFromUser(res, req.user.id, purchaseGroupToRemove, amount, price);
+    }));
     app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let { purchaseGroupID, amount } = req.body;
         let userID = req.user._id.toString();
