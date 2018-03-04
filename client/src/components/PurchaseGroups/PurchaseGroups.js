@@ -20,28 +20,27 @@ class PurchaseGroups extends Component {
                 </div>
             );
         }
-        else {
 
-            return (
-                <div style={{textAlign: 'center'}}>
-                    <h1>
-                        Purchase Groups type - {this.props.match.params.item}
-                    </h1>
+        return (
+            <div style={{textAlign: 'center'}}>
+                <h1>
+                    Purchase Groups type - {this.props.match.params.item}
+                </h1>
 
-                    <div className="row">
-                        {
-                            this.props.purchaseGroups.map(purchaseGroup => {
-                                return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}
-                                                      onAddPurchaseGroup={this.props.onAddPurchaseGroup}
-                                                      onAddPurchaseGroupToCart={this.props.onAddPurchaseGroupToCart}
-                                />
-                            })
-                        }
-                    </div>
+                <div className="row">
+                    {
+                        this.props.purchaseGroups.map(purchaseGroup => {
+                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}
+                                                  onAddPurchaseGroup={this.props.onAddPurchaseGroup}
+                                                  onAddPurchaseGroupToCart={this.props.onAddPurchaseGroupToCart}
+                            />
+                        })
+                    }
                 </div>
-            );
-        }
+            </div>
+        );
     }
+
 };
 
 function mapStateToProps({purchaseGroups}) {

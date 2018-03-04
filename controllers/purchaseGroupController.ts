@@ -121,8 +121,10 @@ export default class purchaseGroupController {
             const customPurchaseGroupSelector = CustomPurchaseGroupSelector.Instance;
             const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
 
+            const RETURN_ARRAY_AMOUNT: number = 3;
+
             const purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
+            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type,RETURN_ARRAY_AMOUNT);
 
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }

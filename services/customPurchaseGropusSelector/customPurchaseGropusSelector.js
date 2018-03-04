@@ -73,8 +73,6 @@ class CustomPurchaseGroupsSelector {
                 selectedType = Object.keys(purchaseGroupsResults).reduce((typeA, typeB) => {
                     return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
                 });
-                // const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
-                // this.message.push(res);
             }
             catch (e) {
                 selectedType = 'computers';

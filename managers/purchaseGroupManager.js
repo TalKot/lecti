@@ -18,24 +18,14 @@ class purchaseGroupManager {
             return purchaseGroup ? purchaseGroup : null;
         });
     }
-    getPurchaseGroupsByType(type) {
+    getPurchaseGroupsByType(type, amount) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            //TODO - DO WE NEED THE QUERY BELOW?
-            const purchaseGroup = yield PurchaseGroup.find({ type }
-            // ,
-            //     {
-            //     name: 1,
-            //     picture: 1,
-            //     priceForGroup: 1,
-            //     originalPrice: 1,
-            //     totalAmount: 1,
-            //     seller: 1,
-            //     totalSales: 1,
-            //     type: 1,
-            //     isActive: 1
-            // }
-            );
-            //
+            let purchaseGroup = yield PurchaseGroup.find({ type })
+                .sort({ discount: 1 })
+                .limit(amount);
+            purchaseGroup = purchaseGroup.map(pb => {
+                return pb.toObject();
+            });
             return purchaseGroup ? purchaseGroup : null;
         });
     }
@@ -53,15 +43,20 @@ class purchaseGroupManager {
             //index by id
             let purchaseGroupIndexed = _.keyBy(purchaseGroupUserOwn, 'id');
             //loop over the id and push
-            const fullPurchaseGroupList = user.purchaseGroupsBought.map(({ time, purchaseGroup, _id, amount }) => {
-                return {
-                    data: purchaseGroupIndexed[purchaseGroup].toObject(),
-                    time,
-                    _id,
-                    amount
-                };
-            });
-            return fullPurchaseGroupList;
+            try {
+                const fullPurchaseGroupList = user.purchaseGroupsBought.map(({ time, purchaseGroup, _id, amount }) => {
+                    return {
+                        data: purchaseGroupIndexed[purchaseGroup] ? purchaseGroupIndexed[purchaseGroup].toObject() : undefined,
+                        time,
+                        _id,
+                        amount
+                    };
+                });
+                return fullPurchaseGroupList;
+            }
+            catch (e) {
+                throw e;
+            }
         });
     }
     addUserToPurchaseGroup(purchaseGroupID, amount, userID) {

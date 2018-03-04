@@ -32,6 +32,7 @@ const purchaseGroup = new mongoose.Schema({
     category: String,
     type: String,
     description: String,
+    discount: Number,
     isActive: {
         type: Boolean,
         default: true
@@ -52,8 +53,9 @@ const purchaseGroup = new mongoose.Schema({
             default: []
         }]
 });
-purchaseGroup.virtual('discount').get(function () {
-    return (this.priceForGroup / this.originalPrice * 100);
+purchaseGroup.pre('save', function (next) {
+    this.discount = (((this.originalPrice - this.priceForGroup) / this.originalPrice) * 100);
+    next();
 });
 const PurchaseGroup = mongoose.model('purchaseGroups', purchaseGroup);
 module.exports = PurchaseGroup;

@@ -115,8 +115,9 @@ class purchaseGroupController {
             try {
                 const customPurchaseGroupSelector = customPurchaseGropusSelector_1.default.Instance;
                 const type = yield customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
+                const RETURN_ARRAY_AMOUNT = 3;
                 const purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
+                let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByType(type, RETURN_ARRAY_AMOUNT);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {

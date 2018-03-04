@@ -84,8 +84,6 @@ export default class CustomPurchaseGroupsSelector {
             });
 
 
-            // const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
-            // this.message.push(res);
         }catch(e){
             selectedType = 'computers';
         }

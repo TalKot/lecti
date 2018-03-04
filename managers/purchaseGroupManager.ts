@@ -16,24 +16,17 @@ export default class purchaseGroupManager {
         return purchaseGroup ? purchaseGroup : null;
     }
 
-    async getPurchaseGroupsByType(type: string) {
-        //TODO - DO WE NEED THE QUERY BELOW?
-        const purchaseGroup = await PurchaseGroup.find({type}
-            // ,
-            //     {
-            //     name: 1,
-            //     picture: 1,
-            //     priceForGroup: 1,
-            //     originalPrice: 1,
-            //     totalAmount: 1,
-            //     seller: 1,
-            //     totalSales: 1,
-            //     type: 1,
-            //     isActive: 1
-            // }
-        )
-        //
+    async getPurchaseGroupsByType(type: string, amount?: number) {
+
+        let purchaseGroup = await PurchaseGroup.find({type})
+            .sort({discount: 1})
+            .limit(amount);
+
+        purchaseGroup = purchaseGroup.map(pb => {
+            return pb.toObject()
+        });
         return purchaseGroup ? purchaseGroup : null;
+
     }
 
     //user by profile page
@@ -49,15 +42,20 @@ export default class purchaseGroupManager {
         //index by id
         let purchaseGroupIndexed = _.keyBy(purchaseGroupUserOwn, 'id');
         //loop over the id and push
-        const fullPurchaseGroupList = user.purchaseGroupsBought.map(({time, purchaseGroup, _id, amount}) => {
-            return {
-                data: purchaseGroupIndexed[purchaseGroup].toObject(),
-                time,
-                _id,
-                amount
-            }
-        });
-        return fullPurchaseGroupList;
+        try {
+            const fullPurchaseGroupList = user.purchaseGroupsBought.map(({time, purchaseGroup, _id, amount}) => {
+                return {
+                    data: purchaseGroupIndexed[purchaseGroup] ? purchaseGroupIndexed[purchaseGroup].toObject() : undefined,
+                    time,
+                    _id,
+                    amount
+                }
+            });
+            return fullPurchaseGroupList;
+
+        }catch(e){
+            throw e;
+        }
     }
 
 
@@ -107,13 +105,13 @@ export default class purchaseGroupManager {
         await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
             $pull: {
                 potentialBuyers: {
-                    user:{
-                        $in : [userID]
+                    user: {
+                        $in: [userID]
                     }
                 }
             },
-            $inc:{
-                sales : -amount
+            $inc: {
+                sales: -amount
             }
         });
     }

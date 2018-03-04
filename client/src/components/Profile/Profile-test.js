@@ -6,27 +6,26 @@ import axios from "axios/index";
 
 class Profile extends Component {
 
-    async componentDidMount() {
-        const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
-        this.setState({purchaseGroups: data})
-    };
+    // async componentDidMount() {
+    //     const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
+    //     this.setState({purchaseGroups: data})
+    // };
 
-    removePurchaseGroup = async (purchaseGroup,amount,price) => {
-        const options = {
-            amount,
-            price
-        };
-        await axios.post(`/api/purchaseGroup/remove/${purchaseGroup.data._id}/`,options);
-        const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
-        this.setState({purchaseGroups: data});
-        this.props.fetchUser();
-    };
+    // removePurchaseGroup = async (purchaseGroup,amount,price) => {
+        // const options = {
+        //     amount,
+        //     price
+        // };
+        // await axios.post(`/api/purchaseGroup/remove/${purchaseGroup.data._id}/`,options);
+        // const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
+        // this.setState({purchaseGroups: data})
+    // };
 
     isActiveButton = (purchaseGroup, amount,price) => {
         return purchaseGroup.data.isActive ?
             (<td key={Math.random()}>
                 <a className="btn-floating" onClick={() => {
-                    this.removePurchaseGroup(purchaseGroup,amount,price)
+                    this.props.onRemovePurchaseGroup(purchaseGroup, amount,price);
                 }}><i
                     className="material-icons">remove_circle_outline</i></a>
             </td>):
@@ -37,7 +36,7 @@ class Profile extends Component {
     };
 
     render() {
-        if (!this.props.auth || !this.state) {
+        if (!this.props.auth) {
             return (<h1>Loading...</h1>);
         }
         return (
