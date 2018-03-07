@@ -58,5 +58,10 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     }));
+    app.post('/api/purchaseGroup/types/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        let { type, status } = req.body;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.typeOnNotRelevantList(res, req.user.id, type, status);
+    }));
 };
 //# sourceMappingURL=purchaseGroupRoutes.js.map

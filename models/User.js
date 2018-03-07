@@ -50,7 +50,11 @@ const userSchema = new mongoose.Schema({
             type: Schema.Types.ObjectId,
             ref: 'comments',
             default: []
-        }]
+        }],
+    notRelevantTypes: {
+        type: [String],
+        default: []
+    }
 });
 userSchema.virtual('commentsCount').get(function () {
     return this.comments.length;

@@ -208,4 +208,24 @@ export default class purchaseGroupController {
             httpResponse.sendError(res, e);
         }
     }
+
+    async typeOnNotRelevantList(res, userID, type, status){
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+
+            if(status){
+                //add purchase group type to not relevant list
+                await purchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);
+            }else{
+                //remove purchase group type to not relevant list
+                await purchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
+            }
+
+            // let purchaseGroups = await purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
+            // purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
 }

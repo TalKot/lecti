@@ -63,7 +63,6 @@ export default class CustomPurchaseGroupsSelector {
 
                 const type = purchaseGroup.data.type;
 
-
                 const timeBought = moment(purchaseGroup.time).unix();
                 const now = moment().unix();
                 const timeDiff = moment.duration(now - timeBought).asSeconds();
@@ -81,6 +80,13 @@ export default class CustomPurchaseGroupsSelector {
                     purchaseGroupsResults[type] = value;
                 } else {
                     purchaseGroupsResults[type] = 1
+                }
+            });
+
+            // remove all purchase groups that client marked as not relevant
+            user.notRelevantTypes.forEach(typeToRemove => {
+                if(purchaseGroupsResults[typeToRemove]) {
+                    delete purchaseGroupsResults[typeToRemove];
                 }
             });
 

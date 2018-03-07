@@ -202,6 +202,26 @@ class purchaseGroupController {
             }
         });
     }
+    typeOnNotRelevantList(res, userID, type, status) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                if (status) {
+                    //add purchase group type to not relevant list
+                    yield purchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);
+                }
+                else {
+                    //remove purchase group type to not relevant list
+                    yield purchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
+                }
+                // let purchaseGroups = await purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
+                // purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
 }
 exports.default = purchaseGroupController;
 //# sourceMappingURL=purchaseGroupController.js.map

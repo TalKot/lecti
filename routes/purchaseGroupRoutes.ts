@@ -67,4 +67,10 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     });
+
+    app.post('/api/purchaseGroup/types/', requireLogin, async (req, res) => {
+        let {type, status} = req.body;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.typeOnNotRelevantList(res, req.user.id, type, status);
+    });
 };

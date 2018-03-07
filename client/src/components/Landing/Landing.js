@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import * as actions from '../../actions';
 import PurchaseGroupSlim from '../PurchaseGroups/PurchaseGroupSlim/PurchaseGroupSlim'
+import axios from "axios/index";
 
 class Landing extends Component {
 
@@ -13,7 +14,28 @@ class Landing extends Component {
     render() {
 
         console.log(this.props.customPurchaseGroupsPerUser);
-        if(!this.props.customPurchaseGroupsPerUser.length){
+
+
+        const onChangeRelevant = async status => {
+            // if(status) {
+            //     console.log (`${this.props.customPurchaseGroupsPerUser[0].type} switch on`);
+
+                const options = {
+                    type : this.props.customPurchaseGroupsPerUser[0].type,
+                    status
+                };
+
+
+                // const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
+            // }else{
+            //     console.log (`${this.props.customPurchaseGroupsPerUser[0].type} switch off`);
+            // }
+            await axios.post(`/api/purchaseGroup/types/`,options);
+
+        };
+
+
+        if (!this.props.customPurchaseGroupsPerUser.length) {
             return (
                 <div className="progress">
                     <div className="indeterminate"></div>
@@ -27,7 +49,7 @@ class Landing extends Component {
                 <h1>
                     Greetings {this.props.auth.displayName}!
                 </h1>
-                    <div className="row">
+                <div className="row">
 
                     {
                         this.props.customPurchaseGroupsPerUser.map(purchaseGroup => {
@@ -37,9 +59,21 @@ class Landing extends Component {
 
                         })
                     }
-                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        <input onChange={(event)=> {
+                            onChangeRelevant(event.target.checked)
+                        }}
+                               type="checkbox" id="relevant"/>
+                        <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser[0].type} is not
+                            relevant for me.</label>
+                    </p>
+                </div>
+
                 <p>
-                    Welcome the the best buying appliction in the world!<br/>
+                    Welcome the the best buying application in the world!<br/>
                     Use this service to buy smart and cheap as many items as you can.
                 </p>
                 <br/><br/>
@@ -54,7 +88,7 @@ class Landing extends Component {
 function mapStateToProps({auth, customPurchaseGroups}) {
     return {
         auth,
-        customPurchaseGroupsPerUser : customPurchaseGroups
+        customPurchaseGroupsPerUser: customPurchaseGroups
     };
 }
 

@@ -187,4 +187,26 @@ export default class purchaseGroupManager {
         return fetchedPurcahseGroup;
 
     }
+
+    async addTypeToNotRelevantList(userID, type) {
+        const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
+
+        await User.findByIdAndUpdate(userID, {
+            $push: {
+                notRelevantTypes: type
+            }
+        });
+
+        setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
+
+
+    }
+
+    async removeTypeToNotRelevantList(userID, type) {
+        await User.findByIdAndUpdate(userID, {
+            $pull: {
+                notRelevantTypes: type
+            }
+        });
+    }
 }

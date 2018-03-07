@@ -182,6 +182,26 @@ class purchaseGroupManager {
             return fetchedPurcahseGroup;
         });
     }
+    addTypeToNotRelevantList(userID, type) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const TIME_INTERVAL = 1000 * 60 * 10; //10 minutes
+            yield User.findByIdAndUpdate(userID, {
+                $push: {
+                    notRelevantTypes: type
+                }
+            });
+            setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
+        });
+    }
+    removeTypeToNotRelevantList(userID, type) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            yield User.findByIdAndUpdate(userID, {
+                $pull: {
+                    notRelevantTypes: type
+                }
+            });
+        });
+    }
 }
 exports.default = purchaseGroupManager;
 //# sourceMappingURL=purchaseGroupManager.js.map
