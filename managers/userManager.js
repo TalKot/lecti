@@ -8,7 +8,11 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 class userManager {
     getUser(userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const user = yield User.findById(userID);
+            const user = yield User.findById(userID)
+                .populate({
+                path: 'purchaseGroupsSell',
+                model: 'purchaseGroups'
+            });
             return user ? user : null;
         });
     }
@@ -37,7 +41,7 @@ class userManager {
     }
     updatePurchaseGroupToUser(purchaseGroupID, price, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            amount = Number(amount);
+            // amount = Number(amount);
             //fetch user from DB
             let user = yield this.getUser(userID);
             // fetch purchase group to change from list

@@ -39,6 +39,11 @@ const userSchema = new mongoose.Schema({
             ref: 'purchaseGroups',
             default: []
         }],
+    purchaseGroupsViewed: [{
+            type: Schema.Types.ObjectId,
+            ref: 'purchaseGroups',
+            default: []
+        }],
     purchaseGroupsBought: [PurchaseGroups],
     cart: [PurchaseGroups],
     comments: [{

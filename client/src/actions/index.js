@@ -23,6 +23,12 @@ export const fetchPurchaseGroups = (type) => async dispatch => {
     dispatch({type: FETCH_PURCHES_GROUPS, payload: res.data});
 };
 
+//fetch purchaseGropus by type
+export const fetchPurchaseGroupsBySearch = (search) => async dispatch => {
+    const res = await axios.get(`/api/purchaseGroup/search/${search}/`);
+    dispatch({type: FETCH_PURCHES_GROUPS, payload: res.data});
+};
+
 // buy purchase group
 export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch => {
     let options = {

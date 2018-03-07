@@ -55,9 +55,23 @@ class purchaseGroupController {
             }
         });
     }
+    getSalesPurchaseGroupsByUserId(res, userId) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let purchaseGroups = yield purchaseGroupManagerInstance.getSalesPurchaseGroupsByUserId(userId);
+                purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
     buyPurchaseGroup(res, purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
+                amount = Number(amount);
+                let purchaseGroupShouldClose = false;
                 let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
                 let userManagerInstance = new userManager_1.default();
                 const purchaseGroup = yield purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
@@ -76,10 +90,14 @@ class purchaseGroupController {
                         throw new Error(error);
                     }
                     //check available amount left for client to purchase
-                    if (purchaseGroup.totalAmount < purchaseGroup.sales + Number(amount)) {
+                    if (purchaseGroup.totalAmount < purchaseGroup.sales + amount) {
                         const error = 'cannot buy this amount';
                         httpResponse_1.default.sendError(res, error);
                         throw new Error(error);
+                    }
+                    //check if purchase group should close after the udpate
+                    if (purchaseGroup.totalAmount === purchaseGroup.sales + amount) {
+                        purchaseGroupShouldClose = true;
                     }
                 }
                 //validate that purchase group is new
@@ -101,6 +119,10 @@ class purchaseGroupController {
                         purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
                         userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
                     ]);
+                }
+                // check and update purchase group active status if needed
+                if (purchaseGroupShouldClose) {
+                    yield purchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false });
                 }
                 //return values
                 yield this.getPurchaseGroupByType(res, purchaseGroup.type);
@@ -137,6 +159,43 @@ class purchaseGroupController {
                     userManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
                 ]);
                 return yield this.getPurchaseGroupsByUserId(res, userID);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
+    removeSellPurchaseGroupsFromUser(res, userID, purchaseGroupToRemove) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                yield purchaseGroupManagerInstance.removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove);
+                //TODO - THIS SHOULD BE RETURNED?
+                return yield this.getPurchaseGroupsByUserId(res, userID);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
+    purchaseGroupsViewed(res, userID, purchaseGroupsViewed) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                yield purchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
+                return;
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
+    searchPurchaseGroup(res, searchValue) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let purchaseGroups = yield purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
+                purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);

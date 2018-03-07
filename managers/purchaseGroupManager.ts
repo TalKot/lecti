@@ -29,6 +29,10 @@ export default class purchaseGroupManager {
 
     }
 
+    async updatePurchaseGroupById(purchaseGroupId, value) {
+        return await PurchaseGroup.findByIdAndUpdate(purchaseGroupId, value);
+    }
+
     //user by profile page
     async getPurchaseGroupsByUserId(userId: string) {
         //finds the user from the DB
@@ -53,13 +57,29 @@ export default class purchaseGroupManager {
             });
             return fullPurchaseGroupList;
 
-        }catch(e){
+        } catch (e) {
+            throw e;
+        }
+    }    //user by profile page
+
+
+    async getSalesPurchaseGroupsByUserId(userId: string) {
+        try {
+            const {purchaseGroupsSell} = await User.findById(userId)
+                .populate({
+                    path: 'purchaseGroupsSell',
+                    model: 'purchaseGroups'
+                });
+
+            return purchaseGroupsSell ? purchaseGroupsSell : null;
+        } catch (e) {
             throw e;
         }
     }
 
 
     async addUserToPurchaseGroup(purchaseGroupID: string, amount: number, userID: string) {
+        // amount = Number(amount);
         await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
             $push: {
                 potentialBuyers: {
@@ -73,7 +93,19 @@ export default class purchaseGroupManager {
         });
     }
 
-    //TODO - REMOVE THIS TO USER MANAGER
+    async purchaseGroupsViewed(userID, purchaseGroupsViewed) {
+        // let purcahseGroupViewed = await PurchaseGroup.findByIdAndUpdate(purchaseGroupsViewed);
+
+        let user = await User.findById(userID);
+
+        //TODO - HOW DOES IT WORK EXACTLY? should user _.filter ?
+        user.purchaseGroupsViewed.push(purchaseGroupsViewed);
+        await user.save();
+
+        // user = await User.findByIdAndUpdate(userID);
+        // console.log(user)
+    }
+
     async addToCart(purchaseGroupID: string, amount: number, userID: string) {
         await User.findByIdAndUpdate(userID, {
             $push: {
@@ -86,7 +118,7 @@ export default class purchaseGroupManager {
     }
 
     async updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
-        amount = Number(amount);
+        // amount = Number(amount);
 
         let purchaseGroup = await this.getPurchaseGroupById(purchaseGroupID);
         const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
@@ -114,5 +146,45 @@ export default class purchaseGroupManager {
                 sales: -amount
             }
         });
+    }
+
+    async removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove) {
+        const purchaseGroup = await this.getPurchaseGroupById(purchaseGroupToRemove);
+
+        purchaseGroup.toObject().potentialBuyers.forEach(async userData => {
+
+            const refund = (userData.amount * purchaseGroup.priceForGroup);
+            await User.findByIdAndUpdate(userData.user.toString(), {
+                $inc: {
+                    credits: refund
+                },
+                $pull: {
+                    purchaseGroupsBought: {
+                        user: {
+                            $in: [purchaseGroupToRemove]
+                        }
+                    }
+                }
+            })
+
+        });
+
+
+        await PurchaseGroup.findByIdAndUpdate(purchaseGroup._id.toString(), {
+            isDeleted: true,
+            isActive: false
+        });
+
+    }
+
+    async searchPurchaseGroup(searchValue) {
+        let fetchedPurcahseGroup = await PurchaseGroup.find({
+            $text: {
+                $search: searchValue
+            }
+        });
+
+        return fetchedPurcahseGroup;
+
     }
 }

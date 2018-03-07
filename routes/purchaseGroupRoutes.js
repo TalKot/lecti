@@ -23,11 +23,25 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
     }));
+    app.get('/api/purchaseGroup/getsales/user/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.getSalesPurchaseGroupsByUserId(res, req.user.id);
+    }));
     app.post('/api/purchaseGroup/remove/:ID/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         const { amount, price } = req.body;
         const purchaseGroupToRemove = req.params.ID;
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.removePurchaseGroupsFromUser(res, req.user.id, purchaseGroupToRemove, amount, price);
+    }));
+    app.post('/api/purchaseGroup/removesale/:ID/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const purchaseGroupToRemove = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.removeSellPurchaseGroupsFromUser(res, req.user.id, purchaseGroupToRemove);
+    }));
+    app.post('/api/purchaseGroup/viewed/:ID/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const purchaseGroupsViewed = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.purchaseGroupsViewed(res, req.user.id, purchaseGroupsViewed);
     }));
     app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let { purchaseGroupID, amount } = req.body;
@@ -35,24 +49,14 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.buyPurchaseGroup(res, purchaseGroupID, amount, userID);
     }));
+    app.get('/api/purchaseGroup/search/:name/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const searchName = req.params.name;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.searchPurchaseGroup(res, searchName);
+    }));
     app.get('/api/purchaseGroup/getgroup/custom/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     }));
-    // // app.post('/purchaseGroup/add', (req, res) => {
-    // app.get('/api/purchaseGroup/add', async (req, res) => {
-    //
-    //     let purchaseGroup = new PurchaseGroup({
-    //         name: 'testing PB2',
-    //         type: 'computers',
-    //         picture: 'sapppp'
-    //     });
-    //     purchaseGroup = await purchaseGroup.save();
-    //     // purchaseGroup = purchaseGroup.toObject();
-    //     // let user = req.user.toObject();
-    //     req.user.cart.push(purchaseGroup);
-    //     await User.findOneAndUpdate({email: req.user.email}, req.user);
-    //     res.send(req.user);
-    // });
 };
 //# sourceMappingURL=purchaseGroupRoutes.js.map

@@ -31,13 +31,29 @@ class CustomPurchaseGroupsSelector {
     selectCustomPurchaseGroupsTypeForUser(userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             let selectedType;
-            const user = yield User.findById(userId);
+            const user = yield User.findById(userId)
+                .populate({
+                path: 'purchaseGroupsViewed',
+                model: 'purchaseGroups'
+            });
             try {
                 const purchaseGroupManager = new purchaseGroupManager_1.default();
                 const purchaseGroupsByUser = yield purchaseGroupManager.getPurchaseGroupsByUserId(userId);
                 let purchaseGroupsResults = {};
                 let purchaseGroupsTimes = {};
+                let purchaseGroupsViews = {};
                 let purchaseGroupsPriority = purchaseGroupsTypesValue;
+                // getting amount of each purchase group viewed by current user
+                user.purchaseGroupsViewed.forEach(purchaseGroupViewed => {
+                    const type = purchaseGroupViewed.type;
+                    if (purchaseGroupsViews[type]) {
+                        const value = purchaseGroupsViews[type] + 1;
+                        purchaseGroupsViews[type] = value;
+                    }
+                    else {
+                        purchaseGroupsViews[type] = 1;
+                    }
+                });
                 // getting amount of each purchase group type
                 purchaseGroupsByUser.forEach(purchaseGroup => {
                     const type = purchaseGroup.data.type;
@@ -64,6 +80,10 @@ class CustomPurchaseGroupsSelector {
                 Object.keys(purchaseGroupsResults).forEach(type => {
                     if (purchaseGroupsPriority[type]) {
                         purchaseGroupsResults[type] *= purchaseGroupsPriority[type];
+                    }
+                    //TODO - IS THIS CORRECT?
+                    if (purchaseGroupsViews[type]) {
+                        purchaseGroupsResults[type] += purchaseGroupsViews[type];
                     }
                     if (purchaseGroupsTimes[type]) {
                         purchaseGroupsResults[type] /= purchaseGroupsTimes[type];

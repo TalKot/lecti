@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import axios from "axios/index";
 
 
 class PurchaseGroupItem extends Component {
 
     componentDidMount() {
-        // this.props.fetchPurchaseGroups(this.props.match.params.item);
+        const purchaseGroupID  = this.props.match.params.item;
+        axios.post(`/api/purchaseGroup/viewed/${purchaseGroupID}/`);
     }
 
     render() {

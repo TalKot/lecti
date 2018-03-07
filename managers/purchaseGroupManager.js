@@ -29,6 +29,11 @@ class purchaseGroupManager {
             return purchaseGroup ? purchaseGroup : null;
         });
     }
+    updatePurchaseGroupById(purchaseGroupId, value) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            return yield PurchaseGroup.findByIdAndUpdate(purchaseGroupId, value);
+        });
+    }
     //user by profile page
     getPurchaseGroupsByUserId(userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
@@ -58,9 +63,25 @@ class purchaseGroupManager {
                 throw e;
             }
         });
+    } //user by profile page
+    getSalesPurchaseGroupsByUserId(userId) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const { purchaseGroupsSell } = yield User.findById(userId)
+                    .populate({
+                    path: 'purchaseGroupsSell',
+                    model: 'purchaseGroups'
+                });
+                return purchaseGroupsSell ? purchaseGroupsSell : null;
+            }
+            catch (e) {
+                throw e;
+            }
+        });
     }
     addUserToPurchaseGroup(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            // amount = Number(amount);
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
                     potentialBuyers: {
@@ -74,7 +95,17 @@ class purchaseGroupManager {
             });
         });
     }
-    //TODO - REMOVE THIS TO USER MANAGER
+    purchaseGroupsViewed(userID, purchaseGroupsViewed) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            // let purcahseGroupViewed = await PurchaseGroup.findByIdAndUpdate(purchaseGroupsViewed);
+            let user = yield User.findById(userID);
+            //TODO - HOW DOES IT WORK EXACTLY? should user _.filter ?
+            user.purchaseGroupsViewed.push(purchaseGroupsViewed);
+            yield user.save();
+            // user = await User.findByIdAndUpdate(userID);
+            // console.log(user)
+        });
+    }
     addToCart(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield User.findByIdAndUpdate(userID, {
@@ -89,7 +120,7 @@ class purchaseGroupManager {
     }
     updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            amount = Number(amount);
+            // amount = Number(amount);
             let purchaseGroup = yield this.getPurchaseGroupById(purchaseGroupID);
             const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
                 return obj.user.toString() === userID;
@@ -115,6 +146,40 @@ class purchaseGroupManager {
                     sales: -amount
                 }
             });
+        });
+    }
+    removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const purchaseGroup = yield this.getPurchaseGroupById(purchaseGroupToRemove);
+            purchaseGroup.toObject().potentialBuyers.forEach((userData) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+                const refund = (userData.amount * purchaseGroup.priceForGroup);
+                yield User.findByIdAndUpdate(userData.user.toString(), {
+                    $inc: {
+                        credits: refund
+                    },
+                    $pull: {
+                        purchaseGroupsBought: {
+                            user: {
+                                $in: [purchaseGroupToRemove]
+                            }
+                        }
+                    }
+                });
+            }));
+            yield PurchaseGroup.findByIdAndUpdate(purchaseGroup._id.toString(), {
+                isDeleted: true,
+                isActive: false
+            });
+        });
+    }
+    searchPurchaseGroup(searchValue) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            let fetchedPurcahseGroup = yield PurchaseGroup.find({
+                $text: {
+                    $search: searchValue
+                }
+            });
+            return fetchedPurcahseGroup;
         });
     }
 }

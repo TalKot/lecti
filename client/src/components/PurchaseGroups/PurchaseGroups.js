@@ -11,7 +11,7 @@ class PurchaseGroups extends Component {
 
     render() {
         //TODO - NEED TO FIX THIS NOT TO CALL LIKE THIS...
-        // this.componentDidMount();
+        //this.props.fetchPurchaseGroups(this.props.match.params.item);
 
         if (!this.props.purchaseGroups.length) {
             return (

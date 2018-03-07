@@ -46,7 +46,7 @@ class Profile extends Component {
                     <div className="col s8 m5">
                         <div className="card">
                             <div className="card-image">
-                                <img src={this.props.auth.photoURL}/>
+                                <img src={this.props.auth.photoURL} alt={this.props.auth.photoURL}/>
                                 <span className="card-title">{this.props.auth.displayName}</span>
                             </div>
                             <div className="card-content">

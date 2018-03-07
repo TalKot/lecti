@@ -50,8 +50,22 @@ export default class purchaseGroupController {
         }
     }
 
+    async getSalesPurchaseGroupsByUserId(res, userId: string) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroups = await purchaseGroupManagerInstance.getSalesPurchaseGroupsByUserId(userId);
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
     async buyPurchaseGroup(res, purchaseGroupID: string, amount: number, userID: string) {
         try {
+            amount = Number(amount);
+            let purchaseGroupShouldClose : boolean = false;
+
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let userManagerInstance = new userManager();
 
@@ -77,10 +91,15 @@ export default class purchaseGroupController {
 
 
                 //check available amount left for client to purchase
-                if (purchaseGroup.totalAmount < purchaseGroup.sales + Number(amount)) {
+                if (purchaseGroup.totalAmount < purchaseGroup.sales + amount) {
                     const error: string = 'cannot buy this amount';
                     httpResponse.sendError(res, error);
                     throw new Error(error)
+                }
+
+                //check if purchase group should close after the udpate
+                if (purchaseGroup.totalAmount === purchaseGroup.sales + amount) {
+                    purchaseGroupShouldClose = true;
                 }
             }
 
@@ -106,6 +125,10 @@ export default class purchaseGroupController {
                     purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
                     userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
                 ]);
+            }
+            // check and update purchase group active status if needed
+            if(purchaseGroupShouldClose){
+                await purchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id,{isActive:false})
             }
             //return values
             await this.getPurchaseGroupByType(res, purchaseGroup.type);
@@ -145,6 +168,41 @@ export default class purchaseGroupController {
                 userManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
             ])
             return await this.getPurchaseGroupsByUserId(res, userID);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async removeSellPurchaseGroupsFromUser(res, userID, purchaseGroupToRemove) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            await purchaseGroupManagerInstance.removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove)
+
+            //TODO - THIS SHOULD BE RETURNED?
+            return await this.getPurchaseGroupsByUserId(res, userID);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async purchaseGroupsViewed(res, userID,purchaseGroupsViewed){
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            await purchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
+            return;
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async searchPurchaseGroup(res, searchValue){
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroups = await purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
             httpResponse.sendError(res, e);

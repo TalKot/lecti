@@ -26,6 +26,11 @@ module.exports = app => {
         await purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
     });
 
+    app.get('/api/purchaseGroup/getsales/user/', requireLogin, async (req, res) => {
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.getSalesPurchaseGroupsByUserId(res, req.user.id);
+    });
+
     app.post('/api/purchaseGroup/remove/:ID/', requireLogin, async (req, res) => {
         const {amount,price} = req.body;
         const purchaseGroupToRemove = req.params.ID;
@@ -33,6 +38,17 @@ module.exports = app => {
         await purchaseGroupControllerInstance.removePurchaseGroupsFromUser(res, req.user.id,purchaseGroupToRemove,amount,price);
     });
 
+    app.post('/api/purchaseGroup/removesale/:ID/', requireLogin, async (req, res) => {
+        const purchaseGroupToRemove = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.removeSellPurchaseGroupsFromUser(res, req.user.id,purchaseGroupToRemove);
+    });
+
+    app.post('/api/purchaseGroup/viewed/:ID/', requireLogin, async (req, res) => {
+        const purchaseGroupsViewed = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.purchaseGroupsViewed(res, req.user.id,purchaseGroupsViewed);
+    });
 
     app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, async (req, res) => {
         let {purchaseGroupID, amount} = req.body;
@@ -41,25 +57,14 @@ module.exports = app => {
         await purchaseGroupControllerInstance.buyPurchaseGroup(res, purchaseGroupID, amount, userID);
     });
 
+    app.get('/api/purchaseGroup/search/:name/', async (req, res) => {
+        const searchName = req.params.name;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.searchPurchaseGroup(res, searchName);
+    });
+
     app.get('/api/purchaseGroup/getgroup/custom/', requireLogin, async (req, res) => {
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.getCustomPurchaseGroupsByUserId(res, req.user.id);
     });
-
-    // // app.post('/purchaseGroup/add', (req, res) => {
-    // app.get('/api/purchaseGroup/add', async (req, res) => {
-    //
-    //     let purchaseGroup = new PurchaseGroup({
-    //         name: 'testing PB2',
-    //         type: 'computers',
-    //         picture: 'sapppp'
-    //     });
-    //     purchaseGroup = await purchaseGroup.save();
-    //     // purchaseGroup = purchaseGroup.toObject();
-    //     // let user = req.user.toObject();
-    //     req.user.cart.push(purchaseGroup);
-    //     await User.findOneAndUpdate({email: req.user.email}, req.user);
-    //     res.send(req.user);
-    // });
-
 };

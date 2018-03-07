@@ -7,7 +7,12 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 export default class userManager {
 
     async getUser(userID: string) {
-        const user = await User.findById(userID);
+        const user = await User.findById(userID)
+            .populate({
+                path: 'purchaseGroupsSell',
+                model: 'purchaseGroups'
+            });
+
         return user ? user : null;
     }
 
@@ -36,7 +41,7 @@ export default class userManager {
     }
 
     async updatePurchaseGroupToUser(purchaseGroupID, price: number, amount: number, userID: string) {
-        amount = Number(amount);
+        // amount = Number(amount);
         //fetch user from DB
         let user = await this.getUser(userID);
         // fetch purchase group to change from list
