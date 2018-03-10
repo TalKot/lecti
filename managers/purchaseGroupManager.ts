@@ -24,9 +24,9 @@ export default class purchaseGroupManager {
     async getPurchaseGroupsByType(type: string, amount?: number) {
 
         let purchaseGroup = await PurchaseGroup.find({
-                type,
-                isSuggestion: false
-            })
+            type,
+            isSuggestion: false
+        })
             .sort({
                 discount: 1
             })
@@ -170,10 +170,11 @@ export default class purchaseGroupManager {
     async removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove) {
         const purchaseGroup = await this.getPurchaseGroupById(purchaseGroupToRemove);
 
-        purchaseGroup.toObject().potentialBuyers.forEach(async userData => {
+        purchaseGroup.potentialBuyers.forEach(async userData => {
 
             const refund = (userData.amount * purchaseGroup.priceForGroup);
-            await User.findByIdAndUpdate(userData.user.toString(), {
+
+            await User.findByIdAndUpdate(userData.user, {
                 $inc: {
                     credits: refund
                 },
@@ -189,9 +190,10 @@ export default class purchaseGroupManager {
         });
 
 
-        await PurchaseGroup.findByIdAndUpdate(purchaseGroup._id.toString(), {
+        await PurchaseGroup.findByIdAndUpdate(purchaseGroup._id, {
             isDeleted: true,
-            isActive: false
+            isActive: false,
+            sales: 0
         });
 
     }

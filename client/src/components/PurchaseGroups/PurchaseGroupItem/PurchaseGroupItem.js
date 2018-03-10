@@ -13,13 +13,10 @@ class PurchaseGroupItem extends Component {
     }
 
     notify() {
-        const purchaseGroupID = this.props.match.params.item;
-        axios.post(`/api/purchaseGroup/viewed/${purchaseGroupID}/`);
+        axios.post(`/api/purchaseGroup/viewed/${this.props.match.params.item}/`);
     }
 
     render() {
-
-        this.notify();
 
         if (!this.state) {
             return (
@@ -28,17 +25,15 @@ class PurchaseGroupItem extends Component {
                 </div>
             )
         }
+
+        this.notify();
+
         let amount = 0;
         const activeOrDisable = this.state.purchaseGroupData.isActive ? "" : "disabled";
 
         console.log(this.state.purchaseGroupData);
         return (
             <div>
-                {/*<h1>*/}
-                    {/*{this.props.match.params.item}*/}
-                {/*</h1>*/}
-
-
                 <div style={{textAlign: 'center'}}>
                     <div className="row" style={{textAlign: 'center', margin: '0'}}>
                         <div className="col s8 m5">

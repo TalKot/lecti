@@ -10,7 +10,7 @@ module.exports = (app) => {
         '/auth/google/callback',
         passport.authenticate('google'), (req, res) => {
             // console.log('loggedIn by google');
-            res.redirect('/');
+            res.redirect('/home');
         }
     );
 
@@ -26,7 +26,7 @@ module.exports = (app) => {
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook'), (req, res) => {
             // console.log('loggedIn by facebook');
-            res.redirect('/');
+            res.redirect('/home');
         });
 
     app.get('/api/current_user', (req, res) => {

@@ -173,9 +173,9 @@ class purchaseGroupManager {
     removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroup = yield this.getPurchaseGroupById(purchaseGroupToRemove);
-            purchaseGroup.toObject().potentialBuyers.forEach((userData) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+            purchaseGroup.potentialBuyers.forEach((userData) => tslib_1.__awaiter(this, void 0, void 0, function* () {
                 const refund = (userData.amount * purchaseGroup.priceForGroup);
-                yield User.findByIdAndUpdate(userData.user.toString(), {
+                yield User.findByIdAndUpdate(userData.user, {
                     $inc: {
                         credits: refund
                     },
@@ -188,9 +188,10 @@ class purchaseGroupManager {
                     }
                 });
             }));
-            yield PurchaseGroup.findByIdAndUpdate(purchaseGroup._id.toString(), {
+            yield PurchaseGroup.findByIdAndUpdate(purchaseGroup._id, {
                 isDeleted: true,
-                isActive: false
+                isActive: false,
+                sales: 0
             });
         });
     }

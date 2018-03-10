@@ -116,7 +116,7 @@ export default class CustomPurchaseGroupsSelector {
 
 
         }catch(e){
-            selectedType = 'shoes';
+            selectedType = 'computers';
         }
         const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
         this.message.push(res);

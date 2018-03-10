@@ -60,9 +60,9 @@ class Profile extends Component {
                                 return (
                                     <tr key={Math.random()}>
                                         <td key={Math.random()}><Link
-                                            to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup._id}</Link></td>
+                                            to={`/purchasegroup/${purchaseGroup.data._id}`}>{purchaseGroup.data._id}</Link></td>
                                         <td key={Math.random()}><Link
-                                            to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup.data.name}</Link></td>
+                                            to={`/purchasegroup/${purchaseGroup.data._id}`}>{purchaseGroup.data.name}</Link></td>
                                         <td key={Math.random()}>{purchaseGroup.amount}</td>
                                         <td key={Math.random()}>{purchaseGroup.time}</td>
                                         <td key={Math.random()}>{purchaseGroup.data.originalPrice}</td>

@@ -35,7 +35,7 @@ class Header extends Component {
         return (
             <nav className="nav-extended">
                 <div className="nav-wrapper">
-                    <Link to='/' className="left brand-logo" style={{marginLeft: "7px"}}>Lecti</Link>
+                    <Link to='/home' className="left brand-logo" style={{marginLeft: "7px"}}>Lecti</Link>
                     <ul className="right">
                         {this.renderContent()}
                     </ul>

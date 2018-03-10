@@ -17,6 +17,7 @@ import purchaseGroupItem from './PurchaseGroups/PurchaseGroupItem/PurchaseGroupI
 import SuggestionItem from './Suggestions/SuggestionItem/SuggestionItem';
 import Sales from './SalesHistory/SalesHistory';
 import Suggestions from './Suggestions/Suggestions';
+import Home from './Home/Home';
 
 class App extends Component {
     componentDidMount() {
@@ -30,6 +31,7 @@ class App extends Component {
                     <div>
                         <Header/>
                         <Route exact path="/" component={Landing}/>
+                        <Route exact path="/home" component={Home}/>
                         <Route exact path="/surveys" component={Surveys}/>
                         <Route exact path="/sales" component={Sales}/>
                         <Route exact path="/surveys/new" component={SurveyNew}/>
