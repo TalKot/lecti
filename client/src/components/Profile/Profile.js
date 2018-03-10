@@ -11,35 +11,89 @@ class Profile extends Component {
         this.setState({purchaseGroups: data})
     };
 
-    removePurchaseGroup = async (purchaseGroup,amount,price) => {
+    removePurchaseGroup = async (purchaseGroup, amount, price) => {
         const options = {
             amount,
             price
         };
-        await axios.post(`/api/purchaseGroup/remove/${purchaseGroup.data._id}/`,options);
+        await axios.post(`/api/purchaseGroup/remove/${purchaseGroup.data._id}/`, options);
         const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
         this.setState({purchaseGroups: data});
         this.props.fetchUser();
     };
 
-    isActiveButton = (purchaseGroup, amount,price) => {
+    isActiveButton = (purchaseGroup, amount, price) => {
         return purchaseGroup.data.isActive ?
             (<td key={Math.random()}>
                 <a className="btn-floating" onClick={() => {
-                    this.removePurchaseGroup(purchaseGroup,amount,price)
+                    this.removePurchaseGroup(purchaseGroup, amount, price)
                 }}><i
                     className="material-icons">remove_circle_outline</i></a>
-            </td>):
+            </td>) :
             (<td key={Math.random()}>
                 <a className="btn-floating disabled"><i className="material-icons">remove_circle_outline</i></a>
             </td>)
 
     };
 
+    getPurchaseHistory() {
+        if (this.state.purchaseGroups.length) {
+            return (
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>name</th>
+                            <th>amount</th>
+                            <th>time</th>
+                            <th>originalPrice</th>
+                            <th>priceForGroup</th>
+                            <th>type</th>
+                            <th>Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {
+                            this.state.purchaseGroups.map(purchaseGroup => {
+
+                                return (
+                                    <tr key={Math.random()}>
+                                        <td key={Math.random()}><Link
+                                            to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup._id}</Link></td>
+                                        <td key={Math.random()}><Link
+                                            to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup.data.name}</Link></td>
+                                        <td key={Math.random()}>{purchaseGroup.amount}</td>
+                                        <td key={Math.random()}>{purchaseGroup.time}</td>
+                                        <td key={Math.random()}>{purchaseGroup.data.originalPrice}</td>
+                                        <td key={Math.random()}>{purchaseGroup.data.priceForGroup}</td>
+                                        <td key={Math.random()}>{purchaseGroup.data.type}</td>
+                                        {this.isActiveButton(purchaseGroup, purchaseGroup.amount, purchaseGroup.data.priceForGroup)}
+                                    </tr>
+                                );
+                            })
+                        }
+                        </tbody>
+                    </table>
+            );
+        } else{
+          return (
+              <h1>There Is No Purchase History...Yet...</h1>
+          );
+
+        }
+
+    }
+
     render() {
         if (!this.props.auth || !this.state) {
-            return (<h1>Loading...</h1>);
+            return (
+                <div className="progress">
+                    <div className="indeterminate"></div>
+                </div>
+            );
         }
+
         return (
             <div style={{textAlign: 'center'}}>
                 <div className="row" style={{textAlign: 'center', margin: '0'}}>
@@ -74,49 +128,10 @@ class Profile extends Component {
                                     <i className="material-icons">perm_identity</i>
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
-
-
-                <h1>Purchase History</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>name</th>
-                        <th>amount</th>
-                        <th>time</th>
-                        <th>originalPrice</th>
-                        <th>priceForGroup</th>
-                        <th>type</th>
-                        <th>Remove</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    {
-                        this.state.purchaseGroups.map(purchaseGroup => {
-
-                            return (
-                                <tr key={Math.random()}>
-                                    <td key={Math.random()}><Link to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup._id}</Link></td>
-                                    <td key={Math.random()}><Link to={`/purchasegroup/${purchaseGroup._id}`}>{purchaseGroup.data.name}</Link></td>
-                                    <td key={Math.random()}>{purchaseGroup.amount}</td>
-                                    <td key={Math.random()}>{purchaseGroup.time}</td>
-                                    <td key={Math.random()}>{purchaseGroup.data.originalPrice}</td>
-                                    <td key={Math.random()}>{purchaseGroup.data.priceForGroup}</td>
-                                    <td key={Math.random()}>{purchaseGroup.data.type}</td>
-                                    {this.isActiveButton(purchaseGroup,purchaseGroup.amount,purchaseGroup.data.priceForGroup)}
-                                </tr>
-                            );
-                        })
-                    }
-                    </tbody>
-                </table>
+                {this.getPurchaseHistory()}
             </div>
 
 
