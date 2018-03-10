@@ -14,9 +14,6 @@ require('./models/PurchaseGroup');
 require('./models/User');
 require('./models/Survey');
 
-//import notify class
-import CustomPurchaseGroupsSelector from './services/customPurchaseGropusSelector/customPurchaseGropusSelector';
-
 //loading passport library to server
 require('./services/passportLogin/passport');
 

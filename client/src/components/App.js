@@ -14,7 +14,9 @@ import Profile from './Profile/Profile';
 import Cart from './Cart/Cart';
 import BecomeSeller from './BecomeSeller/BecomeSeller';
 import purchaseGroupItem from './PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem';
+import SuggestionItem from './Suggestions/SuggestionItem/SuggestionItem';
 import Sales from './SalesHistory/SalesHistory';
+import Suggestions from './Suggestions/Suggestions';
 
 class App extends Component {
     componentDidMount() {
@@ -35,8 +37,10 @@ class App extends Component {
                         <Route exact path="/purchasegroups/:item" component={PurchaseGroups}/>
                         <Route exact path="/profile" component={Profile}/>
                         <Route exact path="/payments" component={Payments}/>
-                        <Route exact path="/Cart" component={Cart}/>
+                        <Route exact path="/cart" component={Cart}/>
                         <Route exact path="/becomeseller" component={BecomeSeller}/>
+                        <Route exact path="/suggestions" component={Suggestions}/>
+                        <Route exact path="/suggestions/:id" component={SuggestionItem}/>
                         <Footer/>
                     </div>
                 </BrowserRouter>

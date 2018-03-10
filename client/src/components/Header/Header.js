@@ -32,7 +32,6 @@ class Header extends Component {
     }
 
     render() {
-        // console.log(this.props);
         return (
             <nav className="nav-extended">
                 <div className="nav-wrapper">
@@ -47,6 +46,7 @@ class Header extends Component {
                         <li className="tab"><Link to={'/purchasegroups/computers'}>Computers</Link></li>
                         <li className="tab"><Link to={'/purchasegroups/shoes'}>Shoes</Link></li>
                         <li className="tab"><Link to={'/purchasegroups/shirts'}>Shirts</Link></li>
+                        <li className="tab right"><Link to={'/suggestions/'}>Suggestions</Link></li>
                     </ul>
                 </div>
             </nav>

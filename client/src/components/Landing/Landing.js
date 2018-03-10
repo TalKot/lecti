@@ -8,6 +8,7 @@ class Landing extends Component {
 
     componentDidMount() {
         this.props.fetchCustomPurchaseGroups(this.props.auth);
+
     }
 
 
@@ -17,21 +18,11 @@ class Landing extends Component {
 
 
         const onChangeRelevant = async status => {
-            // if(status) {
-            //     console.log (`${this.props.customPurchaseGroupsPerUser[0].type} switch on`);
-
-                const options = {
-                    type : this.props.customPurchaseGroupsPerUser[0].type,
-                    status
-                };
-
-
-                // const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
-            // }else{
-            //     console.log (`${this.props.customPurchaseGroupsPerUser[0].type} switch off`);
-            // }
-            await axios.post(`/api/purchaseGroup/types/`,options);
-
+            const options = {
+                type: this.props.customPurchaseGroupsPerUser[0].type,
+                status
+            };
+            await axios.post(`/api/purchaseGroup/types/`, options);
         };
 
 
@@ -43,6 +34,18 @@ class Landing extends Component {
             );
 
         }
+
+        //self invoke function to increase attempts
+        (() => {
+
+            const options = {
+                type: this.props.customPurchaseGroupsPerUser[0].type,
+            };
+
+            axios.post('/api/purchaseGroup/types/increase', options);
+        })();
+
+
 
         return (
             <div style={{textAlign: 'center'}}>
@@ -63,7 +66,7 @@ class Landing extends Component {
 
                 <div>
                     <p>
-                        <input onChange={(event)=> {
+                        <input onChange={(event) => {
                             onChangeRelevant(event.target.checked)
                         }}
                                type="checkbox" id="relevant"/>

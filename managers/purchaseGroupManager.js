@@ -12,6 +12,12 @@ class purchaseGroupManager {
             return purchaseGroupType ? purchaseGroupType : null;
         });
     }
+    getSuggestionsPurchaseGroupByType() {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const purchaseGroupType = yield PurchaseGroup.find({ isSuggestion: true });
+            return purchaseGroupType ? purchaseGroupType : null;
+        });
+    }
     getPurchaseGroupById(id) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroup = yield PurchaseGroup.findById(id);
@@ -20,12 +26,14 @@ class purchaseGroupManager {
     }
     getPurchaseGroupsByType(type, amount) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            let purchaseGroup = yield PurchaseGroup.find({ type })
-                .sort({ discount: 1 })
+            let purchaseGroup = yield PurchaseGroup.find({
+                type,
+                isSuggestion: false
+            })
+                .sort({
+                discount: 1
+            })
                 .limit(amount);
-            purchaseGroup = purchaseGroup.map(pb => {
-                return pb.toObject();
-            });
             return purchaseGroup ? purchaseGroup : null;
         });
     }
@@ -63,7 +71,7 @@ class purchaseGroupManager {
                 throw e;
             }
         });
-    } //user by profile page
+    }
     getSalesPurchaseGroupsByUserId(userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
@@ -97,13 +105,28 @@ class purchaseGroupManager {
     }
     purchaseGroupsViewed(userID, purchaseGroupsViewed) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            // let purcahseGroupViewed = await PurchaseGroup.findByIdAndUpdate(purchaseGroupsViewed);
-            let user = yield User.findById(userID);
-            //TODO - HOW DOES IT WORK EXACTLY? should user _.filter ?
-            user.purchaseGroupsViewed.push(purchaseGroupsViewed);
-            yield user.save();
-            // user = await User.findByIdAndUpdate(userID);
-            // console.log(user)
+            let [{ type }, user] = yield Promise.all([
+                PurchaseGroup.findById(purchaseGroupsViewed),
+                User.findById(userID)
+            ]);
+            try {
+                if (user.purchaseGroupsViewed.length < 5) {
+                    yield User.findByIdAndUpdate(userID, {
+                        $push: {
+                            purchaseGroupsViewed: type
+                        }
+                    });
+                }
+                else {
+                    //TODO - NEED TO DEVELOP LIFO STACK
+                    user.purchaseGroupsViewed.pop();
+                    user.purchaseGroupsViewed.push(type);
+                    yield user.save();
+                }
+            }
+            catch (e) {
+                throw e;
+            }
         });
     }
     addToCart(purchaseGroupID, amount, userID) {
@@ -112,7 +135,7 @@ class purchaseGroupManager {
                 $push: {
                     cart: {
                         purchaseGroup: purchaseGroupID,
-                        amount: amount
+                        amount
                     }
                 }
             });
@@ -120,7 +143,6 @@ class purchaseGroupManager {
     }
     updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            // amount = Number(amount);
             let purchaseGroup = yield this.getPurchaseGroupById(purchaseGroupID);
             const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
                 return obj.user.toString() === userID;
@@ -188,7 +210,8 @@ class purchaseGroupManager {
             yield User.findByIdAndUpdate(userID, {
                 $push: {
                     notRelevantTypes: type
-                }
+                },
+                typesAttempts: 0
             });
             setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
         });
@@ -200,6 +223,23 @@ class purchaseGroupManager {
                     notRelevantTypes: type
                 }
             });
+        });
+    }
+    increaseAttemptsAndCheck(userID, type) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const ATTEMPTS = 4;
+            const user = yield User.findById(userID);
+            if (user.typesAttempts < ATTEMPTS) {
+                user.typesAttempts += 1;
+                yield user.save();
+            }
+            else {
+                user.typesAttempts = 0;
+                yield Promise.all([
+                    user.save(),
+                    this.addTypeToNotRelevantList(userID, type)
+                ]);
+            }
         });
     }
 }

@@ -21,6 +21,11 @@ module.exports = app => {
         await purchaseGroupControllerInstance.getPurchaseGroupByType(res, type);
     });
 
+    app.get('/api/purchaseGroup/getsuggestions/', async (req, res) => {
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.getSuggestionsPurchaseGroupByType(res);
+    });
+
     app.get('/api/purchaseGroup/getgroup/user/', requireLogin, async (req, res) => {
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
@@ -72,5 +77,11 @@ module.exports = app => {
         let {type, status} = req.body;
         let purchaseGroupControllerInstance = new purchaseGroupController();
         await purchaseGroupControllerInstance.typeOnNotRelevantList(res, req.user.id, type, status);
+    });
+
+    app.post('/api/purchaseGroup/types/increase', requireLogin, async (req, res) => {
+        let {type} = req.body;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.increaseAttemptsAndCheck(res, req.user.id, type);
     });
 };

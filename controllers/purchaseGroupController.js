@@ -43,6 +43,18 @@ class purchaseGroupController {
             }
         });
     }
+    getSuggestionsPurchaseGroupByType(res) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let purchaseGroups = yield purchaseGroupManagerInstance.getSuggestionsPurchaseGroupByType();
+                purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
     getPurchaseGroupsByUserId(res, userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
@@ -214,8 +226,18 @@ class purchaseGroupController {
                     //remove purchase group type to not relevant list
                     yield purchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
                 }
-                // let purchaseGroups = await purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
-                // purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
+    increaseAttemptsAndCheck(res, userID, type) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                yield purchaseGroupManagerInstance.increaseAttemptsAndCheck(userID, type);
+                httpResponse_1.default.sendOk(res);
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);

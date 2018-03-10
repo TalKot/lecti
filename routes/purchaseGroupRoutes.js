@@ -19,6 +19,10 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getPurchaseGroupByType(res, type);
     }));
+    app.get('/api/purchaseGroup/getsuggestions/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.getSuggestionsPurchaseGroupByType(res);
+    }));
     app.get('/api/purchaseGroup/getgroup/user/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);
@@ -62,6 +66,11 @@ module.exports = app => {
         let { type, status } = req.body;
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.typeOnNotRelevantList(res, req.user.id, type, status);
+    }));
+    app.post('/api/purchaseGroup/types/increase', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        let { type } = req.body;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.increaseAttemptsAndCheck(res, req.user.id, type);
     }));
 };
 //# sourceMappingURL=purchaseGroupRoutes.js.map

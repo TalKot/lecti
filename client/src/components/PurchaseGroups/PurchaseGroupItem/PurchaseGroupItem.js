@@ -5,11 +5,17 @@ import axios from "axios/index";
 class PurchaseGroupItem extends Component {
 
     componentDidMount() {
+        // const purchaseGroupID  = this.props.match.params.item;
+        // axios.post(`/api/purchaseGroup/viewed/${purchaseGroupID}/`);
+    }
+
+    notify(){
         const purchaseGroupID  = this.props.match.params.item;
         axios.post(`/api/purchaseGroup/viewed/${purchaseGroupID}/`);
     }
 
     render() {
+        this.notify();
         return (
         <div>
             <h1>

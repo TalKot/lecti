@@ -27,11 +27,11 @@ export default class CustomPurchaseGroupsSelector {
 
     public async selectCustomPurchaseGroupsTypeForUser(userId: string) {
         let selectedType: string;
-        const user = await User.findById(userId)
-            .populate({
-                path:'purchaseGroupsViewed',
-                model: 'purchaseGroups'
-            });
+        const user = await User.findById(userId);
+            // .populate({
+            //     path:'purchaseGroupsViewed',
+            //     model: 'purchaseGroups'
+            // });
 
 
         try {
@@ -45,13 +45,13 @@ export default class CustomPurchaseGroupsSelector {
             let purchaseGroupsPriority = purchaseGroupsTypesValue;
 
             // getting amount of each purchase group viewed by current user
-            user.purchaseGroupsViewed.forEach(purchaseGroupViewed => {
+            user.purchaseGroupsViewed.forEach(type => {
 
-                const type = purchaseGroupViewed.type;
+                // const type = purchaseGroupViewed;
 
                 if (purchaseGroupsViews[type]) {
-                    const value = purchaseGroupsViews[type] + 1;
-                    purchaseGroupsViews[type] = value;
+                    // const value = purchaseGroupsViews[type] + 1;
+                    purchaseGroupsViews[type] += 1;
                 } else {
                     purchaseGroupsViews[type] = 1
                 }
@@ -108,6 +108,7 @@ export default class CustomPurchaseGroupsSelector {
 
             });
 
+            //TODO - what happened when empty object?
             //get result
             selectedType = Object.keys(purchaseGroupsResults).reduce((typeA, typeB) => {
                 return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
@@ -115,7 +116,7 @@ export default class CustomPurchaseGroupsSelector {
 
 
         }catch(e){
-            selectedType = 'computers';
+            selectedType = 'shoes';
         }
         const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
         this.message.push(res);

@@ -11,6 +11,11 @@ export default class purchaseGroupManager {
         return purchaseGroupType ? purchaseGroupType : null;
     }
 
+    async getSuggestionsPurchaseGroupByType() {
+        const purchaseGroupType = await PurchaseGroup.find({isSuggestion: true});
+        return purchaseGroupType ? purchaseGroupType : null;
+    }
+
     async getPurchaseGroupById(id: string) {
         const purchaseGroup = await PurchaseGroup.findById(id);
         return purchaseGroup ? purchaseGroup : null;
@@ -18,13 +23,15 @@ export default class purchaseGroupManager {
 
     async getPurchaseGroupsByType(type: string, amount?: number) {
 
-        let purchaseGroup = await PurchaseGroup.find({type})
-            .sort({discount: 1})
+        let purchaseGroup = await PurchaseGroup.find({
+                type,
+                isSuggestion: false
+            })
+            .sort({
+                discount: 1
+            })
             .limit(amount);
 
-        purchaseGroup = purchaseGroup.map(pb => {
-            return pb.toObject()
-        });
         return purchaseGroup ? purchaseGroup : null;
 
     }
@@ -60,7 +67,7 @@ export default class purchaseGroupManager {
         } catch (e) {
             throw e;
         }
-    }    //user by profile page
+    }
 
 
     async getSalesPurchaseGroupsByUserId(userId: string) {
@@ -94,16 +101,29 @@ export default class purchaseGroupManager {
     }
 
     async purchaseGroupsViewed(userID, purchaseGroupsViewed) {
-        // let purcahseGroupViewed = await PurchaseGroup.findByIdAndUpdate(purchaseGroupsViewed);
 
-        let user = await User.findById(userID);
+        let [{type}, user] = await Promise.all([
+            PurchaseGroup.findById(purchaseGroupsViewed),
+            User.findById(userID)
+        ]);
 
-        //TODO - HOW DOES IT WORK EXACTLY? should user _.filter ?
-        user.purchaseGroupsViewed.push(purchaseGroupsViewed);
-        await user.save();
+        try {
+            if (user.purchaseGroupsViewed.length < 5) {
+                await User.findByIdAndUpdate(userID, {
+                    $push: {
+                        purchaseGroupsViewed: type
+                    }
+                });
 
-        // user = await User.findByIdAndUpdate(userID);
-        // console.log(user)
+            } else {
+                //TODO - NEED TO DEVELOP LIFO STACK
+                user.purchaseGroupsViewed.pop();
+                user.purchaseGroupsViewed.push(type);
+                await user.save();
+            }
+        } catch (e) {
+            throw e;
+        }
     }
 
     async addToCart(purchaseGroupID: string, amount: number, userID: string) {
@@ -111,14 +131,13 @@ export default class purchaseGroupManager {
             $push: {
                 cart: {
                     purchaseGroup: purchaseGroupID,
-                    amount: amount
+                    amount
                 }
             }
         });
     }
 
     async updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
-        // amount = Number(amount);
 
         let purchaseGroup = await this.getPurchaseGroupById(purchaseGroupID);
         const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
@@ -194,7 +213,8 @@ export default class purchaseGroupManager {
         await User.findByIdAndUpdate(userID, {
             $push: {
                 notRelevantTypes: type
-            }
+            },
+            typesAttempts: 0
         });
 
         setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
@@ -208,5 +228,26 @@ export default class purchaseGroupManager {
                 notRelevantTypes: type
             }
         });
+    }
+
+
+    async increaseAttemptsAndCheck(userID, type) {
+
+        const ATTEMPTS = 4;
+
+        const user = await User.findById(userID);
+
+        if (user.typesAttempts < ATTEMPTS) {
+
+            user.typesAttempts += 1;
+            await user.save();
+
+        } else {
+            user.typesAttempts = 0;
+            await Promise.all([
+                user.save(),
+                this.addTypeToNotRelevantList(userID, type)
+            ])
+        }
     }
 }

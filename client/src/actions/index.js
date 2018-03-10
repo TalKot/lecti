@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {FETCH_USER, FETCH_PURCHES_GROUPS, FETCH_CUSTOM_MADE_GROUPS} from './types';
+import {FETCH_USER, FETCH_PURCHASE_GROUPS, FETCH_CUSTOM_MADE_GROUPS,FETCH_SUGGESTIONS_PURCHES_GROUPS} from './types';
 
 //fetching user when application load
 export const fetchUser = () => async dispatch => {
@@ -20,13 +20,19 @@ export const handleToken = (token, amount) => async dispatch => {
 //fetch purchaseGropus by type
 export const fetchPurchaseGroups = (type) => async dispatch => {
     const res = await axios.get(`/api/purchaseGroup/getgroup/type/${type}`);
-    dispatch({type: FETCH_PURCHES_GROUPS, payload: res.data});
+    dispatch({type: FETCH_PURCHASE_GROUPS, payload: res.data});
+};
+
+//fetch purchaseGropus by type
+export const fetchSuggestionsPurchaseGroups = () => async dispatch => {
+    const res = await axios.get(`/api/purchaseGroup/getsuggestions/`);
+    dispatch({type: FETCH_SUGGESTIONS_PURCHES_GROUPS, payload: res.data});
 };
 
 //fetch purchaseGropus by type
 export const fetchPurchaseGroupsBySearch = (search) => async dispatch => {
     const res = await axios.get(`/api/purchaseGroup/search/${search}/`);
-    dispatch({type: FETCH_PURCHES_GROUPS, payload: res.data});
+    dispatch({type: FETCH_PURCHASE_GROUPS, payload: res.data});
 };
 
 // buy purchase group
@@ -37,7 +43,7 @@ export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch =>
     };
 
     const res = await axios.post(`/api/purchaseGroup/buy/`, options);
-    dispatch({type: FETCH_PURCHES_GROUPS, payload: res.data});
+    dispatch({type: FETCH_PURCHASE_GROUPS, payload: res.data});
 
     const resUser = await axios.get('/api/current_user');
     dispatch({type: FETCH_USER, payload: resUser.data});

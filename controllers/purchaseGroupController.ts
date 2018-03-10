@@ -39,6 +39,17 @@ export default class purchaseGroupController {
         }
     }
 
+    async getSuggestionsPurchaseGroupByType(res) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroups = await purchaseGroupManagerInstance.getSuggestionsPurchaseGroupByType();
+            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
     async getPurchaseGroupsByUserId(res, userId: string) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
@@ -220,9 +231,17 @@ export default class purchaseGroupController {
                 //remove purchase group type to not relevant list
                 await purchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
             }
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
 
-            // let purchaseGroups = await purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
-            // purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+    async increaseAttemptsAndCheck(res, userID,type){
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            await purchaseGroupManagerInstance.increaseAttemptsAndCheck(userID,type);
+            httpResponse.sendOk(res)
         }
         catch (e) {
             httpResponse.sendError(res, e);

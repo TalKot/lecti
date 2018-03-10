@@ -31,11 +31,11 @@ class CustomPurchaseGroupsSelector {
     selectCustomPurchaseGroupsTypeForUser(userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             let selectedType;
-            const user = yield User.findById(userId)
-                .populate({
-                path: 'purchaseGroupsViewed',
-                model: 'purchaseGroups'
-            });
+            const user = yield User.findById(userId);
+            // .populate({
+            //     path:'purchaseGroupsViewed',
+            //     model: 'purchaseGroups'
+            // });
             try {
                 const purchaseGroupManager = new purchaseGroupManager_1.default();
                 const purchaseGroupsByUser = yield purchaseGroupManager.getPurchaseGroupsByUserId(userId);
@@ -44,11 +44,11 @@ class CustomPurchaseGroupsSelector {
                 let purchaseGroupsViews = {};
                 let purchaseGroupsPriority = purchaseGroupsTypesValue;
                 // getting amount of each purchase group viewed by current user
-                user.purchaseGroupsViewed.forEach(purchaseGroupViewed => {
-                    const type = purchaseGroupViewed.type;
+                user.purchaseGroupsViewed.forEach(type => {
+                    // const type = purchaseGroupViewed;
                     if (purchaseGroupsViews[type]) {
-                        const value = purchaseGroupsViews[type] + 1;
-                        purchaseGroupsViews[type] = value;
+                        // const value = purchaseGroupsViews[type] + 1;
+                        purchaseGroupsViews[type] += 1;
                     }
                     else {
                         purchaseGroupsViews[type] = 1;
@@ -95,13 +95,14 @@ class CustomPurchaseGroupsSelector {
                         purchaseGroupsResults[type] /= purchaseGroupsTimes[type];
                     }
                 });
+                //TODO - what happened when empty object?
                 //get result
                 selectedType = Object.keys(purchaseGroupsResults).reduce((typeA, typeB) => {
                     return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
                 });
             }
             catch (e) {
-                selectedType = 'computers';
+                selectedType = 'shoes';
             }
             const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
             this.message.push(res);

@@ -9,9 +9,13 @@ class PurchaseGroups extends Component {
         this.props.fetchPurchaseGroups(this.props.match.params.item);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.match.params.item !== this.props.match.params.item) {
+            nextProps.fetchPurchaseGroups(nextProps.match.params.item);
+        }
+    }
+
     render() {
-        //TODO - NEED TO FIX THIS NOT TO CALL LIKE THIS...
-        //this.props.fetchPurchaseGroups(this.props.match.params.item);
 
         if (!this.props.purchaseGroups.length) {
             return (

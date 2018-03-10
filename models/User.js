@@ -40,8 +40,7 @@ const userSchema = new mongoose.Schema({
             default: []
         }],
     purchaseGroupsViewed: [{
-            type: Schema.Types.ObjectId,
-            ref: 'purchaseGroups',
+            type: [String],
             default: []
         }],
     purchaseGroupsBought: [PurchaseGroups],
@@ -54,6 +53,10 @@ const userSchema = new mongoose.Schema({
     notRelevantTypes: {
         type: [String],
         default: []
+    },
+    typesAttempts: {
+        type: Number,
+        default: 0
     }
 });
 userSchema.virtual('commentsCount').get(function () {

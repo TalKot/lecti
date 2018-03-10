@@ -55,8 +55,11 @@ const purchaseGroup = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'comment',
         default: []
-    }]
-
+    }],
+    isSuggestion : {
+        type: Boolean,
+        default : false
+    }
 });
 
 purchaseGroup.pre('save', function (next) {
