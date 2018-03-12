@@ -16,6 +16,18 @@ class userController {
             }
         });
     }
+    getSellerById(res, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let userManagerInstance = new userManager_1.default();
+                let userSeller = yield userManagerInstance.getUserSeller(userID);
+                userSeller ? httpResponse_1.default.sendOk(res, userSeller) : httpResponse_1.default.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
 }
 exports.default = userController;
 //# sourceMappingURL=userController.js.map

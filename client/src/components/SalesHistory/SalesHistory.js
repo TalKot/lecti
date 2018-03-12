@@ -36,7 +36,11 @@ class Sales extends Component {
 
     render() {
         if (!this.props.auth || !this.state) {
-            return (<h1>Loading...</h1>);
+            return (
+                <div className="progress">
+                    <div className="indeterminate"></div>
+                </div>
+            );
         }
         return (
             <div style={{textAlign: 'center'}}>

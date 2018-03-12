@@ -20,7 +20,12 @@ class purchaseGroupManager {
     }
     getPurchaseGroupById(id) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const purchaseGroup = yield PurchaseGroup.findById(id);
+            const purchaseGroup = yield PurchaseGroup.findById(id)
+                .populate({
+                path: 'seller',
+                model: 'users',
+                select: ["displayName", "email", "photoURL", "_id"]
+            });
             return purchaseGroup ? purchaseGroup : null;
         });
     }
@@ -197,12 +202,11 @@ class purchaseGroupManager {
     }
     searchPurchaseGroup(searchValue) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            let fetchedPurcahseGroup = yield PurchaseGroup.find({
+            return yield PurchaseGroup.find({
                 $text: {
                     $search: searchValue
                 }
             });
-            return fetchedPurcahseGroup;
         });
     }
     addTypeToNotRelevantList(userID, type) {

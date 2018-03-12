@@ -45,6 +45,9 @@ export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch =>
     const res = await axios.post(`/api/purchaseGroup/buy/`, options);
     dispatch({type: FETCH_PURCHASE_GROUPS, payload: res.data});
 
+    const resData = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
+    dispatch({type: FETCH_PURCHASE_GROUPS, payload: resData.data});
+
     const resUser = await axios.get('/api/current_user');
     dispatch({type: FETCH_USER, payload: resUser.data});
 };

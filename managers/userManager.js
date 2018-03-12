@@ -16,6 +16,16 @@ class userManager {
             return user ? user : null;
         });
     }
+    getUserSeller(userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const user = yield User.findById(userID, { comments: 1, displayName: 1, email: 1, gender: 1, photoURL: 1, purchaseGroupsSell: 1 })
+                .populate({
+                path: 'purchaseGroupsSell',
+                model: 'purchaseGroups'
+            });
+            return user ? user : null;
+        });
+    }
     getPurchaseGroupsBoughtByUserID(userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const { purchaseGroupsBought } = yield User.findById(userID);

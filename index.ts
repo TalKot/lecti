@@ -6,7 +6,8 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
-
+const PurchaseGroupData = require('./data/PurchaseGroupData');
+const PurchaseGroup = require('./models/PurchaseGroup');
 //loading all models
 require('./models/Comment');
 require('./models/SellerComment');
@@ -32,12 +33,6 @@ app.use(
         keys: [keys.cookieKey]
     })
 );
-app.use(
-    cookieSession({
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        keys: [keys.cookieKey]
-    })
-);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -47,6 +42,7 @@ require('./routes/billingRoutes')(app);
 require('./routes/purchaseGroupRoutes')(app);
 require('./routes/cartRoutes')(app);
 require('./routes/surveyRoutes')(app);
+require('./routes/userRoutes')(app);
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -59,11 +55,18 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-// will call start notify once.
-// _.once(() => {
-//     const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
-//     customPurchaseGroupsSelector.notify();
-// })();
+//will call start notify once.
+_.once(() => {
+    //notifications system
+    //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
+    //customPurchaseGroupsSelector.notify();
+
+    //load and store data to DB
+    PurchaseGroupData.forEach(async purchaseGroup=>{
+        let res = new PurchaseGroup(purchaseGroup);
+        await res.save();
+    });
+})();
 
 
 

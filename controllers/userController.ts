@@ -13,4 +13,15 @@ export default class userController {
             httpResponse.sendError(res, e);
         }
     }
+
+    async getSellerById(res,userID) {
+        try {
+            let userManagerInstance = new userManager();
+            let userSeller = await userManagerInstance.getUserSeller(userID);
+            userSeller ? httpResponse.sendOk(res, userSeller) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
 }

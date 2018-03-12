@@ -17,7 +17,12 @@ export default class purchaseGroupManager {
     }
 
     async getPurchaseGroupById(id: string) {
-        const purchaseGroup = await PurchaseGroup.findById(id);
+        const purchaseGroup = await PurchaseGroup.findById(id)
+            .populate({
+                path:'seller',
+                model: 'users',
+                select: ["displayName","email","photoURL","_id"]
+            });
         return purchaseGroup ? purchaseGroup : null;
     }
 
@@ -199,14 +204,11 @@ export default class purchaseGroupManager {
     }
 
     async searchPurchaseGroup(searchValue) {
-        let fetchedPurcahseGroup = await PurchaseGroup.find({
+        return await PurchaseGroup.find({
             $text: {
                 $search: searchValue
             }
         });
-
-        return fetchedPurcahseGroup;
-
     }
 
     async addTypeToNotRelevantList(userID, type) {

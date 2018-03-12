@@ -16,6 +16,16 @@ export default class userManager {
         return user ? user : null;
     }
 
+    async getUserSeller(userID: string) {
+        const user = await User.findById(userID,{comments:1,displayName:1,email:1,gender:1,photoURL:1,purchaseGroupsSell:1})
+            .populate({
+                path: 'purchaseGroupsSell',
+                model: 'purchaseGroups'
+            });
+
+        return user ? user : null;
+    }
+
     async getPurchaseGroupsBoughtByUserID(userID: string) {
         const {purchaseGroupsBought} = await User.findById(userID);
         return purchaseGroupsBought ? purchaseGroupsBought : null;

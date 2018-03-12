@@ -18,6 +18,7 @@ import SuggestionItem from './Suggestions/SuggestionItem/SuggestionItem';
 import Sales from './SalesHistory/SalesHistory';
 import Suggestions from './Suggestions/Suggestions';
 import Home from './Home/Home';
+import Seller from './Seller/Seller'
 
 class App extends Component {
     componentDidMount() {
@@ -43,6 +44,7 @@ class App extends Component {
                         <Route exact path="/becomeseller" component={BecomeSeller}/>
                         <Route exact path="/suggestions" component={Suggestions}/>
                         <Route exact path="/suggestions/:id" component={SuggestionItem}/>
+                        <Route exact path="/seller/:id" component={Seller}/>
                         <Footer/>
                     </div>
                 </BrowserRouter>
