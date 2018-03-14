@@ -132,10 +132,10 @@ export default class purchaseGroupController {
             } else {
                 //new purchase group for this user
                 // update records values
-                await Promise.all([
-                    purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                    userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
-                ]);
+                // await Promise.all([
+                    await purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                    await userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
+                // ]);
             }
             // check and update purchase group active status if needed
             if(purchaseGroupShouldClose){

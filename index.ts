@@ -1,20 +1,24 @@
 const express = require('express');
 const keys = require('./config/keys');
 import * as mongoose from 'mongoose';
+
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
 const PurchaseGroupData = require('./data/PurchaseGroupData');
-const PurchaseGroup = require('./models/PurchaseGroup');
+const UserData = require('./data/UserData');
+const purchaseGroupSchema = require('./models/PurchaseGroup');
+const userSchema = require('./models/User');
 //loading all models
 require('./models/Comment');
 require('./models/SellerComment');
 require('./models/PurchaseGroup');
 require('./models/User');
 require('./models/Survey');
-
+//
+const User = mongoose.model('users');
 //loading passport library to server
 require('./services/passportLogin/passport');
 
@@ -56,18 +60,29 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //will call start notify once.
-_.once(() => {
+_.once(async () => {
     //notifications system
     //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
     //customPurchaseGroupsSelector.notify();
 
-    //load and store data to DB
-    PurchaseGroupData.forEach(async purchaseGroup=>{
-        let res = new PurchaseGroup(purchaseGroup);
-        await res.save();
-    });
-})();
+    //load and store user data to DB
+    const user = new userSchema(UserData);
+    await user.save();
 
+    //load and store purchase group data to DB
+    PurchaseGroupData.forEach(async purchaseGroup => {
+        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+        purchaseGroupObject.seller = user;
+
+        user.purchaseGroupsSell.push(purchaseGroupObject);
+
+        // await Promise.all([
+        //     user.save(),
+            purchaseGroupObject.save()
+        // ]);
+    });
+    await user.save();
+})();
 
 
 //setting up port with Heroku and locally

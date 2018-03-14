@@ -133,8 +133,6 @@ class Profile extends Component {
                 </div>
                 {this.getPurchaseHistory()}
             </div>
-
-
         );
     };
 }

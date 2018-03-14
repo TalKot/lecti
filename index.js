@@ -10,13 +10,17 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
 const PurchaseGroupData = require('./data/PurchaseGroupData');
-const PurchaseGroup = require('./models/PurchaseGroup');
+const UserData = require('./data/UserData');
+const purchaseGroupSchema = require('./models/PurchaseGroup');
+const userSchema = require('./models/User');
 //loading all models
 require('./models/Comment');
 require('./models/SellerComment');
 require('./models/PurchaseGroup');
 require('./models/User');
 require('./models/Survey');
+//
+const User = mongoose.model('users');
 //loading passport library to server
 require('./services/passportLogin/passport');
 mongoose.Promise = global.Promise;
@@ -49,16 +53,25 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 //will call start notify once.
-_.once(() => {
+_.once(() => tslib_1.__awaiter(this, void 0, void 0, function* () {
     //notifications system
     //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
     //customPurchaseGroupsSelector.notify();
-    //load and store data to DB
+    //load and store user data to DB
+    const user = new userSchema(UserData);
+    yield user.save();
+    //load and store purchase group data to DB
     PurchaseGroupData.forEach((purchaseGroup) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-        let res = new PurchaseGroup(purchaseGroup);
-        yield res.save();
+        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+        purchaseGroupObject.seller = user;
+        user.purchaseGroupsSell.push(purchaseGroupObject);
+        // await Promise.all([
+        //     user.save(),
+        purchaseGroupObject.save();
+        // ]);
     }));
-})();
+    yield user.save();
+}))();
 //setting up port with Heroku and locally
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

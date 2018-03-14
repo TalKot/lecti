@@ -17,7 +17,14 @@ export default class userManager {
     }
 
     async getUserSeller(userID: string) {
-        const user = await User.findById(userID,{comments:1,displayName:1,email:1,gender:1,photoURL:1,purchaseGroupsSell:1})
+        const user = await User.findById(userID, {
+            comments: 1,
+            displayName: 1,
+            email: 1,
+            gender: 1,
+            photoURL: 1,
+            purchaseGroupsSell: 1
+        })
             .populate({
                 path: 'purchaseGroupsSell',
                 model: 'purchaseGroups'
@@ -51,7 +58,7 @@ export default class userManager {
     }
 
     async updatePurchaseGroupToUser(purchaseGroupID, price: number, amount: number, userID: string) {
-        // amount = Number(amount);
+
         //fetch user from DB
         let user = await this.getUser(userID);
         // fetch purchase group to change from list

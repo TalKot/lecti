@@ -18,7 +18,14 @@ class userManager {
     }
     getUserSeller(userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const user = yield User.findById(userID, { comments: 1, displayName: 1, email: 1, gender: 1, photoURL: 1, purchaseGroupsSell: 1 })
+            const user = yield User.findById(userID, {
+                comments: 1,
+                displayName: 1,
+                email: 1,
+                gender: 1,
+                photoURL: 1,
+                purchaseGroupsSell: 1
+            })
                 .populate({
                 path: 'purchaseGroupsSell',
                 model: 'purchaseGroups'
@@ -51,7 +58,6 @@ class userManager {
     }
     updatePurchaseGroupToUser(purchaseGroupID, price, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            // amount = Number(amount);
             //fetch user from DB
             let user = yield this.getUser(userID);
             // fetch purchase group to change from list

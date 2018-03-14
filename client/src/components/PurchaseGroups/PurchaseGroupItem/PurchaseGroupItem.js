@@ -102,7 +102,6 @@ class PurchaseGroupItem extends Component {
                                                 <h6>Seller Data:</h6>
                                             </div>
                                             <div className="chip col s3">
-
                                                 <img src={this.state.purchaseGroupData.seller.photoURL}
                                                      alt={this.state.purchaseGroupData.seller.photoURL}/>
                                                 <Link to={`/seller/${this.state.purchaseGroupData.seller._id}`}>

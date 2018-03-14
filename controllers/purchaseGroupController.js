@@ -127,10 +127,10 @@ class purchaseGroupController {
                 else {
                     //new purchase group for this user
                     // update records values
-                    yield Promise.all([
-                        purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                        userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
-                    ]);
+                    // await Promise.all([
+                    yield purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                        yield userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID);
+                    // ]);
                 }
                 // check and update purchase group active status if needed
                 if (purchaseGroupShouldClose) {
