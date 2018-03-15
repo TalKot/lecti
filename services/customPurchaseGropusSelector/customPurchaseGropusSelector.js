@@ -82,12 +82,12 @@ class CustomPurchaseGroupsSelector {
                         delete purchaseGroupsResults[typeToRemove];
                     }
                 });
+                //TODO - IS THIS CORRECT?
                 //calculating all data combined
                 Object.keys(purchaseGroupsResults).forEach(type => {
                     if (purchaseGroupsPriority[type]) {
                         purchaseGroupsResults[type] *= purchaseGroupsPriority[type];
                     }
-                    //TODO - IS THIS CORRECT?
                     if (purchaseGroupsViews[type]) {
                         purchaseGroupsResults[type] += purchaseGroupsViews[type];
                     }
@@ -95,11 +95,16 @@ class CustomPurchaseGroupsSelector {
                         purchaseGroupsResults[type] /= purchaseGroupsTimes[type];
                     }
                 });
-                //TODO - what happened when empty object?
                 //get result
-                selectedType = Object.keys(purchaseGroupsResults).reduce((typeA, typeB) => {
-                    return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
-                });
+                if (Object.keys(purchaseGroupsResults).length) {
+                    selectedType = Object.keys(purchaseGroupsResults).reduce((typeA, typeB) => {
+                        return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
+                    });
+                }
+                else {
+                    //TODO - what happened when empty object?
+                    selectedType = 'computers';
+                }
             }
             catch (e) {
                 selectedType = 'computers';

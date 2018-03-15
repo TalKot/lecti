@@ -10,6 +10,8 @@ export default combineReducers({
     purchaseGroups: purchaseGroupsReducer,
     customPurchaseGroups: customPurchaseGroupsReducer,
     suggestionsPurchaseGroups: purchaseGroupsSuggestionsReducer,
-    form: reduxForm,
-    becomeSellerForm: reduxForm
+    // form: reduxForm,
+    // becomeSellerForm: reduxForm,
+    // newPurchaseGroupForm: reduxForm
+    form: reduxForm
 });

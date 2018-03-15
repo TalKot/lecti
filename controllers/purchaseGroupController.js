@@ -244,6 +244,18 @@ class purchaseGroupController {
             }
         });
     }
+    createPurchaseGroup(res, data) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let purchaseGroup = yield purchaseGroupManagerInstance.createPurchaseGroup(data);
+                purchaseGroup ? httpResponse_1.default.sendOk(res, purchaseGroup) : httpResponse_1.default.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
 }
 exports.default = purchaseGroupController;
 //# sourceMappingURL=purchaseGroupController.js.map

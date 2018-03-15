@@ -19,6 +19,8 @@ import Sales from './SalesHistory/SalesHistory';
 import Suggestions from './Suggestions/Suggestions';
 import Home from './Home/Home';
 import Seller from './Seller/Seller'
+import AddPurchaseGroupForm from './PurchaseGroups/addPurchaseGroup/AddPurchaseGroupForm'
+import NewAddPurchaseGroupForm from './PurchaseGroups/addPurchaseGroup/NewAddPurchaseGroupForm';
 
 class App extends Component {
     componentDidMount() {
@@ -35,7 +37,8 @@ class App extends Component {
                         <Route exact path="/home" component={Home}/>
                         <Route exact path="/surveys" component={Surveys}/>
                         <Route exact path="/sales" component={Sales}/>
-                        <Route exact path="/surveys/new" component={SurveyNew}/>
+                        <Route exact path="/new/purchasegroup/" component={NewAddPurchaseGroupForm}/>
+                        <Route exact path="/pur/new" component={SurveyNew}/>
                         <Route exact path="/purchasegroup/:item" component={purchaseGroupItem}/>
                         <Route exact path="/purchasegroups/:item" component={PurchaseGroups}/>
                         <Route exact path="/profile" component={Profile}/>

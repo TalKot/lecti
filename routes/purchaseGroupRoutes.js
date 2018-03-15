@@ -72,5 +72,11 @@ module.exports = app => {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
         yield purchaseGroupControllerInstance.increaseAttemptsAndCheck(res, req.user.id, type);
     }));
+    app.post('/api/create/purchasegroup/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        let data = req.body;
+        data.seller = req.user.id;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.createPurchaseGroup(res, data);
+    }));
 };
 //# sourceMappingURL=purchaseGroupRoutes.js.map

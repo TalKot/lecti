@@ -3,6 +3,8 @@ import * as mongoose from 'mongoose';
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
+const PurchaseGroupSchema = require('../models/PurchaseGroup');
+
 
 export default class purchaseGroupManager {
 
@@ -19,9 +21,9 @@ export default class purchaseGroupManager {
     async getPurchaseGroupById(id: string) {
         const purchaseGroup = await PurchaseGroup.findById(id)
             .populate({
-                path:'seller',
+                path: 'seller',
                 model: 'users',
-                select: ["displayName","email","photoURL","_id"]
+                select: ["displayName", "email", "photoURL", "_id"]
             });
         return purchaseGroup ? purchaseGroup : null;
     }
@@ -252,6 +254,21 @@ export default class purchaseGroupManager {
                 user.save(),
                 this.addTypeToNotRelevantList(userID, type)
             ])
+        }
+    }
+
+    async createPurchaseGroup(data) {
+        try {
+            let purchaseGroupObject = new PurchaseGroupSchema(data);
+            purchaseGroupObject = await purchaseGroupObject.save();
+            await User.findByIdAndUpdate(purchaseGroupObject._id, {
+                $push: {
+                    purchaseGroupsSell: purchaseGroupObject._id
+                }
+            });
+            return purchaseGroupObject;
+        } catch (e) {
+            throw e;
         }
     }
 }

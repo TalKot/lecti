@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
+const PurchaseGroupSchema = require('../models/PurchaseGroup');
 class purchaseGroupManager {
     getAllPurchaseGroups() {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
@@ -244,6 +245,23 @@ class purchaseGroupManager {
                     user.save(),
                     this.addTypeToNotRelevantList(userID, type)
                 ]);
+            }
+        });
+    }
+    createPurchaseGroup(data) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupObject = new PurchaseGroupSchema(data);
+                purchaseGroupObject = yield purchaseGroupObject.save();
+                yield User.findByIdAndUpdate(purchaseGroupObject._id, {
+                    $push: {
+                        purchaseGroupsSell: purchaseGroupObject._id
+                    }
+                });
+                return purchaseGroupObject;
+            }
+            catch (e) {
+                throw e;
             }
         });
     }

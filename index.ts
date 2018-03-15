@@ -1,7 +1,6 @@
 const express = require('express');
 const keys = require('./config/keys');
 import * as mongoose from 'mongoose';
-
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');

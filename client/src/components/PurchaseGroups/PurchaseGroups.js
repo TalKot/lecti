@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import * as actions from '../../actions';
 import {connect} from 'react-redux';
 import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
-
+import {Link} from 'react-router-dom';
 class PurchaseGroups extends Component {
 
     componentDidMount() {
@@ -41,6 +41,13 @@ class PurchaseGroups extends Component {
                         })
                     }
                 </div>
+
+                <div className="fixed-action-btn">
+                    <Link to="/new/purchasegroup" className="btn-floating btn-large red">
+                        <i className="material-icons">add</i>
+                    </Link>
+                </div>
+
             </div>
         );
     }

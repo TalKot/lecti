@@ -247,4 +247,15 @@ export default class purchaseGroupController {
             httpResponse.sendError(res, e);
         }
     }
+
+    async createPurchaseGroup(res, data){
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroup = await purchaseGroupManagerInstance.createPurchaseGroup(data);
+            purchaseGroup ? httpResponse.sendOk(res, purchaseGroup) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
 }
