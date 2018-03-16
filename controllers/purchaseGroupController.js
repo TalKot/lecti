@@ -244,11 +244,16 @@ class purchaseGroupController {
             }
         });
     }
-    createPurchaseGroup(res, data) {
+    createPurchaseGroup(res, data, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let userManagerInstance = new userManager_1.default();
+                const user = yield userManagerInstance.getUser(userID);
+                user.isSeller ? data.seller = userID : data.isSuggestion = true;
                 let purchaseGroup = yield purchaseGroupManagerInstance.createPurchaseGroup(data);
+                user.purchaseGroupsSell.push(purchaseGroup._id);
+                yield user.save();
                 purchaseGroup ? httpResponse_1.default.sendOk(res, purchaseGroup) : httpResponse_1.default.sendError(res);
             }
             catch (e) {

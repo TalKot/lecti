@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {FETCH_USER, FETCH_PURCHASE_GROUPS, FETCH_CUSTOM_MADE_GROUPS,FETCH_SUGGESTIONS_PURCHES_GROUPS} from './types';
+import {FETCH_USER, FETCH_PURCHASE_GROUPS, FETCH_CUSTOM_MADE_GROUPS, FETCH_SUGGESTIONS_PURCHES_GROUPS} from './types';
 
 //fetching user when application load
 export const fetchUser = () => async dispatch => {
@@ -82,7 +82,7 @@ export const becomeSellerSubmit = (values) => async dispatch => {
 };
 
 //add purchase group from form data
-export const createNewPurchaseGroup = (values,history) => async dispatch => {
+export const createNewPurchaseGroup = (values, isSeller, history) => async dispatch => {
     const {data} = await axios.post('/api/create/purchasegroup', values);
-    history.push(`/purchasegroup/${data._id}`);
+    isSeller ? history.push(`/purchasegroup/${data._id}`) : history.push(`/suggestions/${data._id}`);
 };

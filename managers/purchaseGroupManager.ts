@@ -206,11 +206,16 @@ export default class purchaseGroupManager {
     }
 
     async searchPurchaseGroup(searchValue) {
-        return await PurchaseGroup.find({
-            $text: {
-                $search: searchValue
-            }
-        });
+        try {
+            let res = await PurchaseGroup.find({
+                $text: {
+                    $search: searchValue
+                }
+            });
+            return res;
+        }catch (e){
+            throw e;
+        }
     }
 
     async addTypeToNotRelevantList(userID, type) {

@@ -50,7 +50,7 @@ export = [
         priceForGroup: 7,
         originalPrice: 35,
         totalAmount: 50,
-        picture: "https://s-media-cache-ak0.pinimg.com/originals/1b/74/f6/1b74f6049bf343e5e49d49d6a560fcd4.jpg",
+        picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTvGN3ZQhHTvKaxthSY_nVlx9mN7aIAuuhRxuezYos-92sANFf",
         comments: [],
         sales: 0,
         isActive: true,
@@ -88,5 +88,15 @@ export = [
         isSuggestion: false,
         potentialBuyers: [],
         discount: 80
+    },
+    {
+        name: "shoes - isSuggestion true",
+        type: "shoes",
+        priceForGroup: 7,
+        totalAmount: 50,
+        isActive: true,
+        isDeleted: false,
+        isSuggestion: true,
+        potentialBuyers: []
     }
 ];

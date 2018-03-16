@@ -248,10 +248,15 @@ export default class purchaseGroupController {
         }
     }
 
-    async createPurchaseGroup(res, data){
+    async createPurchaseGroup(res, data,userID){
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let userManagerInstance = new userManager();
+            const user = await userManagerInstance.getUser(userID);
+            user.isSeller ? data.seller = userID : data.isSuggestion = true;
             let purchaseGroup = await purchaseGroupManagerInstance.createPurchaseGroup(data);
+            user.purchaseGroupsSell.push(purchaseGroup._id);
+            await user.save();
             purchaseGroup ? httpResponse.sendOk(res, purchaseGroup) : httpResponse.sendError(res);
         }
         catch (e) {

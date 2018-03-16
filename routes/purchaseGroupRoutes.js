@@ -74,9 +74,8 @@ module.exports = app => {
     }));
     app.post('/api/create/purchasegroup/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let data = req.body;
-        data.seller = req.user.id;
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
-        yield purchaseGroupControllerInstance.createPurchaseGroup(res, data);
+        yield purchaseGroupControllerInstance.createPurchaseGroup(res, data, req.user.id);
     }));
 };
 //# sourceMappingURL=purchaseGroupRoutes.js.map

@@ -3,16 +3,15 @@ import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import formFields from "./formFields";
 import PurchaseGroupField from "./PurchaseGroupField";
-// import validateEmails from "../../../utils/validateEmails";
+import {connect} from "react-redux";
+import * as actions from "../../../actions";
 
-var options = [
-    { value: 'computers', label: 'computers' },
-    { value: 'shoes', label: 'shoes' }
-];
+// import validateEmails from "../../../utils/validateEmails";
 
 class AddPurchaseGroup extends Component {
     renderFields() {
         return formFields.map(({label, name}) => {
+
             return (
                 <Field
                     key={name}
@@ -29,15 +28,7 @@ class AddPurchaseGroup extends Component {
         return (
             <div>
                 <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
-                    <div className="input-field col s12">
-                        <select  options={options} defaultValue='computers'>
-                            <option value="computers">computers</option>
-                            <option value="shoes">shoes</option>
-                        </select>
-                        <label>Materialize Select</label>
-                    </div>
                     {this.renderFields()}
-
 
                     <Link to="/home" className="red btn-flat white-text">
                         Cancel
@@ -71,5 +62,5 @@ function validate(values) {
 
 export default reduxForm({
     validate,
-    form: 'AddPurchaseGroup'
+    form: 'AddPurchaseGroup',
 })(AddPurchaseGroup);

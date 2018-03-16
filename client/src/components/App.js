@@ -12,14 +12,12 @@ import Surveys from './Surveys/Surveys';
 import SurveyNew from './Surveys/SurveyNew';
 import Profile from './Profile/Profile';
 import Cart from './Cart/Cart';
-import BecomeSeller from './BecomeSeller/BecomeSeller';
 import purchaseGroupItem from './PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem';
 import SuggestionItem from './Suggestions/SuggestionItem/SuggestionItem';
 import Sales from './SalesHistory/SalesHistory';
 import Suggestions from './Suggestions/Suggestions';
 import Home from './Home/Home';
 import Seller from './Seller/Seller'
-import AddPurchaseGroupForm from './PurchaseGroups/addPurchaseGroup/AddPurchaseGroupForm'
 import NewAddPurchaseGroupForm from './PurchaseGroups/addPurchaseGroup/NewAddPurchaseGroupForm';
 
 class App extends Component {
@@ -44,7 +42,6 @@ class App extends Component {
                         <Route exact path="/profile" component={Profile}/>
                         <Route exact path="/payments" component={Payments}/>
                         <Route exact path="/cart" component={Cart}/>
-                        <Route exact path="/becomeseller" component={BecomeSeller}/>
                         <Route exact path="/suggestions" component={Suggestions}/>
                         <Route exact path="/suggestions/:id" component={SuggestionItem}/>
                         <Route exact path="/seller/:id" component={Seller}/>

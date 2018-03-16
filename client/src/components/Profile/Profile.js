@@ -104,12 +104,11 @@ class Profile extends Component {
                                 <span className="card-title">{this.props.auth.displayName}</span>
                             </div>
                             <div className="card-content">
-                                <h6>Profile email - {this.props.auth.email}</h6>
                                 <h6>Gender - {this.props.auth.gender}</h6>
                                 <h6>Credits - {this.props.auth.credits}$</h6>
                             </div>
                             <div className="card-action">
-                                <a href={this.props.auth.email}>This is a link</a>
+                                <h6>Email - {this.props.auth.email}</h6>
                             </div>
                         </div>
                     </div>

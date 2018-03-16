@@ -1,6 +1,7 @@
 const express = require('express');
 const keys = require('./config/keys');
 import * as mongoose from 'mongoose';
+
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
@@ -10,6 +11,7 @@ const PurchaseGroupData = require('./data/PurchaseGroupData');
 const UserData = require('./data/UserData');
 const purchaseGroupSchema = require('./models/PurchaseGroup');
 const userSchema = require('./models/User');
+
 //loading all models
 require('./models/Comment');
 require('./models/SellerComment');
@@ -73,12 +75,9 @@ _.once(async () => {
         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
         purchaseGroupObject.seller = user;
 
-        user.purchaseGroupsSell.push(purchaseGroupObject);
+        purchaseGroupObject.isSuggestion && user.purchaseGroupsSell.push(purchaseGroupObject);
 
-        // await Promise.all([
-        //     user.save(),
-            purchaseGroupObject.save()
-        // ]);
+        purchaseGroupObject.save()
     });
     await user.save();
 })();

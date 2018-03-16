@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import * as _ from 'lodash';
+import * as _ from 'lodash';
 // import axios from "axios/index";
 import {connect} from "react-redux";
 import * as actions from "../../actions";
@@ -22,23 +22,14 @@ class SearchBar extends Component {
         );
     };
 
-    // onInputChange = _.debounce((term) =>{
-    //     this.setState({term});
-    //     this.props.onSearchTermChange(term);
-    // },300);
-
-    onInputChange =async term => {
+    onInputChange = async term => {
         await this.setState({term});
         const search = this.state.term;
-        if(search){
-            this.props.fetchPurchaseGroupsBySearch(search);
-        }else {
-            this.props.fetchPurchaseGroups(search);
-        }
 
-        // const {data} = await axios.get(`/api/purchaseGroup/search/${search}/`);
-        // console.log(data);
-        // this.props.onSearchTermChange(term);
+        //TODO : WHAT TO BRING BACK WHEN SEARCH IS EMPTY?
+        (_.debounce(() => {
+            search ? this.props.fetchPurchaseGroupsBySearch(search) : this.props.fetchPurchaseGroups(search);
+        }, 700))()
     };
 };
 

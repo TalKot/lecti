@@ -87,8 +87,7 @@ module.exports = app => {
 
     app.post('/api/create/purchasegroup/', requireLogin, async (req, res) => {
         let data = req.body;
-        data.seller = req.user.id;
         let purchaseGroupControllerInstance = new purchaseGroupController();
-        await purchaseGroupControllerInstance.createPurchaseGroup(res, data);
+        await purchaseGroupControllerInstance.createPurchaseGroup(res, data,req.user.id);
     });
 };

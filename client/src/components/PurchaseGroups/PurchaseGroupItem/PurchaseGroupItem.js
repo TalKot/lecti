@@ -44,10 +44,10 @@ class PurchaseGroupItem extends Component {
                                 </div>
                                 <div className="card-content">
                                     <h6>Name - <strong>{this.state.purchaseGroupData.name}</strong></h6>
-                                    <h6>type - {this.state.purchaseGroupData.type}</h6>
-                                    <h6>isActive - {this.state.purchaseGroupData.isActive ? 'true' : 'false'}</h6>
-                                    <h6>isDeleted - {this.state.purchaseGroupData.isDeleted ? 'true' : 'false'}</h6>
-                                    <h6>isSuggestion
+                                    <h6>Type - {this.state.purchaseGroupData.type}</h6>
+                                    <h6>Active - {this.state.purchaseGroupData.isActive ? 'true' : 'false'}</h6>
+                                    <h6>Deleted - {this.state.purchaseGroupData.isDeleted ? 'true' : 'false'}</h6>
+                                    <h6>Suggestion
                                         - {this.state.purchaseGroupData.isSuggestion ? 'true' : 'false'}</h6>
                                 </div>
                                 <div className="card-action">
@@ -78,11 +78,9 @@ class PurchaseGroupItem extends Component {
                             <div className="row">
                                 <div className="col s3 m6">
                                     <div className="card-panel">
-                                        originalPrice - {this.state.purchaseGroupData.originalPrice}<br/>
-                                        originalPrice - {this.state.purchaseGroupData.originalPrice}<br/>
-                                        priceForGroup - {this.state.purchaseGroupData.priceForGroup}<br/>
-                                        discount - {this.state.purchaseGroupData.discount}%<br/>
-
+                                        Original Product Price - {this.state.purchaseGroupData.originalPrice}<br/>
+                                        Group Price Per Item - {this.state.purchaseGroupData.priceForGroup}<br/>
+                                        Discount - {this.state.purchaseGroupData.discount}%<br/>
                                     </div>
                                 </div>
 
@@ -119,18 +117,9 @@ class PurchaseGroupItem extends Component {
 
                                 <div className="col s3 m6">
                                     <div className="card-panel">
-                                        <h6>Description - bla bla bla bla bla bla bla bla bla bla bla bla </h6>
-                                        <h6>bla bla bla bla bla bla bla bla bla bla bla bla </h6>
-                                        <h6>bla bla bla bla bla bla bla bla bla bla bla bla </h6>
-                                        <h6>bla bla bla bla bla bla bla bla bla bla bla bla </h6>
-                                        <h6>bla bla bla bla bla bla bla bla bla bla bla bla </h6>
-                                        <h6>bla bla bla bla bla bla bla bla bla bla bla bla </h6>
-                                        <h6>bla bla bla bla bla bla bla bla bla bla bla bla </h6>
-                                        <h6>bla bla bla bla bla bla bla bla bla bla bla bla </h6>
+                                        <h6>Description - {this.state.purchaseGroupData.description}</h6>
                                     </div>
                                 </div>
-
-
 
                             </div>
                         </div>

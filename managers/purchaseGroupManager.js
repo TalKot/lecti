@@ -203,11 +203,17 @@ class purchaseGroupManager {
     }
     searchPurchaseGroup(searchValue) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            return yield PurchaseGroup.find({
-                $text: {
-                    $search: searchValue
-                }
-            });
+            try {
+                let res = yield PurchaseGroup.find({
+                    $text: {
+                        $search: searchValue
+                    }
+                });
+                return res;
+            }
+            catch (e) {
+                throw e;
+            }
         });
     }
     addTypeToNotRelevantList(userID, type) {

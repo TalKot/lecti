@@ -32,7 +32,32 @@ class Seller extends Component {
         console.log(this.state.seller);
 
         return (
-            <div>
+                <div style={{textAlign: 'center'}}>
+                    <div className="row" style={{textAlign: 'center', margin: '0'}}>
+                        <div className="col s8 m5">
+                            <div className="card">
+                                <div className="card-image">
+                                    <img src={this.state.seller.photoURL} alt={this.state.seller.photoURL}/>
+                                    <span className="card-title">{this.state.seller.displayName}</span>
+                                </div>
+                                <div className="card-content">
+                                    <h6>Email - {this.state.seller.email}</h6>
+                                    <h6>Gender - {this.state.seller.gender}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="row">
+
+                                <div className="col s3 m6">
+                                    <div className="card-panel">
+                                        Auth ID - {this.state.seller.AuthId}
+                                        <i className="material-icons">perm_identity</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <h4>Items for sale({this.state.seller.purchaseGroupsSell.length})</h4>
                 {this.getSellerPurchaseGroups()}
             </div>
