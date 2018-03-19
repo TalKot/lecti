@@ -45,12 +45,12 @@ class purchaseGroupManager {
             let purchaseGroup;
             if (amount) {
                 purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false })
-                    .sort({ discount: 1 })
+                    .sort({ discount: -1 })
                     .limit(amount);
             }
             else {
                 purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false })
-                    .sort({ discount: 1 })
+                    .sort({ discount: -1 })
                     .skip(minPurchaseGroup)
                     .limit(maxPurchaseGroup);
             }

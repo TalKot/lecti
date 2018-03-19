@@ -43,11 +43,11 @@ export default class purchaseGroupManager {
 
         if(amount){
             purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
-                .sort({discount: 1})
+                .sort({discount: -1})
                 .limit(amount);
         }else{
             purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
-                .sort({discount: 1})
+                .sort({discount: -1})
                 .skip(minPurchaseGroup)
                 .limit(maxPurchaseGroup);
         }

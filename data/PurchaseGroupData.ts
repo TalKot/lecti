@@ -212,11 +212,12 @@ export = [
     {
         name: "shoes - isSuggestion true",
         type: "computers",
-        priceForGroup: 16,
-        totalAmount: 20,
+        priceForGroup: 10,
+        picture: "https://s-media-cache-ak0.pinimg.com/originals/1b/74/f6/1b74f6049bf343e5e49d49d6a560fcd4.jpg",
+        originalPrice: 20,
+        totalAmount: 500,
         isActive: true,
         isDeleted: false,
-        isSuggestion: true,
-        potentialBuyers: []
+        isSuggestion: true
     }
 ];

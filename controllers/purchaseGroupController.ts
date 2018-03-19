@@ -293,7 +293,7 @@ export default class purchaseGroupController {
             await Promise.all([
                 userManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID),
                 purchaseGroupManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID)
-            ])
+            ]);
             httpResponse.sendOk(res);
         }
         catch (e) {

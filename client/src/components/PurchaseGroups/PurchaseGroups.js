@@ -65,15 +65,17 @@ class PurchaseGroups extends Component {
                     </Link>
                 </div>
 
-                <div className="row center">
-                    <button onClick={() => this.changeToPreviousPage()}
+
+                <div className="center row" style={{margin: "30px", display: "inline-block"}}>
+                    <button className="col" onClick={() => this.changeToPreviousPage()}
                     >
                         <i className="material-icons">navigate_before</i>
                     </button>
 
-                    {this.state.page}
+                    <div className="col">{this.state.page}</div>
 
-                    <button onClick={() => this.changeToNextPage()}
+
+                    <button className="col" onClick={() => this.changeToNextPage()}
                     >
                         <i className="material-icons">navigate_next</i>
                     </button>
