@@ -90,4 +90,14 @@ export default class userManager {
             }
         });
     }
+
+    async takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
+
+        await User.findByIdAndUpdate(userID, {
+            $push: {
+                purchaseGroupsSell: suggestionID
+            }
+        });
+
+    }
 }

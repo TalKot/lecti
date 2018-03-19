@@ -28,10 +28,10 @@ export default class purchaseGroupController {
         }
     }
 
-    async getPurchaseGroupByType(res, type: string) {
+    async getPurchaseGroupByType(res, type: string, page: string) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type);
+            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -39,11 +39,22 @@ export default class purchaseGroupController {
         }
     }
 
-    async getSuggestionsPurchaseGroupByType(res) {
+    async getSuggestionsPurchaseGroups(res) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getSuggestionsPurchaseGroupByType();
+            let purchaseGroups = await purchaseGroupManagerInstance.getSuggestionsPurchaseGroups();
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async getSuggestionsPurchaseGroupByID(res, ID) {
+        try {
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let purchaseGroup = await purchaseGroupManagerInstance.getSuggestionsPurchaseGroupByID(ID);
+            purchaseGroup ? httpResponse.sendOk(res, purchaseGroup) : httpResponse.sendError(res);
         }
         catch (e) {
             httpResponse.sendError(res, e);
@@ -75,7 +86,7 @@ export default class purchaseGroupController {
     async buyPurchaseGroup(res, purchaseGroupID: string, amount: number, userID: string) {
         try {
             amount = Number(amount);
-            let purchaseGroupShouldClose : boolean = false;
+            let purchaseGroupShouldClose: boolean = false;
 
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let userManagerInstance = new userManager();
@@ -133,16 +144,17 @@ export default class purchaseGroupController {
                 //new purchase group for this user
                 // update records values
                 // await Promise.all([
-                    await purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                await purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
                     await userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
                 // ]);
             }
             // check and update purchase group active status if needed
-            if(purchaseGroupShouldClose){
-                await purchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id,{isActive:false})
+            if (purchaseGroupShouldClose) {
+                await purchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, {isActive: false})
             }
             //return values
-            await this.getPurchaseGroupByType(res, purchaseGroup.type);
+            //todo - need to fix amounts here
+            await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
 
         }
         catch (e) {
@@ -154,11 +166,11 @@ export default class purchaseGroupController {
         try {
             const customPurchaseGroupSelector = CustomPurchaseGroupSelector.Instance;
             const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
-
+            //todo - need to fix amounts here
             const RETURN_ARRAY_AMOUNT: number = 3;
 
             const purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type,RETURN_ARRAY_AMOUNT);
+            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
 
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
@@ -198,7 +210,7 @@ export default class purchaseGroupController {
         }
     }
 
-    async purchaseGroupsViewed(res, userID,purchaseGroupsViewed){
+    async purchaseGroupsViewed(res, userID, purchaseGroupsViewed) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             await purchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
@@ -209,7 +221,7 @@ export default class purchaseGroupController {
         }
     }
 
-    async searchPurchaseGroup(res, searchValue){
+    async searchPurchaseGroup(res, searchValue) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let purchaseGroups = await purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
@@ -220,14 +232,14 @@ export default class purchaseGroupController {
         }
     }
 
-    async typeOnNotRelevantList(res, userID, type, status){
+    async typeOnNotRelevantList(res, userID, type, status) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
 
-            if(status){
+            if (status) {
                 //add purchase group type to not relevant list
                 await purchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);
-            }else{
+            } else {
                 //remove purchase group type to not relevant list
                 await purchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
             }
@@ -237,10 +249,10 @@ export default class purchaseGroupController {
         }
     }
 
-    async increaseAttemptsAndCheck(res, userID,type){
+    async increaseAttemptsAndCheck(res, userID, type) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
-            await purchaseGroupManagerInstance.increaseAttemptsAndCheck(userID,type);
+            await purchaseGroupManagerInstance.increaseAttemptsAndCheck(userID, type);
             httpResponse.sendOk(res)
         }
         catch (e) {
@@ -248,16 +260,41 @@ export default class purchaseGroupController {
         }
     }
 
-    async createPurchaseGroup(res, data,userID){
+    async createPurchaseGroup(res, data, userID) {
         try {
             let purchaseGroupManagerInstance = new purchaseGroupManager();
             let userManagerInstance = new userManager();
             const user = await userManagerInstance.getUser(userID);
-            user.isSeller ? data.seller = userID : data.isSuggestion = true;
-            let purchaseGroup = await purchaseGroupManagerInstance.createPurchaseGroup(data);
-            user.purchaseGroupsSell.push(purchaseGroup._id);
-            await user.save();
+            let purchaseGroup = {};
+
+            if (user.isSeller) {
+                //will create active purchase group because user type seller
+                data.seller = userID;
+                purchaseGroup = await purchaseGroupManagerInstance.createPurchaseGroup(data);
+                user.purchaseGroupsSell.push(purchaseGroup['_id']);
+                await user.save();
+
+            } else {
+                //will create suggestion purchase group because user ype is buyer
+                data.isSuggestion = true;
+                purchaseGroup = await purchaseGroupManagerInstance.createSuggestionsPurchaseGroup(data);
+            }
             purchaseGroup ? httpResponse.sendOk(res, purchaseGroup) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async takeSuggestionsPurchaseGroupOwnership(res, suggestionID, userID) {
+        try {
+            let userManagerInstance = new userManager();
+            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            await Promise.all([
+                userManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID),
+                purchaseGroupManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID)
+            ])
+            httpResponse.sendOk(res);
         }
         catch (e) {
             httpResponse.sendError(res, e);

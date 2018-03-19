@@ -17,13 +17,27 @@ module.exports = app => {
 
     app.get('/api/purchaseGroup/getgroup/type/:type', async (req, res) => {
         const type = req.params.type;
+        const page = req.query.page;
         let purchaseGroupControllerInstance = new purchaseGroupController();
-        await purchaseGroupControllerInstance.getPurchaseGroupByType(res, type);
+        await purchaseGroupControllerInstance.getPurchaseGroupByType(res, type,page);
     });
 
     app.get('/api/purchaseGroup/getsuggestions/', async (req, res) => {
         let purchaseGroupControllerInstance = new purchaseGroupController();
-        await purchaseGroupControllerInstance.getSuggestionsPurchaseGroupByType(res);
+        await purchaseGroupControllerInstance.getSuggestionsPurchaseGroups(res);
+    });
+
+    app.get('/api/purchaseGroup/getsuggestions/:ID', async (req, res) => {
+        const ID = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.getSuggestionsPurchaseGroupByID(res,ID);
+    });
+
+    app.post('/api/purchaseGroup/getsuggestions/:ID', async (req, res) => {
+        const suggestionID = req.params.ID;
+        const userID = req.user.id;
+        let purchaseGroupControllerInstance = new purchaseGroupController();
+        await purchaseGroupControllerInstance.takeSuggestionsPurchaseGroupOwnership(res,suggestionID,userID);
     });
 
     app.get('/api/purchaseGroup/getgroup/user/', requireLogin, async (req, res) => {

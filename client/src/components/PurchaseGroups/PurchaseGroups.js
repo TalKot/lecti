@@ -3,10 +3,12 @@ import * as actions from '../../actions';
 import {connect} from 'react-redux';
 import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
 import {Link} from 'react-router-dom';
-class PurchaseGroups extends Component {
 
-    componentDidMount() {
-        this.props.fetchPurchaseGroups(this.props.match.params.item);
+class PurchaseGroups extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {page: 1};
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -14,6 +16,24 @@ class PurchaseGroups extends Component {
             nextProps.fetchPurchaseGroups(nextProps.match.params.item);
         }
     }
+
+    componentDidMount() {
+        let page = this.state ? this.state.page : 1;
+        this.props.fetchPurchaseGroups(this.props.match.params.item, page);
+    }
+
+    changeToNextPage = () => {
+        let page = this.state.page + 1;
+        this.setState({page: page});
+        this.props.fetchPurchaseGroups(this.props.match.params.item, page);
+    };
+
+    changeToPreviousPage = () => {
+        let page = this.state.page - 1;
+        this.setState({page: page});
+        this.props.fetchPurchaseGroups(this.props.match.params.item, page);
+    };
+
 
     render() {
 
@@ -34,10 +54,7 @@ class PurchaseGroups extends Component {
                 <div className="row">
                     {
                         this.props.purchaseGroups.map(purchaseGroup => {
-                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}
-                                                  // onAddPurchaseGroup={this.props.onAddPurchaseGroup}
-                                                  // onAddPurchaseGroupToCart={this.props.onAddPurchaseGroupToCart}
-                            />
+                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
                         })
                     }
                 </div>
@@ -46,6 +63,20 @@ class PurchaseGroups extends Component {
                     <Link to="/new/purchasegroup" className="btn-floating btn-large red">
                         <i className="material-icons">add</i>
                     </Link>
+                </div>
+
+                <div className="row center">
+                    <button onClick={() => this.changeToPreviousPage()}
+                    >
+                        <i className="material-icons">navigate_before</i>
+                    </button>
+
+                    {this.state.page}
+
+                    <button onClick={() => this.changeToNextPage()}
+                    >
+                        <i className="material-icons">navigate_next</i>
+                    </button>
                 </div>
 
             </div>

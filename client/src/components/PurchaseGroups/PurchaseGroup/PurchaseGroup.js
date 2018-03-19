@@ -3,13 +3,15 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // import axios from "axios/index";
 
-const PurchaseGroup = ({purchaseGroup, onAddPurchaseGroup, onAddPurchaseGroupToCart}) => {
+const PurchaseGroup = ({purchaseGroup}) => {
 
     return (
         <div className="col s6 m4">
-            <div className="card">
-                <div className="card-image small" style={{height:"200px",width:"300px",textAlign:'center'}}>
-                    <Link to={`/purchasegroup/${purchaseGroup._id}`}><img style={{height:"200px",width:"300px",textAlign:'center'}} src={purchaseGroup.picture}/></Link>
+            <div className="card z-depth-3">
+                <div className="card-image small" style={{height: "200px", width: "300px", textAlign: 'center'}}>
+                    <Link to={`/purchasegroup/${purchaseGroup._id}`}><img
+                        style={{height: "200px", width: "300px", textAlign: 'center'}}
+                        src={purchaseGroup.picture}/></Link>
                 </div>
                 <div className="card-content">
                     <b>{purchaseGroup.name}</b>,<br/>
@@ -27,6 +29,7 @@ const PurchaseGroup = ({purchaseGroup, onAddPurchaseGroup, onAddPurchaseGroupToC
             </div>
         </div>
     );
+
 };
 
 export default PurchaseGroup;

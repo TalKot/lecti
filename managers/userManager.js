@@ -90,6 +90,15 @@ class userManager {
             });
         });
     }
+    takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            yield User.findByIdAndUpdate(userID, {
+                $push: {
+                    purchaseGroupsSell: suggestionID
+                }
+            });
+        });
+    }
 }
 exports.default = userManager;
 //# sourceMappingURL=userManager.js.map

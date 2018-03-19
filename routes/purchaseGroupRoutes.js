@@ -16,12 +16,24 @@ module.exports = app => {
     }));
     app.get('/api/purchaseGroup/getgroup/type/:type', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         const type = req.params.type;
+        const page = req.query.page;
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
-        yield purchaseGroupControllerInstance.getPurchaseGroupByType(res, type);
+        yield purchaseGroupControllerInstance.getPurchaseGroupByType(res, type, page);
     }));
     app.get('/api/purchaseGroup/getsuggestions/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
-        yield purchaseGroupControllerInstance.getSuggestionsPurchaseGroupByType(res);
+        yield purchaseGroupControllerInstance.getSuggestionsPurchaseGroups(res);
+    }));
+    app.get('/api/purchaseGroup/getsuggestions/:ID', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const ID = req.params.ID;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.getSuggestionsPurchaseGroupByID(res, ID);
+    }));
+    app.post('/api/purchaseGroup/getsuggestions/:ID', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const suggestionID = req.params.ID;
+        const userID = req.user.id;
+        let purchaseGroupControllerInstance = new purchaseGroupController_1.default();
+        yield purchaseGroupControllerInstance.takeSuggestionsPurchaseGroupOwnership(res, suggestionID, userID);
     }));
     app.get('/api/purchaseGroup/getgroup/user/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = new purchaseGroupController_1.default();

@@ -18,12 +18,12 @@ export const handleToken = (token, amount) => async dispatch => {
 };
 
 //fetch purchaseGropus by type
-export const fetchPurchaseGroups = (type) => async dispatch => {
-    const res = await axios.get(`/api/purchaseGroup/getgroup/type/${type}`);
+export const fetchPurchaseGroups = (type,page) => async dispatch => {
+    const res = await axios.get(`/api/purchaseGroup/getgroup/type/${type}?page=${page}`);
     dispatch({type: FETCH_PURCHASE_GROUPS, payload: res.data});
 };
 
-//fetch purchaseGropus by type
+//fetch Suggestions purchase Groupu
 export const fetchSuggestionsPurchaseGroups = () => async dispatch => {
     const res = await axios.get(`/api/purchaseGroup/getsuggestions/`);
     dispatch({type: FETCH_SUGGESTIONS_PURCHES_GROUPS, payload: res.data});
@@ -64,8 +64,8 @@ export const onAddPurchaseGroupToCart = (purchaseGroupID, amount) => async dispa
 
 // fetch custom purchase group recommended per user
 export const fetchCustomPurchaseGroups = (purchaseGroupID, amount) => async dispatch => {
-    const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
-    dispatch({type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data});
+        const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
+        dispatch({type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data});
 };
 
 // //submit a survey
@@ -75,11 +75,11 @@ export const fetchCustomPurchaseGroups = (purchaseGroupID, amount) => async disp
 //     dispatch({type: FETCH_USER, payload: res.data});
 // };
 
-//submit become a seller form
-export const becomeSellerSubmit = (values) => async dispatch => {
-    const res = await axios.post('/api/becomeseller', values);
-    dispatch({type: FETCH_USER, payload: res.data});
-};
+// //submit become a seller form
+// export const becomeSellerSubmit = (values) => async dispatch => {
+//     const res = await axios.post('/api/becomeseller', values);
+//     dispatch({type: FETCH_USER, payload: res.data});
+// };
 
 //add purchase group from form data
 export const createNewPurchaseGroup = (values, isSeller, history) => async dispatch => {

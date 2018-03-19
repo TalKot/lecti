@@ -13,10 +13,16 @@ class purchaseGroupManager {
             return purchaseGroupType ? purchaseGroupType : null;
         });
     }
-    getSuggestionsPurchaseGroupByType() {
+    getSuggestionsPurchaseGroups() {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const purchaseGroupType = yield PurchaseGroup.find({ isSuggestion: true });
-            return purchaseGroupType ? purchaseGroupType : null;
+            const purchaseGroups = yield PurchaseGroup.find({ isSuggestion: true });
+            return purchaseGroups ? purchaseGroups : null;
+        });
+    }
+    getSuggestionsPurchaseGroupByID(ID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const purchaseGroup = yield PurchaseGroup.findById(ID);
+            return purchaseGroup ? purchaseGroup : null;
         });
     }
     getPurchaseGroupById(id) {
@@ -30,16 +36,24 @@ class purchaseGroupManager {
             return purchaseGroup ? purchaseGroup : null;
         });
     }
-    getPurchaseGroupsByType(type, amount) {
+    getPurchaseGroupsByType(type, page, amount) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            let purchaseGroup = yield PurchaseGroup.find({
-                type,
-                isSuggestion: false
-            })
-                .sort({
-                discount: 1
-            })
-                .limit(amount);
+            let pageNumber = Number(page);
+            const maxPurchaseGroup = pageNumber * 12;
+            const minPurchaseGroup = maxPurchaseGroup - 12;
+            //will be used for custom purchase groups selector
+            let purchaseGroup;
+            if (amount) {
+                purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false })
+                    .sort({ discount: 1 })
+                    .limit(amount);
+            }
+            else {
+                purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false })
+                    .sort({ discount: 1 })
+                    .skip(minPurchaseGroup)
+                    .limit(maxPurchaseGroup);
+            }
             return purchaseGroup ? purchaseGroup : null;
         });
     }
@@ -265,6 +279,30 @@ class purchaseGroupManager {
                     }
                 });
                 return purchaseGroupObject;
+            }
+            catch (e) {
+                throw e;
+            }
+        });
+    }
+    createSuggestionsPurchaseGroup(data) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let purchaseGroupObject = new PurchaseGroupSchema(data);
+                return yield purchaseGroupObject.save();
+            }
+            catch (e) {
+                throw e;
+            }
+        });
+    }
+    takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                yield PurchaseGroup.findByIdAndUpdate(suggestionID, {
+                    isSuggestion: false,
+                    seller: userID
+                });
             }
             catch (e) {
                 throw e;

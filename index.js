@@ -63,8 +63,10 @@ _.once(() => tslib_1.__awaiter(this, void 0, void 0, function* () {
     //load and store purchase group data to DB
     PurchaseGroupData.forEach((purchaseGroup) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
-        purchaseGroupObject.seller = user;
-        purchaseGroupObject.isSuggestion && user.purchaseGroupsSell.push(purchaseGroupObject);
+        if (!purchaseGroupObject.isSuggestion) {
+            purchaseGroupObject.seller = user;
+            user.purchaseGroupsSell.push(purchaseGroupObject);
+        }
         purchaseGroupObject.save();
     }));
     yield user.save();

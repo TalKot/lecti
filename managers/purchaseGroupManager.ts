@@ -13,9 +13,14 @@ export default class purchaseGroupManager {
         return purchaseGroupType ? purchaseGroupType : null;
     }
 
-    async getSuggestionsPurchaseGroupByType() {
-        const purchaseGroupType = await PurchaseGroup.find({isSuggestion: true});
-        return purchaseGroupType ? purchaseGroupType : null;
+    async getSuggestionsPurchaseGroups() {
+        const purchaseGroups = await PurchaseGroup.find({isSuggestion: true});
+        return purchaseGroups ? purchaseGroups : null;
+    }
+
+    async getSuggestionsPurchaseGroupByID(ID) {
+        const purchaseGroup = await PurchaseGroup.findById(ID);
+        return purchaseGroup ? purchaseGroup : null;
     }
 
     async getPurchaseGroupById(id: string) {
@@ -28,16 +33,24 @@ export default class purchaseGroupManager {
         return purchaseGroup ? purchaseGroup : null;
     }
 
-    async getPurchaseGroupsByType(type: string, amount?: number) {
+    async getPurchaseGroupsByType(type: string, page: string, amount?: number) {
+        let pageNumber = Number(page);
 
-        let purchaseGroup = await PurchaseGroup.find({
-            type,
-            isSuggestion: false
-        })
-            .sort({
-                discount: 1
-            })
-            .limit(amount);
+        const maxPurchaseGroup = pageNumber * 12;
+        const minPurchaseGroup = maxPurchaseGroup - 12;
+        //will be used for custom purchase groups selector
+        let purchaseGroup;
+
+        if(amount){
+            purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
+                .sort({discount: 1})
+                .limit(amount);
+        }else{
+            purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
+                .sort({discount: 1})
+                .skip(minPurchaseGroup)
+                .limit(maxPurchaseGroup);
+        }
 
         return purchaseGroup ? purchaseGroup : null;
 
@@ -213,7 +226,7 @@ export default class purchaseGroupManager {
                 }
             });
             return res;
-        }catch (e){
+        } catch (e) {
             throw e;
         }
     }
@@ -272,6 +285,26 @@ export default class purchaseGroupManager {
                 }
             });
             return purchaseGroupObject;
+        } catch (e) {
+            throw e;
+        }
+    }
+
+    async createSuggestionsPurchaseGroup(data) {
+        try {
+            let purchaseGroupObject = new PurchaseGroupSchema(data);
+            return await purchaseGroupObject.save();
+        } catch (e) {
+            throw e;
+        }
+    }
+
+    async takeSuggestionsPurchaseGroupOwnership(suggestionID, userID){
+        try {
+            await PurchaseGroup.findByIdAndUpdate(suggestionID, {
+                isSuggestion: false,
+                seller : userID
+            });
         } catch (e) {
             throw e;
         }

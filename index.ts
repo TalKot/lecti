@@ -1,7 +1,6 @@
 const express = require('express');
 const keys = require('./config/keys');
 import * as mongoose from 'mongoose';
-
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
@@ -73,9 +72,12 @@ _.once(async () => {
     //load and store purchase group data to DB
     PurchaseGroupData.forEach(async purchaseGroup => {
         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
-        purchaseGroupObject.seller = user;
 
-        purchaseGroupObject.isSuggestion && user.purchaseGroupsSell.push(purchaseGroupObject);
+
+        if(!purchaseGroupObject.isSuggestion){
+            purchaseGroupObject.seller = user;
+            user.purchaseGroupsSell.push(purchaseGroupObject);
+        }
 
         purchaseGroupObject.save()
     });
