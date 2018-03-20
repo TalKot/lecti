@@ -29,7 +29,6 @@ class Seller extends Component {
                 <h1>Loading...</h1>
             )
         }
-        console.log(this.state.seller);
 
         return (
                 <div style={{textAlign: 'center'}}>

@@ -30,6 +30,19 @@ class cartController {
             }
         });
     }
+    removeFromCart(res, purchaseGroupID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let userManagerInstance = new userManager_1.default();
+                // update records values & return updated user data
+                const user = yield userManagerInstance.removeFromCart(purchaseGroupID, userID);
+                user ? httpResponse_1.default.sendOk(res, user) : httpResponse_1.default.sendError(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
 }
 exports.default = cartController;
 //# sourceMappingURL=cartController.js.map

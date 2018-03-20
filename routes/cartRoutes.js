@@ -9,5 +9,10 @@ module.exports = app => {
         let cartInstance = new cartController_1.default();
         yield cartInstance.addToCart(res, purchaseGroupID, amount, req.user._id.toString());
     }));
+    app.post('/api/cart/remove/:id', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const purchaseGroupID = req.params.id;
+        let cartInstance = new cartController_1.default();
+        yield cartInstance.removeFromCart(res, purchaseGroupID, req.user._id);
+    }));
 };
 //# sourceMappingURL=cartRoutes.js.map

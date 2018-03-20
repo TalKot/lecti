@@ -99,6 +99,18 @@ class userManager {
             });
         });
     }
+    removeFromCart(purchaseGroupID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            yield User.findByIdAndUpdate(userID, {
+                $pull: {
+                    cart: {
+                        purchaseGroup: purchaseGroupID
+                    }
+                }
+            });
+            return yield User.findByIdAndUpdate(userID);
+        });
+    }
 }
 exports.default = userManager;
 //# sourceMappingURL=userManager.js.map

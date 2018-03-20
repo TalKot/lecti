@@ -32,4 +32,16 @@ export default class cartController {
             httpResponse.sendError(res, e);
         }
     }
+
+    async removeFromCart(res, purchaseGroupID, userID) {
+        try {
+            let userManagerInstance = new userManager();
+            // update records values & return updated user data
+            const user = await userManagerInstance.removeFromCart(purchaseGroupID, userID);
+            user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
 }

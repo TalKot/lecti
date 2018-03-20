@@ -13,9 +13,7 @@ class Sales extends Component {
     };
 
     CancelPurchaseGroup = async (purchaseGroupID) => {
-        console.log(purchaseGroupID);
         await axios.post(`/api/purchaseGroup/removesale/${purchaseGroupID}/`);
-
         const {data} = await axios.get(`/api/purchaseGroup/getsales/user/`);
         this.setState({purchaseGroups: data});
         this.props.fetchUser();

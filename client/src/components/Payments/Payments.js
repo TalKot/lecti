@@ -11,7 +11,6 @@ class Payments extends Component {
         };
     }
 
-
     render() {
         if (!this.state.amount) return;
         return (
@@ -21,6 +20,7 @@ class Payments extends Component {
                 amount={this.props.amount * 100}
                 token={token => this.props.handleToken(token, this.state.amount)}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
+
             >
                 <i className="material-icons" style={{cursor: 'pointer'}}>attach_money</i>
             </StripeCheckout>

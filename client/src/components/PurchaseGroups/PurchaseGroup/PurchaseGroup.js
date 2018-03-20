@@ -1,7 +1,6 @@
 import React from 'react';
 // import swal from 'sweetalert';
 import {Link} from 'react-router-dom';
-// import axios from "axios/index";
 
 const PurchaseGroup = ({purchaseGroup}) => {
 

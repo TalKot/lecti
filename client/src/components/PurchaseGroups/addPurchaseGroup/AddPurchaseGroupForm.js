@@ -3,8 +3,6 @@ import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import formFields from "./formFields";
 import PurchaseGroupField from "./PurchaseGroupField";
-import {connect} from "react-redux";
-import * as actions from "../../../actions";
 
 // import validateEmails from "../../../utils/validateEmails";
 

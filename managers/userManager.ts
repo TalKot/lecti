@@ -100,4 +100,16 @@ export default class userManager {
         });
 
     }
+
+    async removeFromCart(purchaseGroupID, userID) {
+
+        await User.findByIdAndUpdate(userID, {
+            $pull: {
+                cart: {
+                    purchaseGroup: purchaseGroupID
+                }
+            }
+        });
+        return await User.findByIdAndUpdate(userID);
+    }
 }
