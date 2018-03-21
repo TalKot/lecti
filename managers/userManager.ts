@@ -4,7 +4,15 @@ import * as _ from 'lodash';
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
 
-export default class userManager {
+export default class UserManager {
+    /****** will be user as singelton*****/
+    private static _instance;
+
+    public static get Instance() {
+        return this._instance || (this._instance = new this());
+    }
+
+    /************************************/
 
     async getUser(userID: string) {
         const user = await User.findById(userID)
@@ -99,17 +107,5 @@ export default class userManager {
             }
         });
 
-    }
-
-    async removeFromCart(purchaseGroupID, userID) {
-
-        await User.findByIdAndUpdate(userID, {
-            $pull: {
-                cart: {
-                    purchaseGroup: purchaseGroupID
-                }
-            }
-        });
-        return await User.findByIdAndUpdate(userID);
     }
 }

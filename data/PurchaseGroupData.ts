@@ -210,6 +210,34 @@ export = [
         potentialBuyers: []
     },
     {
+        name: "shoes - purchase group 1",
+        type: "shoes",
+        priceForGroup: 15,
+        originalPrice: 20,
+        totalAmount: 50,
+        picture: "https://cdn.shopify.com/s/files/1/1104/4168/products/KotareJo.png?v=1520967294",
+        comments: [],
+        sales: 0,
+        isActive: true,
+        isDeleted: false,
+        isSuggestion: false,
+        potentialBuyers: []
+    },
+    {
+        name: "shirts - purchase group 1",
+        type: "shirts",
+        priceForGroup: 15,
+        originalPrice: 20,
+        totalAmount: 50,
+        picture: "https://www.fox.co.il/filestock/img/preview_06ef3ae.jpg",
+        comments: [],
+        sales: 0,
+        isActive: true,
+        isDeleted: false,
+        isSuggestion: false,
+        potentialBuyers: []
+    },
+    {
         name: "shoes - isSuggestion true",
         type: "computers",
         priceForGroup: 10,

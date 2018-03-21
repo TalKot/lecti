@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {FETCH_USER, FETCH_PURCHASE_GROUPS, FETCH_CUSTOM_MADE_GROUPS, FETCH_SUGGESTIONS_PURCHES_GROUPS} from './types';
+import {FETCH_USER, FETCH_PURCHASE_GROUPS, FETCH_PAGE_COUNT,
+    FETCH_CUSTOM_MADE_GROUPS, FETCH_SUGGESTIONS_PURCHES_GROUPS} from './types';
 
 //fetching user when application load
 export const fetchUser = () => async dispatch => {
@@ -18,9 +19,11 @@ export const handleToken = (token, amount) => async dispatch => {
 };
 
 //fetch purchaseGropus by type
-export const fetchPurchaseGroups = (type,page) => async dispatch => {
+export const fetchPurchaseGroups = (type, page) => async dispatch => {
     const res = await axios.get(`/api/purchaseGroup/getgroup/type/${type}?page=${page}`);
-    dispatch({type: FETCH_PURCHASE_GROUPS, payload: res.data});
+    dispatch({type: FETCH_PURCHASE_GROUPS, payload: res.data.purchaseGroup});
+    dispatch({type: FETCH_PAGE_COUNT, payload: res.data.count});
+
 };
 
 //fetch Suggestions purchase Groupu
@@ -63,9 +66,9 @@ export const onAddPurchaseGroupToCart = (purchaseGroupID, amount) => async dispa
 };
 
 // fetch custom purchase group recommended per user
-export const fetchCustomPurchaseGroups = (purchaseGroupID, amount) => async dispatch => {
-        const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
-        dispatch({type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data});
+export const fetchCustomPurchaseGroups = () => async dispatch => {
+    const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
+    dispatch({type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data.purchaseGroup});
 };
 
 // //submit a survey

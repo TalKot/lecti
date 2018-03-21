@@ -1,15 +1,23 @@
-import purchaseGroupManager from "../managers/purchaseGroupManager";
-import userManager from '../managers/userManager';
-// import cartManager from '../managers/cartManager';
+import PurchaseGroupManager from "../managers/purchaseGroupManager";
+import UserManager from '../managers/userManager';
+import CartManager from '../managers/cartManager';
 
 import httpResponse from '../common/httpResponse'
 
-export default class cartController {
+export default class CartController {
+    /****** will be user as singelton*****/
+    private static _instance;
+
+    public static get Instance() {
+        return this._instance || (this._instance = new this());
+    }
+    /************************************/
 
     async addToCart(res, purchaseGroupID: string, amount: number, userID: string) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let userManagerInstance = new userManager();
+            const purchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            const cartManagerInstance = CartManager.Instance;
+            const userManagerInstance = UserManager.Instance;
 
 
             //check available amount for client to purchase
@@ -22,7 +30,7 @@ export default class cartController {
             }
 
             // update records values
-            purchaseGroupManagerInstance.addToCart(purchaseGroupID, amount, userID);
+            await cartManagerInstance.addToCart(purchaseGroupID, amount, userID);
 
             //return updated user data
             let user = await userManagerInstance.getUser(userID);
@@ -35,9 +43,9 @@ export default class cartController {
 
     async removeFromCart(res, purchaseGroupID, userID) {
         try {
-            let userManagerInstance = new userManager();
+            const cartManagerInstance = CartManager.Instance;
             // update records values & return updated user data
-            const user = await userManagerInstance.removeFromCart(purchaseGroupID, userID);
+            const user = await cartManagerInstance.removeFromCart(purchaseGroupID, userID);
             user ? httpResponse.sendOk(res, user) : httpResponse.sendError(res);
         }
         catch (e) {

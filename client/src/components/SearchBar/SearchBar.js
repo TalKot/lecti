@@ -14,10 +14,12 @@ class SearchBar extends Component {
     render() {
         return (
             <div className="search-bar">
-                {/*<i className="material-icons">search</i>*/}
                 <input
+                    style={{marginLeft: "10px"}}
                     value={this.state.term}
-                    onChange={event => this.onInputChange(event.target.value)}/>
+                    onChange={event => this.onInputChange(event.target.value)}
+                    placeholder="Search..."
+                />
             </div>
         );
     };
@@ -28,7 +30,7 @@ class SearchBar extends Component {
 
         //TODO : WHAT TO BRING BACK WHEN SEARCH IS EMPTY?
         (_.debounce(() => {
-            search ? this.props.fetchPurchaseGroupsBySearch(search) : this.props.fetchPurchaseGroups(search);
+            search ? this.props.fetchPurchaseGroupsBySearch(search) : this.props.fetchPurchaseGroups("computers", 1);
         }, 700))()
     };
 };

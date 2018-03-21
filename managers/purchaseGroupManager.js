@@ -6,7 +6,11 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
-class purchaseGroupManager {
+class PurchaseGroupManager {
+    static get Instance() {
+        return this._instance || (this._instance = new this());
+    }
+    /************************************/
     getAllPurchaseGroups() {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroupType = yield PurchaseGroup.find({});
@@ -52,9 +56,11 @@ class purchaseGroupManager {
                 purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false })
                     .sort({ discount: -1 })
                     .skip(minPurchaseGroup)
-                    .limit(maxPurchaseGroup);
+                    .limit(12);
             }
-            return purchaseGroup ? purchaseGroup : null;
+            let count = yield PurchaseGroup.find({ type })
+                .count();
+            return purchaseGroup ? { count, purchaseGroup } : null;
         });
     }
     updatePurchaseGroupById(purchaseGroupId, value) {
@@ -109,7 +115,6 @@ class purchaseGroupManager {
     }
     addUserToPurchaseGroup(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            // amount = Number(amount);
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
                     potentialBuyers: {
@@ -147,18 +152,6 @@ class purchaseGroupManager {
             catch (e) {
                 throw e;
             }
-        });
-    }
-    addToCart(purchaseGroupID, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            yield User.findByIdAndUpdate(userID, {
-                $push: {
-                    cart: {
-                        purchaseGroup: purchaseGroupID,
-                        amount
-                    }
-                }
-            });
         });
     }
     updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
@@ -310,5 +303,5 @@ class purchaseGroupManager {
         });
     }
 }
-exports.default = purchaseGroupManager;
+exports.default = PurchaseGroupManager;
 //# sourceMappingURL=purchaseGroupManager.js.map

@@ -6,7 +6,14 @@ const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
 
 
-export default class purchaseGroupManager {
+export default class PurchaseGroupManager {
+    /****** will be user as singelton*****/
+    private static _instance;
+
+    public static get Instance() {
+        return this._instance || (this._instance = new this());
+    }
+    /************************************/
 
     async getAllPurchaseGroups() {
         const purchaseGroupType = await PurchaseGroup.find({});
@@ -41,18 +48,19 @@ export default class purchaseGroupManager {
         //will be used for custom purchase groups selector
         let purchaseGroup;
 
-        if(amount){
+        if (amount) {
             purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
                 .sort({discount: -1})
                 .limit(amount);
-        }else{
+        } else {
             purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
                 .sort({discount: -1})
                 .skip(minPurchaseGroup)
-                .limit(maxPurchaseGroup);
+                .limit(12);
         }
-
-        return purchaseGroup ? purchaseGroup : null;
+        let count = await PurchaseGroup.find({type})
+            .count();
+        return purchaseGroup ? {count, purchaseGroup} : null;
 
     }
 
@@ -106,7 +114,6 @@ export default class purchaseGroupManager {
 
 
     async addUserToPurchaseGroup(purchaseGroupID: string, amount: number, userID: string) {
-        // amount = Number(amount);
         await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
             $push: {
                 potentialBuyers: {
@@ -144,17 +151,6 @@ export default class purchaseGroupManager {
         } catch (e) {
             throw e;
         }
-    }
-
-    async addToCart(purchaseGroupID: string, amount: number, userID: string) {
-        await User.findByIdAndUpdate(userID, {
-            $push: {
-                cart: {
-                    purchaseGroup: purchaseGroupID,
-                    amount
-                }
-            }
-        });
     }
 
     async updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
@@ -299,11 +295,11 @@ export default class purchaseGroupManager {
         }
     }
 
-    async takeSuggestionsPurchaseGroupOwnership(suggestionID, userID){
+    async takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
         try {
             await PurchaseGroup.findByIdAndUpdate(suggestionID, {
                 isSuggestion: false,
-                seller : userID
+                seller: userID
             });
         } catch (e) {
             throw e;

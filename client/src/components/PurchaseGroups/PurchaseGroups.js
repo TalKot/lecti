@@ -34,6 +34,34 @@ class PurchaseGroups extends Component {
         this.props.fetchPurchaseGroups(this.props.match.params.item, page);
     };
 
+    getNextPageButton = () => {
+        return (
+
+            <button className="col" onClick={() => this.changeToNextPage()}>
+                <i className="material-icons">navigate_next</i>
+            </button>
+        );
+    }
+
+    getPreviousPageButton = () => {
+        if (this.state.page == 1) return;
+        return (
+            <button className="col" onClick={() => this.changeToPreviousPage()}>
+                <i className="material-icons">navigate_before</i>
+            </button>
+        );
+    }
+
+    getPagesButtons = () => {
+        if (this.state.page * 12 > this.props.pageCount) return;
+        return (
+            <div className="center row" style={{margin: "30px", display: "inline-block"}}>
+                {this.getPreviousPageButton()}
+                <div className="col">{this.state.page}</div>
+                {this.getNextPageButton()}
+            </div>
+        );
+    };
 
     render() {
 
@@ -48,7 +76,7 @@ class PurchaseGroups extends Component {
         return (
             <div style={{textAlign: 'center'}}>
                 <h1>
-                    Purchase Groups type - {this.props.match.params.item}
+                    Purchase Groups type - {this.props.match.params.item} - {this.props.pageCount}
                 </h1>
 
                 <div className="row">
@@ -66,20 +94,8 @@ class PurchaseGroups extends Component {
                 </div>
 
 
-                <div className="center row" style={{margin: "30px", display: "inline-block"}}>
-                    <button className="col" onClick={() => this.changeToPreviousPage()}
-                    >
-                        <i className="material-icons">navigate_before</i>
-                    </button>
+                {this.getPagesButtons()}
 
-                    <div className="col">{this.state.page}</div>
-
-
-                    <button className="col" onClick={() => this.changeToNextPage()}
-                    >
-                        <i className="material-icons">navigate_next</i>
-                    </button>
-                </div>
 
             </div>
         );
@@ -87,8 +103,8 @@ class PurchaseGroups extends Component {
 
 };
 
-function mapStateToProps({purchaseGroups}) {
-    return {purchaseGroups};
+function mapStateToProps({purchaseGroups, pageCount}) {
+    return {purchaseGroups, pageCount};
 }
 
 export default connect(mapStateToProps, actions)(PurchaseGroups);

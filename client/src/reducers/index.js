@@ -4,14 +4,13 @@ import authReducer from './authReducer';
 import purchaseGroupsReducer from './purchaseGroupsReducer';
 import customPurchaseGroupsReducer from './customPurchaseGroupsReducer';
 import purchaseGroupsSuggestionsReducer from './purchaseGroupsSuggestionsReducer';
+import purchaseGroupsPageCountReducer from './purchaseGroupsPageCountReducer';
 
 export default combineReducers({
     auth: authReducer,
     purchaseGroups: purchaseGroupsReducer,
     customPurchaseGroups: customPurchaseGroupsReducer,
     suggestionsPurchaseGroups: purchaseGroupsSuggestionsReducer,
-    // form: reduxForm,
-    // becomeSellerForm: reduxForm,
-    // newPurchaseGroupForm: reduxForm
+    pageCount : purchaseGroupsPageCountReducer,
     form: reduxForm
 });

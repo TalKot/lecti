@@ -6,7 +6,7 @@ const requireLogin = require('../middlewares/requireLogin');
 module.exports = app => {
     app.get('/api/seller/:id', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         const id = req.params.id;
-        let userControllerInstance = new userController_1.default();
+        let userControllerInstance = userController_1.default.Instance;
         yield userControllerInstance.getSellerById(res, id);
     }));
 };

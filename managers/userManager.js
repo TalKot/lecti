@@ -5,7 +5,11 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
-class userManager {
+class UserManager {
+    static get Instance() {
+        return this._instance || (this._instance = new this());
+    }
+    /************************************/
     getUser(userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const user = yield User.findById(userID)
@@ -99,18 +103,6 @@ class userManager {
             });
         });
     }
-    removeFromCart(purchaseGroupID, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            yield User.findByIdAndUpdate(userID, {
-                $pull: {
-                    cart: {
-                        purchaseGroup: purchaseGroupID
-                    }
-                }
-            });
-            return yield User.findByIdAndUpdate(userID);
-        });
-    }
 }
-exports.default = userManager;
+exports.default = UserManager;
 //# sourceMappingURL=userManager.js.map

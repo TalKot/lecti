@@ -1,15 +1,24 @@
-import purchaseGroupManager from '../managers/purchaseGroupManager';
-import userManager from '../managers/userManager';
+import PurchaseGroupManager from '../managers/purchaseGroupManager';
+import UserManager from '../managers/userManager';
 import httpResponse from '../common/httpResponse'
 import CustomPurchaseGroupSelector from "../services/customPurchaseGropusSelector/customPurchaseGropusSelector";
 import * as _ from 'lodash';
 
-export default class purchaseGroupController {
+export default class PurchaseGroupController {
+
+    /****** will be user as singelton*****/
+    private static _instance;
+
+    public static get Instance() {
+        return this._instance || (this._instance = new this());
+    }
+    /************************************/
+
 
     async getAllPurchaseGroups(res) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getAllPurchaseGroups();
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.getAllPurchaseGroups();
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -19,8 +28,8 @@ export default class purchaseGroupController {
 
     async getPurchaseGroupById(res, id: string) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupById(id);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupById(id);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -30,8 +39,8 @@ export default class purchaseGroupController {
 
     async getPurchaseGroupByType(res, type: string, page: string) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -41,8 +50,8 @@ export default class purchaseGroupController {
 
     async getSuggestionsPurchaseGroups(res) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getSuggestionsPurchaseGroups();
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.getSuggestionsPurchaseGroups();
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -52,8 +61,8 @@ export default class purchaseGroupController {
 
     async getSuggestionsPurchaseGroupByID(res, ID) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroup = await purchaseGroupManagerInstance.getSuggestionsPurchaseGroupByID(ID);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroup = await PurchaseGroupManagerInstance.getSuggestionsPurchaseGroupByID(ID);
             purchaseGroup ? httpResponse.sendOk(res, purchaseGroup) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -63,8 +72,8 @@ export default class purchaseGroupController {
 
     async getPurchaseGroupsByUserId(res, userId: string) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByUserId(userId);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByUserId(userId);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -74,8 +83,8 @@ export default class purchaseGroupController {
 
     async getSalesPurchaseGroupsByUserId(res, userId: string) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getSalesPurchaseGroupsByUserId(userId);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.getSalesPurchaseGroupsByUserId(userId);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -88,10 +97,10 @@ export default class purchaseGroupController {
             amount = Number(amount);
             let purchaseGroupShouldClose: boolean = false;
 
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let userManagerInstance = new userManager();
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let UserManagerInstance = UserManager.Instance;
 
-            const purchaseGroup = await purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+            const purchaseGroup = await PurchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
 
             // purchase group validation tests
             if (purchaseGroup) {
@@ -126,7 +135,7 @@ export default class purchaseGroupController {
             }
 
             //validate that purchase group is new
-            const purchaseGroupsBought = await userManagerInstance.getPurchaseGroupsBoughtByUserID(userID);
+            const purchaseGroupsBought = await UserManagerInstance.getPurchaseGroupsBoughtByUserID(userID);
             let userPurchaseGroupBoughtList = _.keyBy(purchaseGroupsBought, obj =>
                 obj.purchaseGroup.toString()
             );
@@ -136,24 +145,23 @@ export default class purchaseGroupController {
                 // in user - need to update user credits and purchaseGroupsBought amount
                 // in purchase group - need to update sales and potentialBuyers
                 await Promise.all([
-                    userManagerInstance.updatePurchaseGroupToUser(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID),
-                    purchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID)
+                    UserManagerInstance.updatePurchaseGroupToUser(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID),
+                    PurchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID)
                 ])
 
             } else {
                 //new purchase group for this user
                 // update records values
                 // await Promise.all([
-                await purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                    await userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
+                await PurchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                    await UserManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
                 // ]);
             }
             // check and update purchase group active status if needed
             if (purchaseGroupShouldClose) {
-                await purchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, {isActive: false})
+                await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, {isActive: false})
             }
             //return values
-            //todo - need to fix amounts here
             await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
 
         }
@@ -166,11 +174,10 @@ export default class purchaseGroupController {
         try {
             const customPurchaseGroupSelector = CustomPurchaseGroupSelector.Instance;
             const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
-            //todo - need to fix amounts here
             const RETURN_ARRAY_AMOUNT: number = 3;
 
-            const purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
 
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
@@ -181,15 +188,15 @@ export default class purchaseGroupController {
 
     async removePurchaseGroupsFromUser(res, userID, purchaseGroupToRemove, amount, price) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let userManagerInstance = new userManager();
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let UserManagerInstance = UserManager.Instance;
 
             // in user - update credits & purchaseGroupsBought
             // in purchase group - sales & potentialBuyers
             await Promise.all([
-                purchaseGroupManagerInstance.removeUserFromPurchaseGroup(userID, purchaseGroupToRemove, amount),
-                userManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
-            ])
+                PurchaseGroupManagerInstance.removeUserFromPurchaseGroup(userID, purchaseGroupToRemove, amount),
+                UserManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
+            ]);
             return await this.getPurchaseGroupsByUserId(res, userID);
         }
         catch (e) {
@@ -199,10 +206,8 @@ export default class purchaseGroupController {
 
     async removeSellPurchaseGroupsFromUser(res, userID, purchaseGroupToRemove) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            await purchaseGroupManagerInstance.removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove)
-
-            //TODO - THIS SHOULD BE RETURNED?
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            await PurchaseGroupManagerInstance.removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove)
             return await this.getPurchaseGroupsByUserId(res, userID);
         }
         catch (e) {
@@ -212,8 +217,8 @@ export default class purchaseGroupController {
 
     async purchaseGroupsViewed(res, userID, purchaseGroupsViewed) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            await purchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            await PurchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
             return;
         }
         catch (e) {
@@ -223,8 +228,8 @@ export default class purchaseGroupController {
 
     async searchPurchaseGroup(res, searchValue) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let purchaseGroups = await purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let purchaseGroups = await PurchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
         }
         catch (e) {
@@ -234,14 +239,14 @@ export default class purchaseGroupController {
 
     async typeOnNotRelevantList(res, userID, type, status) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
 
             if (status) {
                 //add purchase group type to not relevant list
-                await purchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);
+                await PurchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);
             } else {
                 //remove purchase group type to not relevant list
-                await purchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
+                await PurchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
             }
         }
         catch (e) {
@@ -251,8 +256,8 @@ export default class purchaseGroupController {
 
     async increaseAttemptsAndCheck(res, userID, type) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            await purchaseGroupManagerInstance.increaseAttemptsAndCheck(userID, type);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            await PurchaseGroupManagerInstance.increaseAttemptsAndCheck(userID, type);
             httpResponse.sendOk(res)
         }
         catch (e) {
@@ -262,22 +267,23 @@ export default class purchaseGroupController {
 
     async createPurchaseGroup(res, data, userID) {
         try {
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
-            let userManagerInstance = new userManager();
-            const user = await userManagerInstance.getUser(userID);
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            let UserManagerInstance = UserManager.Instance;
+
+            const user = await UserManagerInstance.getUser(userID);
             let purchaseGroup = {};
 
             if (user.isSeller) {
                 //will create active purchase group because user type seller
                 data.seller = userID;
-                purchaseGroup = await purchaseGroupManagerInstance.createPurchaseGroup(data);
+                purchaseGroup = await PurchaseGroupManagerInstance.createPurchaseGroup(data);
                 user.purchaseGroupsSell.push(purchaseGroup['_id']);
                 await user.save();
 
             } else {
                 //will create suggestion purchase group because user ype is buyer
                 data.isSuggestion = true;
-                purchaseGroup = await purchaseGroupManagerInstance.createSuggestionsPurchaseGroup(data);
+                purchaseGroup = await PurchaseGroupManagerInstance.createSuggestionsPurchaseGroup(data);
             }
             purchaseGroup ? httpResponse.sendOk(res, purchaseGroup) : httpResponse.sendError(res);
         }
@@ -288,11 +294,12 @@ export default class purchaseGroupController {
 
     async takeSuggestionsPurchaseGroupOwnership(res, suggestionID, userID) {
         try {
-            let userManagerInstance = new userManager();
-            let purchaseGroupManagerInstance = new purchaseGroupManager();
+            let UserManagerInstance = UserManager.Instance;
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+
             await Promise.all([
-                userManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID),
-                purchaseGroupManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID)
+                UserManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID),
+                PurchaseGroupManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID)
             ]);
             httpResponse.sendOk(res);
         }

@@ -6,12 +6,16 @@ const userManager_1 = require("../managers/userManager");
 const httpResponse_1 = require("../common/httpResponse");
 const customPurchaseGropusSelector_1 = require("../services/customPurchaseGropusSelector/customPurchaseGropusSelector");
 const _ = require("lodash");
-class purchaseGroupController {
+class PurchaseGroupController {
+    static get Instance() {
+        return this._instance || (this._instance = new this());
+    }
+    /************************************/
     getAllPurchaseGroups(res) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getAllPurchaseGroups();
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.getAllPurchaseGroups();
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -22,8 +26,8 @@ class purchaseGroupController {
     getPurchaseGroupById(res, id) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupById(id);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupById(id);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -34,8 +38,8 @@ class purchaseGroupController {
     getPurchaseGroupByType(res, type, page) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -46,8 +50,8 @@ class purchaseGroupController {
     getSuggestionsPurchaseGroups(res) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getSuggestionsPurchaseGroups();
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.getSuggestionsPurchaseGroups();
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -58,8 +62,8 @@ class purchaseGroupController {
     getSuggestionsPurchaseGroupByID(res, ID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroup = yield purchaseGroupManagerInstance.getSuggestionsPurchaseGroupByID(ID);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroup = yield PurchaseGroupManagerInstance.getSuggestionsPurchaseGroupByID(ID);
                 purchaseGroup ? httpResponse_1.default.sendOk(res, purchaseGroup) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -70,8 +74,8 @@ class purchaseGroupController {
     getPurchaseGroupsByUserId(res, userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByUserId(userId);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByUserId(userId);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -82,8 +86,8 @@ class purchaseGroupController {
     getSalesPurchaseGroupsByUserId(res, userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getSalesPurchaseGroupsByUserId(userId);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.getSalesPurchaseGroupsByUserId(userId);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -96,9 +100,9 @@ class purchaseGroupController {
             try {
                 amount = Number(amount);
                 let purchaseGroupShouldClose = false;
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let userManagerInstance = new userManager_1.default();
-                const purchaseGroup = yield purchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let UserManagerInstance = userManager_1.default.Instance;
+                const purchaseGroup = yield PurchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
                 // purchase group validation tests
                 if (purchaseGroup) {
                     // check that group is active
@@ -125,31 +129,30 @@ class purchaseGroupController {
                     }
                 }
                 //validate that purchase group is new
-                const purchaseGroupsBought = yield userManagerInstance.getPurchaseGroupsBoughtByUserID(userID);
+                const purchaseGroupsBought = yield UserManagerInstance.getPurchaseGroupsBoughtByUserID(userID);
                 let userPurchaseGroupBoughtList = _.keyBy(purchaseGroupsBought, obj => obj.purchaseGroup.toString());
                 if (userPurchaseGroupBoughtList[purchaseGroupID]) {
                     //purchase group already in this user list
                     // in user - need to update user credits and purchaseGroupsBought amount
                     // in purchase group - need to update sales and potentialBuyers
                     yield Promise.all([
-                        userManagerInstance.updatePurchaseGroupToUser(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID),
-                        purchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID)
+                        UserManagerInstance.updatePurchaseGroupToUser(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID),
+                        PurchaseGroupManagerInstance.updateUserOnPurchaseGroup(purchaseGroupID, purchaseGroup.priceForGroup, amount, userID)
                     ]);
                 }
                 else {
                     //new purchase group for this user
                     // update records values
                     // await Promise.all([
-                    yield purchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                        yield userManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID);
+                    yield PurchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                        yield UserManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID);
                     // ]);
                 }
                 // check and update purchase group active status if needed
                 if (purchaseGroupShouldClose) {
-                    yield purchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false });
+                    yield PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false });
                 }
                 //return values
-                //todo - need to fix amounts here
                 yield this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
             }
             catch (e) {
@@ -162,10 +165,9 @@ class purchaseGroupController {
             try {
                 const customPurchaseGroupSelector = customPurchaseGropusSelector_1.default.Instance;
                 const type = yield customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
-                //todo - need to fix amounts here
                 const RETURN_ARRAY_AMOUNT = 3;
-                const purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -176,13 +178,13 @@ class purchaseGroupController {
     removePurchaseGroupsFromUser(res, userID, purchaseGroupToRemove, amount, price) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let userManagerInstance = new userManager_1.default();
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let UserManagerInstance = userManager_1.default.Instance;
                 // in user - update credits & purchaseGroupsBought
                 // in purchase group - sales & potentialBuyers
                 yield Promise.all([
-                    purchaseGroupManagerInstance.removeUserFromPurchaseGroup(userID, purchaseGroupToRemove, amount),
-                    userManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
+                    PurchaseGroupManagerInstance.removeUserFromPurchaseGroup(userID, purchaseGroupToRemove, amount),
+                    UserManagerInstance.removePurchaseGroupFromUser(userID, purchaseGroupToRemove, amount, price)
                 ]);
                 return yield this.getPurchaseGroupsByUserId(res, userID);
             }
@@ -194,9 +196,8 @@ class purchaseGroupController {
     removeSellPurchaseGroupsFromUser(res, userID, purchaseGroupToRemove) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                yield purchaseGroupManagerInstance.removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove);
-                //TODO - THIS SHOULD BE RETURNED?
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                yield PurchaseGroupManagerInstance.removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove);
                 return yield this.getPurchaseGroupsByUserId(res, userID);
             }
             catch (e) {
@@ -207,8 +208,8 @@ class purchaseGroupController {
     purchaseGroupsViewed(res, userID, purchaseGroupsViewed) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                yield purchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                yield PurchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
                 return;
             }
             catch (e) {
@@ -219,8 +220,8 @@ class purchaseGroupController {
     searchPurchaseGroup(res, searchValue) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let purchaseGroups = yield purchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let purchaseGroups = yield PurchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
@@ -231,14 +232,14 @@ class purchaseGroupController {
     typeOnNotRelevantList(res, userID, type, status) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 if (status) {
                     //add purchase group type to not relevant list
-                    yield purchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);
+                    yield PurchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);
                 }
                 else {
                     //remove purchase group type to not relevant list
-                    yield purchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
+                    yield PurchaseGroupManagerInstance.removeTypeToNotRelevantList(userID, type);
                 }
             }
             catch (e) {
@@ -249,8 +250,8 @@ class purchaseGroupController {
     increaseAttemptsAndCheck(res, userID, type) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                yield purchaseGroupManagerInstance.increaseAttemptsAndCheck(userID, type);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                yield PurchaseGroupManagerInstance.increaseAttemptsAndCheck(userID, type);
                 httpResponse_1.default.sendOk(res);
             }
             catch (e) {
@@ -261,21 +262,21 @@ class purchaseGroupController {
     createPurchaseGroup(res, data, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
-                let userManagerInstance = new userManager_1.default();
-                const user = yield userManagerInstance.getUser(userID);
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                let UserManagerInstance = userManager_1.default.Instance;
+                const user = yield UserManagerInstance.getUser(userID);
                 let purchaseGroup = {};
                 if (user.isSeller) {
                     //will create active purchase group because user type seller
                     data.seller = userID;
-                    purchaseGroup = yield purchaseGroupManagerInstance.createPurchaseGroup(data);
+                    purchaseGroup = yield PurchaseGroupManagerInstance.createPurchaseGroup(data);
                     user.purchaseGroupsSell.push(purchaseGroup['_id']);
                     yield user.save();
                 }
                 else {
                     //will create suggestion purchase group because user ype is buyer
                     data.isSuggestion = true;
-                    purchaseGroup = yield purchaseGroupManagerInstance.createSuggestionsPurchaseGroup(data);
+                    purchaseGroup = yield PurchaseGroupManagerInstance.createSuggestionsPurchaseGroup(data);
                 }
                 purchaseGroup ? httpResponse_1.default.sendOk(res, purchaseGroup) : httpResponse_1.default.sendError(res);
             }
@@ -287,11 +288,11 @@ class purchaseGroupController {
     takeSuggestionsPurchaseGroupOwnership(res, suggestionID, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let userManagerInstance = new userManager_1.default();
-                let purchaseGroupManagerInstance = new purchaseGroupManager_1.default();
+                let UserManagerInstance = userManager_1.default.Instance;
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 yield Promise.all([
-                    userManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID),
-                    purchaseGroupManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID)
+                    UserManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID),
+                    PurchaseGroupManagerInstance.takeSuggestionsPurchaseGroupOwnership(suggestionID, userID)
                 ]);
                 httpResponse_1.default.sendOk(res);
             }
@@ -301,5 +302,5 @@ class purchaseGroupController {
         });
     }
 }
-exports.default = purchaseGroupController;
+exports.default = PurchaseGroupController;
 //# sourceMappingURL=purchaseGroupController.js.map

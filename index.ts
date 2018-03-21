@@ -61,6 +61,7 @@ if (process.env.NODE_ENV === 'production') {
 
 //will call start notify once.
 _.once(async () => {
+
     //notifications system
     //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
     //customPurchaseGroupsSelector.notify();

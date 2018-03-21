@@ -7,7 +7,7 @@ import axios from "axios/index";
 class Home extends Component {
 
     componentDidMount() {
-        this.props.fetchCustomPurchaseGroups(this.props.auth);
+        this.props.fetchCustomPurchaseGroups();
 
     }
 
