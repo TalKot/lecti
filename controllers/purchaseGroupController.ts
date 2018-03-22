@@ -39,6 +39,7 @@ export default class PurchaseGroupController {
 
     async getPurchaseGroupByType(res, type: string, page: string) {
         try {
+            // throw new Error('some problem.');
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
@@ -152,18 +153,19 @@ export default class PurchaseGroupController {
             } else {
                 //new purchase group for this user
                 // update records values
-                // await Promise.all([
-                await PurchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                    await UserManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
-                // ]);
+                //TODO - SHOULD WORK BELOW?
+                await Promise.all([
+                    PurchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                    UserManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
+                ]);
             }
             // check and update purchase group active status if needed
             if (purchaseGroupShouldClose) {
                 await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, {isActive: false})
             }
+            //TODO - WE NEED THIS?
             //return values
             await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
-
         }
         catch (e) {
             httpResponse.sendError(res, e);

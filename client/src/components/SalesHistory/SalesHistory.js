@@ -25,7 +25,7 @@ class Sales extends Component {
                 <a className="btn-floating disabled"><i className="material-icons">remove_circle_outline</i></a>
             </td>) :
             (<td key={Math.random()} style={{textAlign: 'center'}}>
-                <a className="btn-floating" onClick={() => {
+                <a className="btn-floating pulse" onClick={() => {
                     this.CancelPurchaseGroup(purchaseGroup._id)
                 }}><i
                     className="material-icons">remove_circle_outline</i></a>
@@ -45,16 +45,16 @@ class Sales extends Component {
 
 
                 <h1>Sales History</h1>
-                <table>
+                <table className="striped highlight centered">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>name</th>
+                        <th>Name</th>
                         <th>Total Amount</th>
                         <th>Sales</th>
-                        <th>originalPrice</th>
-                        <th>priceForGroup</th>
-                        <th>type</th>
+                        <th>Original Price</th>
+                        <th>Group Price</th>
+                        <th>Type</th>
                         <th>Cancel Group</th>
                     </tr>
                     </thead>

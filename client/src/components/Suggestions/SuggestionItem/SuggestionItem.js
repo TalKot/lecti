@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../../actions';
 import axios from "axios/index";
+import swal from 'sweetalert';
 
 class SuggestionPurchaseGroupItem extends Component {
 
@@ -13,15 +14,18 @@ class SuggestionPurchaseGroupItem extends Component {
 
     takeOwnership = async () => {
         const ID = this.state.suggestion._id;
-        return await axios.post(`/api/purchaseGroup/getsuggestions/${ID}`);
+        await axios.post(`/api/purchaseGroup/getsuggestions/${ID}`);
     };
 
     takeOwnershipIfAdmin = () => {
         if (this.props.auth.isSeller) {
+            swal("Take Ownership!", 'Because your user type is "seller", you can take ownership on this purchase group suggestion.Click on the button to take ownership on this group.');
             return (
                 <div className="card-panel #fff9c4 blue lighten-4 center text-darken-2" style={{width: "100%"}}>
                     <a href={`/purchasegroup/${this.state.suggestion._id}`}
-                          onClick={() => this.takeOwnership()}
+                          onClick={() => {
+                              this.takeOwnership()
+                          }}
                     >
                         Because your user type is "seller", you can take ownership on this purchase group suggestion.
                     </a>

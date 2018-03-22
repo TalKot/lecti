@@ -3,6 +3,7 @@ import axios from "axios/index";
 import {connect} from "react-redux";
 import * as actions from "../../../actions";
 import {Link} from 'react-router-dom';
+import swal from 'sweetalert';
 
 class PurchaseGroupItem extends Component {
 
@@ -15,6 +16,23 @@ class PurchaseGroupItem extends Component {
     notify() {
         axios.post(`/api/purchaseGroup/viewed/${this.props.match.params.item}/`);
     }
+
+    buyPurchaseGroup = async (purchaseGroup, amount) => {
+        let status = await this.props.onAddPurchaseGroup(purchaseGroup._id, amount);
+        if (status) {
+            swal("Nice For You!", `You have purchased ${amount} amount of ${purchaseGroup.name}.`, "success");
+        } else {
+            swal("ops! something went wrong!", `You didn't purchase ${amount} amount of ${purchaseGroup.name}.`, "warning");
+        }
+
+    };
+
+    addToCart = async (purchaseGroup, amount) => {
+        let res = await this.props.onAddPurchaseGroupToCart(purchaseGroup._id, amount);
+        console.log(res);
+        // swal("Nice For You!", `Product ${purchaseGroup.name} with ${amount} amount added to cart .`, "success");
+
+    };
 
     render() {
 
@@ -31,7 +49,7 @@ class PurchaseGroupItem extends Component {
         let amount = 0;
         const activeOrDisable = this.state.purchaseGroupData.isActive ? "" : "disabled";
 
-        console.log(this.state.purchaseGroupData);
+        // console.log(this.state.purchaseGroupData);
         return (
             <div>
                 <div style={{textAlign: 'center'}}>
@@ -59,15 +77,13 @@ class PurchaseGroupItem extends Component {
                                                 type="submit"
                                                 name="action"
                                                 onClick={() => {
-                                                    // swal("Nice For You!", `You have purchased ${amount} amount of ${purchaseGroup.name}.`, "success");
-                                                    this.props.onAddPurchaseGroup(this.state.purchaseGroupData._id, amount);
+                                                    this.buyPurchaseGroup(this.state.purchaseGroupData, amount)
                                                 }}>Buy
                                         </button>
                                         <button className="btn waves-effect waves-light right red" type="submit"
                                                 name="action"
                                                 onClick={() => {
-                                                    this.props.onAddPurchaseGroupToCart(this.state.purchaseGroupData._id, amount)
-                                                    // swal("Nice For You!", `Product ${purchaseGroup.name} with ${amount} amount added to cart .`, "success");
+                                                    this.addToCart(this.state.purchaseGroupData, amount)
                                                 }}>Cart
                                         </button>
                                     </div>
@@ -86,7 +102,8 @@ class PurchaseGroupItem extends Component {
 
                                 <div className="col s3 m6">
                                     <div className="card-panel">
-                                        <h6>Stock - {this.state.purchaseGroupData.sales}/{this.state.purchaseGroupData.totalAmount}</h6>
+                                        <h6>Stock
+                                            - {this.state.purchaseGroupData.sales}/{this.state.purchaseGroupData.totalAmount}</h6>
                                         <i className="material-icons">shopping_basket</i>
                                     </div>
                                 </div>
@@ -103,7 +120,7 @@ class PurchaseGroupItem extends Component {
                                                 <img src={this.state.purchaseGroupData.seller.photoURL}
                                                      alt={this.state.purchaseGroupData.seller.photoURL}/>
                                                 <Link to={`/seller/${this.state.purchaseGroupData.seller._id}`}>
-                                                {this.state.purchaseGroupData.seller.displayName}
+                                                    {this.state.purchaseGroupData.seller.displayName}
                                                 </Link>
                                             </div>
                                             <div className="col s5">

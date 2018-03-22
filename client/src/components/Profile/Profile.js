@@ -39,7 +39,7 @@ class Profile extends Component {
     getPurchaseHistory() {
         if (this.state.purchaseGroups.length) {
             return (
-                <table>
+                <table className="striped centered">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -118,14 +118,18 @@ class Profile extends Component {
                         <div className="row">
                             <div className="col s3 m6">
                                 <div className="card-panel">
+                                    <i className="material-icons" style={{margin:"10px"}}>shopping_basket</i>
                                     Total Purchase Groups Bought - {this.state.purchaseGroups.length}
-                                    <i className="material-icons">shopping_basket</i>
                                 </div>
                             </div>
 
                             <div className="col s3 m6">
+
+
                                 <div className="card-panel">
-                                    Auth ID - {this.props.auth.AuthId}
+                                    <i className="material-icons prefix" style={{margin:"10px"}}>account_circle</i>
+                                    <span className="title">User Auth ID - </span>
+                                    {this.props.auth.AuthId}
                                 </div>
                             </div>
 

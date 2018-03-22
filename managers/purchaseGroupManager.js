@@ -13,8 +13,7 @@ class PurchaseGroupManager {
     /************************************/
     getAllPurchaseGroups() {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const purchaseGroupType = yield PurchaseGroup.find({});
-            return purchaseGroupType ? purchaseGroupType : null;
+            return yield PurchaseGroup.find({});
         });
     }
     getSuggestionsPurchaseGroups() {

@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
 import {Link} from 'react-router-dom';
 
+
 class PurchaseGroups extends Component {
     constructor(props) {
         super(props);
@@ -17,9 +18,9 @@ class PurchaseGroups extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         let page = this.state ? this.state.page : 1;
-        this.props.fetchPurchaseGroups(this.props.match.params.item, page);
+        await this.props.fetchPurchaseGroups(this.props.match.params.item, page);
     }
 
     changeToNextPage = () => {
@@ -36,7 +37,6 @@ class PurchaseGroups extends Component {
 
     getNextPageButton = () => {
         return (
-
             <button className="col" onClick={() => this.changeToNextPage()}>
                 <i className="material-icons">navigate_next</i>
             </button>
@@ -44,7 +44,7 @@ class PurchaseGroups extends Component {
     }
 
     getPreviousPageButton = () => {
-        if (this.state.page == 1) return;
+        if (Number(this.state.page) === 1) return;
         return (
             <button className="col" onClick={() => this.changeToPreviousPage()}>
                 <i className="material-icons">navigate_before</i>
@@ -63,6 +63,7 @@ class PurchaseGroups extends Component {
         );
     };
 
+
     render() {
 
         if (!this.props.purchaseGroups.length) {
@@ -75,9 +76,8 @@ class PurchaseGroups extends Component {
 
         return (
             <div style={{textAlign: 'center'}}>
-                <h1>
-                    Purchase Groups type - {this.props.match.params.item} - {this.props.pageCount}
-                </h1>
+
+                <h5>{this.props.pageCount} results for Purchase Groups type - {this.props.match.params.item}</h5>
 
                 <div className="row">
                     {
@@ -93,10 +93,7 @@ class PurchaseGroups extends Component {
                     </Link>
                 </div>
 
-
                 {this.getPagesButtons()}
-
-
             </div>
         );
     }

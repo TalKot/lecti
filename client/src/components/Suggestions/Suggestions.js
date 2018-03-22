@@ -40,9 +40,9 @@ class Suggestions extends Component {
                     {
                         this.props.suggestionsPurchaseGroups.map(purchaseGroupSuggestions => {
 
-                            return <PurchaseGroupSuggestions key={Math.random()} purchaseGroupSuggestion={purchaseGroupSuggestions}
-                                                  // onAddPurchaseGroup={this.props.onAddPurchaseGroup}
-                                                  // onAddPurchaseGroupToCart={this.props.onAddPurchaseGroupToCart}
+                            return <PurchaseGroupSuggestions
+                                key={Math.random()}
+                                purchaseGroupSuggestion={purchaseGroupSuggestions}
                             />
                         })
                     }

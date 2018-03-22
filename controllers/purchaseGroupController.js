@@ -38,6 +38,7 @@ class PurchaseGroupController {
     getPurchaseGroupByType(res, type, page) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
+                // throw new Error('some problem.');
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 let purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
@@ -143,15 +144,17 @@ class PurchaseGroupController {
                 else {
                     //new purchase group for this user
                     // update records values
-                    // await Promise.all([
-                    yield PurchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
-                        yield UserManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID);
-                    // ]);
+                    //TODO - SHOULD WORK BELOW?
+                    yield Promise.all([
+                        PurchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
+                        UserManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
+                    ]);
                 }
                 // check and update purchase group active status if needed
                 if (purchaseGroupShouldClose) {
                     yield PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false });
                 }
+                //TODO - WE NEED THIS?
                 //return values
                 yield this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
             }

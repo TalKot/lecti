@@ -16,8 +16,7 @@ export default class PurchaseGroupManager {
     /************************************/
 
     async getAllPurchaseGroups() {
-        const purchaseGroupType = await PurchaseGroup.find({});
-        return purchaseGroupType ? purchaseGroupType : null;
+        return await PurchaseGroup.find({});
     }
 
     async getSuggestionsPurchaseGroups() {
