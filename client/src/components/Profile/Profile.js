@@ -5,6 +5,10 @@ import React, {Component} from 'react';
 import axios from "axios/index";
 
 class Profile extends Component {
+    constructor(props) {
+        super(props);
+        this.setState({rating: 3,comment: ''});
+    }
 
     async componentDidMount() {
         const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
@@ -25,7 +29,7 @@ class Profile extends Component {
     isActiveButton = (purchaseGroup, amount, price) => {
         return purchaseGroup.data.isActive ?
             (<td key={Math.random()}>
-                <a className="btn-floating" onClick={() => {
+                <a className="btn-floating #f44336 red pulse" onClick={() => {
                     this.removePurchaseGroup(purchaseGroup, amount, price)
                 }}><i
                     className="material-icons">remove_circle_outline</i></a>
@@ -43,12 +47,12 @@ class Profile extends Component {
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>name</th>
-                        <th>amount</th>
-                        <th>time</th>
-                        <th>originalPrice</th>
-                        <th>priceForGroup</th>
-                        <th>type</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Time</th>
+                        <th>Original Price</th>
+                        <th>Group Price</th>
+                        <th>Type</th>
                         <th>Remove</th>
                     </tr>
                     </thead>
@@ -118,7 +122,7 @@ class Profile extends Component {
                         <div className="row">
                             <div className="col s3 m6">
                                 <div className="card-panel">
-                                    <i className="material-icons" style={{margin:"10px"}}>shopping_basket</i>
+                                    <i className="material-icons" style={{margin: "10px"}}>shopping_basket</i>
                                     Total Purchase Groups Bought - {this.state.purchaseGroups.length}
                                 </div>
                             </div>
@@ -127,7 +131,7 @@ class Profile extends Component {
 
 
                                 <div className="card-panel">
-                                    <i className="material-icons prefix" style={{margin:"10px"}}>account_circle</i>
+                                    <i className="material-icons prefix" style={{margin: "10px"}}>account_circle</i>
                                     <span className="title">User Auth ID - </span>
                                     {this.props.auth.AuthId}
                                 </div>
@@ -144,7 +148,6 @@ class Profile extends Component {
                                     User Type - {this.props.auth.isSeller ? "Seller" : "Buyer"}
                                 </div>
                             </div>
-
 
                         </div>
                     </div>

@@ -15,7 +15,6 @@ const purchaseGroupSchema = require('./models/PurchaseGroup');
 const userSchema = require('./models/User');
 //loading all models
 require('./models/Comment');
-require('./models/SellerComment');
 require('./models/PurchaseGroup');
 require('./models/User');
 require('./models/Survey');
@@ -42,8 +41,9 @@ require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/purchaseGroupRoutes')(app);
 require('./routes/cartRoutes')(app);
-require('./routes/surveyRoutes')(app);
+// require('./routes/surveyRoutes')(app);
 require('./routes/userRoutes')(app);
+require('./routes/commentRoutes')(app);
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build')); // serve up production assets
     // if route cannot be found - serve up index.html

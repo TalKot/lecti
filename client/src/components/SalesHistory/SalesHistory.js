@@ -25,7 +25,7 @@ class Sales extends Component {
                 <a className="btn-floating disabled"><i className="material-icons">remove_circle_outline</i></a>
             </td>) :
             (<td key={Math.random()} style={{textAlign: 'center'}}>
-                <a className="btn-floating pulse" onClick={() => {
+                <a className="btn-floating #f44336 red pulse" onClick={() => {
                     this.CancelPurchaseGroup(purchaseGroup._id)
                 }}><i
                     className="material-icons">remove_circle_outline</i></a>

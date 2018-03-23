@@ -21,7 +21,7 @@ class Header extends Component {
                     <li key="2" style={{margin: '0 10px'}}>
                         Credits: {this.props.auth.credits}
                     </li>,
-                    <li key="7"><Link to={'/profile'}>Profile</Link></li>,
+                    <li key="7"><Link to={`/profile/${this.props.auth._id}`}>Profile</Link></li>,
                     <li key="8"><Link to={'/cart'}><i className="material-icons">shopping_cart</i></Link></li>,
                     <li key="9"><Payments /></li>,
                     <li key="10"><a href="/api/logout">Logout</a></li>,
@@ -37,7 +37,7 @@ class Header extends Component {
 
     render() {
         return (
-            <nav className="nav-extended">
+            <nav className="nav-extended #1976d2 blue darken-2">
                 <div className="nav-wrapper">
                     <Link to='/home' className="left brand-logo" style={{marginLeft: "7px"}}>Lecti</Link>
                     <ul className="right">

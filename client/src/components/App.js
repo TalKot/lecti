@@ -39,7 +39,7 @@ class App extends Component {
                         <Route exact path="/pur/new" component={SurveyNew}/>
                         <Route exact path="/purchasegroup/:item" component={purchaseGroupItem}/>
                         <Route exact path="/purchasegroups/:item" component={PurchaseGroups}/>
-                        <Route exact path="/profile" component={Profile}/>
+                        <Route exact path="/profile/:id" component={Profile}/>
                         <Route exact path="/payments" component={Payments}/>
                         <Route exact path="/cart" component={Cart}/>
                         <Route exact path="/suggestions" component={Suggestions}/>

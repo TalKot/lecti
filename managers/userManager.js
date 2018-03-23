@@ -33,6 +33,15 @@ class UserManager {
                 .populate({
                 path: 'purchaseGroupsSell',
                 model: 'purchaseGroups'
+            })
+                .populate({
+                path: 'comments',
+                model: 'comments',
+                populate: {
+                    path: 'user',
+                    model: 'users',
+                    select: ["displayName", "_id"]
+                }
             });
             return user ? user : null;
         });

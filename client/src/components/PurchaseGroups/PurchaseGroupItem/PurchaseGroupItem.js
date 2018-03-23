@@ -26,10 +26,10 @@ class PurchaseGroupItem extends Component {
         }
 
     };
-
+    //TODO - NEED TO COMPLETE THIS CODE
     addToCart = async (purchaseGroup, amount) => {
-        let res = await this.props.onAddPurchaseGroupToCart(purchaseGroup._id, amount);
-        console.log(res);
+        let status = await this.props.onAddPurchaseGroupToCart(purchaseGroup._id, amount);
+        console.log(status);
         // swal("Nice For You!", `Product ${purchaseGroup.name} with ${amount} amount added to cart .`, "success");
 
     };
@@ -80,7 +80,7 @@ class PurchaseGroupItem extends Component {
                                                     this.buyPurchaseGroup(this.state.purchaseGroupData, amount)
                                                 }}>Buy
                                         </button>
-                                        <button className="btn waves-effect waves-light right red" type="submit"
+                                        <button className="btn waves-effect waves-light right #7986cb indigo lighten-2" type="submit"
                                                 name="action"
                                                 onClick={() => {
                                                     this.addToCart(this.state.purchaseGroupData, amount)

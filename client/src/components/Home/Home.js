@@ -81,21 +81,12 @@ class Home extends Component {
                     </p>
                 </div>
 
-
-                <div className="section center" style={{height:'600px',width:'800px',marginLeft:"140px"}}>
-                    <Slide
-                        images={images}
-                        duration={5000}
-                        transitionDuration={1000}
-                    />
-                </div>
-
                 <div className="section">
                     <div className="row">
 
                         <div className="col s4">
                             <div className="center promo promo-example">
-                                <i className="large material-icons" style={{color:"red"}}>flash_on</i>
+                                <i className="large material-icons">flash_on</i>
                                 <h4>Speeds up development</h4>
                                 <p>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
                             </div>
@@ -103,7 +94,7 @@ class Home extends Component {
 
                         <div className="col s4">
                             <div className="center promo promo-example">
-                                <i className="large material-icons" style={{color:"red"}}>group</i>
+                                <i className="large material-icons">group</i>
                                 <h4>User Experience Focused</h4>
                                 <p>By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
                             </div>
@@ -112,7 +103,7 @@ class Home extends Component {
 
                         <div className="col s4">
                             <div className="center promo promo-example">
-                                <i className="large material-icons" style={{color:"red"}}>settings</i>
+                                <i className="large material-icons">settings</i>
                                 <h4>Easy To Work with The Platform</h4>
                                 <p>We have provided detailed documentation as well as specific code examples to help new users get started.</p>
                             </div>
@@ -121,6 +112,18 @@ class Home extends Component {
 
                     </div>
                 </div>
+
+
+                <div className="section center" style={{height:'700px',width:'800px',marginLeft:"140px"}}>
+                    <Slide
+                        images={images}
+                        duration={5000}
+                        transitionDuration={1000}
+                    />
+                </div>
+
+
+
             </div>
         )
     }
