@@ -106,7 +106,7 @@ class Seller extends Component {
                 </div>
             );
         }
-        console.log(this.state.seller);
+        // console.log(this.state.seller);
 
         return (
             <div style={{textAlign: 'center'}}>
@@ -129,18 +129,33 @@ class Seller extends Component {
                             <div className="col s3 m6">
                                 <div className="card-panel">
 
-                                    <i className="material-icons prefix medium" onClick={async () => {
-                                        await this.changeRating(5);
-                                    }}
-                                       style={{margin: "10px"}}>sentiment_very_satisfied</i>
-                                    <i className="material-icons prefix medium" onClick={async () => {
-                                        await this.changeRating(3);
-                                    }}
-                                       style={{margin: "10px"}}>sentiment_neutral</i>
-                                    <i className="material-icons prefix medium" onClick={async () => {
-                                        await this.changeRating(1);
-                                    }}
-                                       style={{margin: "10px"}}>sentiment_very_dissatisfied</i>
+                                    <i className='material-icons medium' id="happy" style={{margin: "10px", cursor: 'pointer'}}
+                                       onClick={async () => {
+                                           document.getElementById("happy").style.color = "blue";
+                                           document.getElementById("medium").style.color = "black";
+                                           document.getElementById("sad").style.color = "black";
+
+                                           await this.changeRating(5)
+                                       }}
+                                    >sentiment_very_satisfied</i>
+
+                                    <i className="material-icons medium"  id="medium" style={{margin: "10px", cursor: 'pointer'}}
+                                       onClick={async () => {
+                                           document.getElementById("medium").style.color = "blue";
+                                           document.getElementById("happy").style.color = "black";
+                                           document.getElementById("sad").style.color = "black";
+                                           await this.changeRating(3)
+                                       }}
+                                    >sentiment_neutral</i>
+
+                                    <i className="material-icons medium" id="sad" style={{margin: "10px", cursor: 'pointer'}}
+                                       onClick={async () => {
+                                           document.getElementById("sad").style.color = "blue";
+                                           document.getElementById("medium").style.color = "black";
+                                           document.getElementById("happy").style.color = "black";
+                                           await this.changeRating(1);
+                                       }}
+                                    >sentiment_very_dissatisfied</i>
 
                                     <div className="row">
                                         <div className="input-field col s12">
