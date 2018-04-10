@@ -72,7 +72,7 @@ class Home extends Component {
 
                 <div>
                     <p>
-                        <input onChange={(event) => {
+                        <input onChange={event => {
                             onChangeRelevant(event.target.checked)
                         }}
                                type="checkbox" id="relevant"/>

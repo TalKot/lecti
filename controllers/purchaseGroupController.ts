@@ -39,7 +39,6 @@ export default class PurchaseGroupController {
 
     async getPurchaseGroupByType(res, type: string, page: string) {
         try {
-            // throw new Error('some problem.');
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
             purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
@@ -179,11 +178,17 @@ export default class PurchaseGroupController {
             const RETURN_ARRAY_AMOUNT: number = 3;
 
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
-            let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
+            let purchaseGroups;
 
-            purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
-        }
-        catch (e) {
+            if(type === 'cheapest'){
+                purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT);
+                purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+            }else {
+                purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
+                purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
+
+            }
+        } catch (e) {
             httpResponse.sendError(res, e);
         }
     }

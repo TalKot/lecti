@@ -46,7 +46,17 @@ class PurchaseGroupManager {
             const minPurchaseGroup = maxPurchaseGroup - 12;
             //will be used for custom purchase groups selector
             let purchaseGroup;
-            if (amount) {
+            if (amount && !type) {
+                purchaseGroup = yield PurchaseGroup.find({ isSuggestion: false })
+                    .sort({ discount: -1 })
+                    .limit(amount);
+                let res = {
+                    count: amount,
+                    purchaseGroup
+                };
+                return res;
+            }
+            else if (amount) {
                 purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false })
                     .sort({ discount: -1 })
                     .limit(amount);

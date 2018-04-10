@@ -1,9 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 const express = require('express');
 const keys = require('./config/keys');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
@@ -41,7 +46,6 @@ require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/purchaseGroupRoutes')(app);
 require('./routes/cartRoutes')(app);
-// require('./routes/surveyRoutes')(app);
 require('./routes/userRoutes')(app);
 require('./routes/commentRoutes')(app);
 if (process.env.NODE_ENV === 'production') {
@@ -53,7 +57,7 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 //will call start notify once.
-_.once(() => tslib_1.__awaiter(this, void 0, void 0, function* () {
+_.once(() => __awaiter(this, void 0, void 0, function* () {
     //notifications system
     //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
     //customPurchaseGroupsSelector.notify();
@@ -61,7 +65,7 @@ _.once(() => tslib_1.__awaiter(this, void 0, void 0, function* () {
     const user = new userSchema(UserData);
     yield user.save();
     //load and store purchase group data to DB
-    PurchaseGroupData.forEach((purchaseGroup) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+    PurchaseGroupData.forEach((purchaseGroup) => __awaiter(this, void 0, void 0, function* () {
         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
         if (!purchaseGroupObject.isSuggestion) {
             purchaseGroupObject.seller = user;

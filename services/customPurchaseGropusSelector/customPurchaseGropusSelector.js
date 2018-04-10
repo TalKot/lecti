@@ -8,6 +8,7 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const clientNotify = require('./clientList');
 const purchaseGroupsTypesValue = require("./purcahseGroupsTypesValueList");
+const CategoryCalculationWeight = require('./purcahseGroupsCategoryCalculationWeight');
 const WEEK = 1000 * 60 * 60 * 24 * 7;
 class CustomPurchaseGroupsSelector {
     constructor() {
@@ -32,22 +33,17 @@ class CustomPurchaseGroupsSelector {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             let selectedType;
             const user = yield User.findById(userId);
-            // .populate({
-            //     path:'purchaseGroupsViewed',
-            //     model: 'purchaseGroups'
-            // });
             try {
                 const purchaseGroupManager = new purchaseGroupManager_1.default();
                 const purchaseGroupsByUser = yield purchaseGroupManager.getPurchaseGroupsByUserId(userId);
                 let purchaseGroupsResults = {};
                 let purchaseGroupsTimes = {};
                 let purchaseGroupsViews = {};
+                let purchaseGroupsAmount = {};
                 let purchaseGroupsPriority = purchaseGroupsTypesValue;
                 // getting amount of each purchase group viewed by current user
                 user.purchaseGroupsViewed.forEach(type => {
-                    // const type = purchaseGroupViewed;
                     if (purchaseGroupsViews[type]) {
-                        // const value = purchaseGroupsViews[type] + 1;
                         purchaseGroupsViews[type] += 1;
                     }
                     else {
@@ -68,31 +64,36 @@ class CustomPurchaseGroupsSelector {
                     else {
                         purchaseGroupsTimes[type] = timeDiff;
                     }
-                    if (purchaseGroupsResults[type]) {
-                        const value = purchaseGroupsResults[type] + 1;
-                        purchaseGroupsResults[type] = value;
+                    if (purchaseGroupsAmount[type]) {
+                        const value = purchaseGroupsAmount[type] + 1;
+                        purchaseGroupsAmount[type] = value;
                     }
                     else {
-                        purchaseGroupsResults[type] = 1;
+                        purchaseGroupsAmount[type] = 1;
                     }
                 });
                 // remove all purchase groups that client marked as not relevant
                 user.notRelevantTypes.forEach(typeToRemove => {
-                    if (purchaseGroupsResults[typeToRemove]) {
-                        delete purchaseGroupsResults[typeToRemove];
+                    if (purchaseGroupsAmount[typeToRemove]) {
+                        delete purchaseGroupsAmount[typeToRemove];
                     }
                 });
-                //TODO - IS THIS CORRECT?
+                Object.keys(purchaseGroupsAmount).forEach(type => {
+                    purchaseGroupsResults[type] = 0;
+                });
                 //calculating all data combined
                 Object.keys(purchaseGroupsResults).forEach(type => {
                     if (purchaseGroupsPriority[type]) {
-                        purchaseGroupsResults[type] *= purchaseGroupsPriority[type];
+                        purchaseGroupsResults[type] += purchaseGroupsAmount[type] * CategoryCalculationWeight.amount;
+                    }
+                    if (purchaseGroupsPriority[type]) {
+                        purchaseGroupsResults[type] += purchaseGroupsPriority[type] * CategoryCalculationWeight.priority;
                     }
                     if (purchaseGroupsViews[type]) {
-                        purchaseGroupsResults[type] += purchaseGroupsViews[type];
+                        purchaseGroupsResults[type] += purchaseGroupsViews[type] * CategoryCalculationWeight.viewed;
                     }
                     if (purchaseGroupsTimes[type]) {
-                        purchaseGroupsResults[type] /= purchaseGroupsTimes[type];
+                        purchaseGroupsResults[type] += ((1 / purchaseGroupsTimes[type]) * CategoryCalculationWeight.time);
                     }
                 });
                 //get result
@@ -102,12 +103,12 @@ class CustomPurchaseGroupsSelector {
                     });
                 }
                 else {
-                    //TODO - what happened when empty object?
-                    selectedType = 'computers';
+                    // will return the mix of the most discounted purchase groups for new users.
+                    selectedType = 'cheapest';
                 }
             }
             catch (e) {
-                selectedType = 'computers';
+                selectedType = 'cheapest';
             }
             const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
             this.message.push(res);

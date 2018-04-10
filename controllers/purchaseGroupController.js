@@ -38,7 +38,6 @@ class PurchaseGroupController {
     getPurchaseGroupByType(res, type, page) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                // throw new Error('some problem.');
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 let purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
                 purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
@@ -170,8 +169,15 @@ class PurchaseGroupController {
                 const type = yield customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
                 const RETURN_ARRAY_AMOUNT = 3;
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
-                let purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
-                purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
+                let purchaseGroups;
+                if (type === 'cheapest') {
+                    purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT);
+                    purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
+                }
+                else {
+                    purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
+                    purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
+                }
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);

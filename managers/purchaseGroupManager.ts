@@ -47,7 +47,17 @@ export default class PurchaseGroupManager {
         //will be used for custom purchase groups selector
         let purchaseGroup;
 
-        if (amount) {
+        if (amount && !type){
+            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false})
+                .sort({discount: -1})
+                .limit(amount);
+            let res = {
+                count :amount,
+                purchaseGroup
+            };
+            return res;
+
+        } else if (amount) {
             purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
                 .sort({discount: -1})
                 .limit(amount);

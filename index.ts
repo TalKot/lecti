@@ -1,6 +1,6 @@
 const express = require('express');
 const keys = require('./config/keys');
-import * as mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
@@ -44,7 +44,6 @@ require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/purchaseGroupRoutes')(app);
 require('./routes/cartRoutes')(app);
-// require('./routes/surveyRoutes')(app);
 require('./routes/userRoutes')(app);
 require('./routes/commentRoutes')(app);
 
