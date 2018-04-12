@@ -138,7 +138,7 @@ export default class PurchaseGroupManager {
 
     async purchaseGroupsViewed(userID, purchaseGroupsViewed) {
 
-        let [{type}, user] = await Promise.all([
+        let [{subCategory}, user] = await Promise.all([
             PurchaseGroup.findById(purchaseGroupsViewed),
             User.findById(userID)
         ]);
@@ -147,14 +147,14 @@ export default class PurchaseGroupManager {
             if (user.purchaseGroupsViewed.length < 5) {
                 await User.findByIdAndUpdate(userID, {
                     $push: {
-                        purchaseGroupsViewed: type
+                        purchaseGroupsViewed: subCategory
                     }
                 });
 
             } else {
                 //TODO - NEED TO DEVELOP LIFO STACK
                 user.purchaseGroupsViewed.pop();
-                user.purchaseGroupsViewed.push(type);
+                user.purchaseGroupsViewed.push(subCategory);
                 await user.save();
             }
         } catch (e) {
@@ -229,6 +229,21 @@ export default class PurchaseGroupManager {
                 $text: {
                     $search: searchValue
                 }
+            });
+            return res;
+        } catch (e) {
+            throw e;
+        }
+    }
+
+     async getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
+        try {
+
+            let res = await PurchaseGroup.findOne({
+                $text: {
+                    $search: purchaseGroupsSimilarName
+                },
+                isSuggestion: userType
             });
             return res;
         } catch (e) {

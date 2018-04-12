@@ -140,7 +140,7 @@ class PurchaseGroupManager {
     }
     purchaseGroupsViewed(userID, purchaseGroupsViewed) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            let [{ type }, user] = yield Promise.all([
+            let [{ subCategory }, user] = yield Promise.all([
                 PurchaseGroup.findById(purchaseGroupsViewed),
                 User.findById(userID)
             ]);
@@ -148,14 +148,14 @@ class PurchaseGroupManager {
                 if (user.purchaseGroupsViewed.length < 5) {
                     yield User.findByIdAndUpdate(userID, {
                         $push: {
-                            purchaseGroupsViewed: type
+                            purchaseGroupsViewed: subCategory
                         }
                     });
                 }
                 else {
                     //TODO - NEED TO DEVELOP LIFO STACK
                     user.purchaseGroupsViewed.pop();
-                    user.purchaseGroupsViewed.push(type);
+                    user.purchaseGroupsViewed.push(subCategory);
                     yield user.save();
                 }
             }
@@ -225,6 +225,22 @@ class PurchaseGroupManager {
                     $text: {
                         $search: searchValue
                     }
+                });
+                return res;
+            }
+            catch (e) {
+                throw e;
+            }
+        });
+    }
+    getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let res = yield PurchaseGroup.findOne({
+                    $text: {
+                        $search: purchaseGroupsSimilarName
+                    },
+                    isSuggestion: userType
                 });
                 return res;
             }

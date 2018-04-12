@@ -52,24 +52,24 @@ class CustomPurchaseGroupsSelector {
                 });
                 // getting amount of each purchase group type
                 purchaseGroupsByUser.forEach(purchaseGroup => {
-                    const type = purchaseGroup.data.type;
+                    const { subCategory } = purchaseGroup.data;
                     const timeBought = moment(purchaseGroup.time).unix();
                     const now = moment().unix();
                     const timeDiff = moment.duration(now - timeBought).asSeconds();
-                    if (purchaseGroupsTimes[type]) {
-                        if (purchaseGroupsTimes[type] > timeDiff) {
-                            purchaseGroupsTimes[type] = timeDiff;
+                    if (purchaseGroupsTimes[subCategory]) {
+                        if (purchaseGroupsTimes[subCategory] > timeDiff) {
+                            purchaseGroupsTimes[subCategory] = timeDiff;
                         }
                     }
                     else {
-                        purchaseGroupsTimes[type] = timeDiff;
+                        purchaseGroupsTimes[subCategory] = timeDiff;
                     }
-                    if (purchaseGroupsAmount[type]) {
-                        const value = purchaseGroupsAmount[type] + 1;
-                        purchaseGroupsAmount[type] = value;
+                    if (purchaseGroupsAmount[subCategory]) {
+                        const value = purchaseGroupsAmount[subCategory] + 1;
+                        purchaseGroupsAmount[subCategory] = value;
                     }
                     else {
-                        purchaseGroupsAmount[type] = 1;
+                        purchaseGroupsAmount[subCategory] = 1;
                     }
                 });
                 // remove all purchase groups that client marked as not relevant

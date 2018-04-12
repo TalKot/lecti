@@ -233,6 +233,17 @@ export default class PurchaseGroupController {
         }
     }
 
+    async getSimilarGroupByName(res, purchaseGroupsSimilarName, userType){
+        try {
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            const similarPurchaseGroup =  await PurchaseGroupManagerInstance.getSimilarGroupByName(purchaseGroupsSimilarName, userType);
+            httpResponse.sendOk(res, similarPurchaseGroup);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
     async searchPurchaseGroup(res, searchValue) {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;

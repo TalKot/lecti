@@ -84,6 +84,13 @@ module.exports = app => {
         await purchaseGroupControllerInstance.purchaseGroupsViewed(res, req.user.id, purchaseGroupsViewed);
     });
 
+    app.get('/api/purchaseGroup/checksimilar/:isSeller/:name/', requireLogin, async (req, res) => {
+        const purchaseGroupsSimilarName = req.params.name;
+        const userType = req.params.isSeller;
+        let purchaseGroupControllerInstance = PurchaseGroupController.Instance;
+        await purchaseGroupControllerInstance.getSimilarGroupByName(res, purchaseGroupsSimilarName, userType);
+    });
+
     app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, async (req, res) => {
         let {purchaseGroupID, amount} = req.body;
         let userID = req.user._id.toString();

@@ -226,6 +226,18 @@ class PurchaseGroupController {
             }
         });
     }
+    getSimilarGroupByName(res, purchaseGroupsSimilarName, userType) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                const similarPurchaseGroup = yield PurchaseGroupManagerInstance.getSimilarGroupByName(purchaseGroupsSimilarName, userType);
+                httpResponse_1.default.sendOk(res, similarPurchaseGroup);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
     searchPurchaseGroup(res, searchValue) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {

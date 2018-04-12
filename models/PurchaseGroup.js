@@ -29,7 +29,7 @@ const purchaseGroup = new mongoose.Schema({
     priceForGroup: Number,
     originalPrice: Number,
     potentialBuyers: [potentialBuyers],
-    category: String,
+    subCategory: String,
     type: String,
     description: String,
     discount: Number,

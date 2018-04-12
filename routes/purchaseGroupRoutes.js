@@ -71,6 +71,12 @@ module.exports = app => {
         let purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
         yield purchaseGroupControllerInstance.purchaseGroupsViewed(res, req.user.id, purchaseGroupsViewed);
     }));
+    app.get('/api/purchaseGroup/checksimilar/:isSeller/:name/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const purchaseGroupsSimilarName = req.params.name;
+        const userType = req.params.isSeller;
+        let purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
+        yield purchaseGroupControllerInstance.getSimilarGroupByName(res, purchaseGroupsSimilarName, userType);
+    }));
     app.post('/api/purchaseGroup/buy/', requireLogin, requireCredits, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let { purchaseGroupID, amount } = req.body;
         let userID = req.user._id.toString();

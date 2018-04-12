@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import formFields from './formFields';
 import {withRouter} from 'react-router-dom';
 import * as actions from '../../../actions'
-
+import axios from 'axios';
 
 const PurchaseGroupFormReview = ({onCancel, formValues, createNewPurchaseGroup, history,auth}) => {
     if (!auth) {
@@ -45,6 +45,18 @@ const PurchaseGroupFormReview = ({onCancel, formValues, createNewPurchaseGroup, 
         }
     };
 
+    const getSimilarGroup =async () =>{
+
+           let similarPurchaseGroup = await axios.get(`/api/purchaseGroup/checksimilar/${auth.isSeller}/${formValues.name}`);
+            return (
+                <div className="card-panel #fff9c4 yellow lighten-4 center">
+                    <span className="text-darken-2">Because your user is type seller, this purchase group will open as live and active purchase group.</span>
+                    <div>{similarPurchaseGroup.data._id}</div>
+                </div>
+
+            );
+    };
+
     return (
         <div>
             {getWarning()}
@@ -62,6 +74,7 @@ const PurchaseGroupFormReview = ({onCancel, formValues, createNewPurchaseGroup, 
             >
                 Submit
             </button>
+            {getSimilarGroup()}
         </div>
     );
 };
