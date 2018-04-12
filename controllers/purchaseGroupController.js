@@ -310,6 +310,30 @@ class PurchaseGroupController {
             }
         });
     }
+    joinSuggestionGroup(res, groupID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                PurchaseGroupManagerInstance.joinSuggestionGroup(groupID, userID);
+                httpResponse_1.default.sendOk(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
+    leaveSuggestionGroup(res, groupID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                PurchaseGroupManagerInstance.leaveSuggestionGroup(groupID, userID);
+                httpResponse_1.default.sendOk(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
 }
 exports.default = PurchaseGroupController;
 //# sourceMappingURL=purchaseGroupController.js.map

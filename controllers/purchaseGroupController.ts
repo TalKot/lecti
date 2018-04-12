@@ -314,4 +314,26 @@ export default class PurchaseGroupController {
             httpResponse.sendError(res, e);
         }
     }
+
+    async joinSuggestionGroup(res, groupID, userID){
+        try {
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            PurchaseGroupManagerInstance.joinSuggestionGroup(groupID, userID);
+            httpResponse.sendOk(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    async leaveSuggestionGroup(res, groupID, userID){
+        try {
+            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+            PurchaseGroupManagerInstance.leaveSuggestionGroup(groupID, userID);
+            httpResponse.sendOk(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
 }

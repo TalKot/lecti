@@ -4,7 +4,7 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
-
+let { attempts } = require('../config/keys');
 
 export default class PurchaseGroupManager {
     /****** will be user as singelton*****/
@@ -262,11 +262,9 @@ export default class PurchaseGroupManager {
 
     async increaseAttemptsAndCheck(userID, type) {
 
-        const ATTEMPTS = 4;
-
         const user = await User.findById(userID);
 
-        if (user.typesAttempts < ATTEMPTS) {
+        if (user.typesAttempts < attempts) {
 
             user.typesAttempts += 1;
             await user.save();
@@ -304,12 +302,53 @@ export default class PurchaseGroupManager {
         }
     }
 
+    //todo - need to heck this that schame potentialBuyers is emapty after taking ownership
     async takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
         try {
             await PurchaseGroup.findByIdAndUpdate(suggestionID, {
                 isSuggestion: false,
-                seller: userID
+                seller: userID,
+                $set: {
+                    potentialBuyers: []
+                }
             });
+
+        } catch (e) {
+            throw e;
+        }
+    }
+    async joinSuggestionGroup(groupID, userID) {
+        try {
+            let suggestionGroup = await PurchaseGroup.findById(groupID);
+            let buyers = suggestionGroup.potentialBuyers;
+            buyers = _.keyBy(buyers, 'user');
+            if(!buyers[userID]) {
+                suggestionGroup.potentialBuyers.push({
+                    user: userID,
+                    amount: 1,
+                    time: Date.now()
+                });
+                await suggestionGroup.save();
+            }
+
+        } catch (e) {
+            throw e;
+        }
+    }
+
+    async leaveSuggestionGroup(groupID, userID) {
+        try {
+
+            await PurchaseGroup.findByIdAndUpdate(groupID, {
+                    $pull: {
+                    potentialBuyers: {
+                         $elemMatch: {
+                             user: userID
+                             }
+                         }
+                    },
+                });
+
         } catch (e) {
             throw e;
         }

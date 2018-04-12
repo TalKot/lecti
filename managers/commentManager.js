@@ -14,9 +14,11 @@ class CommentManager {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             let commentObject = new commentSchema({ rating, comment, seller, user: userID });
             commentObject = yield commentObject.save();
-            let user = yield User.findById(userID);
-            user.comments.push(commentObject);
-            yield user.save();
+            yield User.findByIdAndUpdate(seller, {
+                $push: {
+                    comments: commentObject._id.toString()
+                }
+            });
         });
     }
 }

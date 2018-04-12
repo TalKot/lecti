@@ -6,6 +6,7 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
+let { attempts } = require('../config/keys');
 class PurchaseGroupManager {
     static get Instance() {
         return this._instance || (this._instance = new this());
@@ -255,9 +256,8 @@ class PurchaseGroupManager {
     }
     increaseAttemptsAndCheck(userID, type) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const ATTEMPTS = 4;
             const user = yield User.findById(userID);
-            if (user.typesAttempts < ATTEMPTS) {
+            if (user.typesAttempts < attempts) {
                 user.typesAttempts += 1;
                 yield user.save();
             }
@@ -298,12 +298,54 @@ class PurchaseGroupManager {
             }
         });
     }
+    //todo - need to heck this that schame potentialBuyers is emapty after taking ownership
     takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 yield PurchaseGroup.findByIdAndUpdate(suggestionID, {
                     isSuggestion: false,
-                    seller: userID
+                    seller: userID,
+                    $set: {
+                        potentialBuyers: []
+                    }
+                });
+            }
+            catch (e) {
+                throw e;
+            }
+        });
+    }
+    joinSuggestionGroup(groupID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let suggestionGroup = yield PurchaseGroup.findById(groupID);
+                let buyers = suggestionGroup.potentialBuyers;
+                buyers = _.keyBy(buyers, 'user');
+                if (!buyers[userID]) {
+                    suggestionGroup.potentialBuyers.push({
+                        user: userID,
+                        amount: 1,
+                        time: Date.now()
+                    });
+                    yield suggestionGroup.save();
+                }
+            }
+            catch (e) {
+                throw e;
+            }
+        });
+    }
+    leaveSuggestionGroup(groupID, userID) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                yield PurchaseGroup.findByIdAndUpdate(groupID, {
+                    $pull: {
+                        potentialBuyers: {
+                            $elemMatch: {
+                                user: userID
+                            }
+                        }
+                    },
                 });
             }
             catch (e) {

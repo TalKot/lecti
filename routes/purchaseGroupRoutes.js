@@ -35,6 +35,18 @@ module.exports = app => {
         let purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
         yield purchaseGroupControllerInstance.takeSuggestionsPurchaseGroupOwnership(res, suggestionID, userID);
     }));
+    app.post('/api/purchaseGroup/join/suggestions/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const { groupID } = req.body;
+        const userID = req.user.id;
+        let purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
+        yield purchaseGroupControllerInstance.joinSuggestionGroup(res, groupID, userID);
+    }));
+    app.post('/api/purchaseGroup/leave/suggestions/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const { groupID } = req.body;
+        const userID = req.user.id;
+        let purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
+        yield purchaseGroupControllerInstance.leaveSuggestionGroup(res, groupID, userID);
+    }));
     app.get('/api/purchaseGroup/getgroup/user/', requireLogin, (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
         yield purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);

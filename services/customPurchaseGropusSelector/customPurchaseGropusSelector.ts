@@ -5,7 +5,7 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const clientNotify = require('./clientList');
 import purchaseGroupsTypesValue = require('./purcahseGroupsTypesValueList');
-const CategoryCalculationWeight = require('./purcahseGroupsCategoryCalculationWeight');
+const CategoryCalculationWeight = require('../../config/keys');
 
 
 const WEEK: number = 1000 * 60 * 60 * 24 * 7;

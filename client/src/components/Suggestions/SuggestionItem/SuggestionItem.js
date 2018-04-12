@@ -34,6 +34,25 @@ class SuggestionPurchaseGroupItem extends Component {
         }
     };
 
+    joinGroup = async () =>{
+        swal("Joined Suggestion!", 'Thank you for joining the group. Because the group is suggestion only, no money was taken from your account.');
+        const options = {
+            groupID : this.state.suggestion._id
+        };
+
+        await axios.post(`/api/purchaseGroup/join/suggestions/`,options);
+    };
+
+    leaveGroup = async () =>{
+        swal("Left Suggestion!", 'Because the group is suggestion only, no money was refunded.');
+
+        const options = {
+            groupID : this.state.suggestion._id
+        };
+
+        await axios.post(`/api/purchaseGroup/leave/suggestions/`,options);
+
+    };
 
     render() {
         if (!this.props.auth || !this.state) {
@@ -81,12 +100,22 @@ class SuggestionPurchaseGroupItem extends Component {
 
                                 <div className="col s3 m6">
                                     <div className="card-panel">
-                                        <h6>Stock
-                                            - {this.state.suggestion.sales}/{this.state.suggestion.totalAmount}</h6>
-                                        <i className="material-icons">shopping_basket</i>
+                                        <h6>Stock - {this.state.suggestion.totalAmount}</h6>
+                                        <h6>Joined - {this.state.suggestion.potentialBuyers.length}</h6>
+                                        <div>
+                                                <div>
+                                                join group - <i className="material-icons"
+                                                                style={{ cursor: 'pointer'}}
+                                                onClick={this.joinGroup}>exposure_plus_1</i>
+                                            </div>
+                                            <div>
+                                                leave group - <i className="material-icons"
+                                                              style={{cursor: 'pointer'}}
+                                                    onClick={this.leaveGroup}>exposure_neg_1</i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
 
                             </div>
                         </div>

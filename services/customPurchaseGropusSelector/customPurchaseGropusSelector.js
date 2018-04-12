@@ -8,7 +8,7 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const clientNotify = require('./clientList');
 const purchaseGroupsTypesValue = require("./purcahseGroupsTypesValueList");
-const CategoryCalculationWeight = require('./purcahseGroupsCategoryCalculationWeight');
+const CategoryCalculationWeight = require('../../config/keys');
 const WEEK = 1000 * 60 * 60 * 24 * 7;
 class CustomPurchaseGroupsSelector {
     constructor() {

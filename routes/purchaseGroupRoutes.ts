@@ -41,6 +41,20 @@ module.exports = app => {
         await purchaseGroupControllerInstance.takeSuggestionsPurchaseGroupOwnership(res, suggestionID, userID);
     });
 
+    app.post('/api/purchaseGroup/join/suggestions/', async (req, res) => {
+        const {groupID} = req.body;
+        const userID = req.user.id;
+        let purchaseGroupControllerInstance = PurchaseGroupController.Instance;
+        await purchaseGroupControllerInstance.joinSuggestionGroup(res, groupID, userID);
+    });
+
+    app.post('/api/purchaseGroup/leave/suggestions/', async (req, res) => {
+        const {groupID} = req.body;
+        const userID = req.user.id;
+        let purchaseGroupControllerInstance = PurchaseGroupController.Instance;
+        await purchaseGroupControllerInstance.leaveSuggestionGroup(res, groupID, userID);
+    });
+
     app.get('/api/purchaseGroup/getgroup/user/', requireLogin, async (req, res) => {
         let purchaseGroupControllerInstance = PurchaseGroupController.Instance;
         await purchaseGroupControllerInstance.getPurchaseGroupsByUserId(res, req.user.id);

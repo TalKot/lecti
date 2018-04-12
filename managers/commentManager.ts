@@ -16,8 +16,10 @@ export default class CommentManager {
     async postComment(rating, seller, comment, userID){
         let commentObject = new commentSchema({rating,comment,seller,user:userID});
         commentObject = await commentObject.save();
-        let user = await User.findById(userID);
-        user.comments.push(commentObject);
-        await user.save();
+            await User.findByIdAndUpdate(seller, {
+                $push: {
+                    comments: commentObject._id.toString()
+                }});
+
     }
 }
