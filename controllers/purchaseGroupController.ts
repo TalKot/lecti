@@ -181,10 +181,10 @@ export default class PurchaseGroupController {
             let purchaseGroups;
 
             if(type === 'cheapest'){
-                purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT);
+                purchaseGroups = await PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT);
                 purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
             }else {
-                purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
+                purchaseGroups = await PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
                 purchaseGroups ? httpResponse.sendOk(res, purchaseGroups) : httpResponse.sendError(res);
 
             }

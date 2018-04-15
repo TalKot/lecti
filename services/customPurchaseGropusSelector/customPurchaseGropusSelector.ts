@@ -33,6 +33,7 @@ export default class CustomPurchaseGroupsSelector {
 
             const purchaseGroupManager = new PurchaseGroupManager();
             const purchaseGroupsByUser = await purchaseGroupManager.getPurchaseGroupsByUserId(userId);
+            const purchaseViewedGroupsByUser = await purchaseGroupManager.getViewedPurchaseGroupsByUserId(userId);
 
             let purchaseGroupsResults = {};
             let purchaseGroupsTimes = {};
@@ -76,6 +77,20 @@ export default class CustomPurchaseGroupsSelector {
                 }
             });
 
+            purchaseViewedGroupsByUser.forEach(type=>{
+                if(!purchaseGroupsResults[type]){
+                    purchaseGroupsResults[type]=0;
+                }
+            });
+
+
+            Object.keys(purchaseGroupsAmount).forEach(type=>{
+                if(!purchaseGroupsResults[type]){
+                    purchaseGroupsResults[type]=0;
+                }
+            });
+
+
             // remove all purchase groups that client marked as not relevant
             user.notRelevantTypes.forEach(typeToRemove => {
                 if(purchaseGroupsAmount[typeToRemove]) {
@@ -83,14 +98,10 @@ export default class CustomPurchaseGroupsSelector {
                 }
             });
 
-
-            Object.keys(purchaseGroupsAmount).forEach(type=>{
-                purchaseGroupsResults[type]=0;
-            });
             //calculating all data combined
             Object.keys(purchaseGroupsResults).forEach(type => {
 
-                if (purchaseGroupsPriority[type]) {
+                 if (purchaseGroupsAmount[type]) {
                     purchaseGroupsResults[type] += purchaseGroupsAmount[type] * CategoryCalculationWeight.amount;
                 }
 

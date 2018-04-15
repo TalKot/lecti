@@ -171,11 +171,11 @@ class PurchaseGroupController {
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 let purchaseGroups;
                 if (type === 'cheapest') {
-                    purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT);
+                    purchaseGroups = yield PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT);
                     purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
                 }
                 else {
-                    purchaseGroups = yield PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
+                    purchaseGroups = yield PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
                     purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
                 }
             }

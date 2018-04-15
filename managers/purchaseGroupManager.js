@@ -73,6 +73,39 @@ class PurchaseGroupManager {
             return purchaseGroup ? { count, purchaseGroup } : null;
         });
     }
+    getSubPurchaseGroupsByType(type, page, amount) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            let pageNumber = Number(page);
+            const maxPurchaseGroup = pageNumber * 12;
+            const minPurchaseGroup = maxPurchaseGroup - 12;
+            //will be used for custom purchase groups selector
+            let purchaseGroup;
+            if (amount && !type) {
+                purchaseGroup = yield PurchaseGroup.find({ isSuggestion: false })
+                    .sort({ discount: -1 })
+                    .limit(amount);
+                let res = {
+                    count: amount,
+                    purchaseGroup
+                };
+                return res;
+            }
+            else if (amount) {
+                purchaseGroup = yield PurchaseGroup.find({ 'subCategory': type, isSuggestion: false })
+                    .sort({ discount: -1 })
+                    .limit(amount);
+            }
+            else {
+                purchaseGroup = yield PurchaseGroup.find({ 'subCategory': type, isSuggestion: false })
+                    .sort({ discount: -1 })
+                    .skip(minPurchaseGroup)
+                    .limit(12);
+            }
+            let count = yield PurchaseGroup.find({ 'subCategory': type })
+                .count();
+            return purchaseGroup ? { count, purchaseGroup } : null;
+        });
+    }
     updatePurchaseGroupById(purchaseGroupId, value) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             return yield PurchaseGroup.findByIdAndUpdate(purchaseGroupId, value);
@@ -102,6 +135,17 @@ class PurchaseGroupManager {
                     };
                 });
                 return fullPurchaseGroupList;
+            }
+            catch (e) {
+                throw e;
+            }
+        });
+    }
+    getViewedPurchaseGroupsByUserId(userId) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const user = yield User.findById(userId);
+                return user.toObject().purchaseGroupsViewed;
             }
             catch (e) {
                 throw e;

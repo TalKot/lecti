@@ -73,6 +73,41 @@ export default class PurchaseGroupManager {
 
     }
 
+
+    async getSubPurchaseGroupsByType(type: string, page: string, amount?: number) {
+        let pageNumber = Number(page);
+
+        const maxPurchaseGroup = pageNumber * 12;
+        const minPurchaseGroup = maxPurchaseGroup - 12;
+        //will be used for custom purchase groups selector
+        let purchaseGroup;
+
+        if (amount && !type){
+            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false})
+                .sort({discount: -1})
+                .limit(amount);
+            let res = {
+                count :amount,
+                purchaseGroup
+            };
+            return res;
+
+        } else if (amount) {
+            purchaseGroup = await PurchaseGroup.find({'subCategory':type, isSuggestion: false})
+                .sort({discount: -1})
+                .limit(amount);
+        } else {
+            purchaseGroup = await PurchaseGroup.find({'subCategory':type, isSuggestion: false})
+                .sort({discount: -1})
+                .skip(minPurchaseGroup)
+                .limit(12);
+        }
+        let count = await PurchaseGroup.find({'subCategory':type})
+            .count();
+        return purchaseGroup ? {count, purchaseGroup} : null;
+
+    }
+
     async updatePurchaseGroupById(purchaseGroupId, value) {
         return await PurchaseGroup.findByIdAndUpdate(purchaseGroupId, value);
     }
@@ -107,7 +142,16 @@ export default class PurchaseGroupManager {
     }
 
 
-    async getSalesPurchaseGroupsByUserId(userId: string) {
+    async getViewedPurchaseGroupsByUserId(userId: string) {
+        try {
+            const user = await User.findById(userId);
+            return user.toObject().purchaseGroupsViewed;
+        } catch (e) {
+            throw e;
+        }
+    }
+
+     async getSalesPurchaseGroupsByUserId(userId: string) {
         try {
             const {purchaseGroupsSell} = await User.findById(userId)
                 .populate({

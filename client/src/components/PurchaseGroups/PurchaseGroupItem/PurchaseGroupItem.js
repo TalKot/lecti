@@ -63,6 +63,7 @@ class PurchaseGroupItem extends Component {
                                 <div className="card-content">
                                     <h6>Name - <strong>{this.state.purchaseGroupData.name}</strong></h6>
                                     <h6>Type - {this.state.purchaseGroupData.type}</h6>
+                                    <h6>Sub Type - {this.state.purchaseGroupData.subCategory}</h6>
                                     <h6>Active - {this.state.purchaseGroupData.isActive ? 'true' : 'false'}</h6>
                                     <h6>Deleted - {this.state.purchaseGroupData.isDeleted ? 'true' : 'false'}</h6>
                                     <h6>Suggestion

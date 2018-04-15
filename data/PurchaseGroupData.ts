@@ -1,8 +1,8 @@
 export = [
     {
         name: "Apple MacBook Pro 13\"",
-        type: "Computers",
-        subCategory:'tablets',
+        type: "computers",
+        subCategory:'mobile',
         priceForGroup: 300,
         originalPrice: 800,
         totalAmount: 50,
@@ -17,8 +17,8 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab A 7\"",
-        type: "Computers",
-        subCategory:'tablets',
+        type: "computers",
+        subCategory:'mobile',
         priceForGroup: 200,
         originalPrice: 600,
         totalAmount: 20,
@@ -33,7 +33,7 @@ export = [
     },
     {
         name: "Samsung 9.6 Inch Wifi Tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 150,
         originalPrice: 300,
@@ -56,8 +56,8 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab E 8\" HD Display",
-        type: "Computers",
-        subCategory:'tablets',
+        type: "shoes",
+        subCategory:'shoes',
         priceForGroup: 250,
         originalPrice: 500,
         totalAmount: 10,
@@ -72,8 +72,8 @@ export = [
     },
     {
         name: "10.1'' Tablet PC Google Android",
-        type: "Computers",
-        subCategory:'tablets',
+        type: "shoes",
+        subCategory:'shoes',
         priceForGroup: 130,
         originalPrice: 200,
         totalAmount: 30,
@@ -106,8 +106,8 @@ export = [
     },
     {
         name: "Amazon Kindle Fire HD 8 Tablet",
-        type: "Computers",
-        subCategory:'tablets',
+        type: "shirts",
+        subCategory:'shirts',
         priceForGroup: 100,
         originalPrice: 150,
         totalAmount: 50,
@@ -128,8 +128,8 @@ export = [
     },
     {
         name: "8\" CHUWI Hi 8 Air Tablet",
-        type: "Computers",
-        subCategory:'tablets',
+        type: "shirts",
+        subCategory:'shirts',
         priceForGroup: 90,
         originalPrice: 170,
         totalAmount: 10,
@@ -149,7 +149,7 @@ export = [
     },
     {
         name: "Huawei Mediapad M2 WiFi/LTE tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 340,
@@ -172,7 +172,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -188,7 +188,7 @@ export = [
     },
     {
         name: "TABLET ASUS lcd 10.1 ZENPAD",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 160,
         originalPrice: 240,
@@ -211,7 +211,7 @@ export = [
     },
     {
         name: "Apple iPad Air 2 64GB",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 800,
         originalPrice: 1000,
@@ -227,7 +227,7 @@ export = [
     },
     {
         name: "Apple iPad mini 4 128GB",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 600,
         originalPrice: 950,
@@ -243,7 +243,7 @@ export = [
     },
     {
         name: "Apple iPad 2 16GB",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 380,
@@ -259,7 +259,7 @@ export = [
     },
     {
         name: "HP Pro Tablet 408 G1 8\"",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 700,
         originalPrice: 850,
@@ -275,7 +275,7 @@ export = [
     },
     {
         name: "Apple MacBook Pro 13\"",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 300,
         originalPrice: 800,
@@ -291,7 +291,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab E 8\" HD Display",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 250,
         originalPrice: 500,
@@ -307,7 +307,7 @@ export = [
     },
     {
         name: "Lenovo TAB4 8 Plus 8.0\" Tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 500,
         originalPrice: 700,
@@ -323,7 +323,7 @@ export = [
     },
     {
         name: "Lenovo Xiaoxin 8\" Tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 380,
@@ -339,7 +339,7 @@ export = [
     },
     {
         name: "Lenovo TAB4 8 Plus 8.0\" Tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 600,
         originalPrice: 900,
@@ -355,7 +355,7 @@ export = [
     },
     {
         name: "Amazon Kindle Fire HD 8 Tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 100,
         originalPrice: 150,
@@ -377,7 +377,7 @@ export = [
     },
     {
         name: "8\" CHUWI Hi 8 Air Tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 90,
         originalPrice: 170,
@@ -398,7 +398,7 @@ export = [
     },
     {
         name: "Apple iPad Air 2 64GB",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 800,
         originalPrice: 1000,
@@ -414,7 +414,7 @@ export = [
     },
     {
         name: "Sony Xperia Z3 Tablet",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 500,
         originalPrice: 700,
@@ -430,7 +430,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab S3",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 870,
         originalPrice: 980,
@@ -455,7 +455,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -471,7 +471,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -487,7 +487,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -503,7 +503,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -519,7 +519,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -535,7 +535,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -551,7 +551,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -567,7 +567,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -583,7 +583,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -599,7 +599,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "Computers",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
