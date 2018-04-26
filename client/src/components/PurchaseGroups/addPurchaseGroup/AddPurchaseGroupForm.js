@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { reduxForm, Field, select } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import formFields from "./formFields";
 import PurchaseGroupField from "./PurchaseGroupField";
+import subCatagories from '../../../utils/types';
 
 class AddPurchaseGroup extends Component {
     renderFields() {
@@ -10,14 +11,15 @@ class AddPurchaseGroup extends Component {
 
             if (name === 'subCategory') {
                 return (
-                    <div key={name}>
-                        <label>{label}</label>
-                        <select className="browser-default">
+                    <div key={'subCategory'}>
+                        <label style={{ margin: '10px' }}>{label}</label>
+                        <Field name={name} component="select" type="text" key={name} label={label} className="browser-default">
                             {this.getOptions()}
-                        </select>
+                        </Field>
                     </div>
                 );
             }
+
             return (
                 <Field
                     key={name}
@@ -29,17 +31,12 @@ class AddPurchaseGroup extends Component {
             );
         });
     }
-    getOptions = () => {
 
-        const subCatagories = [
-            { name: 'Shirts', value: 'Shirts' },
-            { name: 'Shoes', value: 'Shoes' },
-            { name: 'Computers', value: 'Computers' },
-        ];
+    getOptions = () => {
 
         return subCatagories.map(({ value, name }) => {
             return (
-                <option key={name} value={value}>{name}</option>
+                <option key={name} value={value}>{value}</option>
             );
         });
     };
@@ -48,10 +45,7 @@ class AddPurchaseGroup extends Component {
         return (
             <div>
                 <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
-
-
                     {this.renderFields()}
-
                     <Link to="/home" className="red btn-flat white-text">
                         Cancel
                     </Link>
@@ -59,15 +53,11 @@ class AddPurchaseGroup extends Component {
                         Next
                         <i className="material-icons right">done</i>
                     </button>
-
                 </form>
             </div>
-
         );
     }
-
 }
-
 function validate(values) {
     const errors = {};
 
