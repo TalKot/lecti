@@ -281,10 +281,10 @@ class PurchaseGroupManager {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const res = yield PurchaseGroup.findOne({
+                    // isSuggestion: userType,
                     $text: {
                         $search: purchaseGroupsSimilarName
                     }
-                    //,isSuggestion: userType
                 });
                 return res;
             }

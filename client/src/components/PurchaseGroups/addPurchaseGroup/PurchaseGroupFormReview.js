@@ -91,7 +91,6 @@ function mapStateToProps(state) {
         formValues: state.form.AddPurchaseGroup.values,
         auth: state.auth,
         onCancel: state.onCancel,
-        // formValues: state.formValues,
         createNewPurchaseGroup: state.createNewPurchaseGroup,
         history: state.history,
     };

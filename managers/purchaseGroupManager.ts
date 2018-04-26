@@ -284,12 +284,12 @@ export default class PurchaseGroupManager {
         try {
 
             const res = await PurchaseGroup.findOne({
+                // isSuggestion: userType,
                 $text: {
                     $search: purchaseGroupsSimilarName
                 }
-                //,isSuggestion: userType
             });
-            
+
             return res;
         } catch (e) {
             throw e;
