@@ -4,16 +4,20 @@ import formFields from './formFields';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../../actions'
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class PurchaseGroupFormReview extends Component {
 
+    state = {
+        similar: undefined
+    };
 
     async componentDidMount() {
         const { data } = await axios.get(`/api/purchaseGroup/checksimilar/${this.props.auth.isSeller}/${this.props.formValues.name}`);
-        if(data){
-            this.state.similar  = data;
+        if (data) {
+            this.setState({ similar  : data })
         }
-        
+
     }
 
     reviewFields = formFields.map(({ name, label }) => {
@@ -49,11 +53,10 @@ class PurchaseGroupFormReview extends Component {
 
     getSimilarGroup = () => {
 
-        if (this.state) {
+        if (this.state.similar) {
             return (
-                <div className="card-panel #fff9c4 yellow lighten-4 center">
-                    <span className="text-darken-2">Because your user is type seller, this purchase group will open as live and active purchase group.</span>
-                    <div>{this.state.similar._id}</div>
+                <div className="card-panel #fff9c4 blue lighten-4 center">
+                    <span className="text-darken-2">We found the following purchase group to be the same as the one you are trying to open : <Link to={`/purchasegroup/${this.state.similar._id}`}>{this.state.similar.name}</Link></span>
                 </div>
             );
         }
