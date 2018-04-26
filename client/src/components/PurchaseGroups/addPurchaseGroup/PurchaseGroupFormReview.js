@@ -1,32 +1,34 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import formFields from './formFields';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import * as actions from '../../../actions'
 import axios from 'axios';
 
-const PurchaseGroupFormReview = ({onCancel, formValues, createNewPurchaseGroup, history,auth}) => {
-    if (!auth) {
-        return (
-            <div className="progress">
-                <div className="indeterminate"></div>
-            </div>
-        );
+class PurchaseGroupFormReview extends Component {
+
+
+    async componentDidMount() {
+        const { data } = await axios.get(`/api/purchaseGroup/checksimilar/${this.props.auth.isSeller}/${this.props.formValues.name}`);
+        if(data){
+            this.state.similar  = data;
+        }
+        
     }
 
-    const reviewFields = formFields.map(({name, label}) => {
+    reviewFields = formFields.map(({ name, label }) => {
         return (
             <div key={name}>
                 <label>{label}</label>
                 <div>
-                    {formValues[name]}
+                    {this.props.formValues[name]}
                 </div>
             </div>
         );
     });
 
-    const getWarning = () => {
-        if (auth.isSeller) {
+    getWarning = () => {
+        if (this.props.auth.isSeller) {
             //notify to user to purchase group will create as suggestion
             return (
                 <div className="card-panel #fff9c4 yellow lighten-4 center">
@@ -45,44 +47,50 @@ const PurchaseGroupFormReview = ({onCancel, formValues, createNewPurchaseGroup, 
         }
     };
 
-    const getSimilarGroup =async () =>{
+    getSimilarGroup = () => {
 
-           let similarPurchaseGroup = await axios.get(`/api/purchaseGroup/checksimilar/${auth.isSeller}/${formValues.name}`);
+        if (this.state) {
             return (
                 <div className="card-panel #fff9c4 yellow lighten-4 center">
                     <span className="text-darken-2">Because your user is type seller, this purchase group will open as live and active purchase group.</span>
-                    <div>{similarPurchaseGroup.data._id}</div>
+                    <div>{this.state.similar._id}</div>
                 </div>
-
             );
+        }
     };
 
-    return (
-        <div>
-            {getWarning()}
-            <h5>Please confirm your entries</h5>
-            {reviewFields}
-            <button
-                className="yellow darken-3 white-text btn-flat"
-                onClick={onCancel}
-            >
-                Back
-            </button>
-            <button
-                onClick={() => createNewPurchaseGroup(formValues, auth.isSeller,history)}
-                className="green btn-flat right white-text"
-            >
-                Submit
-            </button>
-            {getSimilarGroup()}
-        </div>
-    );
+    render() {
+        return (
+            <div>
+                {this.getWarning()}
+                <h5>Please confirm your entries</h5>
+                {this.reviewFields}
+                <button
+                    className="yellow darken-3 white-text btn-flat"
+                    onClick={this.props.onCancel}
+                >
+                    Back
+                </button>
+                <button
+                    onClick={() => this.props.createNewPurchaseGroup(this.props.formValues, this.props.auth.isSeller, this.props.history)}
+                    className="green btn-flat right white-text"
+                >
+                    Submit
+                </button>
+                {this.getSimilarGroup()}
+            </div>
+        );
+    }
 };
 
 function mapStateToProps(state) {
     return {
         formValues: state.form.AddPurchaseGroup.values,
-        auth : state.auth
+        auth: state.auth,
+        onCancel: state.onCancel,
+        // formValues: state.formValues,
+        createNewPurchaseGroup: state.createNewPurchaseGroup,
+        history: state.history,
     };
 }
 

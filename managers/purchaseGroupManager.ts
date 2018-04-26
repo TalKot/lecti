@@ -4,7 +4,7 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
-let { attempts } = require('../config/keys');
+let { attempts, timeIntervalRemoveNotRelevent } = require('../config/keys');
 
 export default class PurchaseGroupManager {
     /****** will be user as singelton*****/
@@ -283,12 +283,13 @@ export default class PurchaseGroupManager {
      async getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
         try {
 
-            let res = await PurchaseGroup.findOne({
+            const res = await PurchaseGroup.findOne({
                 $text: {
                     $search: purchaseGroupsSimilarName
-                },
-                isSuggestion: userType
+                }
+                //,isSuggestion: userType
             });
+            
             return res;
         } catch (e) {
             throw e;
@@ -296,8 +297,9 @@ export default class PurchaseGroupManager {
     }
 
     async addTypeToNotRelevantList(userID, type) {
-        const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
-
+        //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
+        const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
+        
         await User.findByIdAndUpdate(userID, {
             $push: {
                 notRelevantTypes: type

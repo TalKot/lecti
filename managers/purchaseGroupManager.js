@@ -6,7 +6,7 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
-let { attempts } = require('../config/keys');
+let { attempts, timeIntervalRemoveNotRelevent } = require('../config/keys');
 class PurchaseGroupManager {
     static get Instance() {
         return this._instance || (this._instance = new this());
@@ -280,11 +280,11 @@ class PurchaseGroupManager {
     getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let res = yield PurchaseGroup.findOne({
+                const res = yield PurchaseGroup.findOne({
                     $text: {
                         $search: purchaseGroupsSimilarName
-                    },
-                    isSuggestion: userType
+                    }
+                    //,isSuggestion: userType
                 });
                 return res;
             }
@@ -295,7 +295,8 @@ class PurchaseGroupManager {
     }
     addTypeToNotRelevantList(userID, type) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const TIME_INTERVAL = 1000 * 60 * 10; //10 minutes
+            //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
+            const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
             yield User.findByIdAndUpdate(userID, {
                 $push: {
                     notRelevantTypes: type

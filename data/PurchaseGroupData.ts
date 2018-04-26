@@ -1,6 +1,23 @@
+//purchase groups data import
 export = [
     {
         name: "Apple MacBook Pro 13\"",
+        type: "computers",
+        subCategory:'mobile',
+        priceForGroup: 300,
+        originalPrice: 800,
+        totalAmount: 50,
+        picture: "https://i.ebayimg.com/images/g/rCwAAOSwSz1azUVf/s-l1600.jpg",
+        comments: [],
+        sales: 0,
+        isActive: true,
+        isDeleted: false,
+        isSuggestion: false,
+        potentialBuyers: [],
+        description : 'The Apple MacBook Pro with Touchbar and Toch ID renders performance and multitasking efficiency with its integrated 8 GB RAM. This device is powered by a reliable 3.1 GHz Intel Core i5 processor. Its 256 GB flash drive provides storage space for digital content. Also, it features a convenient 13.3-inch display that provides a clear view of files, apps and documents. In addition, this space grey Apple notebook comes pre-installed with the Mac OS Sierra.'
+    },
+    {
+        name: "test - Apple MacBook Pro 13\"",
         type: "computers",
         subCategory:'mobile',
         priceForGroup: 300,

@@ -14,6 +14,7 @@ module.exports = {
     time: process.env.TIME || 0.1,
     priority: process.env.PRIORITY || 0.4,
     amount: process.env.AMOUNT || 0.3,
-    attempts: process.env.ATTEMPTS || 3
+    attempts: process.env.ATTEMPTS || 3,
+    timeIntervalRemoveNotRelevent: process.env.ATTEMPTS || 1000 * 60 * 10
 };
 //# sourceMappingURL=prod.js.map

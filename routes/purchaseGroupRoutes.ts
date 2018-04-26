@@ -88,6 +88,7 @@ module.exports = app => {
         const purchaseGroupsSimilarName = req.params.name;
         const userType = req.params.isSeller;
         let purchaseGroupControllerInstance = PurchaseGroupController.Instance;
+        console.log(purchaseGroupsSimilarName, userType);
         await purchaseGroupControllerInstance.getSimilarGroupByName(res, purchaseGroupsSimilarName, userType);
     });
 
