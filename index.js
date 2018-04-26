@@ -22,10 +22,8 @@ const userSchema = require('./models/User');
 require('./models/Comment');
 require('./models/PurchaseGroup');
 require('./models/User');
-require('./models/Survey');
-//
-const User = mongoose.model('users');
 //loading passport library to server
+const User = mongoose.model('users');
 require('./services/passportLogin/passport');
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, {
