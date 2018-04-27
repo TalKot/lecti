@@ -8,8 +8,6 @@ import Footer from './Footer/Footer';
 import Landing from './Landing/Landing';
 import PurchaseGroups from './PurchaseGroups/PurchaseGroups';
 import Payments from './Payments/Payments';
-import Surveys from './Surveys/Surveys';
-import SurveyNew from './Surveys/SurveyNew';
 import Profile from './Profile/Profile';
 import Cart from './Cart/Cart';
 import purchaseGroupItem from './PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem';
@@ -33,10 +31,8 @@ class App extends Component {
                         <Header/>
                         <Route exact path="/" component={Landing}/>
                         <Route exact path="/home" component={Home}/>
-                        <Route exact path="/surveys" component={Surveys}/>
                         <Route exact path="/sales" component={Sales}/>
                         <Route exact path="/new/purchasegroup/" component={NewAddPurchaseGroupForm}/>
-                        <Route exact path="/pur/new" component={SurveyNew}/>
                         <Route exact path="/purchasegroup/:item" component={purchaseGroupItem}/>
                         <Route exact path="/purchasegroups/:item" component={PurchaseGroups}/>
                         <Route exact path="/profile/:id" component={Profile}/>

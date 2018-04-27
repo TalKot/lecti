@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Payments from '../Payments/Payments';
 import SearchBar from '../SearchBar/SearchBar';
 import Types from '../../utils/types';
@@ -18,7 +18,7 @@ class Header extends Component {
                 ];
             default:
                 let headers = [
-                    <li key="2" style={{margin: '0 10px'}}>
+                    <li key="2" style={{ margin: '0 10px' }}>
                         Credits: {this.props.auth.credits}
                     </li>,
                     <li key="7"><Link to={`/profile/${this.props.auth._id}`}>Profile</Link></li>,
@@ -27,7 +27,7 @@ class Header extends Component {
                     <li key="10"><a href="/api/logout">Logout</a></li>,
                 ];
 
-                if (this.props.auth.isSeller){
+                if (this.props.auth.isSeller) {
                     headers.splice(2, 0, <li key="6"><Link to={'/sales'}>Sales</Link></li>);
                 }
 
@@ -39,7 +39,7 @@ class Header extends Component {
         return (
             <nav className="nav-extended #1976d2 blue darken-2">
                 <div className="nav-wrapper">
-                    <Link to='/home' className="left brand-logo" style={{marginLeft: "7px"}}>Lecti</Link>
+                    <Link to='/home' className="left brand-logo" style={{ marginLeft: "7px" }}>Lecti</Link>
                     <ul className="right">
                         {this.renderContent()}
                     </ul>
@@ -48,7 +48,7 @@ class Header extends Component {
                     <ul className="tabs tabs-transparent">
                         <li className="tab"><SearchBar /></li>
                         {
-                            Types.map(type=> {
+                            Types.categories.map(type => {
                                 return <li className="tab" key={type.value}><Link to={`/purchasegroups/${type.value}`}>{type.name}</Link></li>
                             })
                         }
@@ -61,8 +61,8 @@ class Header extends Component {
 }
 
 
-function mapStateToProps({auth}) {
-    return {auth};
+function mapStateToProps({ auth }) {
+    return { auth };
 }
 
 export default connect(mapStateToProps)(Header);
