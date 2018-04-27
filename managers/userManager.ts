@@ -52,7 +52,7 @@ export default class UserManager {
     }
 
     async getPurchaseGroupsBoughtByUserID(userID: string) {
-        const {purchaseGroupsBought} = await User.findById(userID);
+        const { purchaseGroupsBought } = await User.findById(userID);
         return purchaseGroupsBought ? purchaseGroupsBought : null;
     }
 
@@ -116,6 +116,16 @@ export default class UserManager {
                 purchaseGroupsSell: suggestionID
             }
         });
+    }
 
+    async notifyClientsOnClosedPurchaseGroup(purchaseGroup) {
+        let clientList = await purchaseGroup.potentialBuyers.map(client => client.user;
+        clientList = await User.find({
+            _id: {
+                $in: clientList
+            }
+        });
+        const emailsToNotify = clientList.map(obj => obj.email);
+        console.log(emailsToNotify);
     }
 }

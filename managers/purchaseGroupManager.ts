@@ -279,7 +279,7 @@ export default class PurchaseGroupManager {
             throw e;
         }
     }
-
+    //todo - need to check what to do in here
      async getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
         try {
 
@@ -391,7 +391,6 @@ export default class PurchaseGroupManager {
                 });
                 await suggestionGroup.save();
             }
-
         } catch (e) {
             throw e;
         }

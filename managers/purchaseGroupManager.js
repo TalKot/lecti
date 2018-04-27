@@ -277,6 +277,7 @@ class PurchaseGroupManager {
             }
         });
     }
+    //todo - need to check what to do in here
     getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {

@@ -160,7 +160,9 @@ export default class PurchaseGroupController {
             }
             // check and update purchase group active status if needed
             if (purchaseGroupShouldClose) {
-                await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, {isActive: false})
+                //todo - user Promise.all
+                const updatedPurchaseGroup = await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, {isActive: false})
+                await UserManagerInstance.notifyClientsOnClosedPurchaseGroup(updatedPurchaseGroup);
             }
             //TODO - WE NEED THIS?
             //return values

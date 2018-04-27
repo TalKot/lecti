@@ -151,7 +151,9 @@ class PurchaseGroupController {
                 }
                 // check and update purchase group active status if needed
                 if (purchaseGroupShouldClose) {
-                    yield PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false });
+                    //todo - user Promise.all
+                    const updatedPurchaseGroup = yield PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false });
+                    yield UserManagerInstance.notifyClientsOnClosedPurchaseGroup(updatedPurchaseGroup);
                 }
                 //TODO - WE NEED THIS?
                 //return values

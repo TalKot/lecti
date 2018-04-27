@@ -112,6 +112,18 @@ class UserManager {
             });
         });
     }
+    notifyClientsOnClosedPurchaseGroup(purchaseGroup) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            let clientList = yield purchaseGroup.potentialBuyers.map(client => client.user);
+            clientList = yield User.find({
+                _id: {
+                    $in: clientList
+                }
+            });
+            const emailsToNotify = clientList.map(obj => obj.email);
+            console.log(emailsToNotify);
+        });
+    }
 }
 exports.default = UserManager;
 //# sourceMappingURL=userManager.js.map
