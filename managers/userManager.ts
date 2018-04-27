@@ -3,6 +3,8 @@ import * as _ from 'lodash';
 
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
+const liveEmailNotificationTemplte = require('../services/emailsNotifications/emailTemplates/livePurchaseGroupTemplate')
+const Mailer = require('../services/emailsNotifications/livePurchaseGroupsMailer');
 
 export default class UserManager {
     /****** will be user as singelton*****/
@@ -119,13 +121,30 @@ export default class UserManager {
     }
 
     async notifyClientsOnClosedPurchaseGroup(purchaseGroup) {
-        let clientList = await purchaseGroup.potentialBuyers.map(client => client.user;
+        let clientList = await purchaseGroup.potentialBuyers.map(client => client.user);
         clientList = await User.find({
             _id: {
                 $in: clientList
             }
         });
-        const emailsToNotify = clientList.map(obj => obj.email);
-        console.log(emailsToNotify);
+
+        try {
+            const emailsToNotify = clientList.map(obj => obj.email);
+            const message = `Purchase Group - ${purchaseGroup.name} Is Now LIVE!`;
+
+            const customPurchaseGroup = {
+                body: message,
+                subject: message,
+                title: message,
+                mailingList: emailsToNotify
+            };
+
+            const mailer = new Mailer(customPurchaseGroup, liveEmailNotificationTemplte(message, purchaseGroup.name, purchaseGroup.id));
+            await mailer.send();
+        } catch (e) {
+            console.error(e);
+            throw e;
+        }
     }
+
 }

@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
+const liveEmailNotificationTemplte = require('../services/emailsNotifications/emailTemplates/livePurchaseGroupTemplate');
+const Mailer = require('../services/emailsNotifications/livePurchaseGroupsMailer');
 class UserManager {
     static get Instance() {
         return this._instance || (this._instance = new this());
@@ -120,8 +122,22 @@ class UserManager {
                     $in: clientList
                 }
             });
-            const emailsToNotify = clientList.map(obj => obj.email);
-            console.log(emailsToNotify);
+            try {
+                const emailsToNotify = clientList.map(obj => obj.email);
+                const message = `Purchase Group - ${purchaseGroup.name} Is Now LIVE!`;
+                const customPurchaseGroup = {
+                    body: message,
+                    subject: message,
+                    title: message,
+                    mailingList: emailsToNotify
+                };
+                const mailer = new Mailer(customPurchaseGroup, liveEmailNotificationTemplte(message, purchaseGroup.name, purchaseGroup.id));
+                yield mailer.send();
+            }
+            catch (e) {
+                console.error(e);
+                throw e;
+            }
         });
     }
 }

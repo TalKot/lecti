@@ -154,7 +154,6 @@ export default class CustomPurchaseGroupsSelector {
         //reset algorithm data and recursive call
         this.message = [];
         setInterval(this.notify, WEEK);
-        // setInterval(this.notify, 1000 * 20);
     }
 
 }
