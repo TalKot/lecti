@@ -84,8 +84,9 @@ class CustomPurchaseGroupsSelector {
                 });
                 // remove all purchase groups that client marked as not relevant
                 user.notRelevantTypes.forEach(typeToRemove => {
-                    if (purchaseGroupsAmount[typeToRemove]) {
-                        delete purchaseGroupsAmount[typeToRemove];
+                    // if(purchaseGroupsResults[typeToRemove]) {
+                    if (typeof purchaseGroupsResults[typeToRemove] != undefined) {
+                        delete purchaseGroupsResults[typeToRemove];
                     }
                 });
                 //calculating all data combined

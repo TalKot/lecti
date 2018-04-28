@@ -77,31 +77,32 @@ export default class CustomPurchaseGroupsSelector {
                 }
             });
 
-            purchaseViewedGroupsByUser.forEach(type=>{
-                if(!purchaseGroupsResults[type]){
-                    purchaseGroupsResults[type]=0;
+            purchaseViewedGroupsByUser.forEach(type => {
+                if (!purchaseGroupsResults[type]) {
+                    purchaseGroupsResults[type] = 0;
                 }
             });
 
 
-            Object.keys(purchaseGroupsAmount).forEach(type=>{
-                if(!purchaseGroupsResults[type]){
-                    purchaseGroupsResults[type]=0;
+            Object.keys(purchaseGroupsAmount).forEach(type => {
+                if (!purchaseGroupsResults[type]) {
+                    purchaseGroupsResults[type] = 0;
                 }
             });
 
 
             // remove all purchase groups that client marked as not relevant
             user.notRelevantTypes.forEach(typeToRemove => {
-                if(purchaseGroupsAmount[typeToRemove]) {
-                    delete purchaseGroupsAmount[typeToRemove];
+                // if(purchaseGroupsResults[typeToRemove]) {
+                if (typeof purchaseGroupsResults[typeToRemove]!= undefined){
+                    delete purchaseGroupsResults[typeToRemove];
                 }
             });
 
             //calculating all data combined
             Object.keys(purchaseGroupsResults).forEach(type => {
 
-                 if (purchaseGroupsAmount[type]) {
+                if (purchaseGroupsAmount[type]) {
                     purchaseGroupsResults[type] += purchaseGroupsAmount[type] * CategoryCalculationWeight.amount;
                 }
 
@@ -109,29 +110,29 @@ export default class CustomPurchaseGroupsSelector {
                     purchaseGroupsResults[type] += purchaseGroupsPriority[type] * CategoryCalculationWeight.priority;
                 }
                 if (purchaseGroupsViews[type]) {
-                    purchaseGroupsResults[type] += purchaseGroupsViews[type]  * CategoryCalculationWeight.viewed;
+                    purchaseGroupsResults[type] += purchaseGroupsViews[type] * CategoryCalculationWeight.viewed;
                 }
 
                 if (purchaseGroupsTimes[type]) {
-                    purchaseGroupsResults[type] += ((1/purchaseGroupsTimes[type]) * CategoryCalculationWeight.time);
+                    purchaseGroupsResults[type] += ((1 / purchaseGroupsTimes[type]) * CategoryCalculationWeight.time);
                 }
 
             });
 
             //get result
-            if(Object.keys(purchaseGroupsResults).length) {
+            if (Object.keys(purchaseGroupsResults).length) {
 
                 selectedType = Object.keys(purchaseGroupsResults).reduce((typeA, typeB) => {
                     return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
                 });
 
             }
-            else{
+            else {
                 // will return the mix of the most discounted purchase groups for new users.
                 selectedType = 'cheapest';
             }
 
-        }catch(e){
+        } catch (e) {
             selectedType = 'cheapest';
         }
         const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
@@ -146,7 +147,7 @@ export default class CustomPurchaseGroupsSelector {
         const clientListSlim = Object.keys(clientNotify);
 
         clientListSlim.forEach(client => {
-            if(this.message.length) {
+            if (this.message.length) {
                 clientNotify[client](this.message);
             }
         });

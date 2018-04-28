@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from "react-redux";
+import React, { Component } from 'react';
+import { connect } from "react-redux";
 import * as actions from '../../actions';
 import PurchaseGroup from '../PurchaseGroups/PurchaseGroup/PurchaseGroup';
 import axios from "axios/index";
@@ -13,6 +13,14 @@ class Home extends Component {
         this.props.fetchCustomPurchaseGroups();
     }
 
+    onChangeRelevant = async status => {
+        const options = {
+            type: this.props.customPurchaseGroupsPerUser.type,
+            status
+        };
+        await axios.post(`/api/purchaseGroup/types/`, options);
+    };
+
 
     render() {
         if (_.isEmpty(this.props.customPurchaseGroupsPerUser) || !this.props.auth) {
@@ -23,16 +31,6 @@ class Home extends Component {
             );
 
         }
-
-        const onChangeRelevant = async status => {
-            const options = {
-                type: this.props.customPurchaseGroupsPerUser.type,
-                status
-            };
-            await axios.post(`/api/purchaseGroup/types/`, options);
-        };
-
-
 
         //self invoke function to increase attempts
         (() => {
@@ -55,7 +53,7 @@ class Home extends Component {
         ];
 
         return (
-            <div style={{textAlign: 'center'}}>
+            <div style={{ textAlign: 'center' }}>
                 <h1>
                     Greetings {this.props.auth.displayName}!
                 </h1>
@@ -73,10 +71,10 @@ class Home extends Component {
 
                 <div>
                     <p>
-                        <input onChange={event => {
-                            onChangeRelevant(event.target.checked)
-                        }}
-                               type="checkbox" id="relevant"/>
+                        <input
+                            onChange={event => { this.onChangeRelevant(event.target.checked) }}
+                            type="checkbox"
+                            id="relevant" />
                         <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser.type} is not
                             relevant for me.</label>
                     </p>
@@ -115,7 +113,7 @@ class Home extends Component {
                 </div>
 
 
-                <div className="section center" style={{height:'700px',width:'800px',marginLeft:"140px"}}>
+                <div className="section center" style={{ height: '700px', width: '800px', marginLeft: "140px" }}>
                     <Slide
                         images={images}
                         duration={5000}
@@ -130,7 +128,7 @@ class Home extends Component {
     }
 };
 
-function mapStateToProps({auth, customPurchaseGroups}) {
+function mapStateToProps({ auth, customPurchaseGroups }) {
     return {
         auth,
         customPurchaseGroupsPerUser: customPurchaseGroups
