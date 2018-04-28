@@ -7,11 +7,15 @@ import {Link} from 'react-router-dom';
 class Seller extends Component {
 
     async componentDidMount() {
+        await this.getSellerCommentsFromAPI();
+    }
+
+    getSellerCommentsFromAPI = async ()=>{
         const sellerID = this.props.match.params.id;
         const {data} = await axios.get(`/api/seller/${sellerID}`);
         this.setState({seller: data});
     }
-
+    
     getSellerPurchaseGroups() {
         return (
             <div className="row">
@@ -64,6 +68,7 @@ class Seller extends Component {
             rating: this.state.rating
         };
         await axios.post('/api/comment/add', options);
+        this.getSellerCommentsFromAPI();
         swal("Thank You!", `Your comment has been submitted.`, "success");
     };
 

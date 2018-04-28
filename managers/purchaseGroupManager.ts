@@ -48,7 +48,7 @@ export default class PurchaseGroupManager {
         let purchaseGroup;
 
         if (amount && !type) {
-            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false })
+            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .limit(amount);
             let res = {
@@ -58,21 +58,19 @@ export default class PurchaseGroupManager {
             return res;
 
         } else if (amount) {
-            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false })
+            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .limit(amount);
         } else {
-            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false })
+            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .skip(minPurchaseGroup)
                 .limit(12);
         }
-        let count = await PurchaseGroup.find({ type })
+        let count = await PurchaseGroup.find({ type, isActive: true })
             .count();
         return purchaseGroup ? { count, purchaseGroup } : null;
-
     }
-
 
     async getSubPurchaseGroupsByType(type: string, page: string, amount?: number) {
         let pageNumber = Number(page);
@@ -299,7 +297,7 @@ export default class PurchaseGroupManager {
     async addTypeToNotRelevantList(userID, type) {
         //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
         const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
-        
+
         //if type not in array already - eneter to notRelevent array
         let { notRelevantTypes } = await User.findById(userID);
         if (notRelevantTypes.indexOf(type) === -1) {
