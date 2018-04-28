@@ -172,14 +172,14 @@ class PurchaseGroupController {
                 const RETURN_ARRAY_AMOUNT = 3;
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 let purchaseGroups;
-                if (type === 'cheapest') {
-                    purchaseGroups = yield PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT);
-                    purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
-                }
-                else {
+                type === 'cheapest' ?
+                    purchaseGroups = yield PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT) :
                     purchaseGroups = yield PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
-                    purchaseGroups ? httpResponse_1.default.sendOk(res, purchaseGroups) : httpResponse_1.default.sendError(res);
-                }
+                const returnedResult = {
+                    purchaseGroups,
+                    type
+                };
+                purchaseGroups ? httpResponse_1.default.sendOk(res, returnedResult) : httpResponse_1.default.sendError(res);
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);

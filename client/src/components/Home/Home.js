@@ -4,27 +4,18 @@ import * as actions from '../../actions';
 import PurchaseGroup from '../PurchaseGroups/PurchaseGroup/PurchaseGroup';
 import axios from "axios/index";
 import { Slide } from 'react-slideshow-image';
+import * as _ from 'lodash';
+
 
 class Home extends Component {
 
     componentDidMount() {
         this.props.fetchCustomPurchaseGroups();
-
     }
 
 
     render() {
-
-        const onChangeRelevant = async status => {
-            const options = {
-                type: this.props.customPurchaseGroupsPerUser[0].type,
-                status
-            };
-            await axios.post(`/api/purchaseGroup/types/`, options);
-        };
-
-
-        if (!this.props.customPurchaseGroupsPerUser.length) {
+        if (_.isEmpty(this.props.customPurchaseGroupsPerUser) || !this.props.auth) {
             return (
                 <div className="progress">
                     <div className="indeterminate"></div>
@@ -33,11 +24,21 @@ class Home extends Component {
 
         }
 
+        const onChangeRelevant = async status => {
+            const options = {
+                type: this.props.customPurchaseGroupsPerUser.type,
+                status
+            };
+            await axios.post(`/api/purchaseGroup/types/`, options);
+        };
+
+
+
         //self invoke function to increase attempts
         (() => {
 
             const options = {
-                type: this.props.customPurchaseGroupsPerUser[0].type,
+                type: this.props.customPurchaseGroupsPerUser.type,
             };
 
             axios.post('/api/purchaseGroup/types/increase', options);
@@ -61,7 +62,7 @@ class Home extends Component {
                 <div className="row">
 
                     {
-                        this.props.customPurchaseGroupsPerUser.map(purchaseGroup => {
+                        this.props.customPurchaseGroupsPerUser.purchaseGroups.purchaseGroup.map(purchaseGroup => {
 
                             return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}
                             />
@@ -76,7 +77,7 @@ class Home extends Component {
                             onChangeRelevant(event.target.checked)
                         }}
                                type="checkbox" id="relevant"/>
-                        <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser[0].type} is not
+                        <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser.type} is not
                             relevant for me.</label>
                     </p>
                 </div>

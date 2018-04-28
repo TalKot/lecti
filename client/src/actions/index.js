@@ -90,7 +90,9 @@ export const onAddPurchaseGroupToCart = (purchaseGroupID, amount) => async dispa
 // fetch custom purchase group recommended per user
 export const fetchCustomPurchaseGroups = () => async dispatch => {
     const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
-    dispatch({type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data.purchaseGroup});
+    console.log('from the action ')
+    console.log(res.data)
+    dispatch({type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data});
 };
 
 // //submit a survey

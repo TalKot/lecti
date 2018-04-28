@@ -121,7 +121,7 @@ export default class UserManager {
     }
 
     async notifyClientsOnClosedPurchaseGroup(purchaseGroup) {
-        let clientList = await purchaseGroup.potentialBuyers.map(client => client.user);
+        let clientList = purchaseGroup.potentialBuyers.map(client => client.user);
         clientList = await User.find({
             _id: {
                 $in: clientList

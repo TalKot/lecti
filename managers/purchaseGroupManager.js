@@ -298,13 +298,17 @@ class PurchaseGroupManager {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
             const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
-            yield User.findByIdAndUpdate(userID, {
-                $push: {
-                    notRelevantTypes: type
-                },
-                typesAttempts: 0
-            });
-            setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
+            //if type not in array already - eneter to notRelevent array
+            let { notRelevantTypes } = yield User.findById(userID);
+            if (notRelevantTypes.indexOf(type) === -1) {
+                yield User.findByIdAndUpdate(userID, {
+                    $push: {
+                        notRelevantTypes: type
+                    },
+                    typesAttempts: 0
+                });
+                setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
+            }
         });
     }
     removeTypeToNotRelevantList(userID, type) {

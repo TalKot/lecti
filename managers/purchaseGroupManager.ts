@@ -20,7 +20,7 @@ export default class PurchaseGroupManager {
     }
 
     async getSuggestionsPurchaseGroups() {
-        const purchaseGroups = await PurchaseGroup.find({isSuggestion: true});
+        const purchaseGroups = await PurchaseGroup.find({ isSuggestion: true });
         return purchaseGroups ? purchaseGroups : null;
     }
 
@@ -47,29 +47,29 @@ export default class PurchaseGroupManager {
         //will be used for custom purchase groups selector
         let purchaseGroup;
 
-        if (amount && !type){
-            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false})
-                .sort({discount: -1})
+        if (amount && !type) {
+            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false })
+                .sort({ discount: -1 })
                 .limit(amount);
             let res = {
-                count :amount,
+                count: amount,
                 purchaseGroup
             };
             return res;
 
         } else if (amount) {
-            purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
-                .sort({discount: -1})
+            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false })
+                .sort({ discount: -1 })
                 .limit(amount);
         } else {
-            purchaseGroup = await PurchaseGroup.find({type, isSuggestion: false})
-                .sort({discount: -1})
+            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false })
+                .sort({ discount: -1 })
                 .skip(minPurchaseGroup)
                 .limit(12);
         }
-        let count = await PurchaseGroup.find({type})
+        let count = await PurchaseGroup.find({ type })
             .count();
-        return purchaseGroup ? {count, purchaseGroup} : null;
+        return purchaseGroup ? { count, purchaseGroup } : null;
 
     }
 
@@ -82,29 +82,29 @@ export default class PurchaseGroupManager {
         //will be used for custom purchase groups selector
         let purchaseGroup;
 
-        if (amount && !type){
-            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false})
-                .sort({discount: -1})
+        if (amount && !type) {
+            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false })
+                .sort({ discount: -1 })
                 .limit(amount);
             let res = {
-                count :amount,
+                count: amount,
                 purchaseGroup
             };
             return res;
 
         } else if (amount) {
-            purchaseGroup = await PurchaseGroup.find({'subCategory':type, isSuggestion: false})
-                .sort({discount: -1})
+            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false })
+                .sort({ discount: -1 })
                 .limit(amount);
         } else {
-            purchaseGroup = await PurchaseGroup.find({'subCategory':type, isSuggestion: false})
-                .sort({discount: -1})
+            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false })
+                .sort({ discount: -1 })
                 .skip(minPurchaseGroup)
                 .limit(12);
         }
-        let count = await PurchaseGroup.find({'subCategory':type})
+        let count = await PurchaseGroup.find({ 'subCategory': type })
             .count();
-        return purchaseGroup ? {count, purchaseGroup} : null;
+        return purchaseGroup ? { count, purchaseGroup } : null;
 
     }
 
@@ -121,12 +121,12 @@ export default class PurchaseGroupManager {
             return purchaseGroup.purchaseGroup.toString();
         });
         // bring purchase groups data from DB
-        let purchaseGroupUserOwn = await PurchaseGroup.find({"_id": {"$in": ids}});
+        let purchaseGroupUserOwn = await PurchaseGroup.find({ "_id": { "$in": ids } });
         //index by id
         let purchaseGroupIndexed = _.keyBy(purchaseGroupUserOwn, 'id');
         //loop over the id and push
         try {
-            const fullPurchaseGroupList = user.purchaseGroupsBought.map(({time, purchaseGroup, _id, amount}) => {
+            const fullPurchaseGroupList = user.purchaseGroupsBought.map(({ time, purchaseGroup, _id, amount }) => {
                 return {
                     data: purchaseGroupIndexed[purchaseGroup] ? purchaseGroupIndexed[purchaseGroup].toObject() : undefined,
                     time,
@@ -151,9 +151,9 @@ export default class PurchaseGroupManager {
         }
     }
 
-     async getSalesPurchaseGroupsByUserId(userId: string) {
+    async getSalesPurchaseGroupsByUserId(userId: string) {
         try {
-            const {purchaseGroupsSell} = await User.findById(userId)
+            const { purchaseGroupsSell } = await User.findById(userId)
                 .populate({
                     path: 'purchaseGroupsSell',
                     model: 'purchaseGroups'
@@ -182,7 +182,7 @@ export default class PurchaseGroupManager {
 
     async purchaseGroupsViewed(userID, purchaseGroupsViewed) {
 
-        let [{subCategory}, user] = await Promise.all([
+        let [{ subCategory }, user] = await Promise.all([
             PurchaseGroup.findById(purchaseGroupsViewed),
             User.findById(userID)
         ]);
@@ -280,7 +280,7 @@ export default class PurchaseGroupManager {
         }
     }
     //todo - need to check what to do in here
-     async getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
+    async getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
         try {
 
             const res = await PurchaseGroup.findOne({
@@ -300,16 +300,17 @@ export default class PurchaseGroupManager {
         //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
         const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
         
-        await User.findByIdAndUpdate(userID, {
-            $push: {
-                notRelevantTypes: type
-            },
-            typesAttempts: 0
-        });
-
-        setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
-
-
+        //if type not in array already - eneter to notRelevent array
+        let { notRelevantTypes } = await User.findById(userID);
+        if (notRelevantTypes.indexOf(type) === -1) {
+            await User.findByIdAndUpdate(userID, {
+                $push: {
+                    notRelevantTypes: type
+                },
+                typesAttempts: 0
+            });
+            setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
+        }
     }
 
     async removeTypeToNotRelevantList(userID, type) {
@@ -383,7 +384,7 @@ export default class PurchaseGroupManager {
             let suggestionGroup = await PurchaseGroup.findById(groupID);
             let buyers = suggestionGroup.potentialBuyers;
             buyers = _.keyBy(buyers, 'user');
-            if(!buyers[userID]) {
+            if (!buyers[userID]) {
                 suggestionGroup.potentialBuyers.push({
                     user: userID,
                     amount: 1,
@@ -400,14 +401,14 @@ export default class PurchaseGroupManager {
         try {
 
             await PurchaseGroup.findByIdAndUpdate(groupID, {
-                    $pull: {
+                $pull: {
                     potentialBuyers: {
-                         $elemMatch: {
-                             user: userID
-                             }
-                         }
-                    },
-                });
+                        $elemMatch: {
+                            user: userID
+                        }
+                    }
+                },
+            });
 
         } catch (e) {
             throw e;
