@@ -596,7 +596,7 @@ export = [
     },
     {
         name: "Colourful skull on back men's Polo shirt",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 80,
         originalPrice: 120,
@@ -612,7 +612,7 @@ export = [
     },
     {
         name: "Short Sleeve Polo Collar Work T-shirt Cotton",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 40,
         originalPrice: 60,
@@ -628,7 +628,7 @@ export = [
     },
     {
         name: "Casual Men Basic T-shirt Shirt Slim Rund Neck",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 20,
         originalPrice: 50,
@@ -645,7 +645,7 @@ export = [
     },
     {
         name: "Men's Muscle Short Sleeve Shirt V-neck",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 15,
         originalPrice: 35,
@@ -661,7 +661,7 @@ export = [
     },
     {
         name: "DRAGON BALL Z  Slim Fit T-Shirt",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 30,
         originalPrice: 50,
@@ -677,7 +677,7 @@ export = [
     },
     {
         name: "Cool Hypnotic Psychedelic T Shirt ",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 35,
         originalPrice: 55,
@@ -693,7 +693,7 @@ export = [
     },
     {
         name: "Women/Men GoPro 3D Print Casual T-Shirt",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 20,
         originalPrice: 45,
@@ -709,7 +709,7 @@ export = [
     },
     {
         name: "Men Lapel Polo Shirt Summer Solid",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 30,
         originalPrice: 55,
@@ -728,7 +728,7 @@ export = [
     },
     {
         name: "Mens Summer Casual Dress Shirt",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 60,
         originalPrice: 100,
@@ -744,7 +744,7 @@ export = [
     },
     {
         name: "Denim Jeans Shirt Casual Long Sleeve Slim Fit",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 35,
         originalPrice: 50,
@@ -762,7 +762,7 @@ export = [
 
     {
         name: "Luxury Casual Stylish Slim Fit Long Sleeve",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 80,
         originalPrice: 110,
@@ -778,7 +778,7 @@ export = [
     },
     {
         name: "Mens Velvet Shirts Paisley Print Gold Loong Dragon Pattern Blouse",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 70,
         originalPrice: 95,
@@ -796,7 +796,7 @@ export = [
     },
     {
         name: "Slim Fit Round Neck Long Sleeve T-shirts",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 25,
         originalPrice: 45,
@@ -815,7 +815,7 @@ export = [
     },
     {
         name: "HUGO BOSS men's T-SHIRT",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shirts',
         priceForGroup: 120,
         originalPrice: 250,
@@ -832,7 +832,7 @@ export = [
     },
     {
         name: "VANS Classic OLD SCHOOL Low Top Casual Canvas sneakers",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 100,
         originalPrice: 220,
@@ -848,7 +848,7 @@ export = [
     },
     {
         name: "RUNING AIR VAPOR MAX2018 Athletic sport shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 260,
         originalPrice: 350,
@@ -864,7 +864,7 @@ export = [
     },
     {
         name: "Men's Casual Breathable Sports Mesh sneakers",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 180,
         originalPrice: 250,
@@ -880,7 +880,7 @@ export = [
     },
     {
         name: "Superstars City Trainers Lace up Sports Running Fitness Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 200,
         originalPrice: 330,
@@ -896,7 +896,7 @@ export = [
     },
     {
         name: "Speedcross 3 Running Sports Outdoor Hiking Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 90,
         originalPrice: 150,
@@ -912,7 +912,7 @@ export = [
     },
     {
         name: "CONVERSE ALL STAR",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 120,
         originalPrice: 180,
@@ -928,7 +928,7 @@ export = [
     },
     {
         name: "2018 Men's Shoes Fashion Casual Canvas Sneakers",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 190,
         originalPrice: 300,
@@ -944,7 +944,7 @@ export = [
     },
     {
         name: "Air Max 270 Black White Dusty Cactus Men Running Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 150,
         originalPrice: 220,
@@ -960,7 +960,7 @@ export = [
     },
     {
         name: "Smart Oxford Leather Pointed Toe Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 150,
         originalPrice: 190,
@@ -976,7 +976,7 @@ export = [
     },
     {
         name: "Leather Shoes Flat European Casual",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 120,
         originalPrice: 165,
@@ -992,7 +992,7 @@ export = [
     },
     {
         name: "Minimalism Driving Loafers Suede Leather Slip on penny shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 80,
         originalPrice: 110,
@@ -1008,7 +1008,7 @@ export = [
     },
     {
         name: "Timberland Pro Sawhorse Mens Water Resistant",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 280,
         originalPrice: 400,
@@ -1024,7 +1024,7 @@ export = [
     },
     {
         name: "New Balance 754 Men's Winter Boots Hiking Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 330,
         originalPrice: 460,
@@ -1041,7 +1041,7 @@ export = [
 
     {
         name: "Palladium Pampa HI Leather Black Boots Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 250,
         originalPrice: 380,
@@ -1057,7 +1057,7 @@ export = [
     },
     {
         name: "Puma BMW Drift Cat 5 Men's Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 350,
         originalPrice: 500,
@@ -1073,7 +1073,7 @@ export = [
     },
     {
         name: "Puma Mercedes AMG Drift Cat 6 Men's Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 350,
         originalPrice: 480,
@@ -1089,7 +1089,7 @@ export = [
     },
     {
         name: "Puma Ferrari MS Drift Cat 5 Men's Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 360,
         originalPrice: 450,
@@ -1105,7 +1105,7 @@ export = [
     },
     {
         name: "Puma SF Future Cat Casual Black White Ferrari Men Motorsport Shoes",
-        type: "men's fashion",
+        type: "men fasion",
         subCategory:'shoes',
         priceForGroup: 380,
         originalPrice: 500,
