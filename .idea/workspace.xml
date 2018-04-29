@@ -6,9 +6,6 @@
       <change beforePath="$PROJECT_DIR$/data/PurchaseGroupData.js" afterPath="$PROJECT_DIR$/data/PurchaseGroupData.js" />
       <change beforePath="$PROJECT_DIR$/data/PurchaseGroupData.js.map" afterPath="$PROJECT_DIR$/data/PurchaseGroupData.js.map" />
       <change beforePath="$PROJECT_DIR$/data/PurchaseGroupData.ts" afterPath="$PROJECT_DIR$/data/PurchaseGroupData.ts" />
-      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change beforePath="$PROJECT_DIR$/index.js.map" afterPath="$PROJECT_DIR$/index.js.map" />
-      <change beforePath="$PROJECT_DIR$/index.ts" afterPath="$PROJECT_DIR$/index.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -95,8 +92,8 @@
       <file leaf-file-name="PurchaseGroupData.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/PurchaseGroupData.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20086">
-              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            <state relative-caret-position="418">
+              <caret line="1123" column="26" lean-forward="false" selection-start-line="1123" selection-start-column="15" selection-end-line="1123" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -144,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>potentialBuyers</find>
       <find>api/purchaseGroup/getsuggestions</find>
       <find>&lt;i</find>
       <find>swal</find>
@@ -174,6 +170,7 @@
       <find>subCategory</find>
       <find>purchaseViewedGroupsByUser</find>
       <find>computers</find>
+      <find>electronics</find>
     </findStrings>
     <replaceStrings>
       <replace>purchaseGroup</replace>
@@ -185,8 +182,9 @@
       <replace>UserManager</replace>
       <replace>PurchaseGroupController.Instance;</replace>
       <replace>computers;</replace>
-      <replace>computers</replace>
       <replace>electronics</replace>
+      <replace>computers</replace>
+      <replace>cell phones</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -408,7 +406,7 @@
       <workItem from="1523187072972" duration="16090000" />
       <workItem from="1523520097134" duration="18398000" />
       <workItem from="1523795676897" duration="8775000" />
-      <workItem from="1524740714899" duration="7445000" />
+      <workItem from="1524740714899" duration="7904000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -508,11 +506,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523567709172</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="purchase groups addded to data">
+      <created>1525014500096</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1525014500096</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337674000" />
+    <option name="totallyTimeSpent" value="338133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,6 +951,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="94" column="18" lean-forward="true" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,8 +1107,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/PurchaseGroupData.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20086">
-          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="418">
+          <caret line="1123" column="26" lean-forward="false" selection-start-line="1123" selection-start-column="15" selection-end-line="1123" selection-end-column="26" />
           <folding />
         </state>
       </provider>

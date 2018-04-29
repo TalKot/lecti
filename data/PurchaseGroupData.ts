@@ -2,7 +2,7 @@
 export = [
     {
         name: "Samsung Galaxy Tab A 7 inch",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 200,
         originalPrice: 600,
@@ -18,7 +18,7 @@ export = [
     },
     {
         name: "Samsung 9.6 Inch Wifi Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 150,
         originalPrice: 300,
@@ -41,7 +41,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab E 8 inch HD Display",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 250,
         originalPrice: 500,
@@ -57,7 +57,7 @@ export = [
     },
     {
         name: "10.1 Tablet PC Google Android",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 130,
         originalPrice: 200,
@@ -91,7 +91,7 @@ export = [
     },
     {
         name: "Amazon Kindle Fire HD 8 Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 100,
         originalPrice: 150,
@@ -113,7 +113,7 @@ export = [
     },
     {
         name: "8 inch CHUWI Hi 8 Air Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 90,
         originalPrice: 170,
@@ -134,7 +134,7 @@ export = [
     },
     {
         name: "Huawei Mediapad M2 WiFi/LTE tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 340,
@@ -157,7 +157,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -173,7 +173,7 @@ export = [
     },
     {
         name: "TABLET ASUS lcd 10.1 ZENPAD",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 160,
         originalPrice: 240,
@@ -196,7 +196,7 @@ export = [
     },
     {
         name: "Apple iPad Air 2 64GB",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 800,
         originalPrice: 1000,
@@ -212,7 +212,7 @@ export = [
     },
     {
         name: "Apple iPad mini 4 128GB",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 600,
         originalPrice: 950,
@@ -228,7 +228,7 @@ export = [
     },
     {
         name: "Apple iPad 2 16GB",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 380,
@@ -244,7 +244,7 @@ export = [
     },
     {
         name: "HP Pro Tablet 408 G1 8 inch",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 700,
         originalPrice: 850,
@@ -260,7 +260,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab E 8 inch HD Display",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 250,
         originalPrice: 500,
@@ -276,7 +276,7 @@ export = [
     },
     {
         name: "Lenovo TAB4 8 Plus 8 inch Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 500,
         originalPrice: 700,
@@ -292,7 +292,7 @@ export = [
     },
     {
         name: "Lenovo Xiaoxin 8 inch Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 380,
@@ -308,7 +308,7 @@ export = [
     },
     {
         name: "Lenovo TAB4 8 Plus 8 inch Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 600,
         originalPrice: 900,
@@ -324,7 +324,7 @@ export = [
     },
     {
         name: "Amazon Kindle Fire HD 8 Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 100,
         originalPrice: 150,
@@ -346,7 +346,7 @@ export = [
     },
     {
         name: "8 inch CHUWI Hi 8 Air Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 90,
         originalPrice: 170,
@@ -367,7 +367,7 @@ export = [
     },
     {
         name: "Apple iPad Air 2 64GB",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 800,
         originalPrice: 1000,
@@ -383,7 +383,7 @@ export = [
     },
     {
         name: "Sony Xperia Z3 Tablet",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 500,
         originalPrice: 700,
@@ -399,7 +399,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab S3",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 870,
         originalPrice: 980,
@@ -424,7 +424,7 @@ export = [
     },
     {
         name: "10.1\" ANDROID 6.0 TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -440,7 +440,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -456,7 +456,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -472,7 +472,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -488,7 +488,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -504,7 +504,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -520,7 +520,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -536,7 +536,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -552,7 +552,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -568,7 +568,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "electronics",
+        type: "computers",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -1121,7 +1121,7 @@ export = [
     },
     {
         name: "Apple iPhone X (iPhone 10) - 64GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 3000,
         originalPrice: 3600,
@@ -1137,7 +1137,7 @@ export = [
     },
     {
         name: "Apple iPhone-8-PLUS-64GB RED SPECIAL EDITION",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 2800,
         originalPrice: 3200,
@@ -1153,7 +1153,7 @@ export = [
     },
     {
         name: "Apple iPhone 6S Plus 128GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 1200,
         originalPrice: 1800,
@@ -1169,7 +1169,7 @@ export = [
     },
     {
         name: "Apple iPhone X 256GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 3980,
         originalPrice: 4500,
@@ -1185,7 +1185,7 @@ export = [
     },
     {
         name: "Samsung Galaxy S9+ Plus 64GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 2980,
         originalPrice: 3500,
@@ -1201,7 +1201,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Note5 N920A 32GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 980,
         originalPrice: 1200,
@@ -1217,7 +1217,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Note 8 SM-N950F/DS 64GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 2580,
         originalPrice: 2900,
@@ -1233,7 +1233,7 @@ export = [
     },
     {
         name: "HUAWEI MATE 10 PRO 4G TITANIUM GREY",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 2380,
         originalPrice: 2800,
@@ -1249,7 +1249,7 @@ export = [
     },
     {
         name: "Huawei Honor 9 Lite Smartphone",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 680,
         originalPrice: 800,
@@ -1265,7 +1265,7 @@ export = [
     },
     {
         name: "Huawei P20 Lite ANE-LX3",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 980,
         originalPrice: 1350,
@@ -1281,7 +1281,7 @@ export = [
     },
     {
         name: "Huawei Honor 7X Smartphone",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 780,
         originalPrice: 900,
@@ -1297,7 +1297,7 @@ export = [
     },
     {
         name: "Huawei Mate 10 pro Titanium Grey 128GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 1080,
         originalPrice: 1500,
@@ -1313,7 +1313,7 @@ export = [
     },
     {
         name: "LG V20 H910 64GB 4G LTE",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 800,
         originalPrice: 990,
@@ -1329,7 +1329,7 @@ export = [
     },
     {
         name: "New Original LG G5 H830 32GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 600,
         originalPrice: 750,
@@ -1345,7 +1345,7 @@ export = [
     },
     {
         name: "LG V30+ H930DS 128GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 2000,
         originalPrice: 2500,
@@ -1361,7 +1361,7 @@ export = [
     },
     {
         name: "NEW LG G6 (LS993) - 32GB",
-        type: "electronics",
+        type: "cell phones",
         subCategory:'smartphones',
         priceForGroup: 1000,
         originalPrice: 1200,
