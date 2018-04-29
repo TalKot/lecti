@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/data/PurchaseGroupData.js" afterPath="$PROJECT_DIR$/data/PurchaseGroupData.js" />
-      <change beforePath="$PROJECT_DIR$/data/PurchaseGroupData.js.map" afterPath="$PROJECT_DIR$/data/PurchaseGroupData.js.map" />
-      <change beforePath="$PROJECT_DIR$/data/PurchaseGroupData.ts" afterPath="$PROJECT_DIR$/data/PurchaseGroupData.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -406,7 +403,7 @@
       <workItem from="1523187072972" duration="16090000" />
       <workItem from="1523520097134" duration="18398000" />
       <workItem from="1523795676897" duration="8775000" />
-      <workItem from="1524740714899" duration="7904000" />
+      <workItem from="1524740714899" duration="7917000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -513,11 +510,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525014500096</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="purchase groups addded to data">
+      <created>1525017757221</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1525017757221</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338133000" />
+    <option name="totallyTimeSpent" value="338146000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
