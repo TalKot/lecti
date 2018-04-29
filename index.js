@@ -66,22 +66,18 @@ _.once(() => __awaiter(this, void 0, void 0, function* () {
     //     console.error(e)
     // }
     //load and store user data to DB
-    // const user = new userSchema(UserData);
-    // await user.save();
-    //
-    // //load and store purchase group data to DB
-    // PurchaseGroupData.forEach(async purchaseGroup => {
-    //     let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
-    //
-    //
-    //     if(!purchaseGroupObject.isSuggestion){
-    //         purchaseGroupObject.seller = user;
-    //         user.purchaseGroupsSell.push(purchaseGroupObject);
-    //     }
-    //
-    //     purchaseGroupObject.save()
-    // });
-    // await user.save();
+    const user = new userSchema(UserData);
+    yield user.save();
+    //load and store purchase group data to DB
+    PurchaseGroupData.forEach((purchaseGroup) => __awaiter(this, void 0, void 0, function* () {
+        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+        if (!purchaseGroupObject.isSuggestion) {
+            purchaseGroupObject.seller = user;
+            user.purchaseGroupsSell.push(purchaseGroupObject);
+        }
+        purchaseGroupObject.save();
+    }));
+    yield user.save();
 }))();
 //setting up port with Heroku and locally
 const PORT = process.env.PORT || 5000;

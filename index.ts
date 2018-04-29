@@ -72,22 +72,22 @@ _.once(async () => {
     // }
 
     //load and store user data to DB
-    // const user = new userSchema(UserData);
-    // await user.save();
-    //
-    // //load and store purchase group data to DB
-    // PurchaseGroupData.forEach(async purchaseGroup => {
-    //     let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
-    //
-    //
-    //     if(!purchaseGroupObject.isSuggestion){
-    //         purchaseGroupObject.seller = user;
-    //         user.purchaseGroupsSell.push(purchaseGroupObject);
-    //     }
-    //
-    //     purchaseGroupObject.save()
-    // });
-    // await user.save();
+    const user = new userSchema(UserData);
+    await user.save();
+
+    //load and store purchase group data to DB
+    PurchaseGroupData.forEach(async purchaseGroup => {
+        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+
+
+        if(!purchaseGroupObject.isSuggestion){
+            purchaseGroupObject.seller = user;
+            user.purchaseGroupsSell.push(purchaseGroupObject);
+        }
+
+        purchaseGroupObject.save()
+    });
+    await user.save();
 })();
 
 
