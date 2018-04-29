@@ -186,19 +186,20 @@ export default class PurchaseGroupManager {
         ]);
 
         try {
-            if (user.purchaseGroupsViewed.length < 5) {
-                await User.findByIdAndUpdate(userID, {
-                    $push: {
-                        purchaseGroupsViewed: subCategory
-                    }
-                });
-
-            } else {
-                //TODO - NEED TO DEVELOP LIFO STACK
-                user.purchaseGroupsViewed.pop();
-                user.purchaseGroupsViewed.push(subCategory);
+            // is stack is full - remove the last argument
+            if (user.purchaseGroupsViewed.length >= 5) {
+                await user.purchaseGroupsViewed.pop();
                 await user.save();
             }
+            await User.findByIdAndUpdate(userID, {
+                $push: {
+                    purchaseGroupsViewed: {
+                        $each: [subCategory],
+                        $position: 0
+                    }
+                }
+            });
+
         } catch (e) {
             throw e;
         }

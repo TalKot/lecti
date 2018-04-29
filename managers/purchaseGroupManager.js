@@ -189,19 +189,19 @@ class PurchaseGroupManager {
                 User.findById(userID)
             ]);
             try {
-                if (user.purchaseGroupsViewed.length < 5) {
-                    yield User.findByIdAndUpdate(userID, {
-                        $push: {
-                            purchaseGroupsViewed: subCategory
-                        }
-                    });
-                }
-                else {
-                    //TODO - NEED TO DEVELOP LIFO STACK
-                    user.purchaseGroupsViewed.pop();
-                    user.purchaseGroupsViewed.push(subCategory);
+                // is stack is full - remove the last argument
+                if (user.purchaseGroupsViewed.length >= 5) {
+                    yield user.purchaseGroupsViewed.pop();
                     yield user.save();
                 }
+                yield User.findByIdAndUpdate(userID, {
+                    $push: {
+                        purchaseGroupsViewed: {
+                            $each: [subCategory],
+                            $position: 0
+                        }
+                    }
+                });
             }
             catch (e) {
                 throw e;
