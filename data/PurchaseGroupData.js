@@ -425,7 +425,7 @@ module.exports = [
     {
         name: "10.1\" ANDROID 6.0 TABLET",
         type: "computers",
-        subCategory: 'tablets',
+        subCategory: 'laptops',
         priceForGroup: 450,
         originalPrice: 600,
         totalAmount: 15,

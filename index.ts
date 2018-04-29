@@ -57,38 +57,38 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-//will call start notify once.
-_.once(async () => {
+// //will call start notify once.
+// _.once(async () => {
 
-    //notifications system
-    //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
-    //customPurchaseGroupsSelector.notify();
+//     //notifications system
+//     //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
+//     //customPurchaseGroupsSelector.notify();
 
-    // const { users, comments, purchasegroups } = mongoose.connection.collections;
-    // try {
-    //     await Promise.all([users.drop(), comments.drop(), purchasegroups.drop()])
-    // }catch (e){
-    //     console.error(e)
-    // }
+//     // const { users, comments, purchasegroups } = mongoose.connection.collections;
+//     // try {
+//     //     await Promise.all([users.drop(), comments.drop(), purchasegroups.drop()])
+//     // }catch (e){
+//     //     console.error(e)
+//     // }
 
-    //load and store user data to DB
-    const user = new userSchema(UserData);
-    await user.save();
+//     //load and store user data to DB
+//     const user = new userSchema(UserData);
+//     await user.save();
 
-    //load and store purchase group data to DB
-    PurchaseGroupData.forEach(async purchaseGroup => {
-        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+//     //load and store purchase group data to DB
+//     PurchaseGroupData.forEach(async purchaseGroup => {
+//         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
 
 
-        if(!purchaseGroupObject.isSuggestion){
-            purchaseGroupObject.seller = user;
-            user.purchaseGroupsSell.push(purchaseGroupObject);
-        }
+//         if(!purchaseGroupObject.isSuggestion){
+//             purchaseGroupObject.seller = user;
+//             user.purchaseGroupsSell.push(purchaseGroupObject);
+//         }
 
-        purchaseGroupObject.save()
-    });
-    await user.save();
-})();
+//         purchaseGroupObject.save()
+//     });
+//     await user.save();
+// })();
 
 
 //setting up port with Heroku and locally

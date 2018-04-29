@@ -5,11 +5,12 @@ import Payments from '../Payments/Payments';
 import SearchBar from '../SearchBar/SearchBar';
 import Types from '../../utils/types';
 import { categories, subCategories } from '../../utils/types';
+import { Button, Dropdown, Menu, Segment, Image } from 'semantic-ui-react'
 import logo from '../img/logo.png';
-import { Button, Dropdown, Menu, Segment } from 'semantic-ui-react'
-
+import lecti from '../img/logo.png';
 
 class Header extends Component {
+
     state = { activeItem: 'home' }
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -20,10 +21,10 @@ class Header extends Component {
                 return;
             case false:
                 return [
-                    <Menu.Item>
+                    <Menu.Item key="1">
                         <Button primary href="/auth/google">Sign Up With Google</Button>
                     </Menu.Item>,
-                    <Menu.Item>
+                    <Menu.Item key="2">
                         <Button primary href="/auth/facebook">Sign Up With Facebook</Button>
                     </Menu.Item>
                 ];
@@ -50,16 +51,15 @@ class Header extends Component {
         return (
             <div>
                 <Menu size='huge'>
-                    <Menu.Item>
-                        <img src={logo} />
+                    <Menu.Item key="234532" style={{ backgroundColor: 'black' }}>
+                        <Link to={'/home'}>
+                            <Image src={lecti} size='tiny' verticalAlign='top' />
+                        </Link>
                     </Menu.Item>
-                    <Menu.Menu position='right'>
-
+                    <Menu.Menu position='right' key="1234125">
                         {this.renderContent(activeItem)}
                     </Menu.Menu>
-
                 </Menu>
-
                 <Menu pointing secondary>
                     {
                         categories.map(({ name, value }) => {
@@ -68,7 +68,7 @@ class Header extends Component {
                                     <Dropdown.Menu>
                                         {
                                             subCategories[value].map(({ name, value }) => {
-                                                return <Dropdown.Item key={value}>{value}</Dropdown.Item>
+                                                return <Menu.Item key={value} name={name} active={activeItem === { value }} onClick={this.handleItemClick} ><Link to={`/purchasegroups/${value}`}>{name}</Link></Menu.Item>;
                                             })
                                         }
                                     </Dropdown.Menu>
@@ -76,36 +76,8 @@ class Header extends Component {
                             );
                         })
                     }
-
-                    <Menu.Menu position='right'>
-                        <SearchBar />
-                    </Menu.Menu>
-                    
                 </Menu>
-
             </div >
-
-
-            // <nav className="nav-extended #1976d2 blue darken-2">
-            //     <div className="nav-wrapper">
-            //         <Link to='/home' className="left brand-logo" style={{ marginLeft: "7px" }}><img src={logo} /></Link>
-            //         <ul className="right">
-            //             {this.renderContent()}
-            //         </ul>
-            //     </div>
-            //     <div className="nav-content">
-            //         <ul className="tabs tabs-transparent">
-            //             <li className="tab"><SearchBar /></li>
-            //             {
-            //                 Types.categories.map(type => {
-            //                     return <li className="tab" key={type.value}><Link to={`/purchasegroups/${type.value}`}>{type.name}</Link></li>
-            //                 })
-            //             }
-            //             <li className="tab right"><Link to={'/suggestions/'}>Suggestions</Link></li>
-            //         </ul>
-            //     </div>
-            // </nav>
-
         );
     }
 }

@@ -32,31 +32,48 @@
 
 import React, { Component } from 'react'
 import { Grid, Menu, Segment } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class MenuExampleTabularOnRight extends Component {
+class Footer extends Component {
   state = { activeItem: 'bio' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
+    if (!this.props.auth) {
+      return (
+        <div className="progress">
+          <div className="indeterminate"></div>
+        </div>
+      );
+    }
+
     const { activeItem } = this.state
 
     return (
       <Grid>
         <Grid.Column stretched width={12}>
           <Segment>
-          The Best Purchase Group Buying Platform In The World.
+            The Best Purchase Group Buying Platform In The World.
           </Segment>
         </Grid.Column>
 
         <Grid.Column width={4}>
           <Menu fluid vertical tabular='right'>
-            <Menu.Item name='Profile' active={activeItem === 'Profile'} onClick={this.handleItemClick} />
-            <Menu.Item name='Sales' active={activeItem === 'Sales'} onClick={this.handleItemClick} />
-            <Menu.Item name='Cart' active={activeItem === 'Cart'} onClick={this.handleItemClick} />
+            <Menu.Item name='Profile' active={activeItem === 'Profile'} onClick={this.handleItemClick}><Link to={`/profile/${this.props.auth._id}`}>Profile</Link></Menu.Item>
+            <Menu.Item name='Sales' active={activeItem === 'Sales'} onClick={this.handleItemClick} ><Link to={`/sales`}>Sales</Link></Menu.Item>
+            <Menu.Item name='Cart' active={activeItem === 'Cart'} onClick={this.handleItemClick} ><Link to={`/cart`}>Cart</Link></Menu.Item>
           </Menu>
         </Grid.Column>
       </Grid>
     )
   }
 }
+
+
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps)(Footer);

@@ -40,14 +40,14 @@ class PurchaseGroupManager {
             return purchaseGroup ? purchaseGroup : null;
         });
     }
-    getPurchaseGroupsByType(type, page, amount) {
+    getPurchaseGroupsByType(subCategory, page, amount) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             let pageNumber = Number(page);
             const maxPurchaseGroup = pageNumber * 12;
             const minPurchaseGroup = maxPurchaseGroup - 12;
             //will be used for custom purchase groups selector
             let purchaseGroup;
-            if (amount && !type) {
+            if (amount && !subCategory) {
                 purchaseGroup = yield PurchaseGroup.find({ isSuggestion: false, isActive: true })
                     .sort({ discount: -1 })
                     .limit(amount);
@@ -58,17 +58,17 @@ class PurchaseGroupManager {
                 return res;
             }
             else if (amount) {
-                purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false, isActive: true })
+                purchaseGroup = yield PurchaseGroup.find({ subCategory, isSuggestion: false, isActive: true })
                     .sort({ discount: -1 })
                     .limit(amount);
             }
             else {
-                purchaseGroup = yield PurchaseGroup.find({ type, isSuggestion: false, isActive: true })
+                purchaseGroup = yield PurchaseGroup.find({ subCategory, isSuggestion: false, isActive: true })
                     .sort({ discount: -1 })
                     .skip(minPurchaseGroup)
                     .limit(12);
             }
-            let count = yield PurchaseGroup.find({ type, isActive: true })
+            let count = yield PurchaseGroup.find({ subCategory, isActive: true })
                 .count();
             return purchaseGroup ? { count, purchaseGroup } : null;
         });

@@ -39,7 +39,7 @@ export default class PurchaseGroupManager {
         return purchaseGroup ? purchaseGroup : null;
     }
 
-    async getPurchaseGroupsByType(type: string, page: string, amount?: number) {
+    async getPurchaseGroupsByType(subCategory: string, page: string, amount?: number) {
         let pageNumber = Number(page);
 
         const maxPurchaseGroup = pageNumber * 12;
@@ -47,7 +47,7 @@ export default class PurchaseGroupManager {
         //will be used for custom purchase groups selector
         let purchaseGroup;
 
-        if (amount && !type) {
+        if (amount && !subCategory) {
             purchaseGroup = await PurchaseGroup.find({ isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .limit(amount);
@@ -58,16 +58,16 @@ export default class PurchaseGroupManager {
             return res;
 
         } else if (amount) {
-            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false, isActive: true })
+            purchaseGroup = await PurchaseGroup.find({ subCategory, isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .limit(amount);
         } else {
-            purchaseGroup = await PurchaseGroup.find({ type, isSuggestion: false, isActive: true })
+            purchaseGroup = await PurchaseGroup.find({ subCategory, isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .skip(minPurchaseGroup)
                 .limit(12);
         }
-        let count = await PurchaseGroup.find({ type, isActive: true })
+        let count = await PurchaseGroup.find({ subCategory, isActive: true })
             .count();
         return purchaseGroup ? { count, purchaseGroup } : null;
     }

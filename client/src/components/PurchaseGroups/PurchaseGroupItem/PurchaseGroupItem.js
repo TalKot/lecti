@@ -1,16 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from "axios/index";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import * as actions from "../../../actions";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
+import { Button } from 'semantic-ui-react'
+
 
 class PurchaseGroupItem extends Component {
 
     async componentDidMount() {
         const purchaseGroupID = this.props.match.params.item;
-        const {data} = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
-        this.setState({purchaseGroupData: data})
+        const { data } = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
+        this.setState({ purchaseGroupData: data })
     }
 
     notify() {
@@ -22,12 +24,12 @@ class PurchaseGroupItem extends Component {
         if (status) {
             swal("Nice For You!", `You have purchased ${amount} amount of ${purchaseGroup.name}.`, "success");
             const purchaseGroupID = this.props.match.params.item;
-            const {data} = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
-            this.setState({purchaseGroupData: data})    
+            const { data } = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
+            this.setState({ purchaseGroupData: data })
         } else {
             swal("ops! something went wrong!", `You didn't purchase ${amount} amount of ${purchaseGroup.name}.`, "warning");
         }
-        
+
 
     };
     //TODO - NEED TO COMPLETE THIS CODE
@@ -56,13 +58,13 @@ class PurchaseGroupItem extends Component {
         // console.log(this.state.purchaseGroupData);
         return (
             <div>
-                <div style={{textAlign: 'center'}}>
-                    <div className="row" style={{textAlign: 'center', margin: '0'}}>
+                <div style={{ textAlign: 'center' }}>
+                    <div className="row" style={{ textAlign: 'center', margin: '0' }}>
                         <div className="col s8 m5">
                             <div className="card">
                                 <div className="card-image">
                                     <img src={this.state.purchaseGroupData.picture}
-                                         alt={this.state.purchaseGroupData.picture}/>
+                                        alt={this.state.purchaseGroupData.picture} />
                                 </div>
                                 <div className="card-content">
                                     <h6>Name - <strong>{this.state.purchaseGroupData.name}</strong></h6>
@@ -76,21 +78,25 @@ class PurchaseGroupItem extends Component {
                                 <div className="card-action">
                                     <div className="row">
                                         <label htmlFor="amount">Amount:</label>
-                                        <input type="number" onChange={e => amount = e.target.value}/>
-
-                                        <button className={`btn waves-effect waves-light left ${activeOrDisable}`}
-                                                type="submit"
-                                                name="action"
-                                                onClick={() => {
-                                                    this.buyPurchaseGroup(this.state.purchaseGroupData, amount)
-                                                }}>Buy
-                                        </button>
-                                        <button className="btn waves-effect waves-light right #7986cb indigo lighten-2" type="submit"
-                                                name="action"
-                                                onClick={() => {
-                                                    this.addToCart(this.state.purchaseGroupData, amount)
-                                                }}>Cart
-                                        </button>
+                                        <input type="number" onChange={e => amount = e.target.value} />
+                                        <div>
+                                            <Button.Group>
+                                                <Button className={`${activeOrDisable}`}
+                                                    type="submit"
+                                                    name="action"
+                                                    onClick={() => {
+                                                        this.buyPurchaseGroup(this.state.purchaseGroupData, amount)
+                                                    }}>Buy
+                                        </Button>
+                                                <Button.Or />
+                                                <Button positive type="submit"
+                                                    name="action"
+                                                    onClick={() => {
+                                                        this.addToCart(this.state.purchaseGroupData, amount)
+                                                    }}>Cart
+                                        </Button>
+                                            </Button.Group>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -99,9 +105,9 @@ class PurchaseGroupItem extends Component {
                             <div className="row">
                                 <div className="col s3 m6">
                                     <div className="card-panel">
-                                        Original Product Price - {this.state.purchaseGroupData.originalPrice}<br/>
-                                        Group Price Per Item - {this.state.purchaseGroupData.priceForGroup}<br/>
-                                        Discount - {this.state.purchaseGroupData.discount}%<br/>
+                                        Original Product Price - {this.state.purchaseGroupData.originalPrice}<br />
+                                        Group Price Per Item - {this.state.purchaseGroupData.priceForGroup}<br />
+                                        Discount - {this.state.purchaseGroupData.discount}%<br />
                                     </div>
                                 </div>
 
@@ -123,7 +129,7 @@ class PurchaseGroupItem extends Component {
                                             </div>
                                             <div className="chip col s3">
                                                 <img src={this.state.purchaseGroupData.seller.photoURL}
-                                                     alt={this.state.purchaseGroupData.seller.photoURL}/>
+                                                    alt={this.state.purchaseGroupData.seller.photoURL} />
                                                 <Link to={`/seller/${this.state.purchaseGroupData.seller._id}`}>
                                                     {this.state.purchaseGroupData.seller.displayName}
                                                 </Link>
