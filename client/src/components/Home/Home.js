@@ -23,7 +23,29 @@ class Home extends Component {
         await axios.post(`/api/purchaseGroup/types/`, options);
     };
 
+    getGreeting = () => {
+        return (
+            <section>
+                <h1>
+                    Greetings {this.props.auth.displayName}!
+            </h1>
+                <div className="row">
+                    {
+                        this.props.customPurchaseGroupsPerUser.purchaseGroups.purchaseGroup.map(purchaseGroup =>
+                            <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} />
+                        )
+                    }
+                </div>
 
+                <div>
+                    <p>
+                        <input onChange={event => { this.onChangeRelevant(event.target.checked) }} type="checkbox" id="relevant" />
+                        <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser.type} is notrelevant for me.</label>
+                    </p>
+                </div>
+            </section>
+        );
+    }
     render() {
         if (_.isEmpty(this.props.customPurchaseGroupsPerUser) || !this.props.auth) {
             return (
@@ -42,37 +64,9 @@ class Home extends Component {
             axios.post('/api/purchaseGroup/types/increase', options);
         })();
 
-
-        // const images = [
-        //     //'../images/slide_2.jpg',
-        //     //'../images/slide_3.jpg',
-        //     //'../images/slide_7.jpg'
-        //     'https://m.media-amazon.com/images/G/01/2017/mens-shoes/december2017/adidasoriginalscampus._CB1512587610_.jpg',
-        //     'https://m.media-amazon.com/images/G/01/2018/homepage/january/31861._CB487956350_.jpg',
-        //     // 'https://simages.ericdress.com/Upload/Image/2017/22/watermark/74ea1cfb-056e-4dd7-8e19-e732dfba56eb.jpg'
-        // ];
-
         return (
             <div style={{ textAlign: 'center' }}>
-                <section>
-                    <h1>
-                        Greetings {this.props.auth.displayName}!
-                </h1>
-                    <div className="row">
-                        {
-                            this.props.customPurchaseGroupsPerUser.purchaseGroups.purchaseGroup.map(purchaseGroup =>
-                                <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} />
-                            )
-                        }
-                    </div>
-
-                    <div>
-                        <p>
-                            <input onChange={event => { this.onChangeRelevant(event.target.checked) }} type="checkbox" id="relevant" />
-                            <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser.type} is notrelevant for me.</label>
-                        </p>
-                    </div>
-                </section>
+                {this.getGreeting()}
                 <section>
                     <div className="row">
                         <div className="col s4">
@@ -99,19 +93,8 @@ class Home extends Component {
                                 <p>We have provided detailed documentation as well as specific code examples to help new users get started.</p>
                             </div>
                         </div>
-
-
                     </div>
                 </section>
-
-                {/* <div className="section center" style={{ height: '700px', width: '800px', marginLeft: "140px" }}>
-                    <Slide
-                        images={images}
-                        duration={5000}
-                        transitionDuration={1000}
-                    />
-                </div>
-                */}
 
             </div>
         )

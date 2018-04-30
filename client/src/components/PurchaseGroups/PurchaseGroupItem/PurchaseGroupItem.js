@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../actions";
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-import { Button } from 'semantic-ui-react'
-
+import { Button, Grid, Image, Label, Segment } from 'semantic-ui-react'
 
 class PurchaseGroupItem extends Component {
 
@@ -83,13 +82,14 @@ class PurchaseGroupItem extends Component {
                                             <Button.Group>
                                                 <Button className={`${activeOrDisable}`}
                                                     type="submit"
+                                                    positive
                                                     name="action"
                                                     onClick={() => {
                                                         this.buyPurchaseGroup(this.state.purchaseGroupData, amount)
                                                     }}>Buy
                                         </Button>
                                                 <Button.Or />
-                                                <Button positive type="submit"
+                                                <Button  type="submit"
                                                     name="action"
                                                     onClick={() => {
                                                         this.addToCart(this.state.purchaseGroupData, amount)
@@ -144,11 +144,17 @@ class PurchaseGroupItem extends Component {
 
 
                                 <div className="col s3 m6">
-                                    <div className="card-panel">
-                                        <h6>Description - {this.state.purchaseGroupData.description}</h6>
-                                    </div>
-                                </div>
+                                    <Grid columns={1}>
+                                        <Grid.Column>
+                                        <Segment raised>
+                                            <Label as='a' color='red' ribbon>Description</Label>
+                                            <span>Purcahse Group Details</span>
 
+                                            <h6>{this.state.purchaseGroupData.description}</h6>
+                                        </Segment>
+                                        </Grid.Column>
+                                    </Grid>
+                                </div>
                             </div>
                         </div>
                     </div>

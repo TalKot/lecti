@@ -43,16 +43,26 @@ class Footer extends Component {
   render() {
     if (!this.props.auth) {
       return (
-        <div className="progress">
-          <div className="indeterminate"></div>
-        </div>
+        <Grid style={{marginTop:'20px'}}>
+        <Grid.Column stretched width={12}>
+          <Segment>
+            The Best Purchase Group Buying Platform In The World.
+          </Segment>
+        </Grid.Column>
+
+        <Grid.Column width={1}>
+          <Menu fluid vertical tabular='right'>
+            <Menu.Item name='Home' active={activeItem === 'Home'} onClick={this.handleItemClick}><Link to={`/`}>Home</Link></Menu.Item>
+          </Menu>
+        </Grid.Column>
+      </Grid>
       );
     }
 
     const { activeItem } = this.state
 
     return (
-      <Grid>
+      <Grid style={{marginTop:'20px'}}>
         <Grid.Column stretched width={12}>
           <Segment>
             The Best Purchase Group Buying Platform In The World.
