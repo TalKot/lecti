@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import formFields from "./formFields";
 import PurchaseGroupField from "./PurchaseGroupField";
 import Types from '../../../utils/types';
+import { Grid, Image, Label, Segment } from 'semantic-ui-react'
 
 
 class AddPurchaseGroup extends Component {
@@ -53,16 +54,33 @@ class AddPurchaseGroup extends Component {
 
     render() {
         return (
+
+
+
             <div>
                 <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
-                    {this.renderFields()}
-                    <Link to="/home" className="red btn-flat white-text">
-                        Cancel
-                    </Link>
-                    <button type="submit" className="teal btn-flat right white-text">
-                        Next
-                        <i className="material-icons right">done</i>
-                    </button>
+
+                    <Grid columns={1}>
+                        <Grid.Column>
+                            <Segment raised>
+                                <Label as='a' color='red' ribbon>Overview</Label>
+                                <span>Account Details</span>
+                                <br/><br/>
+                                {this.renderFields()}
+
+                                <Label as='a' color='blue' ribbon>Community</Label>
+                                <span>User Reviews</span>
+                                <br/><br/>
+                                <Link to="/home" className="red btn-flat white-text">
+                                    Cancel
+                                </Link>
+                                <button type="submit" className="teal btn-flat right white-text">
+                                    Next
+                                    <i className="material-icons right">done</i>
+                                </button>
+                            </Segment>
+                        </Grid.Column>
+                    </Grid>
                 </form>
             </div>
         );

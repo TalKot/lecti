@@ -5,7 +5,7 @@ import Payments from '../Payments/Payments';
 import SearchBar from '../SearchBar/SearchBar';
 import Types from '../../utils/types';
 import { categories, subCategories } from '../../utils/types';
-import { Button, Dropdown, Menu, Segment, Image } from 'semantic-ui-react'
+import { Button, Icon, Dropdown, Menu, Segment, Image } from 'semantic-ui-react'
 import logo from '../img/logo.png';
 import lecti from '../img/logo.png';
 
@@ -22,10 +22,14 @@ class Header extends Component {
             case false:
                 return [
                     <Menu.Item key="1">
-                        <Button primary href="/auth/google">Sign Up With Google</Button>
+                        <Button color='google plus' href="/auth/google">
+                            <Icon name='google plus' /> Google Plus
+                        </Button>
                     </Menu.Item>,
                     <Menu.Item key="2">
-                        <Button primary href="/auth/facebook">Sign Up With Facebook</Button>
+                        <Button color='facebook' href="/auth/facebook">
+                            <Icon name='facebook' /> Facebook
+                        </Button>
                     </Menu.Item>
                 ];
             default:
@@ -49,7 +53,7 @@ class Header extends Component {
         const { activeItem } = this.state
 
         return (
-            <div>
+            <div style={{ marginBottom: '20px' }}>
                 <Menu size='huge'>
                     <Menu.Item key="234532" style={{ backgroundColor: 'black' }}>
                         <Link to={'/home'}>

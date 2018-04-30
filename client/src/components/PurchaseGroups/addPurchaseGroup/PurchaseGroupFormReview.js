@@ -4,7 +4,8 @@ import formFields from './formFields';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../../actions'
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Message } from 'semantic-ui-react'
 
 class PurchaseGroupFormReview extends Component {
 
@@ -15,7 +16,7 @@ class PurchaseGroupFormReview extends Component {
     async componentDidMount() {
         const { data } = await axios.get(`/api/purchaseGroup/checksimilar/${this.props.auth.isSeller}/${this.props.formValues.name}`);
         if (data) {
-            this.setState({ similar  : data })
+            this.setState({ similar: data })
         }
 
     }
@@ -32,23 +33,22 @@ class PurchaseGroupFormReview extends Component {
     });
 
     getWarning = () => {
+        let message;
         if (this.props.auth.isSeller) {
             //notify to user to purchase group will create as suggestion
-            return (
-                <div className="card-panel #fff9c4 yellow lighten-4 center">
-                    <span className="text-darken-2">Because your user is type seller, this purchase group will open as live and active purchase group.</span>
-                </div>
-
-            );
+            message = 'Because your user is type seller, this purchase group will open as live and active purchase group.';
         } else {
             //notify to user to purchase group will create as active purchase group
-            return (
-                <div className="card-panel #fff9c4 blue lighten-4 center">
-                    <span className="text-darken-2">Because your user is type buyer, this purchase group will open on suggestion mode only.</span>
-                </div>
-
-            );
+            message = 'Because your user is type buyer, this purchase group will open on suggestion mode only.';
         }
+
+        return (
+            <Message warning size='massive'>
+                <Message.Header>Please read the following before you preform the action!</Message.Header>
+                <p>{message}</p>
+            </Message>
+
+        );
     };
 
     getSimilarGroup = () => {
