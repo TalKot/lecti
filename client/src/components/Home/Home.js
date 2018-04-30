@@ -8,6 +8,9 @@ import * as _ from 'lodash';
 import img1 from '../img/col-1-img.png'
 import img2 from '../img/col-2-img.png'
 import img3 from '../img/col-3-img.png'
+import src1 from '../img/group1.png'
+import { Segment, Image, Card } from 'semantic-ui-react'
+import Loder from '../Loader/Loader';
 
 class Home extends Component {
 
@@ -22,36 +25,76 @@ class Home extends Component {
         };
         await axios.post(`/api/purchaseGroup/types/`, options);
     };
+    getMiddleSection = () =>{
+        return (
+            <div className="row">
+                <div className="col s4">
+                    <div className="center promo promo-example">
+                        <img src={img3} />
+                        <h4>Speeds up development</h4>
+                        <p>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+                    </div>
+                </div>
+
+                <div className="col s4">
+                    <div className="center promo promo-example">
+                        <img src={img2} />
+                        <h4>User Experience Focused</h4>
+                        <p>By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+                    </div>
+                </div>
+
+
+                <div className="col s4">
+                    <div className="center promo promo-example">
+                        <img src={img1} />
+                        <h4>Easy To Work with The Platform</h4>
+                        <p>We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    getImageProp = () => {
+        return (
+            <Segment style={{ backgroundColor: '#fafafa' }}>
+                <Image src={src1} size='huge' centered />
+                <p>
+                    <h3>This is this week's recommened purchase group.</h3>
+                    Condition:<br />
+                    New without box: A brand-new, unused, and unworn item (including handmade items) that is not in original packaging or may be missing original packaging materials (such as the original box or bag).<br />
+                    The original tags may not be attached. For example, new shoes (with absolutely no signs of wear) that are no longer in their original box fall into this category.<br />
+                </p>
+            </Segment>
+        );
+    };
 
     getGreeting = () => {
         return (
-            <section>
-                <h1>
-                    Greetings {this.props.auth.displayName}!
-            </h1>
-                <div className="row">
+            <div style={{marginLeft: "50px"}}>
+                <h1>Greetings {this.props.auth.displayName}!</h1>
+                <Card.Group>
                     {
                         this.props.customPurchaseGroupsPerUser.purchaseGroups.purchaseGroup.map(purchaseGroup =>
                             <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} />
                         )
                     }
-                </div>
-
+                </Card.Group> <br/>
                 <div>
                     <p>
                         <input onChange={event => { this.onChangeRelevant(event.target.checked) }} type="checkbox" id="relevant" />
                         <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser.type} is notrelevant for me.</label>
                     </p>
                 </div>
-            </section>
+            </div>
         );
     }
+
+    
     render() {
         if (_.isEmpty(this.props.customPurchaseGroupsPerUser) || !this.props.auth) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loder />
             );
 
         }
@@ -66,36 +109,15 @@ class Home extends Component {
 
         return (
             <div style={{ textAlign: 'center' }}>
-                {this.getGreeting()}
                 <section>
-                    <div className="row">
-                        <div className="col s4">
-                            <div className="center promo promo-example">
-                                <img src={img3} />
-                                <h4>Speeds up development</h4>
-                                <p>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
-                            </div>
-                        </div>
-
-                        <div className="col s4">
-                            <div className="center promo promo-example">
-                                <img src={img2} />
-                                <h4>User Experience Focused</h4>
-                                <p>By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
-                            </div>
-                        </div>
-
-
-                        <div className="col s4">
-                            <div className="center promo promo-example">
-                                <img src={img1} />
-                                <h4>Easy To Work with The Platform</h4>
-                                <p>We have provided detailed documentation as well as specific code examples to help new users get started.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {this.getGreeting()} <br/>
                 </section>
-
+                <section>
+                    {this.getMiddleSection()} <br/>
+                </section>
+                <section>
+                    {this.getImageProp()} <br/>
+                </section>
             </div>
         )
     }

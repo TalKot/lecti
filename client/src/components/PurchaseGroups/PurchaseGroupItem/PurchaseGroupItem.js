@@ -5,6 +5,7 @@ import * as actions from "../../../actions";
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { Button, Grid, Image, Label, Segment } from 'semantic-ui-react'
+import Loder from '../../Loader/Loader';
 
 class PurchaseGroupItem extends Component {
 
@@ -43,9 +44,7 @@ class PurchaseGroupItem extends Component {
 
         if (!this.state) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loder />
             )
         }
 

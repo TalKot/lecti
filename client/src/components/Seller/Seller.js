@@ -4,6 +4,8 @@ import PurchaseGroup from '../PurchaseGroups/PurchaseGroup/PurchaseGroup'
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
 import { Rating, Message, Button,Form, TextArea } from 'semantic-ui-react'
+import Loader from '../Loader/Loader';
+
 
 class Seller extends Component {
 
@@ -120,9 +122,7 @@ class Seller extends Component {
 
         if (!this.state) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loader />
             );
         }
 

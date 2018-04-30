@@ -3,6 +3,8 @@ import * as actions from '../../actions';
 import {connect} from 'react-redux';
 import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
 import {Link} from 'react-router-dom';
+import Loader from '../Loader/Loader';
+import { Card } from 'semantic-ui-react'
 
 
 class PurchaseGroups extends Component {
@@ -68,9 +70,7 @@ class PurchaseGroups extends Component {
 
         if (!this.props.purchaseGroups.length) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loader />
             );
         }
 
@@ -79,13 +79,13 @@ class PurchaseGroups extends Component {
 
                 <h5>{this.props.pageCount} results for Purchase Groups type - {this.props.match.params.item}</h5>
 
-                <div className="row">
+                <Card.Group>
                     {
                         this.props.purchaseGroups.map(purchaseGroup => {
                             return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
                         })
                     }
-                </div>
+               </Card.Group>
 
                 <div className="fixed-action-btn">
                     <Link to="/new/purchasegroup" className="btn-floating btn-large red">

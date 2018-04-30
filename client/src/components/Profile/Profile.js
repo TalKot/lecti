@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import axios from "axios/index";
 import { Icon, Image, Statistic } from 'semantic-ui-react'
-
+import Loader from '../Loader/Loader'
 
 class Profile extends Component {
     constructor(props) {
@@ -120,9 +120,7 @@ class Profile extends Component {
     render() {
         if (!this.props.auth || !this.state) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loader />
             );
         }
 
