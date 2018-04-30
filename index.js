@@ -1,3 +1,11 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 const express = require('express');
 const keys = require('./config/keys');
 const mongoose = require('mongoose');
@@ -46,31 +54,31 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
-// //will call start notify once.
-// _.once(async () => {
-//     //notifications system
-//     //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
-//     //customPurchaseGroupsSelector.notify();
-//     // const { users, comments, purchasegroups } = mongoose.connection.collections;
-//     // try {
-//     //     await Promise.all([users.drop(), comments.drop(), purchasegroups.drop()])
-//     // }catch (e){
-//     //     console.error(e)
-//     // }
-//     //load and store user data to DB
-//     const user = new userSchema(UserData);
-//     await user.save();
-//     //load and store purchase group data to DB
-//     PurchaseGroupData.forEach(async purchaseGroup => {
-//         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
-//         if(!purchaseGroupObject.isSuggestion){
-//             purchaseGroupObject.seller = user;
-//             user.purchaseGroupsSell.push(purchaseGroupObject);
-//         }
-//         purchaseGroupObject.save()
-//     });
-//     await user.save();
-// })();
+//will call start notify once.
+_.once(() => __awaiter(this, void 0, void 0, function* () {
+    //notifications system
+    //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
+    //customPurchaseGroupsSelector.notify();
+    // const { users, comments, purchasegroups } = mongoose.connection.collections;
+    // try {
+    //     await Promise.all([users.drop(), comments.drop(), purchasegroups.drop()])
+    // }catch (e){
+    //     console.error(e)
+    // }
+    //load and store user data to DB
+    const user = new userSchema(UserData);
+    yield user.save();
+    //load and store purchase group data to DB
+    PurchaseGroupData.forEach((purchaseGroup) => __awaiter(this, void 0, void 0, function* () {
+        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+        if (!purchaseGroupObject.isSuggestion) {
+            purchaseGroupObject.seller = user;
+            user.purchaseGroupsSell.push(purchaseGroupObject);
+        }
+        purchaseGroupObject.save();
+    }));
+    yield user.save();
+}))();
 //setting up port with Heroku and locally
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
