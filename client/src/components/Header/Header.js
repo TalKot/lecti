@@ -5,7 +5,7 @@ import Payments from '../Payments/Payments';
 import SearchBar from '../SearchBar/SearchBar';
 import Types from '../../utils/types';
 import { categories, subCategories } from '../../utils/types';
-import { Button, Icon, Dropdown, Menu, Segment, Image } from 'semantic-ui-react'
+import { Button, Icon, Dropdown, Menu, Segment, Image, Input } from 'semantic-ui-react'
 import logo from '../img/logo.png';
 import lecti from '../img/logo.png';
 
@@ -34,6 +34,7 @@ class Header extends Component {
                 ];
             default:
                 let headers = [
+                    <Menu.Item key="22"> <SearchBar /></Menu.Item>,
                     <Menu.Item key="2" name='Credits' active={activeItem === 'Credits'} onClick={this.handleItemClick}> Credits: {this.props.auth.credits}</Menu.Item>,
                     <Menu.Item key="3" name='Profile' href={`/profile/${this.props.auth._id}`} active={activeItem === 'Profile'} onClick={this.handleItemClick} />,
                     <Menu.Item key="4" name='Shopping Cart' href={'/cart'} active={activeItem === 'Shopping Cart'} onClick={this.handleItemClick}> <i className="material-icons">shopping_cart</i></Menu.Item>,
@@ -68,6 +69,7 @@ class Header extends Component {
                     {
                         categories.map(({ name, value }) => {
                             return (
+
                                 <Dropdown item key={value} text={name}>
                                     <Dropdown.Menu>
                                         {

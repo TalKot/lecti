@@ -7,23 +7,20 @@ import { Input, Menu } from 'semantic-ui-react';
 
 class SearchBar extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = { term: '' };
-    }
-
+    // constructor(props) {
+    //     super(props);
+    //     this.state = { term: '' };
+    // }
+    state = { term: '' };
     render() {
         return (
-            <Menu.Menu position='right'>
-                <Menu.Item>
-                    <Input icon='search'
-                        value={this.state.term}
-                        onChange={event => this.onInputChange(event.target.value)}
-                        placeholder="Search..."
-                    />
-                </Menu.Item>
-            </ Menu.Menu>
+            <Input loading icon='user' iconPosition='left' placeholder='Search...' />
 
+            // <input icon='search'
+            //     value={this.state.term}
+            //     onChange={event => this.onInputChange(event.target.value)}
+            //     placeholder="Search..."
+            // />
         );
     };
 
