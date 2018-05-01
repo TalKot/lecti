@@ -11,7 +11,7 @@ class Footer extends Component {
     return (
       <div style={{ margin: ' 10px 10px 0px 100px' }}>
         The Best Purchase Group Buying Platform In The World.
-      <Button circular color='facebook' icon='facebook' />
+        <Button circular color='facebook' icon='facebook' />
         <Button circular color='twitter' icon='twitter' />
         <Button circular color='linkedin' icon='linkedin' />
         <Button circular color='google plus' icon='google plus' />
@@ -19,20 +19,20 @@ class Footer extends Component {
 
     );
   }
-  
+
   render() {
     const { activeItem } = this.state;
 
     if (!this.props.auth) {
       return (
-        <Grid style={{ marginTop: '20px' }}>
+        <Grid stretched style={{ marginTop: '20px', width:'100%' }}>
           <Grid.Column stretched width={12}>
             <Segment>
               {this.getSocialMediaLinks()}
             </Segment>
           </Grid.Column>
 
-          <Grid.Column width={1}>
+          <Grid.Column width={3}>
             <Menu fluid vertical tabular='right'>
               <Menu.Item name='Home' active={activeItem === 'Home'} onClick={this.handleItemClick}><Link to={`/`}>Home</Link></Menu.Item>
             </Menu>
@@ -40,7 +40,7 @@ class Footer extends Component {
         </Grid>
       );
     }
-    
+
     return (
       <Grid style={{ marginTop: '20px' }}>
         <Grid.Column stretched width={12}>
