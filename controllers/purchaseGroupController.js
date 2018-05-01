@@ -132,6 +132,12 @@ class PurchaseGroupController {
                         throw new Error(error);
                     }
                     //check if purchase group should close after the udpate
+                    if (!amount) {
+                        const error = 'Amount must be higher than 0';
+                        httpResponse_1.default.sendError(res, error);
+                        throw new Error(error);
+                    }
+                    //check if purchase group should close after the udpate
                     if (purchaseGroup.totalAmount === purchaseGroup.sales + amount) {
                         purchaseGroupShouldClose = true;
                     }

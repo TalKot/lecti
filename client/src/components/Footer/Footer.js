@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Menu, Segment } from 'semantic-ui-react'
+import { Grid, Menu, Segment, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -7,15 +7,29 @@ class Footer extends Component {
   state = { activeItem: 'Home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  getSocialMediaLinks = () => {
+    return (
+      <div style={{ margin: ' 10px 10px 0px 100px' }}>
+        The Best Purchase Group Buying Platform In The World.
+      <Button circular color='facebook' icon='facebook' />
+        <Button circular color='twitter' icon='twitter' />
+        <Button circular color='linkedin' icon='linkedin' />
+        <Button circular color='google plus' icon='google plus' />
+      </div>
 
+    );
+  }
+  
   render() {
+    const { activeItem } = this.state;
+
     if (!this.props.auth) {
       return (
         <Grid style={{ marginTop: '20px' }}>
           <Grid.Column stretched width={12}>
             <Segment>
-              The Best Purchase Group Buying Platform In The World.
-          </Segment>
+              {this.getSocialMediaLinks()}
+            </Segment>
           </Grid.Column>
 
           <Grid.Column width={1}>
@@ -26,14 +40,12 @@ class Footer extends Component {
         </Grid>
       );
     }
-
-    const { activeItem } = this.state
-
+    
     return (
       <Grid style={{ marginTop: '20px' }}>
         <Grid.Column stretched width={12}>
           <Segment>
-            The Best Purchase Group Buying Platform In The World.
+            {this.getSocialMediaLinks()}
           </Segment>
         </Grid.Column>
         <Grid.Column width={4}>

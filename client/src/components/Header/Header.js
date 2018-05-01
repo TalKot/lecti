@@ -38,6 +38,7 @@ class Header extends Component {
                     <Menu.Item key="3" name='Profile' href={`/profile/${this.props.auth._id}`} active={activeItem === 'Profile'} onClick={this.handleItemClick} />,
                     <Menu.Item key="4" name='Shopping Cart' href={'/cart'} active={activeItem === 'Shopping Cart'} onClick={this.handleItemClick}> <i className="material-icons">shopping_cart</i></Menu.Item>,
                     <Menu.Item key="5" name='Payments' active={activeItem === 'Payments'} onClick={this.handleItemClick}> <Payments /> </Menu.Item>,
+                    <Menu.Item key="8"></Menu.Item>,
                     <Menu.Item key="6" name='Logout' href={'/api/logout'} active={activeItem === 'Logout'} onClick={this.handleItemClick} />
                 ];
 
@@ -67,8 +68,8 @@ class Header extends Component {
                 <Menu pointing secondary>
                     {
                         categories.map(({ name, value }) => {
-                            if(name === 'search'){
-                                return(
+                            if (name === 'search') {
+                                return (
                                     <Menu.Item key={value} name={name}><SearchBar /> </Menu.Item>
                                 );
                             }
@@ -85,6 +86,7 @@ class Header extends Component {
                             );
                         })
                     }
+
                 </Menu>
             </div >
         );

@@ -102,7 +102,7 @@ export default class PurchaseGroupController {
             let UserManagerInstance = UserManager.Instance;
 
             const purchaseGroup = await PurchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
-            const {credits} = await UserManagerInstance.getUser(userID);
+            const { credits } = await UserManagerInstance.getUser(userID);
 
             // purchase group validation tests
             if (purchaseGroup) {
@@ -133,6 +133,13 @@ export default class PurchaseGroupController {
                 //check available amount left for client to purchase
                 if (purchaseGroup.totalAmount < purchaseGroup.sales + amount) {
                     const error: string = 'cannot buy this amount';
+                    httpResponse.sendError(res, error);
+                    throw new Error(error)
+                }
+
+                //check if purchase group should close after the udpate
+                if (!amount) {
+                    const error: string = 'Amount must be higher than 0';
                     httpResponse.sendError(res, error);
                     throw new Error(error)
                 }
