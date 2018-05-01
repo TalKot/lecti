@@ -9,7 +9,7 @@ import img1 from '../img/col-1-img.png'
 import img2 from '../img/col-2-img.png'
 import img3 from '../img/col-3-img.png'
 import src1 from '../img/group1.png'
-import { Segment, Image, Card } from 'semantic-ui-react'
+import { Segment, Image, Card, Header, Icon, Message } from 'semantic-ui-react'
 import Loder from '../Loader/Loader';
 
 class Home extends Component {
@@ -25,7 +25,7 @@ class Home extends Component {
         };
         await axios.post(`/api/purchaseGroup/types/`, options);
     };
-    getMiddleSection = () =>{
+    getMiddleSection = () => {
         return (
             <div className="row">
                 <div className="col s4">
@@ -71,7 +71,7 @@ class Home extends Component {
 
     getGreeting = () => {
         return (
-            <div style={{marginLeft: "50px"}}>
+            <div style={{ marginLeft: "50px" }}>
                 <h1>Greetings {this.props.auth.displayName}!</h1>
                 <Card.Group>
                     {
@@ -79,18 +79,29 @@ class Home extends Component {
                             <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} />
                         )
                     }
-                </Card.Group> <br/>
+                </Card.Group> <br />
                 <div>
-                    <p>
-                        <input onChange={event => { this.onChangeRelevant(event.target.checked) }} type="checkbox" id="relevant" />
-                        <label htmlFor="relevant">Type - {this.props.customPurchaseGroupsPerUser.type} is notrelevant for me.</label>
-                    </p>
+                    <Header as='h2' icon textAlign='center'>
+                        <Icon name='users' circular />
+                        <Header.Content>
+                            Custom Purchase Group's Type Algorithem Result - {this.props.customPurchaseGroupsPerUser.type}
+                        </Header.Content>
+                    </Header>
+
+                    <Message visible>
+                        <p>
+                            We ran our alogithem and figure out that the most valuble purchase groups types for you are from the type above.<br />
+                            If not, you can always mark below the checkbox, and we will provide differnt types for you to see.<br/>
+                            <input onChange={event => { this.onChangeRelevant(event.target.checked) }} type="checkbox" id="relevant" />
+                            <label htmlFor="relevant">Make this type not relevant for me.</label>
+                        </p>
+                    </Message>
                 </div>
             </div>
         );
     }
 
-    
+
     render() {
         if (_.isEmpty(this.props.customPurchaseGroupsPerUser) || !this.props.auth) {
             return (
@@ -110,13 +121,13 @@ class Home extends Component {
         return (
             <div style={{ textAlign: 'center' }}>
                 <section>
-                    {this.getGreeting()} <br/>
+                    {this.getGreeting()} <br />
                 </section>
                 <section>
-                    {this.getMiddleSection()} <br/>
+                    {this.getMiddleSection()} <br />
                 </section>
                 <section>
-                    {this.getImageProp()} <br/>
+                    {this.getImageProp()} <br />
                 </section>
             </div>
         )

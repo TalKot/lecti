@@ -95,6 +95,7 @@ class PurchaseGroupController {
             }
         });
     }
+    //todo - remove this code to manager
     buyPurchaseGroup(res, purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
@@ -103,11 +104,18 @@ class PurchaseGroupController {
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 let UserManagerInstance = userManager_1.default.Instance;
                 const purchaseGroup = yield PurchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+                const { credits } = yield UserManagerInstance.getUser(userID);
                 // purchase group validation tests
                 if (purchaseGroup) {
                     // check that group is active
                     if (!purchaseGroup.isActive) {
                         const error = 'purchaseGroup is not available';
+                        httpResponse_1.default.sendError(res, error);
+                        throw new Error(error);
+                    }
+                    //check available client's credits to purchase this group 
+                    if (purchaseGroup.priceForGroup * amount > credits) {
+                        const error = 'Not enough money to complete this action.';
                         httpResponse_1.default.sendError(res, error);
                         throw new Error(error);
                     }

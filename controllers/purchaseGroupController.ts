@@ -92,6 +92,7 @@ export default class PurchaseGroupController {
         }
     }
 
+    //todo - remove this code to manager
     async buyPurchaseGroup(res, purchaseGroupID: string, amount: number, userID: string) {
         try {
             amount = Number(amount);
@@ -101,6 +102,7 @@ export default class PurchaseGroupController {
             let UserManagerInstance = UserManager.Instance;
 
             const purchaseGroup = await PurchaseGroupManagerInstance.getPurchaseGroupById(purchaseGroupID);
+            const {credits} = await UserManagerInstance.getUser(userID);
 
             // purchase group validation tests
             if (purchaseGroup) {
@@ -111,6 +113,13 @@ export default class PurchaseGroupController {
                     httpResponse.sendError(res, error);
                     throw new Error(error)
 
+                }
+
+                //check available client's credits to purchase this group 
+                if (purchaseGroup.priceForGroup * amount > credits) {
+                    const error: string = 'Not enough money to complete this action.';
+                    httpResponse.sendError(res, error);
+                    throw new Error(error)
                 }
 
                 //check available amount for client to purchase

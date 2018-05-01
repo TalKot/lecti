@@ -21,13 +21,14 @@ class PurchaseGroupItem extends Component {
 
     buyPurchaseGroup = async (purchaseGroup, amount) => {
         let status = await this.props.onAddPurchaseGroup(purchaseGroup._id, amount);
-        if (status) {
+        if (status.result) {
             swal("Nice For You!", `You have purchased ${amount} amount of ${purchaseGroup.name}.`, "success");
             const purchaseGroupID = this.props.match.params.item;
             const { data } = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
             this.setState({ purchaseGroupData: data })
         } else {
-            swal("ops! something went wrong!", `You didn't purchase ${amount} amount of ${purchaseGroup.name}.`, "warning");
+            swal("You can't prefore this action!", `${status.response}.
+                You didn't purchase ${amount} amount of ${purchaseGroup.name} `, "warning");
         }
 
 
