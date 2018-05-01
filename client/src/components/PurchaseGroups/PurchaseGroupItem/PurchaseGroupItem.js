@@ -12,7 +12,7 @@ class PurchaseGroupItem extends Component {
     async componentDidMount() {
         const purchaseGroupID = this.props.match.params.item;
         const { data } = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
-        this.setState({ purchaseGroupData: data })
+        this.setState({ purchaseGroupData: data, open: false, amount: 0 })
     }
 
     notify() {
@@ -32,7 +32,7 @@ class PurchaseGroupItem extends Component {
         }
     };
 
-    
+
     addToCart = async (purchaseGroup, amount) => {
         let status = await this.props.onAddPurchaseGroupToCart(purchaseGroup._id, amount);
         if (status.result) {
@@ -57,10 +57,11 @@ class PurchaseGroupItem extends Component {
 
         this.notify();
 
-        let amount = 0;
+        // let amount = 0;
         const activeOrDisable = this.state.purchaseGroupData.isActive ? "" : "disabled";
 
-        // console.log(this.state.purchaseGroupData);
+
+
         return (
             <div>
                 <div style={{ textAlign: 'center' }}>
@@ -83,24 +84,32 @@ class PurchaseGroupItem extends Component {
                                 <div className="card-action">
                                     <div className="row">
                                         <label htmlFor="amount">Amount:</label>
-                                        <input type="number" onChange={e => amount = e.target.value} />
+                                        <input type="number" onChange={e => this.setState({ amount: e.target.value })} />
                                         <div>
                                             <Button.Group>
                                                 <Button className={`${activeOrDisable}`}
                                                     type="submit"
                                                     positive
                                                     name="action"
-                                                    onClick={() => {
-                                                        this.buyPurchaseGroup(this.state.purchaseGroupData, amount)
-                                                    }}>Buy
-                                                </Button>
+                                                    onClick={this.show}>Buy
+                                                    </Button>
+                                                <Confirm
+                                                    open={this.state.open}
+                                                    cancelButton='Never mind'
+                                                    confirmButton="Buy"
+                                                    onCancel={this.handleCancel}
+                                                    onConfirm={() => {
+                                                        this.buyPurchaseGroup(this.state.purchaseGroupData, this.state.amount)
+                                                        this.handleConfirm()
+                                                    }}
+                                                />
                                                 <Button.Or />
                                                 <Button type="submit"
                                                     name="action"
                                                     onClick={() => {
-                                                        this.addToCart(this.state.purchaseGroupData, amount)
+                                                        this.addToCart(this.state.purchaseGroupData, this.state.amount)
                                                     }}>Cart
-                                                </Button>
+                                                    </Button>
                                             </Button.Group>
                                         </div>
                                     </div>
@@ -155,7 +164,6 @@ class PurchaseGroupItem extends Component {
                                             <Segment raised>
                                                 <Label as='a' color='red' ribbon>Description</Label>
                                                 <span>Purcahse Group Details</span>
-
                                                 <h6>{this.state.purchaseGroupData.description}</h6>
                                             </Segment>
                                         </Grid.Column>

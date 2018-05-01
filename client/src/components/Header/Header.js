@@ -54,7 +54,7 @@ class Header extends Component {
 
         return (
             <div style={{ marginBottom: '20px' }}>
-                <Menu dividing size='huge'>
+                <Menu size='huge'>
                     <Menu.Item key="234532" style={{ backgroundColor: 'black' }}>
                         <Link to={'/home'}>
                             <Image src={lecti} size='tiny' verticalAlign='top' />

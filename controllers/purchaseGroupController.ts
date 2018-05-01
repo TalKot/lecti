@@ -110,7 +110,7 @@ export default class PurchaseGroupController {
                 // check that group is active
                 if (!purchaseGroup.isActive) {
                     const error: string = 'purchaseGroup is not available';
-                    httpResponse.sendError(res, error);
+                    // httpResponse.sendError(res, error);
                     throw new Error(error)
 
                 }
@@ -118,14 +118,14 @@ export default class PurchaseGroupController {
                 //check available client's credits to purchase this group 
                 if (purchaseGroup.priceForGroup * amount > credits) {
                     const error: string = 'Not enough money to complete this action.';
-                    httpResponse.sendError(res, error);
+                    // httpResponse.sendError(res, error);
                     throw new Error(error)
                 }
 
                 //check available amount for client to purchase
                 if (purchaseGroup.totalAmount < amount) {
                     const error: string = 'Amount is not available for this purchase group';
-                    httpResponse.sendError(res, error);
+                    // httpResponse.sendError(res, error);
                     throw new Error(error)
                 }
 
@@ -133,14 +133,14 @@ export default class PurchaseGroupController {
                 //check available amount left for client to purchase
                 if (purchaseGroup.totalAmount < purchaseGroup.sales + amount) {
                     const error: string = 'cannot buy this amount';
-                    httpResponse.sendError(res, error);
+                    // httpResponse.sendError(res, error);
                     throw new Error(error)
                 }
 
                 //check if purchase group should close after the udpate
                 if (!amount) {
                     const error: string = 'Amount must be higher than 0';
-                    httpResponse.sendError(res, error);
+                    // httpResponse.sendError(res, error);
                     throw new Error(error)
                 }
 
@@ -182,7 +182,8 @@ export default class PurchaseGroupController {
             }
             //TODO - WE NEED THIS?
             //return values
-            await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
+            //await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
+            httpResponse.sendOk(res);
         }
         catch (e) {
             httpResponse.sendError(res, e);

@@ -110,31 +110,31 @@ class PurchaseGroupController {
                     // check that group is active
                     if (!purchaseGroup.isActive) {
                         const error = 'purchaseGroup is not available';
-                        httpResponse_1.default.sendError(res, error);
+                        // httpResponse.sendError(res, error);
                         throw new Error(error);
                     }
                     //check available client's credits to purchase this group 
                     if (purchaseGroup.priceForGroup * amount > credits) {
                         const error = 'Not enough money to complete this action.';
-                        httpResponse_1.default.sendError(res, error);
+                        // httpResponse.sendError(res, error);
                         throw new Error(error);
                     }
                     //check available amount for client to purchase
                     if (purchaseGroup.totalAmount < amount) {
                         const error = 'Amount is not available for this purchase group';
-                        httpResponse_1.default.sendError(res, error);
+                        // httpResponse.sendError(res, error);
                         throw new Error(error);
                     }
                     //check available amount left for client to purchase
                     if (purchaseGroup.totalAmount < purchaseGroup.sales + amount) {
                         const error = 'cannot buy this amount';
-                        httpResponse_1.default.sendError(res, error);
+                        // httpResponse.sendError(res, error);
                         throw new Error(error);
                     }
                     //check if purchase group should close after the udpate
                     if (!amount) {
                         const error = 'Amount must be higher than 0';
-                        httpResponse_1.default.sendError(res, error);
+                        // httpResponse.sendError(res, error);
                         throw new Error(error);
                     }
                     //check if purchase group should close after the udpate
@@ -171,7 +171,8 @@ class PurchaseGroupController {
                 }
                 //TODO - WE NEED THIS?
                 //return values
-                yield this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
+                //await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
+                httpResponse_1.default.sendOk(res);
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);
