@@ -87,12 +87,32 @@ export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch =>
 
 // buy purchase group to cart
 export const onAddPurchaseGroupToCart = (purchaseGroupID, amount) => async dispatch => {
+
     let options = {
         purchaseGroupID,
         amount
     };
-    const res = await axios.post(`/api/cart/add/`, options);
-    dispatch({ type: FETCH_USER, payload: res.data });
+
+    let response = {
+        result: true,
+        response: ''
+    };
+
+
+    axios.post(`/api/cart/add/`, options)
+        .then(res => {
+            dispatch({ type: FETCH_USER, payload: res.data });
+        })
+        .catch(err => {
+            response = {
+                result: false,
+                response: err.response.data.error
+
+            }
+            return response;
+        });
+
+    return response
 };
 
 // fetch custom purchase group recommended per user

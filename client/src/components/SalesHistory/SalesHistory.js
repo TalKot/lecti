@@ -3,6 +3,7 @@ import * as actions from '../../actions';
 import {connect} from 'react-redux';
 import React, {Component} from 'react';
 import axios from "axios/index";
+import Loder from '../Loader/Loader'
 
 class Sales extends Component {
 
@@ -35,9 +36,7 @@ class Sales extends Component {
     render() {
         if (!this.props.auth || !this.state) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loder />
             );
         }
         return (

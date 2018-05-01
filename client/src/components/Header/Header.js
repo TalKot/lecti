@@ -34,7 +34,6 @@ class Header extends Component {
                 ];
             default:
                 let headers = [
-                    <Menu.Item key="22"> <SearchBar /></Menu.Item>,
                     <Menu.Item key="2" name='Credits' active={activeItem === 'Credits'} onClick={this.handleItemClick}> Credits: {this.props.auth.credits}</Menu.Item>,
                     <Menu.Item key="3" name='Profile' href={`/profile/${this.props.auth._id}`} active={activeItem === 'Profile'} onClick={this.handleItemClick} />,
                     <Menu.Item key="4" name='Shopping Cart' href={'/cart'} active={activeItem === 'Shopping Cart'} onClick={this.handleItemClick}> <i className="material-icons">shopping_cart</i></Menu.Item>,
@@ -68,8 +67,12 @@ class Header extends Component {
                 <Menu pointing secondary>
                     {
                         categories.map(({ name, value }) => {
+                            if(name === 'search'){
+                                return(
+                                    <Menu.Item key={value} name={name}><SearchBar /> </Menu.Item>
+                                );
+                            }
                             return (
-
                                 <Dropdown item key={value} text={name}>
                                     <Dropdown.Menu>
                                         {

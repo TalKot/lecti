@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import axios from "axios/index";
 import {Link} from 'react-router-dom';
 import * as actions from '../../actions';
+import Loder from '../Loader/Loader'
 
 
 class Cart extends Component {
@@ -15,9 +16,7 @@ class Cart extends Component {
     render() {
         if (!this.props.auth) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loder />
             )
         }
 

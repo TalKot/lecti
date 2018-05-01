@@ -30,15 +30,17 @@ class PurchaseGroupItem extends Component {
             swal("You can't prefore this action!", `${status.response}.
                 You didn't purchase ${amount} amount of ${purchaseGroup.name} `, "warning");
         }
-
-
     };
-    //TODO - NEED TO COMPLETE THIS CODE
+
+    
     addToCart = async (purchaseGroup, amount) => {
         let status = await this.props.onAddPurchaseGroupToCart(purchaseGroup._id, amount);
-        console.log(status);
-        // swal("Nice For You!", `Product ${purchaseGroup.name} with ${amount} amount added to cart .`, "success");
-
+        if (status.result) {
+            swal("Nice For You!", `You have added to cart ${amount} amount of ${purchaseGroup.name}.`, "success");
+        } else {
+            swal("You can't prefore this action!", `${status.response}.
+                You didn't add to cart ${amount} amount of ${purchaseGroup.name} `, "warning");
+        }
     };
 
     show = () => this.setState({ open: true })

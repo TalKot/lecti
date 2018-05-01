@@ -13,6 +13,7 @@ export default {
 
 //used for the header
 export const categories = [
+    { name: 'search', value: 'search' },
     { name: 'Men’s fashion', value: 'men' },
     { name: 'Women’s fashion', value: 'women' },
     { name: 'Computers', value: 'computers' },

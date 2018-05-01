@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
-// import axios from "axios/index";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 import { Input, Menu } from 'semantic-ui-react';
@@ -12,13 +11,13 @@ class SearchBar extends Component {
     
     render() {
         return (
-            <Input loading icon='user' iconPosition='left' placeholder='Search...' />
-
-            // <input icon='search'
-            //     value={this.state.term}
-            //     onChange={event => this.onInputChange(event.target.value)}
-            //     placeholder="Search..."
-            // />
+            <input 
+                icon='user'
+                value={this.state.term}
+                style={{margin:'0px 0px 0px 0px', border: 'none', height:'18px'}}
+                onChange={event => this.onInputChange(event.target.value)}
+                placeholder="Search..."
+            />
         );
     };
 
