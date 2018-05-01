@@ -166,18 +166,27 @@ class PurchaseGroupController {
     }
     getCustomPurchaseGroupsByUserId(res, userId) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const TYPE_DEFAULT = 'cheapest';
+            let type;
+            const RETURN_ARRAY_AMOUNT = 3;
+            const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+            const customPurchaseGroupSelector = customPurchaseGropusSelector_1.default.Instance;
+            //checking custom purchase group for current user by searching users's data
             try {
-                const customPurchaseGroupSelector = customPurchaseGropusSelector_1.default.Instance;
-                const type = yield customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
-                const RETURN_ARRAY_AMOUNT = 3;
-                const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
+                type = yield customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
+            }
+            catch (e) {
+                //if no relevant data - taking the cheapest
+                type = TYPE_DEFAULT;
+            }
+            try {
                 let purchaseGroups;
-                type === 'cheapest' ?
+                type === TYPE_DEFAULT ?
                     purchaseGroups = yield PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT) :
                     purchaseGroups = yield PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
                 const returnedResult = {
                     purchaseGroups,
-                    type
+                    type: type || TYPE_DEFAULT
                 };
                 purchaseGroups ? httpResponse_1.default.sendOk(res, returnedResult) : httpResponse_1.default.sendError(res);
             }

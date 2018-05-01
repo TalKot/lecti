@@ -161,7 +161,7 @@ export default class PurchaseGroupController {
             // check and update purchase group active status if needed
             if (purchaseGroupShouldClose) {
                 //todo - user Promise.all
-                const updatedPurchaseGroup = await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, {isActive: false})
+                const updatedPurchaseGroup = await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false })
                 await UserManagerInstance.notifyClientsOnClosedPurchaseGroup(updatedPurchaseGroup);
             }
             //TODO - WE NEED THIS?
@@ -174,21 +174,32 @@ export default class PurchaseGroupController {
     }
 
     async getCustomPurchaseGroupsByUserId(res, userId: string) {
-        try {
-            const customPurchaseGroupSelector = CustomPurchaseGroupSelector.Instance;
-            const type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
-            const RETURN_ARRAY_AMOUNT: number = 3;
 
-            const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+        const TYPE_DEFAULT: string = 'cheapest';
+        let type: string;
+        const RETURN_ARRAY_AMOUNT: number = 3;
+        const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
+        const customPurchaseGroupSelector = CustomPurchaseGroupSelector.Instance;
+
+
+        //checking custom purchase group for current user by searching users's data
+        try {
+            type = await customPurchaseGroupSelector.selectCustomPurchaseGroupsTypeForUser(userId);
+        } catch (e) {
+            //if no relevant data - taking the cheapest
+            type = TYPE_DEFAULT;
+        }
+        try {
             let purchaseGroups;
-            type === 'cheapest'? 
-                purchaseGroups = await PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT):
+            type === TYPE_DEFAULT ?
+                purchaseGroups = await PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(null, "1", RETURN_ARRAY_AMOUNT) :
                 purchaseGroups = await PurchaseGroupManagerInstance.getSubPurchaseGroupsByType(type, "1", RETURN_ARRAY_AMOUNT);
-            
+
             const returnedResult = {
                 purchaseGroups,
-                type
-            }
+                type: type || TYPE_DEFAULT
+            };
+
             purchaseGroups ? httpResponse.sendOk(res, returnedResult) : httpResponse.sendError(res);
 
         } catch (e) {
@@ -236,10 +247,10 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getSimilarGroupByName(res, purchaseGroupsSimilarName, userType){
+    async getSimilarGroupByName(res, purchaseGroupsSimilarName, userType) {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
-            const similarPurchaseGroup =  await PurchaseGroupManagerInstance.getSimilarGroupByName(purchaseGroupsSimilarName, userType);
+            const similarPurchaseGroup = await PurchaseGroupManagerInstance.getSimilarGroupByName(purchaseGroupsSimilarName, userType);
             httpResponse.sendOk(res, similarPurchaseGroup);
         }
         catch (e) {
@@ -329,7 +340,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async joinSuggestionGroup(res, groupID, userID){
+    async joinSuggestionGroup(res, groupID, userID) {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             PurchaseGroupManagerInstance.joinSuggestionGroup(groupID, userID);
@@ -340,7 +351,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async leaveSuggestionGroup(res, groupID, userID){
+    async leaveSuggestionGroup(res, groupID, userID) {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             PurchaseGroupManagerInstance.leaveSuggestionGroup(groupID, userID);

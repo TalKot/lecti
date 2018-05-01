@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../actions";
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-import { Button, Grid, Image, Label, Segment } from 'semantic-ui-react'
+import { Button, Grid, Image, Label, Segment, Confirm } from 'semantic-ui-react'
 import Loder from '../../Loader/Loader';
 
 class PurchaseGroupItem extends Component {
@@ -39,6 +39,10 @@ class PurchaseGroupItem extends Component {
         // swal("Nice For You!", `Product ${purchaseGroup.name} with ${amount} amount added to cart .`, "success");
 
     };
+
+    show = () => this.setState({ open: true })
+    handleConfirm = () => this.setState({ result: 'confirmed', open: false })
+    handleCancel = () => this.setState({ result: 'cancelled', open: false })
 
     render() {
 
@@ -86,14 +90,14 @@ class PurchaseGroupItem extends Component {
                                                     onClick={() => {
                                                         this.buyPurchaseGroup(this.state.purchaseGroupData, amount)
                                                     }}>Buy
-                                        </Button>
+                                                </Button>
                                                 <Button.Or />
-                                                <Button  type="submit"
+                                                <Button type="submit"
                                                     name="action"
                                                     onClick={() => {
                                                         this.addToCart(this.state.purchaseGroupData, amount)
                                                     }}>Cart
-                                        </Button>
+                                                </Button>
                                             </Button.Group>
                                         </div>
                                     </div>
@@ -145,12 +149,12 @@ class PurchaseGroupItem extends Component {
                                 <div className="col s3 m6">
                                     <Grid columns={1}>
                                         <Grid.Column>
-                                        <Segment raised>
-                                            <Label as='a' color='red' ribbon>Description</Label>
-                                            <span>Purcahse Group Details</span>
+                                            <Segment raised>
+                                                <Label as='a' color='red' ribbon>Description</Label>
+                                                <span>Purcahse Group Details</span>
 
-                                            <h6>{this.state.purchaseGroupData.description}</h6>
-                                        </Segment>
+                                                <h6>{this.state.purchaseGroupData.description}</h6>
+                                            </Segment>
                                         </Grid.Column>
                                     </Grid>
                                 </div>
@@ -163,5 +167,6 @@ class PurchaseGroupItem extends Component {
     };
 
 };
+
 
 export default connect(null, actions)(PurchaseGroupItem);

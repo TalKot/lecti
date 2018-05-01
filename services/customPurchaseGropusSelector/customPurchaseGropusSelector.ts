@@ -126,8 +126,7 @@ export default class CustomPurchaseGroupsSelector {
                     return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
                 });
 
-            }
-            else {
+            }else {
                 // will return the mix of the most discounted purchase groups for new users.
                 selectedType = 'cheapest';
             }
@@ -137,7 +136,6 @@ export default class CustomPurchaseGroupsSelector {
         }
         const res = `${user.displayName}, ${user.email} will need ${selectedType}`;
         this.message.push(res);
-
         return selectedType;
     }
 
