@@ -85,7 +85,7 @@ class Home extends Component {
                     <Header as='h2' icon textAlign='center'>
                         <Icon name='users' circular />
                         <Header.Content>
-                            Custom Purchase Group's Type Algorithem Result - {this.props.customPurchaseGroupsPerUser.type}
+                            Custom Purchase Group's Type Algorithem Result - {this.props.customPurchaseGroupsPerUser.type[0].toUpperCase() + this.props.customPurchaseGroupsPerUser.type.substring(1)}
                         </Header.Content>
                     </Header>
 

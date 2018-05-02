@@ -191,7 +191,7 @@ export default class PurchaseGroupController {
 
         const TYPE_DEFAULT: string = 'cheapest';
         let type: string;
-        const RETURN_ARRAY_AMOUNT: number = 3;
+        const RETURN_ARRAY_AMOUNT: number = 4;
         const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
         const customPurchaseGroupSelector = CustomPurchaseGroupSelector.Instance;
 

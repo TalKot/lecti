@@ -26,7 +26,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container" style={{margin:'0px 100px 0px 100px', width: '100%'}}>
                 <BrowserRouter>
                     <div>
                         <Header />

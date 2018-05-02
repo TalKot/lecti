@@ -180,7 +180,7 @@ class PurchaseGroupController {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const TYPE_DEFAULT = 'cheapest';
             let type;
-            const RETURN_ARRAY_AMOUNT = 3;
+            const RETURN_ARRAY_AMOUNT = 4;
             const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
             const customPurchaseGroupSelector = customPurchaseGropusSelector_1.default.Instance;
             //checking custom purchase group for current user by searching users's data
