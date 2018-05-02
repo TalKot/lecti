@@ -81,7 +81,7 @@ export default class PurchaseGroupManager {
         let purchaseGroup;
 
         if (amount && !type) {
-            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false })
+            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .limit(amount);
             let res = {
@@ -91,16 +91,16 @@ export default class PurchaseGroupManager {
             return res;
 
         } else if (amount) {
-            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false })
+            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .limit(amount);
         } else {
-            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false })
+            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false, isActive: true })
                 .sort({ discount: -1 })
                 .skip(minPurchaseGroup)
                 .limit(12);
         }
-        let count = await PurchaseGroup.find({ 'subCategory': type })
+        let count = await PurchaseGroup.find({ 'subCategory': type, isActive: true })
             .count();
         return purchaseGroup ? { count, purchaseGroup } : null;
 

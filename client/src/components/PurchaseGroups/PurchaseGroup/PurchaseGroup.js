@@ -20,7 +20,7 @@ const PurchaseGroup = ({ purchaseGroup }) => {
             <Card.Content extra>
                 <a>
                     <Icon name='user' />
-                    {purchaseGroup.sales} Buyers
+                    {purchaseGroup.potentialBuyers.length} Buyers
                  </a>
             </Card.Content>
         </Card>

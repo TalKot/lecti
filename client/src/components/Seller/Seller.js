@@ -3,9 +3,8 @@ import axios from 'axios';
 import PurchaseGroup from '../PurchaseGroups/PurchaseGroup/PurchaseGroup'
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
-import { Rating, Message, Button,Form, TextArea } from 'semantic-ui-react'
+import { Rating, Message, Button,Form, TextArea, Card } from 'semantic-ui-react'
 import Loader from '../Loader/Loader';
-
 
 class Seller extends Component {
 
@@ -25,14 +24,14 @@ class Seller extends Component {
 
     getSellerPurchaseGroups() {
         return (
-            <div className="row">
+            <Card.Group>
                 {
                     this.state.seller.purchaseGroupsSell.map(purchaseGroup => {
                         return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}
                         />
                     })
                 }
-            </div>
+            </Card.Group>
         );
     }
 
@@ -48,7 +47,7 @@ class Seller extends Component {
                                     <div className="card-content">
                                         <span className="card-title"><Link
                                             to={`/profile/${comment.user._id}`}>{comment.user.displayName}</Link> comment:</span>
-                                        Rating - <b> {comment.rating}</b><br />
+                                        Rating - <b> {comment.rating || 3}</b><br />
                                         <p>{comment.comment}</p>
                                     </div>
                                 </div>
