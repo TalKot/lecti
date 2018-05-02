@@ -56,11 +56,7 @@ class PurchaseGroupItem extends Component {
         }
 
         this.notify();
-
-        // let amount = 0;
         const activeOrDisable = this.state.purchaseGroupData.isActive ? "" : "disabled";
-
-
 
         return (
             <div>
@@ -87,7 +83,8 @@ class PurchaseGroupItem extends Component {
                                         <input type="number" onChange={e => this.setState({ amount: e.target.value })} />
                                         <div>
                                             <Button.Group>
-                                                <Button className={`${activeOrDisable}`}
+                                                <Button 
+                                                    disabled={!this.props.auth || !this.state.purchaseGroupData.isActive}
                                                     type="submit"
                                                     positive
                                                     name="action"
@@ -104,8 +101,10 @@ class PurchaseGroupItem extends Component {
                                                     }}
                                                 />
                                                 <Button.Or />
-                                                <Button type="submit"
+                                                <Button 
+                                                    type="submit"
                                                     name="action"
+                                                    disabled={!this.props.auth || !this.state.purchaseGroupData.isActive}
                                                     onClick={() => {
                                                         this.addToCart(this.state.purchaseGroupData, this.state.amount)
                                                     }}>Cart
@@ -179,5 +178,8 @@ class PurchaseGroupItem extends Component {
 
 };
 
+function mapStateToProps({ auth }) {
+    return { auth };
+}
 
-export default connect(null, actions)(PurchaseGroupItem);
+export default connect(mapStateToProps, actions)(PurchaseGroupItem);
