@@ -72,6 +72,7 @@ class Home extends Component {
     getGreeting = () => {
         return (
             <div style={{ marginLeft: "50px" }}>
+                
                 <h1>Greetings {this.props.auth.displayName}!</h1>
                 <Card.Group>
                     {

@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import * as actions from '../../actions';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
-import { Card } from 'semantic-ui-react'
+import { Card, Message, Pagination } from 'semantic-ui-react'
 
 
 class PurchaseGroups extends Component {
     constructor(props) {
         super(props);
-        this.state = {page: 1};
+        this.state = { page: 1 };
 
     }
 
@@ -25,46 +25,10 @@ class PurchaseGroups extends Component {
         await this.props.fetchPurchaseGroups(this.props.match.params.item, page);
     }
 
-    changeToNextPage = () => {
-        let page = this.state.page + 1;
-        this.setState({page: page});
-        this.props.fetchPurchaseGroups(this.props.match.params.item, page);
-    };
-
-    changeToPreviousPage = () => {
-        let page = this.state.page - 1;
-        this.setState({page: page});
-        this.props.fetchPurchaseGroups(this.props.match.params.item, page);
-    };
-
-    getNextPageButton = () => {
-        return (
-            <button className="col" onClick={() => this.changeToNextPage()}>
-                <i className="material-icons">navigate_next</i>
-            </button>
-        );
+    handlePaginationChange = async (e, { activePage }) => {
+        this.setState({ activePage });
+        await this.props.fetchPurchaseGroups(this.props.match.params.item, activePage);
     }
-
-    getPreviousPageButton = () => {
-        if (Number(this.state.page) === 1) return;
-        return (
-            <button className="col" onClick={() => this.changeToPreviousPage()}>
-                <i className="material-icons">navigate_before</i>
-            </button>
-        );
-    }
-
-    getPagesButtons = () => {
-        if (this.state.page * 12 > this.props.pageCount) return;
-        return (
-            <div className="center row" style={{margin: "30px", display: "inline-block"}}>
-                {this.getPreviousPageButton()}
-                <div className="col">{this.state.page}</div>
-                {this.getNextPageButton()}
-            </div>
-        );
-    };
-
 
     render() {
 
@@ -75,17 +39,22 @@ class PurchaseGroups extends Component {
         }
 
         return (
-            <div style={{textAlign: 'center'}}>
+            <div style={{ textAlign: 'center' }}>
 
-                <h5>{this.props.pageCount} results for Purchase Groups type - {this.props.match.params.item}</h5>
+                <Message
+                    info
+                    header='Was this what you wanted?'
+                    content={`${this.props.pageCount} results for Purchase Groups type - ${this.props.match.params.item[0].toUpperCase() + this.props.match.params.item.substring(1)}`}
+                />
 
-                <Card.Group>
+
+                <Card.Group >
                     {
                         this.props.purchaseGroups.map(purchaseGroup => {
-                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
+                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} />
                         })
                     }
-               </Card.Group>
+                </Card.Group>
 
                 <div className="fixed-action-btn">
                     <Link to="/new/purchasegroup" className="btn-floating btn-large red">
@@ -93,15 +62,19 @@ class PurchaseGroups extends Component {
                     </Link>
                 </div>
 
-                {this.getPagesButtons()}
+                <Pagination defaultActivePage={1} 
+                totalPages={Math.floor(this.props.pageCount / 12)} 
+                onPageChange={this.handlePaginationChange} 
+                style={{marginTop: '25px',marginRight:'135px'}}
+                />
             </div>
         );
     }
 
 };
 
-function mapStateToProps({purchaseGroups, pageCount}) {
-    return {purchaseGroups, pageCount};
+function mapStateToProps({ purchaseGroups, pageCount }) {
+    return { purchaseGroups, pageCount };
 }
 
 export default connect(mapStateToProps, actions)(PurchaseGroups);
