@@ -118,23 +118,8 @@ export const onAddPurchaseGroupToCart = (purchaseGroupID, amount) => async dispa
 // fetch custom purchase group recommended per user
 export const fetchCustomPurchaseGroups = () => async dispatch => {
     const res = await axios.get('/api/purchaseGroup/getgroup/custom/');
-    console.log('from the action ')
-    console.log(res.data)
     dispatch({ type: FETCH_CUSTOM_MADE_GROUPS, payload: res.data });
 };
-
-// //submit a survey
-// export const submitSurvey = (values, history) => async dispatch => {
-//     const res = await axios.post('/api/surveys', values);
-//     history.push('/surveys');
-//     dispatch({type: FETCH_USER, payload: res.data});
-// };
-
-// //submit become a seller form
-// export const becomeSellerSubmit = (values) => async dispatch => {
-//     const res = await axios.post('/api/becomeseller', values);
-//     dispatch({type: FETCH_USER, payload: res.data});
-// };
 
 //add purchase group from form data
 export const createNewPurchaseGroup = (values, isSeller, history) => async dispatch => {

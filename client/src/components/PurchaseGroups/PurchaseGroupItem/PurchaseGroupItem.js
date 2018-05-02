@@ -122,7 +122,7 @@ class PurchaseGroupItem extends Component {
                                     <div className="card-panel">
                                         Original Product Price - {this.state.purchaseGroupData.originalPrice}<br />
                                         Group Price Per Item - {this.state.purchaseGroupData.priceForGroup}<br />
-                                        Discount - {this.state.purchaseGroupData.discount}%<br />
+                                        Discount - {parseFloat(this.state.purchaseGroupData.discount).toFixed(2)}%<br />
                                     </div>
                                 </div>
 

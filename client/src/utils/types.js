@@ -3,21 +3,21 @@ export default {
         { name: 'Men’s fashion', value: 'men' },
         { name: 'Women’s fashion', value: 'women' },
         { name: 'Electronics', value: 'electronics' },
-        { name: 'Movies, Music & Games', value: 'movies music games' },
+        { name: 'Movies, Music & Games', value: 'movies_music_games' },
         { name: 'Kids & Baby', value: 'toys' },
         { name: 'Books', value: 'books' },
         { name: 'search', value: 'search' }
     ],
     subCategories: {
         men: [
-            { name: 'Shirts', value: 'men shirts' },
-            { name: 'Shoes', value: 'men shoes' },
-            { name: 'Pants', value: 'men pants' }
+            { name: 'Shirts', value: 'men_shirts' },
+            { name: 'Shoes', value: 'men_shoes' },
+            { name: 'Pants', value: 'men_pants' }
         ],
         women: [
-            { name: 'Shirts', value: 'women shirts' },
-            { name: 'Shoes', value: 'women shoes' },
-            { name: 'Pants', value: 'women pants' }
+            { name: 'Shirts', value: 'women_shirts' },
+            { name: 'Shoes', value: 'women_shoes' },
+            { name: 'Pants', value: 'women_pants' }
         ],
         electronics: [
             { name: 'Tablets', value: 'tablets' },
@@ -26,25 +26,25 @@ export default {
             { name: 'Smartphones', value: 'smartphones' },
             { name: 'Accessories', value: 'accessories' }
         ],
-        'movies music games': [
-            { name: 'Movies & TV', value: 'movies and tv' },
-            { name: 'Blu-ray', value: 'blu ray' },
-            { name: 'CDs & Vinyl', value: 'cd and vinyl' },
-            { name: 'Digital Music', value: 'digital music' },
-            { name: 'Musical Instruments', value: 'music instruments' },
+        movies_music_games: [
+            { name: 'Movies & TV', value: 'movies_and_tv' },
+            { name: 'Blu-ray', value: 'bluray' },
+            { name: 'CDs & Vinyl', value: 'cd_and_vinyl' },
+            { name: 'Digital Music', value: 'digital_music' },
+            { name: 'Musical Instruments', value: 'music_instruments' },
             { name: 'Headphones', value: 'headphones' },
-            { name: 'Video Games', value: 'video games' }
+            { name: 'Video Games', value: 'video_games' }
         ],
         toys: [
-            { name: 'Toys & Games', value: 'toys and games' },
+            { name: 'Toys & Games', value: 'toys_and_games' },
             { name: 'Baby', value: 'baby' },
-            { name: 'Video Games for Kids', value: 'video games and kids' },
+            { name: 'Video Games for Kids', value: 'video_games_kids' },
             { name: 'Kids Birthdays', value: 'kids birthday' }
         ],
         books: [
-            { name: 'Books & Audible', value: 'books and audible' },
+            { name: 'Books & Audible', value: 'books_audible' },
             { name: 'Books', value: 'books' },
-            { name: "Children's Books", value: 'children books' },
+            { name: "Children's Books", value: 'children_books' },
             { name: 'Magazines', value: 'magazines' },
             { name: 'Textbooks', value: 'textbooks' },
         ]

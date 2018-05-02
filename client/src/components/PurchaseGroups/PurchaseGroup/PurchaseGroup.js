@@ -7,11 +7,11 @@ const PurchaseGroup = ({ purchaseGroup }) => {
     return (
         <Card >
             <Link to={`/purchasegroup/${purchaseGroup._id}`}>
-                <Image src={purchaseGroup.picture} style={{maxHeight: '290px', maxWidth: '290px', margin : 'auto'}}/>
+                <Image src={purchaseGroup.picture} style={{ maxHeight: '290px', maxWidth: '290px', margin: 'auto' }} />
             </Link>
             <Card.Content>
                 <Card.Header>{purchaseGroup.name}</Card.Header>
-                <Card.Meta>Discount - {purchaseGroup.discount}%</Card.Meta>
+                <Card.Meta>Discount - {parseFloat(purchaseGroup.discount).toFixed(2)}%</Card.Meta>
                 <Card.Description>
                     Original vs. Group Price: {purchaseGroup.originalPrice} / {purchaseGroup.priceForGroup} <br />
                     Total Amount vs. Sales: {purchaseGroup.totalAmount} / {purchaseGroup.sales}
