@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Payments from '../Payments/Payments';
 import SearchBar from '../SearchBar/SearchBar';
 import Types from '../../utils/types';
-import { categories, subCategories } from '../../utils/types';
 import { Button, Icon, Dropdown, Menu, Segment, Image, Input } from 'semantic-ui-react'
 import logo from '../img/logo.png';
 import lecti from '../img/logo.png';
@@ -66,7 +65,7 @@ class Header extends Component {
                 </Menu>
                 <Menu pointing secondary>
                     {
-                        categories.map(({ name, value }) => {
+                        Types.categories.map(({ name, value }) => {
                             if (name === 'search') {
                                 return (
                                     <Menu.Item key={value} name={name}><SearchBar /> </Menu.Item>
@@ -76,7 +75,7 @@ class Header extends Component {
                                 <Dropdown item key={value} text={name}>
                                     <Dropdown.Menu>
                                         {
-                                            subCategories[value].map(({ name, value }) => {
+                                            Types.subCategories[value].map(({ name, value }) => {
                                                 return <Menu.Item key={value} name={name} active={activeItem === { value }} onClick={this.handleItemClick} ><Link to={`/purchasegroups/${value}`}>{name}</Link></Menu.Item>;
                                             })
                                         }

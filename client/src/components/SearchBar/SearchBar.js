@@ -14,7 +14,7 @@ class SearchBar extends Component {
             <input 
                 icon='user'
                 value={this.state.term}
-                style={{margin:'0px 0px 0px 0px', border: 'none', height:'18px'}}
+                style={{margin:'0px 0px 0px 0px', border: 'none', height:'18px', width: '100px'}}
                 onChange={event => this.onInputChange(event.target.value)}
                 placeholder="Search..."
             />

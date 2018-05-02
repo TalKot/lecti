@@ -169,9 +169,6 @@ class PurchaseGroupController {
                     const updatedPurchaseGroup = yield PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false });
                     yield UserManagerInstance.notifyClientsOnClosedPurchaseGroup(updatedPurchaseGroup);
                 }
-                //TODO - WE NEED THIS?
-                //return values
-                //await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
                 httpResponse_1.default.sendOk(res);
             }
             catch (e) {

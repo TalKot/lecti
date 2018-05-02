@@ -179,10 +179,7 @@ export default class PurchaseGroupController {
                 //todo - user Promise.all
                 const updatedPurchaseGroup = await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false })
                 await UserManagerInstance.notifyClientsOnClosedPurchaseGroup(updatedPurchaseGroup);
-            }
-            //TODO - WE NEED THIS?
-            //return values
-            //await this.getPurchaseGroupByType(res, purchaseGroup.type, "1");
+            }            
             httpResponse.sendOk(res);
         }
         catch (e) {

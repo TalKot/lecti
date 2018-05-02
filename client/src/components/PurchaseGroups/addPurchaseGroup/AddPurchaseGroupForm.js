@@ -17,7 +17,7 @@ class AddPurchaseGroup extends Component {
                     <div key={'subCategory'}>
                         <label style={{ margin: '10px' }}>{label}</label>
                         <Field name={name} component="select" type="text" key={name} label={label} className="browser-default">
-                            {this.getOptions('subCategories')}
+                            {this.getSubCategories()}
                         </Field>
                     </div>
                 );
@@ -26,7 +26,7 @@ class AddPurchaseGroup extends Component {
                     <div key={'category'}>
                         <label style={{ margin: '10px' }}>{label}</label>
                         <Field name={name} component="select" type="text" key={name} label={label} className="browser-default">
-                            {this.getOptions('categories')}
+                            {this.getCategories()}
                         </Field>
                     </div>
                 );
@@ -44,19 +44,26 @@ class AddPurchaseGroup extends Component {
         });
     }
 
-    getOptions = (type) => {
-        return Types[type].map(({ value, name }) => {
+    getCategories = () => {
+        return Types.categories.map(({ value, name }) => {
             return (
-                <option key={name} value={value}>{value}</option>
+                <option key={value} value={value}>{name}</option>
             );
+        });
+    };
+
+    getSubCategories = () => {
+        return Object.keys(Types.subCategories).map((type) => {
+            return Types.subCategories[type].map(({ name, value }) => {
+                return (
+                    <option key={value} value={value} > {name}</option>
+                );
+            })
         });
     };
 
     render() {
         return (
-
-
-
             <div>
                 <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
 
@@ -65,12 +72,12 @@ class AddPurchaseGroup extends Component {
                             <Segment raised>
                                 <Label as='a' color='red' ribbon>Overview</Label>
                                 <span>Account Details</span>
-                                <br/><br/>
+                                <br /><br />
                                 {this.renderFields()}
 
                                 <Label as='a' color='blue' ribbon>Community</Label>
                                 <span>User Reviews</span>
-                                <br/><br/>
+                                <br /><br />
                                 <Link to="/home" className="red btn-flat white-text">
                                     Cancel
                                 </Link>
