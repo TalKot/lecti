@@ -6,6 +6,7 @@ export default {
         { name: 'Movies, Music & Games', value: 'movies_music_games' },
         { name: 'Kids & Baby', value: 'toys' },
         { name: 'Books', value: 'books' },
+        { name: 'Others', value: 'other' },
         { name: 'search', value: 'search' }
     ],
     subCategories: {

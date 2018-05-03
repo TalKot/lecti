@@ -71,17 +71,26 @@ class Header extends Component {
                                     <Menu.Item key={value} name={name}><SearchBar /> </Menu.Item>
                                 );
                             }
-                            return (
-                                <Dropdown item key={value} text={name}>
-                                    <Dropdown.Menu>
-                                        {
-                                            Types.subCategories[value].map(({ name, value }) => {
-                                                return <Menu.Item key={value} name={name} active={activeItem === { value }} onClick={this.handleItemClick} ><Link to={`/purchasegroups/${value}`}>{name}</Link></Menu.Item>;
-                                            })
-                                        }
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            );
+                            else if (value === 'other') {
+                                return (
+                                    <Menu.Item key={value} name={name}>
+                                        <Link style={{ color: 'black' }} to={`/purchasegroups/${value}`}>{name}</Link>
+                                    </Menu.Item>
+                                );
+                            } else {
+                                return (
+                                    <Dropdown item key={value} text={name}>
+                                        <Dropdown.Menu>
+                                            {
+
+                                                Types.subCategories[value].map(({ name, value }) => {
+                                                    return <Menu.Item key={value} name={name} active={activeItem === { value }} onClick={this.handleItemClick} ><Link to={`/purchasegroups/${value}`}>{name}</Link></Menu.Item>;
+                                                })
+                                            }
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                );
+                            }
                         })
                     }
                 </Menu>

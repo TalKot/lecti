@@ -8,11 +8,13 @@ import * as _ from 'lodash';
 import img1 from '../img/col-1-img.png'
 import img2 from '../img/col-2-img.png'
 import img3 from '../img/col-3-img.png'
-import src1 from '../img/group1.png'
-import { Segment, Image, Card, Header, Icon, Message } from 'semantic-ui-react'
+import src1 from '../img/hero-bg.png'
+import src2 from '../img/group1.png'
+import { Segment, Image, Card, Header, Icon, Message, Input, Form, TextArea, Button } from 'semantic-ui-react'
 import Loder from '../Loader/Loader';
 
 class Home extends Component {
+    state = {formStatus: false};
 
     componentDidMount() {
         this.props.fetchCustomPurchaseGroups();
@@ -25,7 +27,8 @@ class Home extends Component {
         };
         await axios.post(`/api/purchaseGroup/types/`, options);
     };
-    getMiddleSection = () => {
+
+    getExperience = () => {
         return (
             <div className="row">
                 <div className="col s4">
@@ -43,22 +46,21 @@ class Home extends Component {
                         <p>By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
                     </div>
                 </div>
-
-
                 <div className="col s4">
                     <div className="center promo promo-example">
                         <img src={img1} />
-                        <h4>Easy To Work with The Platform</h4>
-                        <p>We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+                        <h4>Easy To Work Platform</h4>
+                        <p>We have provided simple and easy to use platform that all our foucs was to bring our best for you to use.</p>
                     </div>
                 </div>
             </div>
         );
     }
+
     getImageProp = () => {
         return (
             <Segment style={{ backgroundColor: '#fafafa' }}>
-                <Image src={src1} size='huge' centered />
+                <Image src={src2} size='huge' centered />
                 <p>
                     <h3>This is this week's recommened purchase group.</h3>
                     Condition:<br />
@@ -72,8 +74,7 @@ class Home extends Component {
     getGreeting = () => {
         return (
             <div style={{ marginLeft: "50px" }}>
-                
-                <h1>Greetings {this.props.auth.displayName}!</h1>
+
                 <Card.Group>
                     {
                         this.props.customPurchaseGroupsPerUser.purchaseGroups.purchaseGroup.map(purchaseGroup =>
@@ -92,7 +93,7 @@ class Home extends Component {
                     <Message visible>
                         <p>
                             We ran our alogithem and figure out that the most valuble purchase groups types for you are from the type above.<br />
-                            If not, you can always mark below the checkbox, and we will provide differnt types for you to see.<br/>
+                            If not, you can always mark below the checkbox, and we will provide differnt types for you to see.<br />
                             <input onChange={event => { this.onChangeRelevant(event.target.checked) }} type="checkbox" id="relevant" />
                             <label htmlFor="relevant">Make this type not relevant for me.</label>
                         </p>
@@ -102,6 +103,69 @@ class Home extends Component {
         );
     }
 
+    handleChange = (e, { value }) => this.setState({ value })
+
+    submitFormResults = () => {
+        //todo - this will send the form data by email
+        this.setState({formStatus:true})
+        console.log(this.state)
+    }
+
+    getContactSection = () => {
+        const options = [
+            { key: 'm', text: 'Male', value: 'male' },
+            { key: 'f', text: 'Female', value: 'female' },
+        ]
+
+        const { value,formStatus } = this.state;
+
+        return (
+            <div>
+                <Message
+                info
+                header='Want To Become A Seller?'
+                content="All you have to do is fill the form below to contact Lecti's admin team.
+                        One of the admins will contact you back to start the proccess of becoming a seller.
+                        So, quickly! what are you waiting for?"
+                />
+                <Form>
+                    <Form.Group widths='equal'>
+                        <Form.Field size='small' control={TextArea} onChange={e=>this.setState({ firstName: e.target.value })} label='First name' placeholder='First name' />
+                        <Form.Field size='small' control={TextArea} onChange={e=>this.setState({ lastName: e.target.value })} label='Last name' placeholder='Last name' />
+                        <Form.Field size='small' control={TextArea} onChange={e=>this.setState({ email: e.target.value })} label='Email' placeholder='Email' />
+                        <Form.Select fluid label='Gender' onChange={this.handleChange} options={options} placeholder='Gender' />
+                    </Form.Group>
+                    <Form.Field id='form-textarea-control-opinion' control={TextArea} onChange={e=>this.setState({ message: e.target.value })} label='Message' placeholder='Message' />
+                </Form>
+                <Button primary id='form-button-control-public' content='Confirm' label='Send Application' onClick={()=>this.submitFormResults()}/>
+                {this.getStatus(formStatus)}
+            </div>
+        );
+
+    }
+    getStatus = (formStatus) =>{
+        if (formStatus){
+            return (
+                <Message
+                success
+                header='Form Completed'
+                content="You're all signed up for the newsletter"
+                />
+            );
+        }
+        
+    }
+    getIntro = () => {
+        return (
+            <div className="mySlides w3-display-container w3-center">
+                <img src={src1} style={{ width: "100%" }} />
+                <div className="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                    <h1>Greetings {this.props.auth.displayName}!</h1>
+                    <p><b>Lecti  - The best purchase group payments platform in the world!</b></p>
+                </div>
+            </div>
+        );
+    }
 
     render() {
         if (_.isEmpty(this.props.customPurchaseGroupsPerUser) || !this.props.auth) {
@@ -122,13 +186,19 @@ class Home extends Component {
         return (
             <div style={{ textAlign: 'center' }}>
                 <section>
-                    {this.getGreeting()} <br />
+                    {this.getIntro()}
                 </section>
                 <section>
-                    {this.getMiddleSection()} <br />
+                    {this.getGreeting()} <hr /><br />
                 </section>
                 <section>
-                    {this.getImageProp()} <br />
+                    {this.getExperience()} <hr /><br />
+                </section>
+                <section>
+                    {this.getContactSection()} <hr /><br />
+                </section>
+                <section>
+                    {this.getImageProp()} <hr /><br />
                 </section>
             </div>
         )
