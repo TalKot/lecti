@@ -2,7 +2,7 @@
 export = [
     {
         name: "Samsung Galaxy Tab A 7 inch",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 200,
         originalPrice: 600,
@@ -18,7 +18,7 @@ export = [
     },
     {
         name: "Samsung 9.6 Inch Wifi Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 150,
         originalPrice: 300,
@@ -41,7 +41,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab E 8 inch HD Display",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 250,
         originalPrice: 500,
@@ -57,7 +57,7 @@ export = [
     },
     {
         name: "10.1 Tablet PC Google Android",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 130,
         originalPrice: 200,
@@ -91,7 +91,7 @@ export = [
     },
     {
         name: "Amazon Kindle Fire HD 8 Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 100,
         originalPrice: 150,
@@ -113,7 +113,7 @@ export = [
     },
     {
         name: "8 inch CHUWI Hi 8 Air Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 90,
         originalPrice: 170,
@@ -134,7 +134,7 @@ export = [
     },
     {
         name: "Huawei Mediapad M2 WiFi/LTE tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 340,
@@ -157,7 +157,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -173,7 +173,7 @@ export = [
     },
     {
         name: "TABLET ASUS lcd 10.1 ZENPAD",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 160,
         originalPrice: 240,
@@ -196,7 +196,7 @@ export = [
     },
     {
         name: "Apple iPad Air 2 64GB",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 800,
         originalPrice: 1000,
@@ -212,7 +212,7 @@ export = [
     },
     {
         name: "Apple iPad mini 4 128GB",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 600,
         originalPrice: 950,
@@ -228,7 +228,7 @@ export = [
     },
     {
         name: "Apple iPad 2 16GB",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 380,
@@ -244,7 +244,7 @@ export = [
     },
     {
         name: "HP Pro Tablet 408 G1 8 inch",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 700,
         originalPrice: 850,
@@ -260,7 +260,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab E 8 inch HD Display",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 250,
         originalPrice: 500,
@@ -276,7 +276,7 @@ export = [
     },
     {
         name: "Lenovo TAB4 8 Plus 8 inch Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 500,
         originalPrice: 700,
@@ -292,7 +292,7 @@ export = [
     },
     {
         name: "Lenovo Xiaoxin 8 inch Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 230,
         originalPrice: 380,
@@ -308,7 +308,7 @@ export = [
     },
     {
         name: "Lenovo TAB4 8 Plus 8 inch Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 600,
         originalPrice: 900,
@@ -324,7 +324,7 @@ export = [
     },
     {
         name: "Amazon Kindle Fire HD 8 Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 100,
         originalPrice: 150,
@@ -346,7 +346,7 @@ export = [
     },
     {
         name: "8 inch CHUWI Hi 8 Air Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 90,
         originalPrice: 170,
@@ -367,7 +367,7 @@ export = [
     },
     {
         name: "Apple iPad Air 2 64GB",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 800,
         originalPrice: 1000,
@@ -383,7 +383,7 @@ export = [
     },
     {
         name: "Sony Xperia Z3 Tablet",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 500,
         originalPrice: 700,
@@ -399,7 +399,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Tab S3",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 870,
         originalPrice: 980,
@@ -424,7 +424,7 @@ export = [
     },
     {
         name: "10.1\" ANDROID 6.0 TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'laptops',
         priceForGroup: 450,
         originalPrice: 600,
@@ -440,7 +440,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -456,7 +456,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -472,7 +472,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -488,7 +488,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -504,7 +504,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -520,7 +520,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -536,7 +536,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -552,7 +552,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -568,7 +568,7 @@ export = [
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
-        type: "computers",
+        type: "electronics",
         subCategory:'tablets',
         priceForGroup: 450,
         originalPrice: 600,
@@ -594,10 +594,11 @@ export = [
         isDeleted: false,
         isSuggestion: true
     },
+    //men's shirts
     {
         name: "Colourful skull on back men's Polo shirt",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 80,
         originalPrice: 120,
         totalAmount: 30,
@@ -612,8 +613,8 @@ export = [
     },
     {
         name: "Short Sleeve Polo Collar Work T-shirt Cotton",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 40,
         originalPrice: 60,
         totalAmount: 50,
@@ -628,8 +629,8 @@ export = [
     },
     {
         name: "Casual Men Basic T-shirt Shirt Slim Rund Neck",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 20,
         originalPrice: 50,
         totalAmount: 100,
@@ -645,8 +646,8 @@ export = [
     },
     {
         name: "Men's Muscle Short Sleeve Shirt V-neck",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 15,
         originalPrice: 35,
         totalAmount: 60,
@@ -661,8 +662,8 @@ export = [
     },
     {
         name: "DRAGON BALL Z  Slim Fit T-Shirt",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 30,
         originalPrice: 50,
         totalAmount: 20,
@@ -677,8 +678,8 @@ export = [
     },
     {
         name: "Cool Hypnotic Psychedelic T Shirt ",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 35,
         originalPrice: 55,
         totalAmount: 30,
@@ -692,9 +693,9 @@ export = [
         description : 'Our clothing are Asia sizes which are smaller 1-2 sizes than US(smaller 1 size for women;smaller 2 sizes for men),Please notice actual size information before purchasing'
     },
     {
-        name: "Women/Men GoPro 3D Print Casual T-Shirt",
-        type: "men's fashion",
-        subCategory:'shirts',
+        name: "Men GoPro 3D Print Casual T-Shirt",
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 20,
         originalPrice: 45,
         totalAmount: 50,
@@ -709,8 +710,8 @@ export = [
     },
     {
         name: "Men Lapel Polo Shirt Summer Solid",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 30,
         originalPrice: 55,
         totalAmount: 20,
@@ -728,8 +729,8 @@ export = [
     },
     {
         name: "Mens Summer Casual Dress Shirt",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 60,
         originalPrice: 100,
         totalAmount: 20,
@@ -744,8 +745,8 @@ export = [
     },
     {
         name: "Denim Jeans Shirt Casual Long Sleeve Slim Fit",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 35,
         originalPrice: 50,
         totalAmount: 20,
@@ -762,8 +763,8 @@ export = [
 
     {
         name: "Luxury Casual Stylish Slim Fit Long Sleeve",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 80,
         originalPrice: 110,
         totalAmount: 30,
@@ -778,8 +779,8 @@ export = [
     },
     {
         name: "Mens Velvet Shirts Paisley Print Gold Loong Dragon Pattern Blouse",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 70,
         originalPrice: 95,
         totalAmount: 10,
@@ -796,8 +797,8 @@ export = [
     },
     {
         name: "Slim Fit Round Neck Long Sleeve T-shirts",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 25,
         originalPrice: 45,
         totalAmount: 35,
@@ -815,8 +816,8 @@ export = [
     },
     {
         name: "HUGO BOSS men's T-SHIRT",
-        type: "men's fashion",
-        subCategory:'shirts',
+        type: "men",
+        subCategory:'men_shirts',
         priceForGroup: 120,
         originalPrice: 250,
         totalAmount: 25,
@@ -830,10 +831,11 @@ export = [
         description : 'VALUE FOR MONEY. RETURN ACCEPTED.' +
          '100% SATISFACTION GUARANTEE.'
     },
+    //men's shoes
     {
         name: "VANS Classic OLD SCHOOL Low Top Casual Canvas sneakers",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 100,
         originalPrice: 220,
         totalAmount: 20,
@@ -848,8 +850,8 @@ export = [
     },
     {
         name: "RUNING AIR VAPOR MAX2018 Athletic sport shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 260,
         originalPrice: 350,
         totalAmount: 10,
@@ -864,8 +866,8 @@ export = [
     },
     {
         name: "Men's Casual Breathable Sports Mesh sneakers",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 180,
         originalPrice: 250,
         totalAmount: 15,
@@ -880,8 +882,8 @@ export = [
     },
     {
         name: "Superstars City Trainers Lace up Sports Running Fitness Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 200,
         originalPrice: 330,
         totalAmount: 12,
@@ -896,8 +898,8 @@ export = [
     },
     {
         name: "Speedcross 3 Running Sports Outdoor Hiking Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 90,
         originalPrice: 150,
         totalAmount: 30,
@@ -912,8 +914,8 @@ export = [
     },
     {
         name: "CONVERSE ALL STAR",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 120,
         originalPrice: 180,
         totalAmount: 15,
@@ -928,8 +930,8 @@ export = [
     },
     {
         name: "2018 Men's Shoes Fashion Casual Canvas Sneakers",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 190,
         originalPrice: 300,
         totalAmount: 10,
@@ -944,8 +946,8 @@ export = [
     },
     {
         name: "Air Max 270 Black White Dusty Cactus Men Running Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 150,
         originalPrice: 220,
         totalAmount: 10,
@@ -960,8 +962,8 @@ export = [
     },
     {
         name: "Smart Oxford Leather Pointed Toe Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 150,
         originalPrice: 190,
         totalAmount: 8,
@@ -976,8 +978,8 @@ export = [
     },
     {
         name: "Leather Shoes Flat European Casual",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 120,
         originalPrice: 165,
         totalAmount: 13,
@@ -992,8 +994,8 @@ export = [
     },
     {
         name: "Minimalism Driving Loafers Suede Leather Slip on penny shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 80,
         originalPrice: 110,
         totalAmount: 30,
@@ -1008,8 +1010,8 @@ export = [
     },
     {
         name: "Timberland Pro Sawhorse Mens Water Resistant",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 280,
         originalPrice: 400,
         totalAmount: 50,
@@ -1024,8 +1026,8 @@ export = [
     },
     {
         name: "New Balance 754 Men's Winter Boots Hiking Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 330,
         originalPrice: 460,
         totalAmount: 40,
@@ -1041,8 +1043,8 @@ export = [
 
     {
         name: "Palladium Pampa HI Leather Black Boots Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 250,
         originalPrice: 380,
         totalAmount: 20,
@@ -1057,8 +1059,8 @@ export = [
     },
     {
         name: "Puma BMW Drift Cat 5 Men's Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 350,
         originalPrice: 500,
         totalAmount: 10,
@@ -1073,8 +1075,8 @@ export = [
     },
     {
         name: "Puma Mercedes AMG Drift Cat 6 Men's Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 350,
         originalPrice: 480,
         totalAmount: 15,
@@ -1089,8 +1091,8 @@ export = [
     },
     {
         name: "Puma Ferrari MS Drift Cat 5 Men's Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 360,
         originalPrice: 450,
         totalAmount: 10,
@@ -1105,8 +1107,8 @@ export = [
     },
     {
         name: "Puma SF Future Cat Casual Black White Ferrari Men Motorsport Shoes",
-        type: "men's fashion",
-        subCategory:'shoes',
+        type: "men",
+        subCategory:'men_shoes',
         priceForGroup: 380,
         originalPrice: 500,
         totalAmount: 13,
@@ -1119,9 +1121,10 @@ export = [
         potentialBuyers: [],
         description : 'VALUE FOR MONEY. RETURN ACCEPTED. 100% SATISFACTION GUARANTEE.'
     },
+    //cell phones
     {
         name: "Apple iPhone X (iPhone 10) - 64GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 3000,
         originalPrice: 3600,
@@ -1137,7 +1140,7 @@ export = [
     },
     {
         name: "Apple iPhone-8-PLUS-64GB RED SPECIAL EDITION",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 2800,
         originalPrice: 3200,
@@ -1153,7 +1156,7 @@ export = [
     },
     {
         name: "Apple iPhone 6S Plus 128GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 1200,
         originalPrice: 1800,
@@ -1169,7 +1172,7 @@ export = [
     },
     {
         name: "Apple iPhone X 256GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 3980,
         originalPrice: 4500,
@@ -1185,7 +1188,7 @@ export = [
     },
     {
         name: "Samsung Galaxy S9+ Plus 64GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 2980,
         originalPrice: 3500,
@@ -1201,7 +1204,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Note5 N920A 32GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 980,
         originalPrice: 1200,
@@ -1217,7 +1220,7 @@ export = [
     },
     {
         name: "Samsung Galaxy Note 8 SM-N950F/DS 64GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 2580,
         originalPrice: 2900,
@@ -1233,7 +1236,7 @@ export = [
     },
     {
         name: "HUAWEI MATE 10 PRO 4G TITANIUM GREY",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 2380,
         originalPrice: 2800,
@@ -1249,7 +1252,7 @@ export = [
     },
     {
         name: "Huawei Honor 9 Lite Smartphone",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 680,
         originalPrice: 800,
@@ -1265,7 +1268,7 @@ export = [
     },
     {
         name: "Huawei P20 Lite ANE-LX3",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 980,
         originalPrice: 1350,
@@ -1281,7 +1284,7 @@ export = [
     },
     {
         name: "Huawei Honor 7X Smartphone",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 780,
         originalPrice: 900,
@@ -1297,7 +1300,7 @@ export = [
     },
     {
         name: "Huawei Mate 10 pro Titanium Grey 128GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 1080,
         originalPrice: 1500,
@@ -1313,7 +1316,7 @@ export = [
     },
     {
         name: "LG V20 H910 64GB 4G LTE",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 800,
         originalPrice: 990,
@@ -1329,7 +1332,7 @@ export = [
     },
     {
         name: "New Original LG G5 H830 32GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 600,
         originalPrice: 750,
@@ -1345,7 +1348,7 @@ export = [
     },
     {
         name: "LG V30+ H930DS 128GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 2000,
         originalPrice: 2500,
@@ -1361,7 +1364,7 @@ export = [
     },
     {
         name: "NEW LG G6 (LS993) - 32GB",
-        type: "cell phones",
+        type: "electronics",
         subCategory:'smartphones',
         priceForGroup: 1000,
         originalPrice: 1200,
@@ -1378,8 +1381,8 @@ export = [
     //men's pants
     {
         name: "Mens Stretchy Jeans Ripped Skinny Biker Jeans",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 60,
         originalPrice: 85,
         totalAmount: 20,
@@ -1394,8 +1397,8 @@ export = [
     },
     {
         name: "Men's Ripped Skinny Biker Jeans",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 100,
         originalPrice: 150,
         totalAmount: 40,
@@ -1410,8 +1413,8 @@ export = [
     },
     {
         name: "Mens Slim Fit Sports Gym Pants",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 30,
         originalPrice: 75,
         totalAmount: 30,
@@ -1426,8 +1429,8 @@ export = [
     },
     {
         name: "Mens Casual Pencil Dress Pants Slim Fit Straight-Leg",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 40,
         originalPrice: 70,
         totalAmount: 40,
@@ -1442,8 +1445,8 @@ export = [
     },
     {
         name: "Fashion Casual Mens Stylish Designed Straight Slim Fit Jeans",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 60,
         originalPrice: 80,
         totalAmount: 15,
@@ -1458,8 +1461,8 @@ export = [
     },
     {
         name: "Casual Straight Slim Short Jeans Pants",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 55,
         originalPrice: 90,
         totalAmount: 30,
@@ -1474,8 +1477,8 @@ export = [
     },
     {
         name: "Slim Fit Denim Pants Casual Straight Trousers",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 65,
         originalPrice: 100,
         totalAmount: 10,
@@ -1490,8 +1493,8 @@ export = [
     },
     {
         name: "Jogger Dance Sportwear Baggy Stylish",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 30,
         originalPrice: 80,
         totalAmount: 50,
@@ -1506,8 +1509,8 @@ export = [
     },
     {
         name: "Long Casual Sport Pants Gym Slim Fit",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 25,
         originalPrice: 40,
         totalAmount: 40,
@@ -1522,8 +1525,8 @@ export = [
     },
     {
         name: "Army Military Combat Cargo Pants",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 70,
         originalPrice: 120,
         totalAmount: 50,
@@ -1538,8 +1541,8 @@ export = [
     },
     {
         name: "Twill Jogger Pants Urban Hip Hop",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 30,
         originalPrice: 70,
         totalAmount: 10,
@@ -1554,8 +1557,8 @@ export = [
     },
     {
         name: "3/4 Knee Length Casual Jogger Sport Shorts",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 45,
         originalPrice: 80,
         totalAmount: 35,
@@ -1570,8 +1573,8 @@ export = [
     },
     {
         name: "Mens Windproof Hiking Climbing Pants",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 40,
         originalPrice: 70,
         totalAmount: 20,
@@ -1586,8 +1589,8 @@ export = [
     },
     {
         name: "Pantalon Dancing Sports Sweatpants",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 35,
         originalPrice: 60,
         totalAmount: 40,
@@ -1602,8 +1605,8 @@ export = [
     },
     {
         name: "Military Tactical Combat Pants",
-        type: "men's fashion",
-        subCategory:'pants',
+        type: "men",
+        subCategory:'men_pants',
         priceForGroup: 90,
         originalPrice: 120,
         totalAmount: 20,
@@ -1619,8 +1622,8 @@ export = [
     //womens shirts
     {
         name: "Loose Long Sleeve Cotton Casual Blouse Shirt",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 30,
         originalPrice: 50,
         totalAmount: 20,
@@ -1635,8 +1638,8 @@ export = [
     },
     {
         name: "Lace Crochet Floral Bell Sleeve Loose Blouse",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 20,
         originalPrice: 45,
         totalAmount: 14,
@@ -1651,8 +1654,8 @@ export = [
     },
     {
         name: "Sleeveless Summer Vest Top T Shirt Blouse",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 20,
         originalPrice: 50,
         totalAmount: 20,
@@ -1667,8 +1670,8 @@ export = [
     },
     {
         name: "Summer Loose Tops Long Sleeve Shirt",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 25,
         originalPrice: 40,
         totalAmount: 10,
@@ -1683,8 +1686,8 @@ export = [
     },
     {
         name: "Loose Casual Long Sleeve T-Shirt",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 28,
         originalPrice: 50,
         totalAmount: 30,
@@ -1699,8 +1702,8 @@ export = [
     },
     {
         name: "Striped Casual Tops Shirt Loose",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 60,
         originalPrice: 90,
         totalAmount: 15,
@@ -1715,8 +1718,8 @@ export = [
     },
     {
         name: "Casual Tank Crop Tops Vest Blouse",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 15,
         originalPrice: 35,
         totalAmount: 20,
@@ -1731,8 +1734,8 @@ export = [
     },
     {
         name: "Butterfly Print Sleeveless Chiffon Blouse",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 50,
         originalPrice: 80,
         totalAmount: 20,
@@ -1747,8 +1750,8 @@ export = [
     },
     {
         name: "Sleeveless Lace Singlet Vest T-shirt",
-        type: "women's fashion",
-        subCategory:'shirts',
+        type: "women",
+        subCategory:'women_shirts',
         priceForGroup: 22,
         originalPrice: 46,
         totalAmount: 30,
@@ -1764,8 +1767,8 @@ export = [
     //women's shoes
     {
         name: "NEW LG G6 (LS993) - 32GB",
-        type: "women's fashion",
-        subCategory:'shoes',
+        type: "women",
+        subCategory:'women_shoes',
         priceForGroup: 1000,
         originalPrice: 1200,
         totalAmount: 10,
