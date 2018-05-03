@@ -40,7 +40,7 @@ export default {
             { name: 'Toys & Games', value: 'toys_and_games' },
             { name: 'Baby', value: 'baby' },
             { name: 'Video Games for Kids', value: 'video_games_kids' },
-            { name: 'Kids Birthdays', value: 'kids birthday' }
+            { name: 'Kids Birthdays', value: 'kids_birthday' }
         ],
         books: [
             { name: 'Books & Audible', value: 'books_audible' },
