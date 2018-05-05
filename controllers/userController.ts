@@ -35,4 +35,17 @@ export default class UserController {
             httpResponse.sendError(res, e);
         }
     }
+
+    async alertAdminsNewSellerRequest(res,userID,body) {
+        try {
+            let userManagerInstance = UserManager.Instance;
+            await userManagerInstance.alertAdminsNewSellerRequest(userID,body);
+            httpResponse.sendOk(res);
+        }
+        catch (e) {
+            httpResponse.sendError(res, e);
+        }
+    }
+
+    
 }

@@ -32,6 +32,18 @@ class UserController {
             }
         });
     }
+    alertAdminsNewSellerRequest(res, userID, body) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                let userManagerInstance = userManager_1.default.Instance;
+                yield userManagerInstance.alertAdminsNewSellerRequest(userID, body);
+                httpResponse_1.default.sendOk(res);
+            }
+            catch (e) {
+                httpResponse_1.default.sendError(res, e);
+            }
+        });
+    }
 }
 exports.default = UserController;
 //# sourceMappingURL=userController.js.map

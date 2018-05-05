@@ -12,6 +12,7 @@ import src1 from '../img/hero-bg.png'
 import src2 from '../img/group1.png'
 import { Segment, Image, Card, Header, Icon, Message, Input, Form, TextArea, Button } from 'semantic-ui-react'
 import Loder from '../Loader/Loader';
+import swal from 'sweetalert';
 
 class Home extends Component {
     state = {formStatus: false};
@@ -105,10 +106,11 @@ class Home extends Component {
 
     handleChange = (e, { value }) => this.setState({ value })
 
-    submitFormResults = () => {
-        //todo - this will send the form data by email
-        this.setState({formStatus:true})
-        console.log(this.state)
+    //will send the form data by email
+    submitFormResults =async  () => {
+        this.setState({formStatus:true});
+        await axios.post('/api/newseller/', this.state);
+        swal("Thank You!", `You will become a seller soon. Exicted?`, "success");
     }
 
     getContactSection = () => {
@@ -130,14 +132,14 @@ class Home extends Component {
                 />
                 <Form>
                     <Form.Group widths='equal'>
+                        <Form.Select fluid label='Gender' onChange={this.handleChange} options={options} placeholder='Gender' />
                         <Form.Field size='small' control={TextArea} onChange={e=>this.setState({ firstName: e.target.value })} label='First name' placeholder='First name' />
                         <Form.Field size='small' control={TextArea} onChange={e=>this.setState({ lastName: e.target.value })} label='Last name' placeholder='Last name' />
                         <Form.Field size='small' control={TextArea} onChange={e=>this.setState({ email: e.target.value })} label='Email' placeholder='Email' />
-                        <Form.Select fluid label='Gender' onChange={this.handleChange} options={options} placeholder='Gender' />
                     </Form.Group>
-                    <Form.Field id='form-textarea-control-opinion' control={TextArea} onChange={e=>this.setState({ message: e.target.value })} label='Message' placeholder='Message' />
+                    <Form.Field  control={TextArea} onChange={e=>this.setState({ message: e.target.value })} label='Message' placeholder='Message' />
                 </Form>
-                <Button primary id='form-button-control-public' content='Confirm' label='Send Application' onClick={()=>this.submitFormResults()}/>
+                <Button primary style={{marginTop:'20px'}} content='Confirm' label='Send Application' onClick={()=>this.submitFormResults()}/>
                 {this.getStatus(formStatus)}
             </div>
         );
@@ -146,6 +148,7 @@ class Home extends Component {
     getStatus = (formStatus) =>{
         if (formStatus){
             return (
+                
                 <Message
                 success
                 header='Form Completed'

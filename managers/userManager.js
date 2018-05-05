@@ -6,6 +6,7 @@ const _ = require("lodash");
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const liveEmailNotificationTemplte = require('../services/emailsNotifications/emailTemplates/livePurchaseGroupTemplate');
+const newSellerTemplte = require('../services/emailsNotifications/emailTemplates/newSellerTemplate');
 const Mailer = require('../services/emailsNotifications/livePurchaseGroupsMailer');
 class UserManager {
     static get Instance() {
@@ -132,6 +133,26 @@ class UserManager {
                     mailingList: emailsToNotify
                 };
                 const mailer = new Mailer(customPurchaseGroup, liveEmailNotificationTemplte(message, purchaseGroup.name, purchaseGroup.id));
+                yield mailer.send();
+            }
+            catch (e) {
+                console.error(e);
+                throw e;
+            }
+        });
+    }
+    alertAdminsNewSellerRequest(userID, body) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            try {
+                const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com'];
+                const message = `New Seller Request!`;
+                const newSellerRequest = {
+                    body: message,
+                    subject: message,
+                    title: message,
+                    mailingList: emailsToNotify
+                };
+                const mailer = new Mailer(newSellerRequest, newSellerTemplte(body));
                 yield mailer.send();
             }
             catch (e) {

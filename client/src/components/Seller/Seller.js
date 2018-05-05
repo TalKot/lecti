@@ -59,12 +59,12 @@ class Seller extends Component {
         );
     }
 
-    changeRating = async value => {
-        await this.setState({ rating: value });
+    changeRating = async rating => {
+        await this.setState({ rating });
     };
 
     changeRatingText = async comment => {
-        await this.setState({ comment: comment });
+        await this.setState({ comment });
     };
 
     sendRating = async () => {

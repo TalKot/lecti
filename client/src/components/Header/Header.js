@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Payments from '../Payments/Payments';
 import SearchBar from '../SearchBar/SearchBar';
 import Types from '../../utils/types';
 import { Button, Icon, Dropdown, Menu, Segment, Image, Input } from 'semantic-ui-react'
 import logo from '../img/logo.png';
 import lecti from '../img/logo.png';
+import { BrowserRouter, Route } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+
 
 class Header extends Component {
 
     state = { activeItem: 'home' }
+
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+    renderRedirect = (target) => {
+        this.props.history.push(target);
+    }
 
     renderContent(activeItem) {
 
@@ -73,18 +81,15 @@ class Header extends Component {
                             }
                             else if (value === 'other') {
                                 return (
-                                    <Menu.Item key={value} name={name}>
-                                        <Link style={{ color: 'black' }} to={`/purchasegroups/${value}`}>{name}</Link>
-                                    </Menu.Item>
+                                    <Menu.Item key={value} name={name} onClick={()=>{this.renderRedirect(`/purchasegroups/${value}`)}}/>
                                 );
                             } else {
                                 return (
                                     <Dropdown item key={value} text={name}>
                                         <Dropdown.Menu>
                                             {
-
                                                 Types.subCategories[value].map(({ name, value }) => {
-                                                    return <Menu.Item key={value} name={name} active={activeItem === { value }} onClick={this.handleItemClick} ><Link to={`/purchasegroups/${value}`}>{name}</Link></Menu.Item>;
+                                                    return <Menu.Item key={value} name={name} active={activeItem === { value }} onClick={()=>{this.renderRedirect(`/purchasegroups/${value}`)}} content={name}/>;
                                                 })
                                             }
                                         </Dropdown.Menu>
@@ -100,8 +105,8 @@ class Header extends Component {
 }
 
 
-function mapStateToProps({ auth }) {
-    return { auth };
+function mapStateToProps({ auth, history }) {
+    return { auth, history };
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(withRouter(Header));

@@ -8,11 +8,8 @@ import { Card, Message, Pagination } from 'semantic-ui-react'
 
 
 class PurchaseGroups extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { page: 1 };
 
-    }
+    state = { page: 1 };
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.match.params.item !== this.props.match.params.item) {
@@ -25,9 +22,9 @@ class PurchaseGroups extends Component {
         await this.props.fetchPurchaseGroups(this.props.match.params.item, page);
     }
 
-    handlePaginationChange = async (e, { activePage }) => {
+    handlePaginationChange = (e, { activePage }) => {
         this.setState({ activePage });
-        await this.props.fetchPurchaseGroups(this.props.match.params.item, activePage);
+        this.props.fetchPurchaseGroups(this.props.match.params.item, activePage);
     }
 
     render() {
@@ -47,7 +44,6 @@ class PurchaseGroups extends Component {
                     content={`${this.props.pageCount} results for Purchase Groups type - ${this.props.match.params.item[0].toUpperCase() + this.props.match.params.item.substring(1)}`}
                 />
 
-
                 <Card.Group >
                     {
                         this.props.purchaseGroups.map(purchaseGroup => {
@@ -61,11 +57,12 @@ class PurchaseGroups extends Component {
                         <i className="material-icons">add</i>
                     </Link>
                 </div>
-
-                <Pagination defaultActivePage={1} 
-                totalPages={Math.floor(this.props.pageCount / 12)} 
-                onPageChange={this.handlePaginationChange} 
-                style={{marginTop: '25px',marginRight:'135px'}}
+                    
+                <Pagination 
+                    defaultActivePage={1}
+                    totalPages={Math.ceil(this.props.pageCount / 12)}
+                    onPageChange={this.handlePaginationChange}
+                    style={{ marginTop: '25px', marginRight: '135px' }}
                 />
             </div>
         );
