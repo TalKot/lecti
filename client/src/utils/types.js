@@ -7,7 +7,8 @@ export default {
         { name: 'Kids & Baby', value: 'toys' },
         { name: 'Books', value: 'books' },
         { name: 'Others', value: 'other' },
-        { name: 'search', value: 'search' }
+        { name: 'Suggestions', value: 'suggestions' },
+        { name: 'Search', value: 'search' }
     ],
     subCategories: {
         men: [

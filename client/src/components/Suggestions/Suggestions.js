@@ -3,6 +3,9 @@ import * as actions from '../../actions';
 import {connect} from 'react-redux';
 import React, {Component} from 'react';
 import PurchaseGroupSuggestions from './Suggestion/Suggestion';
+import Loader from '../Loader/Loader';
+import { Message, Pagination,Button, Icon,Label } from 'semantic-ui-react'
+
 
 class Suggestions extends Component {
 
@@ -14,27 +17,18 @@ class Suggestions extends Component {
 
         if (!this.props.suggestionsPurchaseGroups.length) {
             return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
-            );
-        }
-
-        console.log(this.props.suggestionsPurchaseGroups);
-
-        if (!this.props.suggestionsPurchaseGroups.length) {
-            return (
-                <div className="progress">
-                    <div className="indeterminate"></div>
-                </div>
+                <Loader />
             );
         }
 
         return (
             <div style={{textAlign: 'center'}}>
-                <h1>
-                    Purchase Groups type - Suggestions!
-                </h1>
+                <Message
+                    info
+                    header='Was this what you wanted?'
+                    content={`${this.props.pageCount} results for Purchase Groups type - Suggestions`}
+                />
+
 
                 <div className="row">
                     {

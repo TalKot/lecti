@@ -74,14 +74,17 @@ class Header extends Component {
                 <Menu pointing secondary>
                     {
                         Types.categories.map(({ name, value }) => {
-                            if (name === 'search') {
+                            if (value === 'search') {
                                 return (
                                     <Menu.Item key={value} name={name}><SearchBar /> </Menu.Item>
                                 );
-                            }
-                            else if (value === 'other') {
+                            }else if (value === 'other') {
                                 return (
                                     <Menu.Item key={value} name={name} onClick={()=>{this.renderRedirect(`/purchasegroups/${value}`)}}/>
+                                );
+                            } else if (value === 'suggestions') {
+                                return (
+                                    <Menu.Item key={value} name={name} onClick={()=>{this.renderRedirect(`/suggestions/`)}}/>
                                 );
                             } else {
                                 return (
