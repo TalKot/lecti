@@ -17,7 +17,7 @@ class Header extends Component {
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-    renderRedirect = (target) => {
+    renderRedirect = target => {
         this.props.history.push(target);
     }
 

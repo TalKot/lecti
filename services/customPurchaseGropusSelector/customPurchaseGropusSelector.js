@@ -4,20 +4,34 @@ const tslib_1 = require("tslib");
 const mongoose = require("mongoose");
 const moment = require('moment');
 const purchaseGroupManager_1 = require("../../managers/purchaseGroupManager");
-const PurchaseGroup = mongoose.model('purchaseGroups');
-const User = mongoose.model('users');
 const clientNotify = require('./clientList');
 const purchaseGroupsTypesValue = require("./purcahseGroupsTypesValueList");
 const CategoryCalculationWeight = require('../../config/keys');
+const User = mongoose.model('users');
+const PurchaseGroup = mongoose.model('purchaseGroups');
 const WEEK = 1000 * 60 * 60 * 24 * 7;
 class CustomPurchaseGroupsSelector {
     constructor() {
         this.notify = () => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const clientListSlim = Object.keys(clientNotify);
+            const purchaseGroupManager = new purchaseGroupManager_1.default();
+            const newPurchaseGroups = yield purchaseGroupManager.getAllNewPurchaseGroups();
+            const purchaseGroupsKeyBySubType = {};
+            newPurchaseGroups.forEach(purchaseGroupToKey => {
+                if (purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory]) {
+                    purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory].push(purchaseGroupToKey);
+                }
+                else {
+                    purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory] = [purchaseGroupToKey];
+                }
+            });
             clientListSlim.forEach(client => {
                 if (this.message.length) {
-                    clientNotify[client](this.message);
+                    clientNotify[client](this.message, purchaseGroupsKeyBySubType);
                 }
+            });
+            newPurchaseGroups.forEach(purchasegroup => {
+                purchaseGroupManager.updatePurchaseGroupById(purchasegroup._id, { newPurchaseGroup: false });
             });
             //reset algorithm data and recursive call
             this.message = [];

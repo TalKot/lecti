@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import PurchaseGroupSuggestions from './Suggestion/Suggestion';
 import Loader from '../Loader/Loader';
 import { Message, Pagination,Button, Icon,Label } from 'semantic-ui-react'
-
+import { Link } from 'react-router-dom';
 
 class Suggestions extends Component {
 
@@ -26,7 +26,7 @@ class Suggestions extends Component {
                 <Message
                     info
                     header='Was this what you wanted?'
-                    content={`${this.props.pageCount} results for Purchase Groups type - Suggestions`}
+                    content={`${this.props.suggestionsPurchaseGroups.length} results for Purchase Groups type - Suggestions`}
                 />
 
 
@@ -40,8 +40,17 @@ class Suggestions extends Component {
                             />
                         })
                     }
+
                 </div>
+
+                                <div className="fixed-action-btn">
+                    <Link to="/new/purchasegroup" className="btn-floating btn-large red">
+                        <i className="material-icons">add</i>
+                    </Link>
+                </div>
+
             </div>
+            
         );
     }
 }

@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
@@ -23,7 +22,10 @@ export default class PurchaseGroupManager {
         const purchaseGroups = await PurchaseGroup.find({ isSuggestion: true });
         return purchaseGroups ? purchaseGroups : null;
     }
-
+    async getAllNewPurchaseGroups() {
+        const res = await PurchaseGroup.find({ newPurchaseGroup: true });
+        return res;
+    }
     async getSuggestionsPurchaseGroupByID(ID) {
         const purchaseGroup = await PurchaseGroup.findById(ID);
         return purchaseGroup ? purchaseGroup : null;

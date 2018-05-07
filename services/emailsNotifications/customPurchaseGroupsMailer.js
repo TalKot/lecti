@@ -5,7 +5,7 @@ const keys = require('../../config/keys');
 class customPurchaseGroupsMailer extends helper.Mail {
     constructor({ subject, mailingList }, content) {
         super();
-
+        
         this.sgApi = sendgrid(keys.sendGridKey);
         this.from_email = new helper.Email('no-reply@lecti.com');
         this.subject = subject;

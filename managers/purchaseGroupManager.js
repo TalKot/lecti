@@ -23,6 +23,12 @@ class PurchaseGroupManager {
             return purchaseGroups ? purchaseGroups : null;
         });
     }
+    getAllNewPurchaseGroups() {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const res = yield PurchaseGroup.find({ newPurchaseGroup: true });
+            return res;
+        });
+    }
     getSuggestionsPurchaseGroupByID(ID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroup = yield PurchaseGroup.findById(ID);

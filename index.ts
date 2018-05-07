@@ -6,15 +6,18 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
+
+const purchaseGroupSchema = require('./models/PurchaseGroup');
 const PurchaseGroupData = require('./data/PurchaseGroupData');
 const UserData = require('./data/UserData');
-const purchaseGroupSchema = require('./models/PurchaseGroup');
 const userSchema = require('./models/User');
 
 //loading all models
 require('./models/Comment');
 require('./models/PurchaseGroup');
 require('./models/User');
+
+const CustomPurchaseGroupsSelector = require('./services/customPurchaseGropusSelector/customPurchaseGropusSelector');
 
 //loading passport library to server
 const User = mongoose.model('users');
@@ -61,15 +64,8 @@ if (process.env.NODE_ENV === 'production') {
 _.once(async () => {
 
     //notifications system
-    //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
-    //customPurchaseGroupsSelector.notify();
-
-    // const { users, comments, purchasegroups } = mongoose.connection.collections;
-    // try {
-    //     await Promise.all([users.drop(), comments.drop(), purchasegroups.drop()])
-    // }catch (e){
-    //     console.error(e)
-    // }
+    const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+    customPurchaseGroupsSelector.notify();
 
     //load and store user data to DB
     const user = new userSchema(UserData);

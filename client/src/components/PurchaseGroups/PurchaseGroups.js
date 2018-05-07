@@ -5,6 +5,7 @@ import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import { Card, Message, Pagination } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom';
 
 
 class PurchaseGroups extends Component {
@@ -27,6 +28,28 @@ class PurchaseGroups extends Component {
         this.props.fetchPurchaseGroups(this.props.match.params.item, activePage);
     }
 
+    getWelcomeMessage = () => {
+
+        if (this.props.match.params.item !== 'others') {
+            return (
+                <Message
+                    info
+                    header='Was this what you wanted?'
+                    content={`${this.props.pageCount} results for Purchase Groups type - ${this.props.match.params.item[0].toUpperCase() + this.props.match.params.item.substring(1)}`}
+                />
+            )
+        } else {
+            return (
+                <Message
+                    info
+                    header='Was this what you wanted?'
+                    content={`Results for Purchase Groups type - ${this.props.match.params.item[0].toUpperCase() + this.props.match.params.item.substring(1)}`}
+                />
+            )
+        }
+
+    }
+
     render() {
 
         if (!this.props.purchaseGroups.length) {
@@ -34,15 +57,13 @@ class PurchaseGroups extends Component {
                 <Loader />
             );
         }
-
+        {
+            console.log(this.props.searchValue, this.props.purchasGroupsBySearch)
+        }
         return (
             <div style={{ textAlign: 'center' }}>
 
-                <Message
-                    info
-                    header='Was this what you wanted?'
-                    content={`${this.props.pageCount} results for Purchase Groups type - ${this.props.match.params.item[0].toUpperCase() + this.props.match.params.item.substring(1)}`}
-                />
+                {this.getWelcomeMessage()}
 
                 <Card.Group >
                     {
@@ -57,8 +78,8 @@ class PurchaseGroups extends Component {
                         <i className="material-icons">add</i>
                     </Link>
                 </div>
-                    
-                <Pagination 
+
+                <Pagination
                     defaultActivePage={1}
                     totalPages={Math.ceil(this.props.pageCount / 12)}
                     onPageChange={this.handlePaginationChange}
@@ -70,8 +91,8 @@ class PurchaseGroups extends Component {
 
 };
 
-function mapStateToProps({ purchaseGroups, pageCount }) {
-    return { purchaseGroups, pageCount };
+function mapStateToProps({ purchaseGroups, pageCount, searchValue, history , purchasGroupsBySearch }) {
+    return { purchaseGroups, pageCount, searchValue, history,purchasGroupsBySearch };
 }
 
-export default connect(mapStateToProps, actions)(PurchaseGroups);
+export default connect(mapStateToProps, actions)(withRouter(PurchaseGroups));

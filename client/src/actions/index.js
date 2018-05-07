@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {
     FETCH_USER, FETCH_PURCHASE_GROUPS, FETCH_PAGE_COUNT,
-    FETCH_CUSTOM_MADE_GROUPS, FETCH_SUGGESTIONS_PURCHES_GROUPS
+    FETCH_CUSTOM_MADE_GROUPS, FETCH_SUGGESTIONS_PURCHES_GROUPS,
+    FETCH_PURCHASE_GROUPS_BY_SEARCH
 } from './types';
 
 //fetching user when application load
@@ -31,12 +32,6 @@ export const fetchPurchaseGroups = (type, page) => async dispatch => {
 export const fetchSuggestionsPurchaseGroups = () => async dispatch => {
     const res = await axios.get(`/api/purchaseGroup/getsuggestions/`);
     dispatch({ type: FETCH_SUGGESTIONS_PURCHES_GROUPS, payload: res.data });
-};
-
-//fetch purchaseGroups by type
-export const fetchPurchaseGroupsBySearch = (search) => async dispatch => {
-    const res = await axios.get(`/api/purchaseGroup/search/${search}/`);
-    dispatch({ type: FETCH_PURCHASE_GROUPS, payload: res.data });
 };
 
 // buy purchase group
@@ -125,4 +120,22 @@ export const fetchCustomPurchaseGroups = () => async dispatch => {
 export const createNewPurchaseGroup = (values, isSeller, history) => async dispatch => {
     const { data } = await axios.post('/api/create/purchasegroup', values);
     isSeller ? history.push(`/purchasegroup/${data._id}`) : history.push(`/suggestions/${data._id}`);
+};
+//fetch purchaseGroups by type
+export const fetchPurchaseGroupsBySearch = search => async dispatch => {
+    const res = await axios.get(`/api/purchaseGroup/search/${search}/`);
+    dispatch({ type: FETCH_PURCHASE_GROUPS, payload: res.data });
+};
+
+//fetch purchaseGroups by type
+export const searchActionPreform = (search, history) => async dispatch => {
+    history.push(`/purchasegroups/others/`);
+    if (search) {
+        const res = await axios.get(`/api/purchaseGroup/search/${search}/`);
+        const options = {
+            data :res.data,
+            searchValue:search
+        }
+        dispatch({ type: FETCH_PURCHASE_GROUPS_BY_SEARCH, payload: options });
+    }
 };
