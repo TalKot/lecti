@@ -8,9 +8,11 @@ const morgan = require('morgan');
 const _ = require('lodash');
 
 const purchaseGroupSchema = require('./models/PurchaseGroup');
+const userSchema = require('./models/User');
+
 const PurchaseGroupData = require('./data/PurchaseGroupData');
 const UserData = require('./data/UserData');
-const userSchema = require('./models/User');
+
 
 //loading all models
 require('./models/Comment');
@@ -61,30 +63,30 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //will call start notify once.
-_.once(async () => {
+// _.once(async () => {
 
-    //notifications system
-    const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
-    customPurchaseGroupsSelector.notify();
+//     //load and store user data to DB
+//     const user = new userSchema(UserData);
+//     await user.save();
 
-    //load and store user data to DB
-    const user = new userSchema(UserData);
-    await user.save();
-
-    //load and store purchase group data to DB
-    PurchaseGroupData.forEach(async purchaseGroup => {
-        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+//     //load and store purchase group data to DB
+//     PurchaseGroupData.forEach(async purchaseGroup => {
+//         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
 
 
-        if(!purchaseGroupObject.isSuggestion){
-            purchaseGroupObject.seller = user;
-            user.purchaseGroupsSell.push(purchaseGroupObject);
-        }
+//         if (!purchaseGroupObject.isSuggestion) {
+//             purchaseGroupObject.seller = user;
+//             user.purchaseGroupsSell.push(purchaseGroupObject);
+//         }
 
-        purchaseGroupObject.save()
-    });
-    await user.save();
-})();
+//         purchaseGroupObject.save()
+//     });
+//     await user.save();
+
+//     //notifications system
+//     const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+//     customPurchaseGroupsSelector.notify();
+// })();
 
 
 //setting up port with Heroku and locally

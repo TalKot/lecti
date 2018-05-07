@@ -4,9 +4,7 @@ import PurchaseGroupManager from '../../managers/purchaseGroupManager'
 const clientNotify = require('./clientList');
 import purchaseGroupsTypesValue = require('./purcahseGroupsTypesValueList');
 import * as _ from 'lodash';
-
 const CategoryCalculationWeight = require('../../config/keys');
-
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
 
