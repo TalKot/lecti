@@ -6,15 +6,20 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
-const PurchaseGroupData = require('./data/PurchaseGroupData');
-const UserData = require('./data/UserData');
+
 const purchaseGroupSchema = require('./models/PurchaseGroup');
 const userSchema = require('./models/User');
+
+const PurchaseGroupData = require('./data/PurchaseGroupData');
+const UserData = require('./data/UserData');
+
 
 //loading all models
 require('./models/Comment');
 require('./models/PurchaseGroup');
 require('./models/User');
+
+const CustomPurchaseGroupsSelector = require('./services/customPurchaseGropusSelector/customPurchaseGropusSelector');
 
 //loading passport library to server
 const User = mongoose.model('users');
@@ -58,37 +63,30 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //will call start notify once.
-_.once(async () => {
+// _.once(async () => {
 
-    //notifications system
-    //const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.Instance;
-    //customPurchaseGroupsSelector.notify();
+//     //load and store user data to DB
+//     const user = new userSchema(UserData);
+//     await user.save();
 
-    // const { users, comments, purchasegroups } = mongoose.connection.collections;
-    // try {
-    //     await Promise.all([users.drop(), comments.drop(), purchasegroups.drop()])
-    // }catch (e){
-    //     console.error(e)
-    // }
-
-    //load and store user data to DB
-    const user = new userSchema(UserData);
-    await user.save();
-
-    //load and store purchase group data to DB
-    PurchaseGroupData.forEach(async purchaseGroup => {
-        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+//     //load and store purchase group data to DB
+//     PurchaseGroupData.forEach(async purchaseGroup => {
+//         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
 
 
-        if(!purchaseGroupObject.isSuggestion){
-            purchaseGroupObject.seller = user;
-            user.purchaseGroupsSell.push(purchaseGroupObject);
-        }
+//         if (!purchaseGroupObject.isSuggestion) {
+//             purchaseGroupObject.seller = user;
+//             user.purchaseGroupsSell.push(purchaseGroupObject);
+//         }
 
-        purchaseGroupObject.save()
-    });
-    await user.save();
-})();
+//         purchaseGroupObject.save()
+//     });
+//     await user.save();
+
+//     //notifications system
+//     const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+//     customPurchaseGroupsSelector.notify();
+// })();
 
 
 //setting up port with Heroku and locally

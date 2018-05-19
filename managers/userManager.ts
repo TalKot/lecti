@@ -4,6 +4,7 @@ import * as _ from 'lodash';
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const liveEmailNotificationTemplte = require('../services/emailsNotifications/emailTemplates/livePurchaseGroupTemplate')
+const newSellerTemplte = require('../services/emailsNotifications/emailTemplates/newSellerTemplate')
 const Mailer = require('../services/emailsNotifications/livePurchaseGroupsMailer');
 
 export default class UserManager {
@@ -140,6 +141,27 @@ export default class UserManager {
             };
 
             const mailer = new Mailer(customPurchaseGroup, liveEmailNotificationTemplte(message, purchaseGroup.name, purchaseGroup.id));
+            await mailer.send();
+        } catch (e) {
+            console.error(e);
+            throw e;
+        }
+    }
+
+
+    async alertAdminsNewSellerRequest(userID, body) {
+        try {
+            const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com'];
+            const message = `New Seller Request!`;
+
+            const newSellerRequest = {
+                body: message,
+                subject: message,
+                title: message,
+                mailingList: emailsToNotify
+            };
+
+            const mailer = new Mailer(newSellerRequest, newSellerTemplte(body));
             await mailer.send();
         } catch (e) {
             console.error(e);

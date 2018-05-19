@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import formFields from "./formFields";
 import PurchaseGroupField from "./PurchaseGroupField";
 import Types from '../../../utils/types';
-import { Grid, Image, Label, Segment } from 'semantic-ui-react'
+import { Grid, Image, Label, Segment, Button } from 'semantic-ui-react'
 
 
 class AddPurchaseGroup extends Component {
@@ -78,13 +78,14 @@ class AddPurchaseGroup extends Component {
                                 <Label as='a' color='blue' ribbon>Community</Label>
                                 <span>User Reviews</span>
                                 <br /><br />
-                                <Link to="/home" className="red btn-flat white-text">
-                                    Cancel
+                                <Button negative size='huge'>
+                                    <Link to="/home" style={{color:"white"}}>
+                                        Cancel
                                 </Link>
-                                <button type="submit" className="teal btn-flat right white-text">
+                                </Button>
+                                <Button positive size='huge' floated='right'>
                                     Next
-                                    <i className="material-icons right">done</i>
-                                </button>
+                                </Button>
                             </Segment>
                         </Grid.Column>
                     </Grid>

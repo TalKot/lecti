@@ -1,12 +1,12 @@
 import * as mongoose from 'mongoose';
 const moment = require('moment');
 import PurchaseGroupManager from '../../managers/purchaseGroupManager'
-const PurchaseGroup = mongoose.model('purchaseGroups');
-const User = mongoose.model('users');
 const clientNotify = require('./clientList');
 import purchaseGroupsTypesValue = require('./purcahseGroupsTypesValueList');
+import * as _ from 'lodash';
 const CategoryCalculationWeight = require('../../config/keys');
-
+const User = mongoose.model('users');
+const PurchaseGroup = mongoose.model('purchaseGroups');
 
 const WEEK: number = 1000 * 60 * 60 * 24 * 7;
 
@@ -94,7 +94,7 @@ export default class CustomPurchaseGroupsSelector {
             // remove all purchase groups that client marked as not relevant
             user.notRelevantTypes.forEach(typeToRemove => {
                 // if(purchaseGroupsResults[typeToRemove]) {
-                if (typeof purchaseGroupsResults[typeToRemove]!= undefined){
+                if (typeof purchaseGroupsResults[typeToRemove] != undefined) {
                     delete purchaseGroupsResults[typeToRemove];
                 }
             });
@@ -126,7 +126,7 @@ export default class CustomPurchaseGroupsSelector {
                     return purchaseGroupsResults[typeA] > purchaseGroupsResults[typeB] ? typeA : typeB;
                 });
 
-            }else {
+            } else {
                 // will return the mix of the most discounted purchase groups for new users.
                 selectedType = 'cheapest';
             }
@@ -143,16 +143,31 @@ export default class CustomPurchaseGroupsSelector {
     public notify = async () => {
 
         const clientListSlim = Object.keys(clientNotify);
+        const purchaseGroupManager = new PurchaseGroupManager();
+        const newPurchaseGroups = await purchaseGroupManager.getAllNewPurchaseGroups();
+
+        const purchaseGroupsKeyBySubType = {};
+
+        newPurchaseGroups.forEach(purchaseGroupToKey => {
+            if (purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory]) {
+                purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory].push(purchaseGroupToKey);
+            } else {
+                purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory] = [purchaseGroupToKey]
+            }
+        })
 
         clientListSlim.forEach(client => {
             if (this.message.length) {
-                clientNotify[client](this.message);
+                clientNotify[client](this.message, purchaseGroupsKeyBySubType);
             }
         });
 
+        newPurchaseGroups.forEach( purchasegroup => {
+            purchaseGroupManager.updatePurchaseGroupById(purchasegroup._id, { newPurchaseGroup: false });
+        })
         //reset algorithm data and recursive call
         this.message = [];
-        setInterval(this.notify, WEEK);
+        setInterval(this.notify,WEEK);
     }
 
 }

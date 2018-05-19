@@ -3,16 +3,16 @@ import storeB from './clientList/storeB'
 import storeC from './clientList/storeC'
 
 export = {
-    storeA: (message) => {
+    storeA: (message,purchaseGroupsKeyBySubType) => {
         let a = new storeA();
-        a.notify(message);
+        a.notify(message,purchaseGroupsKeyBySubType);
     },
-    storeB: (message) => {
+    storeB: (message,purchaseGroupsKeyBySubType) => {
         let a = new storeB();
-        a.notify(message);
+        a.notify(message,purchaseGroupsKeyBySubType);
     },
-    storeC: (message) => {
+    storeC: (message,purchaseGroupsKeyBySubType) => {
         let a = new storeC();
-        a.notify(message);
+        a.notify(message,purchaseGroupsKeyBySubType);
     }
 }

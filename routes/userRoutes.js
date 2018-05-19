@@ -9,5 +9,11 @@ module.exports = app => {
         let userControllerInstance = userController_1.default.Instance;
         yield userControllerInstance.getSellerById(res, id);
     }));
+    app.post('/api/newseller', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const { id } = req.user;
+        let { body } = req;
+        let userControllerInstance = userController_1.default.Instance;
+        yield userControllerInstance.alertAdminsNewSellerRequest(res, id, body);
+    }));
 };
 //# sourceMappingURL=userRoutes.js.map
