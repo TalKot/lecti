@@ -13,7 +13,6 @@ const userSchema = require('./models/User');
 const PurchaseGroupData = require('./data/PurchaseGroupData');
 const UserData = require('./data/UserData');
 
-
 //loading all models
 require('./models/Comment');
 require('./models/PurchaseGroup');
@@ -62,34 +61,34 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-//will call start notify once.
-// _.once(async () => {
+// will call start notify once.
+_.once(async () => {
 
-//     //load and store user data to DB
-//     const user = new userSchema(UserData);
-//     await user.save();
+    //load and store user data to DB
+    const user = new userSchema(UserData);
+    await user.save();
 
-//     //load and store purchase group data to DB
-//     PurchaseGroupData.forEach(async purchaseGroup => {
-//         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+    //load and store purchase group data to DB
+    PurchaseGroupData.forEach(async purchaseGroup => {
+        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
 
 
-//         if (!purchaseGroupObject.isSuggestion) {
-//             purchaseGroupObject.seller = user;
-//             user.purchaseGroupsSell.push(purchaseGroupObject);
-//         }
+        if (!purchaseGroupObject.isSuggestion) {
+            purchaseGroupObject.seller = user;
+            user.purchaseGroupsSell.push(purchaseGroupObject);
+        }
 
-//         purchaseGroupObject.save()
-//     });
-//     await user.save();
+        purchaseGroupObject.save()
+    });
+    await user.save();
 
-//     //notifications system
-//     const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
-//     customPurchaseGroupsSelector.notify();
-// })();
+    //notifications system
+    const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+    customPurchaseGroupsSelector.notify();
+})();
 
 
 //setting up port with Heroku and locally
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
-console.log(`Listening on port ${PORT}`);
+console.log(`Listening On Port - ${PORT}`);

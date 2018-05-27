@@ -171,13 +171,6 @@ class Profile extends Component {
                                 </div>
                             </div>
 
-
-                            <div className="col s3 m6">
-                                <div className="card-panel">
-                                    {this.getStatics()}
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -192,4 +185,3 @@ function mapStateToProps({ auth }) {
 }
 
 export default connect(mapStateToProps, actions)(Profile);
-

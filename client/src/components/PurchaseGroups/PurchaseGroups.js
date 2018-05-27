@@ -57,9 +57,7 @@ class PurchaseGroups extends Component {
                 <Loader />
             );
         }
-        {
-            console.log(this.props.searchValue, this.props.purchasGroupsBySearch)
-        }
+
         return (
             <div style={{ textAlign: 'center' }}>
 

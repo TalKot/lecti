@@ -1,9 +1,9 @@
 export = {
         AuthId: "10524845046227861108",
-        displayName: "Tal Kot",
+        displayName: "Lebron James",
         gender: "male",
-        email: "talkot123@gmail.com",
-        photoURL: "https://lh5.googleusercontent.com/-hYortC6bKRQ/AAAAAAAAAAI/AAAAAAAAFTU/jcZzot1ysGM/photo.jpg?sz=50",
+        email: "something@gmail.com",
+        photoURL: "http://www.gstatic.com/tv/thumb/persons/287557/287557_v9_ba.jpg",
         comments: [],
         cart: [],
         purchaseGroupsSell: [],

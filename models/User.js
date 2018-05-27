@@ -31,9 +31,9 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    storeName: String,
-    storeAddress: String,
-    rank: Number,
+    // storeName: String,
+    // storeAddress: String,
+    // rank: Number,
     purchaseGroupsSell: [{
             type: Schema.Types.ObjectId,
             ref: 'purchaseGroups',

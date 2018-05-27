@@ -31,13 +31,13 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'Android operating system\n' +
-        'Productivity and entertainment at your fingertips. Download apps, games, movies, music and eBooks from Google Play. Cloud integration provides a seamless experience across all Android devices.\n' +
-        '\n' +
-        '9.6" display with WXGA (1280 x 800) resolution\n' +
-        'Clear, bright resolution for watching movies, surfing the Web, reading books and more.\n' +
-        '\n' +
-        '16GB internal storage plus microSD card slot\n' +
-        'Plenty of space for music, movies, photos and more. Expand storage up to 128GB with a microSD card (sold separately).'
+            'Productivity and entertainment at your fingertips. Download apps, games, movies, music and eBooks from Google Play. Cloud integration provides a seamless experience across all Android devices.\n' +
+            '\n' +
+            '9.6" display with WXGA (1280 x 800) resolution\n' +
+            'Clear, bright resolution for watching movies, surfing the Web, reading books and more.\n' +
+            '\n' +
+            '16GB internal storage plus microSD card slot\n' +
+            'Plenty of space for music, movies, photos and more. Expand storage up to 128GB with a microSD card (sold separately).'
     },
     {
         name: "Samsung Galaxy Tab E 8 inch HD Display",
@@ -70,24 +70,24 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'Features:\n' +
-        '\n' +
-        'Displaying Screen :\n' +
-        '\n' +
-        '10.1 inch 5-Point IPS HD Capacitive Touch Screen\n' +
-        '\n' +
-        'Resolution :1280*800 (Use different Software test may a little different, if any question, please contact us first)\n' +
-        '\n' +
-        'CPU :MTK6582 Octa-Core\n' +
-        '\n' +
-        'CPU Frequency :598.0 ~1500.0 MHz\n' +
-        '\n' +
-        'GPU :Mali-400MP,Support 3D games\n' +
-        '\n' +
-        'Memory Size-RAM :4GB DDR3\n' +
-        '\n' +
-        'Memory Size-ROM :64GB ROM (internal storage+ tablet storage+ system used some storage),about 12.4GB can use (supports Micro-SD card up to 128GB)\n' +
-        '\n' +
-        'Operating System :Android 5.1 Marshmallow'
+            '\n' +
+            'Displaying Screen :\n' +
+            '\n' +
+            '10.1 inch 5-Point IPS HD Capacitive Touch Screen\n' +
+            '\n' +
+            'Resolution :1280*800 (Use different Software test may a little different, if any question, please contact us first)\n' +
+            '\n' +
+            'CPU :MTK6582 Octa-Core\n' +
+            '\n' +
+            'CPU Frequency :598.0 ~1500.0 MHz\n' +
+            '\n' +
+            'GPU :Mali-400MP,Support 3D games\n' +
+            '\n' +
+            'Memory Size-RAM :4GB DDR3\n' +
+            '\n' +
+            'Memory Size-ROM :64GB ROM (internal storage+ tablet storage+ system used some storage),about 12.4GB can use (supports Micro-SD card up to 128GB)\n' +
+            '\n' +
+            'Operating System :Android 5.1 Marshmallow'
     },
     {
         name: "Amazon Kindle Fire HD 8 Tablet",
@@ -104,12 +104,12 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'The next generation of our best-selling Fire tablet ever - now thinner, lighter, and with longer battery life and an improved display. More durable than the latest iPad\n' +
-        'Beautiful 8" IPS display with higher contrast and sharper text, a 1.3 GHz quad-core processor, and up to 8 hours of battery life. 16 GB of internal storage and a microSD slot for up to 256 GB of expandable storage.\n' +
-        'Now with Alexa, for quick access to the information and entertainment you want. Ask questions, play music, check your calendar, get the news, weather, and more - just press the home button and ask.\n' +
-        'Ask Alexa to call or message almost anyone, or make video calls to family and friends with a Fire tablet, Echo Spot, Echo Show, or the Alexa App. Instantly connect to enabled Echo devices.\n' +
-        'Enjoy millions of movies, TV shows, songs, Kindle eBooks, apps and games - including Netflix, Facebook, HBO, Spotify, and more.\n' +
-        'Prime members get unlimited access to over a thousand books and magazines, millions of songs, and thousands of movies and TV episodes - at no additional cost.\n' +
-        'Watch downloaded videos anywhere with a Prime membership, Netflix plan, or Showtime subscription.'
+            'Beautiful 8" IPS display with higher contrast and sharper text, a 1.3 GHz quad-core processor, and up to 8 hours of battery life. 16 GB of internal storage and a microSD slot for up to 256 GB of expandable storage.\n' +
+            'Now with Alexa, for quick access to the information and entertainment you want. Ask questions, play music, check your calendar, get the news, weather, and more - just press the home button and ask.\n' +
+            'Ask Alexa to call or message almost anyone, or make video calls to family and friends with a Fire tablet, Echo Spot, Echo Show, or the Alexa App. Instantly connect to enabled Echo devices.\n' +
+            'Enjoy millions of movies, TV shows, songs, Kindle eBooks, apps and games - including Netflix, Facebook, HBO, Spotify, and more.\n' +
+            'Prime members get unlimited access to over a thousand books and magazines, millions of songs, and thousands of movies and TV episodes - at no additional cost.\n' +
+            'Watch downloaded videos anywhere with a Prime membership, Netflix plan, or Showtime subscription.'
     },
     {
         name: "8 inch CHUWI Hi 8 Air Tablet",
@@ -126,11 +126,11 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'This item features a 8" multi-point capacitive touch screen with 1920 * 1200 resolution, equipped with intel Quad Core CPU, dual cameras, 2GB RAM and 32GB ROM.\n' +
-        '\n' +
-        'Features:\n' +
-        'General Design: Exquisite workmanship, light and tough, smooth and soft touch, premium feel.\n' +
-        'Display: 8” 1920*1200P FHD display, high light transmittance and color saturation, quite sensitive multi-point capacitive touch screen, a technology of integrating layers of protective glass and touch sensor into one.\n' +
-        'CPU and Storage: intel X5 Z8350 1.92GHz Quad Core, 2GB RAM+32GB ROM(32GB internal storage is divided into 2 parts, one for windows OS Approx. 22GB, one for Android Approx. 8GB),'
+            '\n' +
+            'Features:\n' +
+            'General Design: Exquisite workmanship, light and tough, smooth and soft touch, premium feel.\n' +
+            'Display: 8” 1920*1200P FHD display, high light transmittance and color saturation, quite sensitive multi-point capacitive touch screen, a technology of integrating layers of protective glass and touch sensor into one.\n' +
+            'CPU and Storage: intel X5 Z8350 1.92GHz Quad Core, 2GB RAM+32GB ROM(32GB internal storage is divided into 2 parts, one for windows OS Approx. 22GB, one for Android Approx. 8GB),'
     },
     {
         name: "Huawei Mediapad M2 WiFi/LTE tablet",
@@ -147,13 +147,13 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: '> Display: 8.0 inch 1920X1200P FHD IPS Display, 283PPI;   \n' +
-        '> CPU: Kirin930 64 bit octa-core CPU, 2.0GHz;  \n' +
-        '> 3GB RAM; 16GB / 32GB / 64GB ROM(Extend Up to 128GB);  \n' +
-        '> OS: Android 5.1; \n' +
-        '> WiFi: IEEE 802.11a/b/g/n/ac，2.4＆5GHz; \n' +
-        '> Camera: Front 2.0MP, back 8.0MP  Dual camera;\n' +
-        '> Others: Bluetooth, GPS, Compass, OTG, WiFi Display.\n' +
-        '> Phone call: Yes, support, 1XMicro SIM card.'
+            '> CPU: Kirin930 64 bit octa-core CPU, 2.0GHz;  \n' +
+            '> 3GB RAM; 16GB / 32GB / 64GB ROM(Extend Up to 128GB);  \n' +
+            '> OS: Android 5.1; \n' +
+            '> WiFi: IEEE 802.11a/b/g/n/ac，2.4＆5GHz; \n' +
+            '> Camera: Front 2.0MP, back 8.0MP  Dual camera;\n' +
+            '> Others: Bluetooth, GPS, Compass, OTG, WiFi Display.\n' +
+            '> Phone call: Yes, support, 1XMicro SIM card.'
     },
     {
         name: "NEW ASUS ZENDPAD Z8s TABLET",
@@ -186,13 +186,13 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'Buone condizioni perfettamente funzionante \n' +
-        'Presenta segni di normale uso \n' +
-        'pellicola messa appena comprato \n' +
-        'E stata sostituita la micro usb di ricarica quindi è nuova \n' +
-        'Caricabatteria micro usb compreso ma non originale perfettamente funzionante \n' +
-        'Batteria LUNGA DURATA \n' +
-        'Soddisfatto o rimborsato \n' +
-        'Vero affare!! '
+            'Presenta segni di normale uso \n' +
+            'pellicola messa appena comprato \n' +
+            'E stata sostituita la micro usb di ricarica quindi è nuova \n' +
+            'Caricabatteria micro usb compreso ma non originale perfettamente funzionante \n' +
+            'Batteria LUNGA DURATA \n' +
+            'Soddisfatto o rimborsato \n' +
+            'Vero affare!! '
     },
     {
         name: "Apple iPad Air 2 64GB",
@@ -337,12 +337,12 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'The next generation of our best-selling Fire tablet ever - now thinner, lighter, and with longer battery life and an improved display. More durable than the latest iPad\n' +
-        'Beautiful 8" IPS display with higher contrast and sharper text, a 1.3 GHz quad-core processor, and up to 8 hours of battery life. 16 GB of internal storage and a microSD slot for up to 256 GB of expandable storage.\n' +
-        'Now with Alexa, for quick access to the information and entertainment you want. Ask questions, play music, check your calendar, get the news, weather, and more - just press the home button and ask.\n' +
-        'Ask Alexa to call or message almost anyone, or make video calls to family and friends with a Fire tablet, Echo Spot, Echo Show, or the Alexa App. Instantly connect to enabled Echo devices.\n' +
-        'Enjoy millions of movies, TV shows, songs, Kindle eBooks, apps and games - including Netflix, Facebook, HBO, Spotify, and more.\n' +
-        'Prime members get unlimited access to over a thousand books and magazines, millions of songs, and thousands of movies and TV episodes - at no additional cost.\n' +
-        'Watch downloaded videos anywhere with a Prime membership, Netflix plan, or Showtime subscription.'
+            'Beautiful 8" IPS display with higher contrast and sharper text, a 1.3 GHz quad-core processor, and up to 8 hours of battery life. 16 GB of internal storage and a microSD slot for up to 256 GB of expandable storage.\n' +
+            'Now with Alexa, for quick access to the information and entertainment you want. Ask questions, play music, check your calendar, get the news, weather, and more - just press the home button and ask.\n' +
+            'Ask Alexa to call or message almost anyone, or make video calls to family and friends with a Fire tablet, Echo Spot, Echo Show, or the Alexa App. Instantly connect to enabled Echo devices.\n' +
+            'Enjoy millions of movies, TV shows, songs, Kindle eBooks, apps and games - including Netflix, Facebook, HBO, Spotify, and more.\n' +
+            'Prime members get unlimited access to over a thousand books and magazines, millions of songs, and thousands of movies and TV episodes - at no additional cost.\n' +
+            'Watch downloaded videos anywhere with a Prime membership, Netflix plan, or Showtime subscription.'
     },
     {
         name: "8 inch CHUWI Hi 8 Air Tablet",
@@ -359,11 +359,11 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'This item features a 8" multi-point capacitive touch screen with 1920 * 1200 resolution, equipped with intel Quad Core CPU, dual cameras, 2GB RAM and 32GB ROM.\n' +
-        '\n' +
-        'Features:\n' +
-        'General Design: Exquisite workmanship, light and tough, smooth and soft touch, premium feel.\n' +
-        'Display: 8” 1920*1200P FHD display, high light transmittance and color saturation, quite sensitive multi-point capacitive touch screen, a technology of integrating layers of protective glass and touch sensor into one.\n' +
-        'CPU and Storage: intel X5 Z8350 1.92GHz Quad Core, 2GB RAM+32GB ROM(32GB internal storage is divided into 2 parts, one for windows OS Approx. 22GB, one for Android Approx. 8GB),'
+            '\n' +
+            'Features:\n' +
+            'General Design: Exquisite workmanship, light and tough, smooth and soft touch, premium feel.\n' +
+            'Display: 8” 1920*1200P FHD display, high light transmittance and color saturation, quite sensitive multi-point capacitive touch screen, a technology of integrating layers of protective glass and touch sensor into one.\n' +
+            'CPU and Storage: intel X5 Z8350 1.92GHz Quad Core, 2GB RAM+32GB ROM(32GB internal storage is divided into 2 parts, one for windows OS Approx. 22GB, one for Android Approx. 8GB),'
     },
     {
         name: "Apple iPad Air 2 64GB",
@@ -412,15 +412,15 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: '2.15 GHz & 1.6 GHz Dual-Core Processors\n' +
-        '4GB of RAM & 32GB of Onboard Storage\n' +
-        '9.7" Super AMOLED HDR-Ready Display\n' +
-        'QXGA (2048 x 1536) Native Resolution\n' +
-        'Dual-Band Wi-Fi + Bluetooth 4.1\n' +
-        'Fingerprint Scanner, USB-C Port\n' +
-        'microSD Expansion Slot\n' +
-        '5MP Front Camera + 13MP Rear Camera\n' +
-        'Includes S Pen\n' +
-        'Android 7.0 Nougat'
+            '4GB of RAM & 32GB of Onboard Storage\n' +
+            '9.7" Super AMOLED HDR-Ready Display\n' +
+            'QXGA (2048 x 1536) Native Resolution\n' +
+            'Dual-Band Wi-Fi + Bluetooth 4.1\n' +
+            'Fingerprint Scanner, USB-C Port\n' +
+            'microSD Expansion Slot\n' +
+            '5MP Front Camera + 13MP Rear Camera\n' +
+            'Includes S Pen\n' +
+            'Android 7.0 Nougat'
     },
     {
         name: "10.1\" ANDROID 6.0 TABLET",
@@ -642,7 +642,7 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'The real color of the item may be slightly different from the pictures shown on' +
-        'website caused by many factors such as brightness of your monitor and light brightness. '
+            'website caused by many factors such as brightness of your monitor and light brightness. '
     },
     {
         name: "Men's Muscle Short Sleeve Shirt V-neck",
@@ -723,9 +723,9 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: '-- 100% brand new and high quality ' +
-        'Material: Polyester +Cotton ' +
-        'Due to the difference between different monitors, the picture may not reflect the actual color of the item. Thank you.' +
-        'Compare the detail sizes with yours, please allow 1-4CM differs due to manual measurement, thanks!'
+            'Material: Polyester +Cotton ' +
+            'Due to the difference between different monitors, the picture may not reflect the actual color of the item. Thank you.' +
+            'Compare the detail sizes with yours, please allow 1-4CM differs due to manual measurement, thanks!'
     },
     {
         name: "Mens Summer Casual Dress Shirt",
@@ -758,7 +758,7 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'Style: Euramerican Style ' + 'men\'s fashion Type: Men Denim Jeans Shirt Casual Long Sleeve Slim Fit Cotton Tops Shirts ' +
-        'Material: Cotton'
+            'Material: Cotton'
     },
     {
         name: "Luxury Casual Stylish Slim Fit Long Sleeve",
@@ -791,8 +791,8 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'Mens Velvet Shirts Paisley Print Gold Loong Dragon Pattern Blouse Tops Slim Sexy' +
-        'Please note this is in Asian sizing. We suggest you buy one or two sizes larger.' +
-        'Please check the measurements in pictures carefully before making a purchase.'
+            'Please note this is in Asian sizing. We suggest you buy one or two sizes larger.' +
+            'Please check the measurements in pictures carefully before making a purchase.'
     },
     {
         name: "Slim Fit Round Neck Long Sleeve T-shirts",
@@ -809,9 +809,9 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: '100% band new and high quality' +
-        'Designed to be slim fitted, perfect to show your sexy figure' +
-        'Solid color with unique dragon tattoo print' +
-        'Help attract more attention and increase personal charisma '
+            'Designed to be slim fitted, perfect to show your sexy figure' +
+            'Solid color with unique dragon tattoo print' +
+            'Help attract more attention and increase personal charisma '
     },
     {
         name: "HUGO BOSS men's T-SHIRT",
@@ -828,7 +828,7 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'VALUE FOR MONEY. RETURN ACCEPTED.' +
-        '100% SATISFACTION GUARANTEE.'
+            '100% SATISFACTION GUARANTEE.'
     },
     //men's shoes
     {
@@ -2108,8 +2108,8 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'Deep, immersive sound, improved eq-best-in-class performance for wireless headphones. Connectivity Technology: Wired/Wireless\n' +
-        'Latest Bluetooth technology for easy connectivity and seamless audio/video syncs\n' +
-        'Advanced microphone system, HD voice for clear calls in windy or noisy environments.Recharge Time 3.0 Hours'
+            'Latest Bluetooth technology for easy connectivity and seamless audio/video syncs\n' +
+            'Advanced microphone system, HD voice for clear calls in windy or noisy environments.Recharge Time 3.0 Hours'
     },
     {
         name: "AfterShokz Trekz Titanium Open Ear Wireless Bone Conduction Headphones",
@@ -2143,7 +2143,7 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: 'Includes a fully customized PS4 Pro console inspired by Kratos’s Axe, a Leviathan Gray DUALSHOCK 4 controller with insignia, God of War game on Blu-Ray disc, and digital content.\n' +
-        'It is a new beginning for Kratos. Living as a man outside the shadow of the Gods, he ventures into the brutal Norse wilds with his son Atreus, on a perilous journey to fulfill a promise.'
+            'It is a new beginning for Kratos. Living as a man outside the shadow of the Gods, he ventures into the brutal Norse wilds with his son Atreus, on a perilous journey to fulfill a promise.'
     },
     {
         name: "FIFA 18 PS4",
@@ -2276,8 +2276,8 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: '(16) 7 Inch (17.7cm) Paper Plates\n' +
-        '(16) 9oz (266ml) Paper Cups\n' +
-        '(16) Napkins (5x5in).'
+            '(16) 9oz (266ml) Paper Cups\n' +
+            '(16) Napkins (5x5in).'
     },
     {
         name: "Mickey Mouse 'Playtime' Happy Birthday Banner",
@@ -2294,8 +2294,8 @@ module.exports = [
         isSuggestion: false,
         potentialBuyers: [],
         description: '(16) 7 Inch (17.7cm) Paper Plates\n' +
-        '(16) 9oz (266ml) Paper Cups\n' +
-        '(16) Napkins (5x5in).'
+            '(16) 9oz (266ml) Paper Cups\n' +
+            '(16) Napkins (5x5in).'
     },
     //books - books_audible - delete this category
     {
@@ -2430,7 +2430,6 @@ module.exports = [
         potentialBuyers: [],
         description: 'VALUE FOR MONEY. RETURN ACCEPTED. 100% SATISFACTION GUARANTEE.'
     },
-
     //others - delete this category
     {
         name: "NEW LG G6 (LS993) - 32GB",

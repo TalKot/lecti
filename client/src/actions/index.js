@@ -54,7 +54,7 @@ export const onAddPurchaseGroup = (purchaseGroupID, amount) => async dispatch =>
             return axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
         })
         .then(res => {
-            dispatch({ type: FETCH_PURCHASE_GROUPS, payload: res.data });
+            // dispatch({ type: FETCH_PURCHASE_GROUPS, payload: res.data });
             return axios.get('/api/current_user');
         }).then(res => {
             dispatch({ type: FETCH_USER, payload: res.data });

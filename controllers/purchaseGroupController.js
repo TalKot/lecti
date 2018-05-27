@@ -113,7 +113,7 @@ class PurchaseGroupController {
                         // httpResponse.sendError(res, error);
                         throw new Error(error);
                     }
-                    //check available client's credits to purchase this group 
+                    //check available client's credits to purchase this group
                     if (purchaseGroup.priceForGroup * amount > credits) {
                         const error = 'Not enough money to complete this action.';
                         // httpResponse.sendError(res, error);
@@ -242,7 +242,7 @@ class PurchaseGroupController {
             try {
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 yield PurchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
-                return;
+                httpResponse_1.default.sendOk(res);
             }
             catch (e) {
                 httpResponse_1.default.sendError(res, e);

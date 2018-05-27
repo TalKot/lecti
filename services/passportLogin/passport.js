@@ -7,6 +7,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const User = mongoose.model('users');
 const { googleClientID, googleClientSecret, facebookClientID, facebookClientSecret } = require('../../config/keys');
+const faker = require('faker');
 //how to encrypt userId before sending token it to client's browser
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -25,6 +26,11 @@ passport.use(new GoogleStrategy({
 }, 
 //will be called when the auth flow is complete
 (accessToken, refreshToken, profile, done) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+    const country = faker.address.country();
+    const city = faker.address.city();
+    const street = faker.address.streetAddress();
+    const secondaryAddress = faker.address.secondaryAddress();
+    const address = `${country},${city},${street},${secondaryAddress}`;
     const { displayName, id, gender } = profile;
     let existingUser = yield User.findOne({ email: profile.emails[0].value });
     if (existingUser) {
@@ -36,8 +42,9 @@ passport.use(new GoogleStrategy({
     const user = new User({
         AuthId: id,
         displayName,
-        gender: gender,
+        gender,
         email: profile.emails[0].value,
+        address,
         photoURL: profile.photos[0].value
     });
     yield user.save();
@@ -52,6 +59,12 @@ passport.use(new FacebookStrategy({
 }, 
 //will be called when the auth flow is complete
 (accessToken, refreshToken, profile, done) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+    console.log(profile);
+    const country = faker.address.country();
+    const city = faker.address.city();
+    const street = faker.address.streetAddress();
+    const secondaryAddress = faker.address.secondaryAddress();
+    const address = `${country},${city},${street},${secondaryAddress}`;
     const { first_name, last_name, gender, email } = profile._json;
     let existingUser = yield User.findOne({ email });
     if (existingUser) {
@@ -61,8 +74,9 @@ passport.use(new FacebookStrategy({
     const user = new User({
         AuthId: profile.id,
         displayName: `${first_name} ${last_name}`,
-        gender: gender,
+        gender,
         email: profile._json.email,
+        address,
         photoURL: profile.photos[0].value
     });
     yield user.save();

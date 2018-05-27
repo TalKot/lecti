@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../actions";
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-import { Button, Grid, Image, Label, Segment, Confirm } from 'semantic-ui-react'
+import { Button, Grid, Image, Label, Segment,Menu, Confirm,Message } from 'semantic-ui-react'
 import Loder from '../../Loader/Loader';
 
 class PurchaseGroupItem extends Component {
@@ -47,6 +47,56 @@ class PurchaseGroupItem extends Component {
     handleConfirm = () => this.setState({ result: 'confirmed', open: false })
     handleCancel = () => this.setState({ result: 'cancelled', open: false })
 
+    getPoteinitalBuyersTable = ()=>{
+      if(!this.state.purchaseGroupData.potentialBuyers.length){
+        return (
+          <Message visible>
+              <p>
+                No one bought this item yet.
+              </p>
+          </Message>
+
+        );
+      }else {
+        return(
+        <Grid style={{ marginTop: '20px' }}>
+          <Grid.Column stretched >
+            <Segment>
+            <table className="ui celled table">
+              <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Time Bought</th>
+                    <th>Amount</th>
+                    <th>Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.getPoteinitalBuyers()}
+              </tbody>
+            </table>
+            </Segment>
+          </Grid.Column>
+          </Grid >
+          )
+      }
+
+    }
+
+    getPoteinitalBuyers = () =>{
+      return this.state.purchaseGroupData.potentialBuyers.map(buyer => {
+        return (
+          <tr key={Math.random()}>
+            <td><Link to={`/profile/${buyer.user}`}>{buyer.user}</Link></td>
+            <td>{buyer.time}</td>
+            <td>{buyer.amount}</td>
+            <td>{buyer.address}</td>
+          </tr>
+        );
+      })
+    }
+
+
     render() {
 
         if (!this.state) {
@@ -83,7 +133,7 @@ class PurchaseGroupItem extends Component {
                                         <input type="number" onChange={e => this.setState({ amount: e.target.value })} />
                                         <div>
                                             <Button.Group>
-                                                <Button 
+                                                <Button
                                                     disabled={!this.props.auth || !this.state.purchaseGroupData.isActive}
                                                     type="submit"
                                                     positive
@@ -101,7 +151,7 @@ class PurchaseGroupItem extends Component {
                                                     }}
                                                 />
                                                 <Button.Or />
-                                                <Button 
+                                                <Button
                                                     type="submit"
                                                     name="action"
                                                     disabled={!this.props.auth || !this.state.purchaseGroupData.isActive}
@@ -169,6 +219,13 @@ class PurchaseGroupItem extends Component {
                                     </Grid>
                                 </div>
                             </div>
+
+
+                            <div>
+                            {this.getPoteinitalBuyersTable()}
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

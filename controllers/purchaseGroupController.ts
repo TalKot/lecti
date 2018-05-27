@@ -115,7 +115,7 @@ export default class PurchaseGroupController {
 
                 }
 
-                //check available client's credits to purchase this group 
+                //check available client's credits to purchase this group
                 if (purchaseGroup.priceForGroup * amount > credits) {
                     const error: string = 'Not enough money to complete this action.';
                     // httpResponse.sendError(res, error);
@@ -179,7 +179,7 @@ export default class PurchaseGroupController {
                 //todo - user Promise.all
                 const updatedPurchaseGroup = await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false })
                 await UserManagerInstance.notifyClientsOnClosedPurchaseGroup(updatedPurchaseGroup);
-            }            
+            }
             httpResponse.sendOk(res);
         }
         catch (e) {
@@ -254,7 +254,7 @@ export default class PurchaseGroupController {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             await PurchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
-            return;
+            httpResponse.sendOk(res);
         }
         catch (e) {
             httpResponse.sendError(res, e);

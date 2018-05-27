@@ -13,6 +13,10 @@ const potentialBuyers = Schema({
     time:{
         type: Date,
         default: Date.now()
+    },
+    address:{
+      type: String,
+      default: 'None.'
     }
 });
 

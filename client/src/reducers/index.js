@@ -5,7 +5,7 @@ import purchaseGroupsReducer from './purchaseGroupsReducer';
 import customPurchaseGroupsReducer from './customPurchaseGroupsReducer';
 import purchaseGroupsSuggestionsReducer from './purchaseGroupsSuggestionsReducer';
 import purchaseGroupsPageCountReducer from './purchaseGroupsPageCountReducer';
-import searchValue from './searchReducer';
+// import searchValue from './searchReducer';
 
 export default combineReducers({
     auth: authReducer,
@@ -13,7 +13,7 @@ export default combineReducers({
     customPurchaseGroups: customPurchaseGroupsReducer,
     suggestionsPurchaseGroups: purchaseGroupsSuggestionsReducer,
     pageCount : purchaseGroupsPageCountReducer,
-    searchValue: searchValue.searchValue,
-    purchasGroupsBySearch: searchValue.data,
+    // searchValue: searchValue.searchValue,
+    // purchasGroupsBySearch: searchValue.data,
     form: reduxForm
 });

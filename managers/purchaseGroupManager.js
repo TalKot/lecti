@@ -6,7 +6,9 @@ const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
-let { attempts, timeIntervalRemoveNotRelevent } = require('../config/keys');
+const { attempts, timeIntervalRemoveNotRelevent } = require('../config/keys');
+const Mailer = require('../services/emailsNotifications/tookOwnershipPurchaseGroupMailer');
+const tookOwnershipTemplate = require('../services/emailsNotifications/emailTemplates/tookOwnershipTemplate');
 class PurchaseGroupManager {
     static get Instance() {
         return this._instance || (this._instance = new this());
@@ -175,11 +177,13 @@ class PurchaseGroupManager {
     }
     addUserToPurchaseGroup(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const { address } = yield User.findById(userID);
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
                     potentialBuyers: {
                         user: userID,
-                        amount: amount
+                        amount,
+                        address
                     }
                 },
                 $inc: {
@@ -370,10 +374,13 @@ class PurchaseGroupManager {
             }
         });
     }
-    //todo - need to heck this that schame potentialBuyers is emapty after taking ownership
     takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
+                //update potential buyers that group is now live and can be bought
+                const { potentialBuyers, name } = yield PurchaseGroup.findById(suggestionID);
+                this.notifyForTakingOwnerForPurchaseGroup(potentialBuyers, name);
+                //update suggestion purchase group to become live
                 yield PurchaseGroup.findByIdAndUpdate(suggestionID, {
                     isSuggestion: false,
                     seller: userID,
@@ -385,6 +392,21 @@ class PurchaseGroupManager {
             catch (e) {
                 throw e;
             }
+        });
+    }
+    notifyForTakingOwnerForPurchaseGroup(potentialBuyers, name) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const ids = potentialBuyers.map(user => user.user);
+            const userToNotifyForPurchaeGroupBecomeLive = yield User.find({ "_id": { "$in": ids } });
+            const emails = userToNotifyForPurchaeGroupBecomeLive.map(user => user.email);
+            const options = {
+                body: 'log in to your account to start purchasing',
+                subject: 'Seller user took ownership on purchase group!',
+                title: 'Seller user took ownership on purchase group!',
+                mailingList: emails
+            };
+            const mailer = new Mailer(options, tookOwnershipTemplate(name));
+            yield mailer.send();
         });
     }
     joinSuggestionGroup(groupID, userID) {
