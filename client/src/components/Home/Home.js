@@ -104,7 +104,7 @@ class Home extends Component {
         );
     }
 
-    handleChange = (e, { value }) => this.setState({ value })
+    handleChange = (e, { value }) => this.setState({ value });
 
     //will send the form data by email
     submitFormResults =async  () => {

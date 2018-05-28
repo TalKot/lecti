@@ -1,4 +1,4 @@
-module.exports = ({ email, firstName, lastName, value }) => {
+module.exports = ({ email, firstName, lastName, value,message }) => {
   return `
     <html>
       <body>
@@ -8,6 +8,7 @@ module.exports = ({ email, firstName, lastName, value }) => {
           <h5>Name: ${lastName} ${firstName}</h5>
           <h5>Email: ${email}</h5>
           <h5>Gender: ${value}</h5>
+          <h5>Message: ${message}</h5>
          </div>
       </body>
     </html>

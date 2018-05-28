@@ -1,42 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/PurchaseGroupData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/PurchaseGroupData.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/emailsNotifications/emailTemplates/tookOwnershipTemplate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/emailsNotifications/tookOwnershipPurchaseGroupMailer.js" afterDir="false" />
+    <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Loader/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Loader/Loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/PurchaseGroupData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/PurchaseGroupData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/UserData.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/UserData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/UserData.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/data/UserData.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/UserData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/UserData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/PurchaseGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/PurchaseGroup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/PurchaseGroup.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/models/PurchaseGroup.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/PurchaseGroup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/PurchaseGroup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passportLogin/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passportLogin/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passportLogin/passport.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/services/passportLogin/passport.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passportLogin/passport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/passportLogin/passport.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/userManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/managers/userManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/userManager.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/managers/userManager.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/surveyRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/surveyRoutes.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/surveyRoutes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/emailsNotifications/emailTemplates/newSellerTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/emailsNotifications/emailTemplates/newSellerTemplate.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,11 +29,98 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+            <state relative-caret-position="705">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="112" column="31" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="110" column="41" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchaseGroupRoutes.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="744">
+              <caret line="82" column="78" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userRoutes.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/userRoutes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userController.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/userController.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="41" column="58" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userManager.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/managers/userManager.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="718">
+              <caret line="142" column="88" selection-start-line="142" selection-start-column="88" selection-end-line="142" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newSellerTemplate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/emailsNotifications/emailTemplates/newSellerTemplate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keys.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/keys.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prod.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/prod.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -76,11 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CategoryCalculationWeight</find>
-      <find>attempts</find>
-      <find>$search</find>
-      <find>cat</find>
-      <find>category</find>
       <find>custom</find>
       <find>type</find>
       <find>view</find>
@@ -106,6 +162,11 @@
       <find>women</find>
       <find>pants</find>
       <find>item</find>
+      <find>§</find>
+      <find>Listening on port</find>
+      <find>become a seller</find>
+      <find>export</find>
+      <find>api/newseller</find>
     </findStrings>
     <replaceStrings>
       <replace>purchaseGroup</replace>
@@ -134,20 +195,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/common/httpResponse.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/SearchBar/SearchBar.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/types.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/purchaseGroupsPageCountReducer.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/managers/cartManager.ts" />
         <option value="$PROJECT_DIR$/controllers/cartController.ts" />
         <option value="$PROJECT_DIR$/routes/cartRoutes.ts" />
         <option value="$PROJECT_DIR$/controllers/userController.ts" />
-        <option value="$PROJECT_DIR$/routes/userRoutes.ts" />
         <option value="$PROJECT_DIR$/client/src/components/Cart/Cart.js" />
         <option value="$PROJECT_DIR$/client/src/components/Home/Home.scss" />
         <option value="$PROJECT_DIR$/client/src/components/Home/home.scss" />
@@ -162,12 +220,10 @@
         <option value="$PROJECT_DIR$/routes/surveyRoutes.ts" />
         <option value="$PROJECT_DIR$/models/Comment.ts" />
         <option value="$PROJECT_DIR$/controllers/commentController.ts" />
-        <option value="$PROJECT_DIR$/managers/userManager.ts" />
         <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/client/src/components/App.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/commentRoutes.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/Home/Home.js" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsPriority.ts" />
         <option value="$PROJECT_DIR$/managers/commentManager.ts" />
         <option value="$PROJECT_DIR$/client/src/components/Seller/Seller.js" />
@@ -188,7 +244,13 @@
         <option value="$PROJECT_DIR$/client/src/utils/types.js" />
         <option value="$PROJECT_DIR$/data/PurchaseGroupData.js" />
         <option value="$PROJECT_DIR$/data/PurchaseGroupData.ts" />
+        <option value="$PROJECT_DIR$/client/src/components/Loader/Loader.js" />
+        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/index.ts" />
+        <option value="$PROJECT_DIR$/routes/userRoutes.ts" />
+        <option value="$PROJECT_DIR$/client/src/components/Home/Home.js" />
+        <option value="$PROJECT_DIR$/services/emailsNotifications/emailTemplates/newSellerTemplate.js" />
+        <option value="$PROJECT_DIR$/managers/userManager.ts" />
       </list>
     </option>
   </component>
@@ -219,9 +281,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
+    <option name="y" value="173" />
     <option name="width" value="1920" />
-    <option name="height" value="1177" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -239,6 +301,37 @@
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
               <item name="lecti" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -328,7 +421,7 @@
       <workItem from="1525353091001" duration="9810000" />
       <workItem from="1526553225799" duration="10815000" />
       <workItem from="1526723458585" duration="599000" />
-      <workItem from="1527426488692" duration="404000" />
+      <workItem from="1527426488692" duration="4167000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -477,11 +570,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526673348970</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="many changes">
+      <created>1527438557079</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1527438557079</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364455000" />
+    <option name="totallyTimeSpent" value="368218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,20 +593,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.327252" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.1705847" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49753347" weight="0.32839224" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32923076" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5024665" side_tool="true" weight="0.32889965" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.24820513" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.33333334" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" visible="true" weight="0.2897778" />
+      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.3271795" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.1490258" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32889965" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.24820513" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.33422223" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24960339" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" weight="0.2902564" />
       <window_info id="Favorites" order="3" sideWeight="0.5072202" side_tool="true" weight="0.18816067" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.26577777" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.23022223" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -514,7 +616,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3295325" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3922463" />
@@ -561,8 +662,6 @@
         <option value="$PROJECT_DIR$/managers/userManager.js" />
         <option value="$PROJECT_DIR$/controllers/userController.js.map" />
         <option value="$PROJECT_DIR$/controllers/userController.js" />
-        <option value="$PROJECT_DIR$/routes/surveyRoutes.js.map" />
-        <option value="$PROJECT_DIR$/routes/surveyRoutes.js" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.js.map" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList.js" />
         <option value="$PROJECT_DIR$/routes/cartRoutes.js" />
@@ -632,7 +731,8 @@
     <MESSAGE value="Form to add purchase group and suggestions" />
     <MESSAGE value="purchase groups addded to data" />
     <MESSAGE value="Merge branch 'master' of https://github.com/TalKot/lecti&#10;&#10;# Conflicts:&#10;#&#9;data/PurchaseGroupData.js.map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/TalKot/lecti&#10;&#10;# Conflicts:&#10;#&#9;data/PurchaseGroupData.js.map" />
+    <MESSAGE value="many changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="many changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -651,11 +751,6 @@
           <url>file://$PROJECT_DIR$/test/reading_test.js</url>
           <line>50</line>
           <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/surveyRoutes.ts</url>
-          <line>48</line>
-          <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/managers/purchaseGroupManager.ts</url>
@@ -683,7 +778,7 @@
           <option name="timeStamp" value="626" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="707" />
+      <option name="time" value="713" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -736,59 +831,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/services/emailsNotifications/customPurchaseGroupsMailer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsPriority.ts" />
-    <entry file="file://$PROJECT_DIR$/routes/userRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" lean-forward="true" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/commentRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/commentController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managers/commentManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Comment.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Seller/Seller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
@@ -807,23 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/keys.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/dev.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/prod.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -943,13 +968,6 @@
     <entry file="file://$PROJECT_DIR$/routes/billingRoutes.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="82" column="78" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1006,10 +1024,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/dev.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/keys.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="79" column="30" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        <state relative-caret-position="705">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/surveyRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="82" column="78" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Loader/Loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/prod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="112" column="31" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="110" column="41" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/userController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="41" column="58" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/emailsNotifications/emailTemplates/newSellerTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/userRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managers/userManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="142" column="88" selection-start-line="142" selection-start-column="88" selection-end-line="142" selection-end-column="88" />
         </state>
       </provider>
     </entry>
