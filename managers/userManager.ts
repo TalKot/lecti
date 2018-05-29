@@ -55,7 +55,7 @@ export default class UserManager {
     }
 
     async getPurchaseGroupsBoughtByUserID(userID: string) {
-        const { purchaseGroupsBought } = await User.findById(userID);
+        const {purchaseGroupsBought} = await User.findById(userID);
         return purchaseGroupsBought ? purchaseGroupsBought : null;
     }
 

@@ -13,9 +13,11 @@ const WEEK = 1000 * 60 * 60 * 24 * 7;
 class CustomPurchaseGroupsSelector {
     constructor() {
         this.notify = () => tslib_1.__awaiter(this, void 0, void 0, function* () {
+            //create a list of client groups to notify
             const clientListSlim = Object.keys(clientNotify);
             const purchaseGroupManager = new purchaseGroupManager_1.default();
             const newPurchaseGroups = yield purchaseGroupManager.getAllNewPurchaseGroups();
+            //setting up new purchase group data by catagory for email
             const purchaseGroupsKeyBySubType = {};
             newPurchaseGroups.forEach(purchaseGroupToKey => {
                 if (purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory]) {
@@ -25,11 +27,13 @@ class CustomPurchaseGroupsSelector {
                     purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory] = [purchaseGroupToKey];
                 }
             });
+            //notify clients groups
             clientListSlim.forEach(client => {
                 if (this.message.length) {
                     clientNotify[client](this.message, purchaseGroupsKeyBySubType);
                 }
             });
+            //update new purchasegroup's new flag to false - next time will not show those groups
             newPurchaseGroups.forEach(purchasegroup => {
                 purchaseGroupManager.updatePurchaseGroupById(purchasegroup._id, { newPurchaseGroup: false });
             });

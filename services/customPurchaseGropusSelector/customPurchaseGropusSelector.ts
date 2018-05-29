@@ -1,9 +1,9 @@
 import * as mongoose from 'mongoose';
+
 const moment = require('moment');
 import PurchaseGroupManager from '../../managers/purchaseGroupManager'
 const clientNotify = require('./clientList');
 import purchaseGroupsTypesValue = require('./purcahseGroupsTypesValueList');
-import * as _ from 'lodash';
 const CategoryCalculationWeight = require('../../config/keys');
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
@@ -55,7 +55,7 @@ export default class CustomPurchaseGroupsSelector {
             // getting amount of each purchase group type
             purchaseGroupsByUser.forEach(purchaseGroup => {
 
-                const { subCategory } = purchaseGroup.data;
+                const {subCategory} = purchaseGroup.data;
 
                 const timeBought = moment(purchaseGroup.time).unix();
                 const now = moment().unix();
@@ -142,10 +142,12 @@ export default class CustomPurchaseGroupsSelector {
 
     public notify = async () => {
 
+        //create a list of client groups to notify
         const clientListSlim = Object.keys(clientNotify);
         const purchaseGroupManager = new PurchaseGroupManager();
         const newPurchaseGroups = await purchaseGroupManager.getAllNewPurchaseGroups();
 
+        //setting up new purchase group data by catagory for email
         const purchaseGroupsKeyBySubType = {};
 
         newPurchaseGroups.forEach(purchaseGroupToKey => {
@@ -154,20 +156,21 @@ export default class CustomPurchaseGroupsSelector {
             } else {
                 purchaseGroupsKeyBySubType[purchaseGroupToKey.subCategory] = [purchaseGroupToKey]
             }
-        })
+        });
 
+        //notify clients groups
         clientListSlim.forEach(client => {
             if (this.message.length) {
                 clientNotify[client](this.message, purchaseGroupsKeyBySubType);
             }
         });
-
-        newPurchaseGroups.forEach( purchasegroup => {
-            purchaseGroupManager.updatePurchaseGroupById(purchasegroup._id, { newPurchaseGroup: false });
-        })
+        //update new purchasegroup's new flag to false - next time will not show those groups
+        newPurchaseGroups.forEach(purchasegroup => {
+            purchaseGroupManager.updatePurchaseGroupById(purchasegroup._id, {newPurchaseGroup: false});
+        });
         //reset algorithm data and recursive call
         this.message = [];
-        setInterval(this.notify,WEEK);
+        setInterval(this.notify, WEEK);
     }
 
 }

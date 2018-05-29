@@ -177,13 +177,14 @@ class PurchaseGroupManager {
     }
     addUserToPurchaseGroup(purchaseGroupID, amount, userID) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const { address } = yield User.findById(userID);
+            const { address, email } = yield User.findById(userID);
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
                     potentialBuyers: {
                         user: userID,
                         amount,
-                        address
+                        address,
+                        email
                     }
                 },
                 $inc: {

@@ -16,7 +16,7 @@ class Cart extends Component {
     render() {
         if (!this.props.auth) {
             return (
-                <Loder />
+                <Loder/>
             )
         }
 
@@ -24,7 +24,7 @@ class Cart extends Component {
             return (
                 <div style={{textAlign: 'center'}}>
                     <h4>Your Lecti Shopping Cart</h4>
-                    <div style={{width:"70%",color:"gray",margin:"auto"}}>
+                    <div style={{width: "70%", color: "gray", margin: "auto"}}>
                         <p>
                             Your shopping cart is empty, but it doesn't have to stay that way.
                             There are lots of great purchase groups to explore and one-of-a-kind items just waiting for
@@ -47,7 +47,7 @@ class Cart extends Component {
                 <table className="striped centered">
                     <thead>
                     <tr>
-                        <th />
+                        <th/>
                         <th>ID</th>
                         <th>Amount</th>
                         <th>Time</th>
@@ -56,7 +56,7 @@ class Cart extends Component {
                     </thead>
                     <tbody>
                     {
-                        this.props.auth.cart.map(({purchaseGroup, amount, time},key) => {
+                        this.props.auth.cart.map(({purchaseGroup, amount, time}, key) => {
 
                             return (
                                 <tr key={Math.random()}>

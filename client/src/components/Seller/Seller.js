@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import PurchaseGroup from '../PurchaseGroups/PurchaseGroup/PurchaseGroup'
 import swal from 'sweetalert';
-import { Link } from 'react-router-dom';
-import { Rating, Message, Button,Form, TextArea, Card } from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
+import {Rating, Message, Button, Form, TextArea, Card} from 'semantic-ui-react'
 import Loader from '../Loader/Loader';
 
 class Seller extends Component {
@@ -12,14 +12,14 @@ class Seller extends Component {
         await this.getSellerCommentsFromAPI();
     }
 
-    handleRate = (e, { rating, maxRating }) => {
-        this.setState({ rating, maxRating })
+    handleRate = (e, {rating, maxRating}) => {
+        this.setState({rating, maxRating})
     }
-    
+
     getSellerCommentsFromAPI = async () => {
         const sellerID = this.props.match.params.id;
-        const { data } = await axios.get(`/api/seller/${sellerID}`);
-        this.setState({ seller: data });
+        const {data} = await axios.get(`/api/seller/${sellerID}`);
+        this.setState({seller: data});
     }
 
     getSellerPurchaseGroups() {
@@ -47,7 +47,7 @@ class Seller extends Component {
                                     <div className="card-content">
                                         <span className="card-title"><Link
                                             to={`/profile/${comment.user._id}`}>{comment.user.displayName}</Link> comment:</span>
-                                        Rating - <b> {comment.rating || 3}</b><br />
+                                        Rating - <b> {comment.rating || 3}</b><br/>
                                         <p>{comment.comment}</p>
                                     </div>
                                 </div>
@@ -60,11 +60,11 @@ class Seller extends Component {
     }
 
     changeRating = async rating => {
-        await this.setState({ rating });
+        await this.setState({rating});
     };
 
     changeRatingText = async comment => {
-        await this.setState({ comment });
+        await this.setState({comment});
     };
 
     sendRating = async () => {
@@ -95,22 +95,22 @@ class Seller extends Component {
                 results.two += 1
             } else if (comment.rating === 3) {
                 results.three += 1
-            }  else if (comment.rating === 4) {
+            } else if (comment.rating === 4) {
                 results.four += 1
-            }  else {
+            } else {
                 results.five += 1
-            }  
-        
+            }
+
         });
 
         return (
             <div>
                 <p>
-                    <b>{results.one}</b> marked this seller as "one star"<br />
-                    <b>{results.two}</b> marked this seller as "two stars"<br />
-                    <b>{results.three}</b> marked this seller as "three stars"<br />
-                    <b>{results.four}</b> marked this seller as "four stars"<br />
-                    <b>{results.five}</b> marked this seller as "five stars"<br />
+                    <b>{results.one}</b> marked this seller as "one star"<br/>
+                    <b>{results.two}</b> marked this seller as "two stars"<br/>
+                    <b>{results.three}</b> marked this seller as "three stars"<br/>
+                    <b>{results.four}</b> marked this seller as "four stars"<br/>
+                    <b>{results.five}</b> marked this seller as "five stars"<br/>
                 </p>
             </div>
         );
@@ -121,17 +121,17 @@ class Seller extends Component {
 
         if (!this.state) {
             return (
-                <Loader />
+                <Loader/>
             );
         }
 
         return (
-            <div style={{ textAlign: 'center' }}>
-                <div className="row" style={{ textAlign: 'center', margin: '0' }}>
+            <div style={{textAlign: 'center'}}>
+                <div className="row" style={{textAlign: 'center', margin: '0'}}>
                     <div className="col s8 m5">
                         <div className="card">
                             <div className="card-image">
-                                <img src={this.state.seller.photoURL} alt={this.state.seller.photoURL} />
+                                <img src={this.state.seller.photoURL} alt={this.state.seller.photoURL}/>
                                 <span className="card-title">{this.state.seller.displayName}</span>
                             </div>
                             <div className="card-content">
@@ -149,18 +149,22 @@ class Seller extends Component {
 
                                     <Message positive>
                                         <Message.Header>Rate The Seller!</Message.Header>
-                                        <p><b>Please</b>, take a minute or two to rate this seller behaviour for other buyers to know.</p>
+                                        <p><b>Please</b>, take a minute or two to rate this seller behaviour for other
+                                            buyers to know.</p>
                                     </Message>
                                     <div>
-                                        <Rating maxRating={5} onRate={this.handleRate} defaultRating={3} icon='star' size='massive' />
-                                        <br />
-                                        <br />
+                                        <Rating maxRating={5} onRate={this.handleRate} defaultRating={3} icon='star'
+                                                size='massive'/>
+                                        <br/>
+                                        <br/>
                                     </div>
                                     <div>
-                                        
+
                                         <Form>
-                                            <TextArea onChange={async e => {await this.changeRatingText(e.target.value)}}
-                                            placeholder='Tell us more' />
+                                            <TextArea onChange={async e => {
+                                                await this.changeRatingText(e.target.value)
+                                            }}
+                                                      placeholder='Tell us more'/>
                                         </Form> <br/>
                                         <Button positive onClick={this.sendRating}>Rate Seller</Button>
                                     </div>

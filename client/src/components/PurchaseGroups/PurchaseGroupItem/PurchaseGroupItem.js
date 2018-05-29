@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from "axios/index";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import * as actions from "../../../actions";
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import swal from 'sweetalert';
-import { Button, Grid, Image, Label, Segment,Menu, Confirm,Message } from 'semantic-ui-react'
+import {Button, Grid, Image, Label, Segment, Menu, Confirm, Message} from 'semantic-ui-react'
 import Loder from '../../Loader/Loader';
 
 class PurchaseGroupItem extends Component {
 
     async componentDidMount() {
         const purchaseGroupID = this.props.match.params.item;
-        const { data } = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
-        this.setState({ purchaseGroupData: data, open: false, amount: 0 })
+        const {data} = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
+        this.setState({purchaseGroupData: data, open: false, amount: 0})
     }
 
     notify() {
@@ -24,8 +24,8 @@ class PurchaseGroupItem extends Component {
         if (status.result) {
             swal("Nice For You!", `You have purchased ${amount} amount of ${purchaseGroup.name}.`, "success");
             const purchaseGroupID = this.props.match.params.item;
-            const { data } = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
-            this.setState({ purchaseGroupData: data })
+            const {data} = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
+            this.setState({purchaseGroupData: data})
         } else {
             swal("You can't prefore this action!", `${status.response}.
                 You didn't purchase ${amount} amount of ${purchaseGroup.name} `, "warning");
@@ -43,80 +43,79 @@ class PurchaseGroupItem extends Component {
         }
     };
 
-    show = () => this.setState({ open: true })
-    handleConfirm = () => this.setState({ result: 'confirmed', open: false })
-    handleCancel = () => this.setState({ result: 'cancelled', open: false })
+    show = () => this.setState({open: true})
+    handleConfirm = () => this.setState({result: 'confirmed', open: false})
+    handleCancel = () => this.setState({result: 'cancelled', open: false})
 
-    getPoteinitalBuyersTable = ()=>{
-      if(!this.state.purchaseGroupData.potentialBuyers.length){
-        return (
-          <Message visible>
-              <p>
-                No one bought this item yet.
-              </p>
-          </Message>
+    getPoteinitalBuyersTable = () => {
+        if (!this.state.purchaseGroupData.potentialBuyers.length) {
+            return (
+                <Message visible>
+                    <p>
+                        No one bought this item yet.
+                    </p>
+                </Message>
 
-        );
-      }else {
-        return(
-        <Grid style={{ marginTop: '20px' }}>
-          <Grid.Column stretched >
-            <Segment>
-            <table className="ui celled table">
-              <thead>
-                <tr>
-                    <th>User</th>
-                    <th>Time Bought</th>
-                    <th>Amount</th>
-                    <th>Address</th>
+            );
+        } else {
+            return (
+                <Grid style={{marginTop: '20px'}}>
+                    <Grid.Column stretched>
+                        <Segment>
+                            <table className="ui celled table">
+                                <thead>
+                                <tr>
+                                    <th>User's email</th>
+                                    <th>Time Bought</th>
+                                    <th>Amount</th>
+                                    <th>Address</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {this.getPoteinitalBuyers()}
+                                </tbody>
+                            </table>
+                        </Segment>
+                    </Grid.Column>
+                </Grid>
+            )
+        }
+
+    };
+
+    getPoteinitalBuyers = () => {
+        return this.state.purchaseGroupData.potentialBuyers.map(buyer => {
+            return (
+                <tr key={Math.random()}>
+                    <td>{buyer.email}</td>
+                    <td>{buyer.time}</td>
+                    <td>{buyer.amount}</td>
+                    <td>{buyer.address}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {this.getPoteinitalBuyers()}
-              </tbody>
-            </table>
-            </Segment>
-          </Grid.Column>
-          </Grid >
-          )
-      }
-
-    }
-
-    getPoteinitalBuyers = () =>{
-      return this.state.purchaseGroupData.potentialBuyers.map(buyer => {
-        return (
-          <tr key={Math.random()}>
-            <td><Link to={`/profile/${buyer.user}`}>{buyer.user}</Link></td>
-            <td>{buyer.time}</td>
-            <td>{buyer.amount}</td>
-            <td>{buyer.address}</td>
-          </tr>
-        );
-      })
-    }
+            );
+        })
+    };
 
 
     render() {
 
         if (!this.state) {
             return (
-                <Loder />
+                <Loder/>
             )
         }
 
         this.notify();
-        const activeOrDisable = this.state.purchaseGroupData.isActive ? "" : "disabled";
 
         return (
             <div>
-                <div style={{ textAlign: 'center' }}>
-                    <div className="row" style={{ textAlign: 'center', margin: '0' }}>
+                <div style={{textAlign: 'center'}}>
+                    <div className="row" style={{textAlign: 'center', margin: '0'}}>
                         <div className="col s8 m5">
                             <div className="card">
                                 <div className="card-image">
                                     <img src={this.state.purchaseGroupData.picture}
-                                        alt={this.state.purchaseGroupData.picture} />
+                                         alt={this.state.purchaseGroupData.picture}/>
                                 </div>
                                 <div className="card-content">
                                     <h6>Name - <strong>{this.state.purchaseGroupData.name}</strong></h6>
@@ -130,7 +129,7 @@ class PurchaseGroupItem extends Component {
                                 <div className="card-action">
                                     <div className="row">
                                         <label htmlFor="amount">Amount:</label>
-                                        <input type="number" onChange={e => this.setState({ amount: e.target.value })} />
+                                        <input type="number" onChange={e => this.setState({amount: e.target.value})}/>
                                         <div>
                                             <Button.Group>
                                                 <Button
@@ -139,7 +138,7 @@ class PurchaseGroupItem extends Component {
                                                     positive
                                                     name="action"
                                                     onClick={this.show}>Buy
-                                                    </Button>
+                                                </Button>
                                                 <Confirm
                                                     open={this.state.open}
                                                     cancelButton='Never mind'
@@ -150,7 +149,7 @@ class PurchaseGroupItem extends Component {
                                                         this.handleConfirm()
                                                     }}
                                                 />
-                                                <Button.Or />
+                                                <Button.Or/>
                                                 <Button
                                                     type="submit"
                                                     name="action"
@@ -158,7 +157,7 @@ class PurchaseGroupItem extends Component {
                                                     onClick={() => {
                                                         this.addToCart(this.state.purchaseGroupData, this.state.amount)
                                                     }}>Cart
-                                                    </Button>
+                                                </Button>
                                             </Button.Group>
                                         </div>
                                     </div>
@@ -169,9 +168,9 @@ class PurchaseGroupItem extends Component {
                             <div className="row">
                                 <div className="col s3 m6">
                                     <div className="card-panel">
-                                        Original Product Price - {this.state.purchaseGroupData.originalPrice}<br />
-                                        Group Price Per Item - {this.state.purchaseGroupData.priceForGroup}<br />
-                                        Discount - {parseFloat(this.state.purchaseGroupData.discount).toFixed(2)}%<br />
+                                        Original Product Price - {this.state.purchaseGroupData.originalPrice}<br/>
+                                        Group Price Per Item - {this.state.purchaseGroupData.priceForGroup}<br/>
+                                        Discount - {parseFloat(this.state.purchaseGroupData.discount).toFixed(2)}%<br/>
                                     </div>
                                 </div>
 
@@ -193,7 +192,7 @@ class PurchaseGroupItem extends Component {
                                             </div>
                                             <div className="chip col s3">
                                                 <img src={this.state.purchaseGroupData.seller.photoURL}
-                                                    alt={this.state.purchaseGroupData.seller.photoURL} />
+                                                     alt={this.state.purchaseGroupData.seller.photoURL}/>
                                                 <Link to={`/seller/${this.state.purchaseGroupData.seller._id}`}>
                                                     {this.state.purchaseGroupData.seller.displayName}
                                                 </Link>
@@ -222,7 +221,7 @@ class PurchaseGroupItem extends Component {
 
 
                             <div>
-                            {this.getPoteinitalBuyersTable()}
+                                {this.getPoteinitalBuyersTable()}
                             </div>
 
 
@@ -235,8 +234,8 @@ class PurchaseGroupItem extends Component {
 
 };
 
-function mapStateToProps({ auth }) {
-    return { auth };
+function mapStateToProps({auth}) {
+    return {auth};
 }
 
 export default connect(mapStateToProps, actions)(PurchaseGroupItem);

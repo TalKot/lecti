@@ -36,7 +36,7 @@ class Sales extends Component {
     render() {
         if (!this.props.auth || !this.state) {
             return (
-                <Loder />
+                <Loder/>
             );
         }
         return (

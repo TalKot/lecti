@@ -6,8 +6,8 @@ const requireLogin = require('../middlewares/requireLogin');
 module.exports = app => {
 
     app.post('/api/comment/add', requireLogin, async (req, res) => {
-        let {rating, seller, comment} = req.body;
-        let commentControllerInstance = CommentController.Instance;
+        const {rating, seller, comment} = req.body;
+        const commentControllerInstance = CommentController.Instance;
         await commentControllerInstance.postComment(res, rating, seller, comment, req.user.id);
     });
 

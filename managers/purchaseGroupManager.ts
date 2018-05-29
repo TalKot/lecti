@@ -1,9 +1,10 @@
 import * as mongoose from 'mongoose';
+
 const PurchaseGroup = mongoose.model('purchaseGroups');
 const User = mongoose.model('users');
 const _ = require('lodash');
 const PurchaseGroupSchema = require('../models/PurchaseGroup');
-const { attempts, timeIntervalRemoveNotRelevent } = require('../config/keys');
+const {attempts, timeIntervalRemoveNotRelevent} = require('../config/keys');
 const Mailer = require('../services/emailsNotifications/tookOwnershipPurchaseGroupMailer');
 const tookOwnershipTemplate = require('../services/emailsNotifications/emailTemplates/tookOwnershipTemplate');
 
@@ -14,6 +15,7 @@ export default class PurchaseGroupManager {
     public static get Instance() {
         return this._instance || (this._instance = new this());
     }
+
     /************************************/
 
     async getAllPurchaseGroups() {
@@ -21,13 +23,15 @@ export default class PurchaseGroupManager {
     }
 
     async getSuggestionsPurchaseGroups() {
-        const purchaseGroups = await PurchaseGroup.find({ isSuggestion: true });
+        const purchaseGroups = await PurchaseGroup.find({isSuggestion: true});
         return purchaseGroups ? purchaseGroups : null;
     }
+
     async getAllNewPurchaseGroups() {
-        const res = await PurchaseGroup.find({ newPurchaseGroup: true });
+        const res = await PurchaseGroup.find({newPurchaseGroup: true});
         return res;
     }
+
     async getSuggestionsPurchaseGroupByID(ID) {
         const purchaseGroup = await PurchaseGroup.findById(ID);
         return purchaseGroup ? purchaseGroup : null;
@@ -52,8 +56,8 @@ export default class PurchaseGroupManager {
         let purchaseGroup;
 
         if (amount && !subCategory) {
-            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false, isActive: true })
-                .sort({ discount: -1 })
+            purchaseGroup = await PurchaseGroup.find({isSuggestion: false, isActive: true})
+                .sort({discount: -1})
                 .limit(amount);
             let res = {
                 count: amount,
@@ -62,18 +66,18 @@ export default class PurchaseGroupManager {
             return res;
 
         } else if (amount) {
-            purchaseGroup = await PurchaseGroup.find({ subCategory, isSuggestion: false, isActive: true })
-                .sort({ discount: -1 })
+            purchaseGroup = await PurchaseGroup.find({subCategory, isSuggestion: false, isActive: true})
+                .sort({discount: -1})
                 .limit(amount);
         } else {
-            purchaseGroup = await PurchaseGroup.find({ subCategory, isSuggestion: false, isActive: true })
-                .sort({ discount: -1 })
+            purchaseGroup = await PurchaseGroup.find({subCategory, isSuggestion: false, isActive: true})
+                .sort({discount: -1})
                 .skip(minPurchaseGroup)
                 .limit(12);
         }
-        let count = await PurchaseGroup.find({ subCategory, isActive: true })
+        let count = await PurchaseGroup.find({subCategory, isActive: true})
             .count();
-        return purchaseGroup ? { count, purchaseGroup } : null;
+        return purchaseGroup ? {count, purchaseGroup} : null;
     }
 
     async getSubPurchaseGroupsByType(type: string, page: string, amount?: number) {
@@ -85,8 +89,8 @@ export default class PurchaseGroupManager {
         let purchaseGroup;
 
         if (amount && !type) {
-            purchaseGroup = await PurchaseGroup.find({ isSuggestion: false, isActive: true })
-                .sort({ discount: -1 })
+            purchaseGroup = await PurchaseGroup.find({isSuggestion: false, isActive: true})
+                .sort({discount: -1})
                 .limit(amount);
             let res = {
                 count: amount,
@@ -95,18 +99,18 @@ export default class PurchaseGroupManager {
             return res;
 
         } else if (amount) {
-            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false, isActive: true })
-                .sort({ discount: -1 })
+            purchaseGroup = await PurchaseGroup.find({'subCategory': type, isSuggestion: false, isActive: true})
+                .sort({discount: -1})
                 .limit(amount);
         } else {
-            purchaseGroup = await PurchaseGroup.find({ 'subCategory': type, isSuggestion: false, isActive: true })
-                .sort({ discount: -1 })
+            purchaseGroup = await PurchaseGroup.find({'subCategory': type, isSuggestion: false, isActive: true})
+                .sort({discount: -1})
                 .skip(minPurchaseGroup)
                 .limit(12);
         }
-        let count = await PurchaseGroup.find({ 'subCategory': type, isActive: true })
+        let count = await PurchaseGroup.find({'subCategory': type, isActive: true})
             .count();
-        return purchaseGroup ? { count, purchaseGroup } : null;
+        return purchaseGroup ? {count, purchaseGroup} : null;
 
     }
 
@@ -123,12 +127,12 @@ export default class PurchaseGroupManager {
             return purchaseGroup.purchaseGroup.toString();
         });
         // bring purchase groups data from DB
-        let purchaseGroupUserOwn = await PurchaseGroup.find({ "_id": { "$in": ids } });
+        let purchaseGroupUserOwn = await PurchaseGroup.find({"_id": {"$in": ids}});
         //index by id
         let purchaseGroupIndexed = _.keyBy(purchaseGroupUserOwn, 'id');
         //loop over the id and push
         try {
-            const fullPurchaseGroupList = user.purchaseGroupsBought.map(({ time, purchaseGroup, _id, amount }) => {
+            const fullPurchaseGroupList = user.purchaseGroupsBought.map(({time, purchaseGroup, _id, amount}) => {
                 return {
                     data: purchaseGroupIndexed[purchaseGroup] ? purchaseGroupIndexed[purchaseGroup].toObject() : undefined,
                     time,
@@ -155,7 +159,7 @@ export default class PurchaseGroupManager {
 
     async getSalesPurchaseGroupsByUserId(userId: string) {
         try {
-            const { purchaseGroupsSell } = await User.findById(userId)
+            const {purchaseGroupsSell} = await User.findById(userId)
                 .populate({
                     path: 'purchaseGroupsSell',
                     model: 'purchaseGroups'
@@ -169,14 +173,15 @@ export default class PurchaseGroupManager {
 
 
     async addUserToPurchaseGroup(purchaseGroupID: string, amount: number, userID: string) {
-        const {address} = await User.findById(userID);
+        const {address,email} = await User.findById(userID);
 
         await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
             $push: {
                 potentialBuyers: {
                     user: userID,
                     amount,
-                    address
+                    address,
+                    email
                 }
             },
             $inc: {
@@ -187,7 +192,7 @@ export default class PurchaseGroupManager {
 
     async purchaseGroupsViewed(userID, purchaseGroupsViewed) {
 
-        let [{ subCategory }, user] = await Promise.all([
+        let [{subCategory}, user] = await Promise.all([
             PurchaseGroup.findById(purchaseGroupsViewed),
             User.findById(userID)
         ]);
@@ -285,6 +290,7 @@ export default class PurchaseGroupManager {
             throw e;
         }
     }
+
     //todo - need to check what to do in here
     async getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
         try {
@@ -307,7 +313,7 @@ export default class PurchaseGroupManager {
         const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
 
         //if type not in array already - eneter to notRelevent array
-        let { notRelevantTypes } = await User.findById(userID);
+        let {notRelevantTypes} = await User.findById(userID);
         if (notRelevantTypes.indexOf(type) === -1) {
             await User.findByIdAndUpdate(userID, {
                 $push: {
@@ -374,7 +380,7 @@ export default class PurchaseGroupManager {
         try {
             //update potential buyers that group is now live and can be bought
             const {potentialBuyers, name} = await PurchaseGroup.findById(suggestionID);
-            this.notifyForTakingOwnerForPurchaseGroup(potentialBuyers,name);
+            this.notifyForTakingOwnerForPurchaseGroup(potentialBuyers, name);
 
             //update suggestion purchase group to become live
             await PurchaseGroup.findByIdAndUpdate(suggestionID, {
@@ -390,21 +396,21 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async notifyForTakingOwnerForPurchaseGroup(potentialBuyers,name){
-      const ids = potentialBuyers.map(user => user.user);
-      const userToNotifyForPurchaeGroupBecomeLive = await User.find({ "_id": { "$in": ids } });
-      const emails = userToNotifyForPurchaeGroupBecomeLive.map(user => user.email);
+    async notifyForTakingOwnerForPurchaseGroup(potentialBuyers, name) {
+        const ids = potentialBuyers.map(user => user.user);
+        const userToNotifyForPurchaeGroupBecomeLive = await User.find({"_id": {"$in": ids}});
+        const emails = userToNotifyForPurchaeGroupBecomeLive.map(user => user.email);
 
 
-      const options = {
-          body: 'log in to your account to start purchasing',
-          subject: 'Seller user took ownership on purchase group!',
-          title: 'Seller user took ownership on purchase group!',
-          mailingList : emails
-      };
+        const options = {
+            body: 'log in to your account to start purchasing',
+            subject: 'Seller user took ownership on purchase group!',
+            title: 'Seller user took ownership on purchase group!',
+            mailingList: emails
+        };
 
-      const mailer = new Mailer(options, tookOwnershipTemplate(name));
-      await mailer.send();
+        const mailer = new Mailer(options, tookOwnershipTemplate(name));
+        await mailer.send();
     }
 
     async joinSuggestionGroup(groupID, userID) {

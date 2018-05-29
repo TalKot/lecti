@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import * as actions from '../../actions';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Loader from '../Loader/Loader';
-import { Card, Message, Pagination } from 'semantic-ui-react'
-import { withRouter } from 'react-router-dom';
+import {Card, Message, Pagination} from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom';
 
 
 class PurchaseGroups extends Component {
 
-    state = { page: 1 };
+    state = {page: 1};
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.match.params.item !== this.props.match.params.item) {
@@ -23,8 +23,8 @@ class PurchaseGroups extends Component {
         await this.props.fetchPurchaseGroups(this.props.match.params.item, page);
     }
 
-    handlePaginationChange = (e, { activePage }) => {
-        this.setState({ activePage });
+    handlePaginationChange = (e, {activePage}) => {
+        this.setState({activePage});
         this.props.fetchPurchaseGroups(this.props.match.params.item, activePage);
     }
 
@@ -54,19 +54,19 @@ class PurchaseGroups extends Component {
 
         if (!this.props.purchaseGroups.length) {
             return (
-                <Loader />
+                <Loader/>
             );
         }
 
         return (
-            <div style={{ textAlign: 'center' }}>
+            <div style={{textAlign: 'center'}}>
 
                 {this.getWelcomeMessage()}
 
-                <Card.Group >
+                <Card.Group>
                     {
                         this.props.purchaseGroups.map(purchaseGroup => {
-                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup} />
+                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
                         })
                     }
                 </Card.Group>
@@ -81,7 +81,7 @@ class PurchaseGroups extends Component {
                     defaultActivePage={1}
                     totalPages={Math.ceil(this.props.pageCount / 12)}
                     onPageChange={this.handlePaginationChange}
-                    style={{ marginTop: '25px', marginRight: '135px' }}
+                    style={{marginTop: '25px', marginRight: '135px'}}
                 />
             </div>
         );
@@ -89,8 +89,8 @@ class PurchaseGroups extends Component {
 
 };
 
-function mapStateToProps({ purchaseGroups, pageCount, searchValue, history , purchasGroupsBySearch }) {
-    return { purchaseGroups, pageCount, searchValue, history,purchasGroupsBySearch };
+function mapStateToProps({purchaseGroups, pageCount, searchValue, history, purchasGroupsBySearch}) {
+    return {purchaseGroups, pageCount, searchValue, history, purchasGroupsBySearch};
 }
 
 export default connect(mapStateToProps, actions)(withRouter(PurchaseGroups));

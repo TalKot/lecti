@@ -18,6 +18,9 @@ const potentialBuyers = Schema({
     address: {
         type: String,
         default: 'None.'
+    },
+    email: {
+        type: String
     }
 });
 const purchaseGroup = new mongoose.Schema({

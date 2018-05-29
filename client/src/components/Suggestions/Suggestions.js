@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import React, {Component} from 'react';
 import PurchaseGroupSuggestions from './Suggestion/Suggestion';
 import Loader from '../Loader/Loader';
-import { Message, Pagination,Button, Icon,Label } from 'semantic-ui-react'
-import { Link } from 'react-router-dom';
+import {Message, Pagination, Button, Icon, Label} from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 
 class Suggestions extends Component {
 
@@ -17,7 +17,7 @@ class Suggestions extends Component {
 
         if (!this.props.suggestionsPurchaseGroups.length) {
             return (
-                <Loader />
+                <Loader/>
             );
         }
 
@@ -43,14 +43,14 @@ class Suggestions extends Component {
 
                 </div>
 
-                                <div className="fixed-action-btn">
+                <div className="fixed-action-btn">
                     <Link to="/new/purchasegroup" className="btn-floating btn-large red">
                         <i className="material-icons">add</i>
                     </Link>
                 </div>
 
             </div>
-            
+
         );
     }
 }

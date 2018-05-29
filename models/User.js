@@ -31,6 +31,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    address: String,
     // storeName: String,
     // storeAddress: String,
     // rank: Number,

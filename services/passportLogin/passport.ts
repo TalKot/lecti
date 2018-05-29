@@ -1,4 +1,5 @@
 import passport = require('passport');
+
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
@@ -63,7 +64,7 @@ passport.use(new FacebookStrategy({
         clientID: facebookClientID,
         clientSecret: facebookClientSecret,
         callbackURL: '/auth/facebook/callback',
-        profileFields: ['email', "id", "birthday","first_name", "gender", "last_name", "picture.width(400).height(400)"],
+        profileFields: ['email', "id", "birthday", "first_name", "gender", "last_name", "picture.width(400).height(400)"],
         proxy: true
     },
     //will be called when the auth flow is complete

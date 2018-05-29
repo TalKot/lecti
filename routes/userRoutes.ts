@@ -1,4 +1,5 @@
 import UserController from '../controllers/userController'
+
 const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = app => {
@@ -9,9 +10,9 @@ module.exports = app => {
         await userControllerInstance.getSellerById(res, id);
     });
 
-    app.post('/api/newseller', async (req, res) => {
-        const { id } = req.user;
-        let { body } = req;
+    app.post('/api/newseller',requireLogin, async (req, res) => {
+        const {id} = req.user;
+        let {body} = req;
         let userControllerInstance = UserController.Instance;
         await userControllerInstance.alertAdminsNewSellerRequest(res, id, body);
     });

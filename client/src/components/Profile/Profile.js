@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import * as actions from '../../actions';
-import { connect } from 'react-redux';
-import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import React, {Component} from 'react';
 import axios from "axios/index";
-import { Icon, Image, Statistic } from 'semantic-ui-react'
+import {Icon, Image, Statistic} from 'semantic-ui-react'
 import Loader from '../Loader/Loader'
 
 class Profile extends Component {
@@ -12,8 +12,8 @@ class Profile extends Component {
     }
 
     async componentDidMount() {
-        const { data } = await axios.get(`/api/purchaseGroup/getgroup/user/`);
-        this.setState({ purchaseGroups: data })
+        const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
+        this.setState({purchaseGroups: data})
     };
 
     removePurchaseGroup = async (purchaseGroup, amount, price) => {
@@ -22,8 +22,8 @@ class Profile extends Component {
             price
         };
         await axios.post(`/api/purchaseGroup/remove/${purchaseGroup.data._id}/`, options);
-        const { data } = await axios.get(`/api/purchaseGroup/getgroup/user/`);
-        this.setState({ purchaseGroups: data });
+        const {data} = await axios.get(`/api/purchaseGroup/getgroup/user/`);
+        this.setState({purchaseGroups: data});
         this.props.fetchUser();
     };
 
@@ -46,40 +46,40 @@ class Profile extends Component {
             return (
                 <table className="striped centered">
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Amount</th>
-                            <th>Time</th>
-                            <th>Original Price</th>
-                            <th>Group Price</th>
-                            <th>Type</th>
-                            <th>Remove</th>
-                        </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Time</th>
+                        <th>Original Price</th>
+                        <th>Group Price</th>
+                        <th>Type</th>
+                        <th>Remove</th>
+                    </tr>
                     </thead>
                     <tbody>
 
-                        {
-                            this.state.purchaseGroups.map(purchaseGroup => {
+                    {
+                        this.state.purchaseGroups.map(purchaseGroup => {
 
-                                return (
-                                    <tr key={Math.random()}>
-                                        <td key={Math.random()}><Link
-                                            to={`/purchasegroup/${purchaseGroup.data._id}`}>{purchaseGroup.data._id}</Link>
-                                        </td>
-                                        <td key={Math.random()}><Link
-                                            to={`/purchasegroup/${purchaseGroup.data._id}`}>{purchaseGroup.data.name}</Link>
-                                        </td>
-                                        <td key={Math.random()}>{purchaseGroup.amount}</td>
-                                        <td key={Math.random()}>{purchaseGroup.time}</td>
-                                        <td key={Math.random()}>{purchaseGroup.data.originalPrice}</td>
-                                        <td key={Math.random()}>{purchaseGroup.data.priceForGroup}</td>
-                                        <td key={Math.random()}>{purchaseGroup.data.type}</td>
-                                        {this.isActiveButton(purchaseGroup, purchaseGroup.amount, purchaseGroup.data.priceForGroup)}
-                                    </tr>
-                                );
-                            })
-                        }
+                            return (
+                                <tr key={Math.random()}>
+                                    <td key={Math.random()}><Link
+                                        to={`/purchasegroup/${purchaseGroup.data._id}`}>{purchaseGroup.data._id}</Link>
+                                    </td>
+                                    <td key={Math.random()}><Link
+                                        to={`/purchasegroup/${purchaseGroup.data._id}`}>{purchaseGroup.data.name}</Link>
+                                    </td>
+                                    <td key={Math.random()}>{purchaseGroup.amount}</td>
+                                    <td key={Math.random()}>{purchaseGroup.time}</td>
+                                    <td key={Math.random()}>{purchaseGroup.data.originalPrice}</td>
+                                    <td key={Math.random()}>{purchaseGroup.data.priceForGroup}</td>
+                                    <td key={Math.random()}>{purchaseGroup.data.type}</td>
+                                    {this.isActiveButton(purchaseGroup, purchaseGroup.amount, purchaseGroup.data.priceForGroup)}
+                                </tr>
+                            );
+                        })
+                    }
                     </tbody>
                 </table>
             );
@@ -91,9 +91,10 @@ class Profile extends Component {
         }
 
     }
+
     getStatics = () => {
         return (
-            <Statistic.Group >
+            <Statistic.Group>
                 <Statistic>
                     <Statistic.Value>{this.state.purchaseGroups.length}</Statistic.Value>
                     <Statistic.Label>P.G. Bought</Statistic.Label>
@@ -101,36 +102,37 @@ class Profile extends Component {
 
                 <Statistic>
                     <Statistic.Value text>
-                        BEST<br />
+                        BEST<br/>
                         SELLER
-              </Statistic.Value>
+                    </Statistic.Value>
                     <Statistic.Label>RATING</Statistic.Label>
                 </Statistic>
 
                 <Statistic>
-                    <Statistic.Value >
+                    <Statistic.Value>
                         {this.props.auth.credits}
-                        <Icon name='dollar' />
+                        <Icon name='dollar'/>
                     </Statistic.Value>
                     <Statistic.Label>CREDITS</Statistic.Label>
                 </Statistic>
             </Statistic.Group>
         );
     }
+
     render() {
         if (!this.props.auth || !this.state) {
             return (
-                <Loader />
+                <Loader/>
             );
         }
 
         return (
-            <div style={{ textAlign: 'center' }}>
-                <div className="row" style={{ textAlign: 'center', margin: '0' }}>
+            <div style={{textAlign: 'center'}}>
+                <div className="row" style={{textAlign: 'center', margin: '0'}}>
                     <div className="col s8 m5">
                         <div className="card">
                             <div className="card-image">
-                                <img src={this.props.auth.photoURL} alt={this.props.auth.photoURL} />
+                                <img src={this.props.auth.photoURL} alt={this.props.auth.photoURL}/>
                                 <span className="card-title">{this.props.auth.displayName}</span>
                             </div>
                             <div className="card-content">
@@ -146,14 +148,14 @@ class Profile extends Component {
                         <div className="row">
                             <div className="col s3 m6">
                                 <div className="card-panel">
-                                    <i className="material-icons" style={{ margin: "10px" }}>shopping_basket</i>
+                                    <i className="material-icons" style={{margin: "10px"}}>shopping_basket</i>
                                     Total Purchase Groups Bought - {this.state.purchaseGroups.length}
                                 </div>
                             </div>
 
                             <div className="col s3 m6">
                                 <div className="card-panel">
-                                    <i className="material-icons prefix" style={{ margin: "10px" }}>account_circle</i>
+                                    <i className="material-icons prefix" style={{margin: "10px"}}>account_circle</i>
                                     <span className="title">User Auth ID - </span>
                                     {this.props.auth.AuthId}
                                 </div>
@@ -180,8 +182,8 @@ class Profile extends Component {
     };
 }
 
-function mapStateToProps({ auth }) {
-    return { auth };
+function mapStateToProps({auth}) {
+    return {auth};
 }
 
 export default connect(mapStateToProps, actions)(Profile);

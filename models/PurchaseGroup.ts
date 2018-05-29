@@ -1,4 +1,5 @@
 import mongoose = require('mongoose');
+
 const {Schema} = mongoose;
 
 const potentialBuyers = Schema({
@@ -10,13 +11,16 @@ const potentialBuyers = Schema({
         type: Number,
         default: 1
     },
-    time:{
+    time: {
         type: Date,
         default: Date.now()
     },
-    address:{
-      type: String,
-      default: 'None.'
+    address: {
+        type: String,
+        default: 'None.'
+    },
+    email : {
+        type: String
     }
 });
 
@@ -36,16 +40,16 @@ const purchaseGroup = new mongoose.Schema({
     subCategory: String,
     type: String,
     description: String,
-    discount:Number,
-    isActive : {
+    discount: Number,
+    isActive: {
         type: Boolean,
         default: true
     },
-    newPurchaseGroup : {
+    newPurchaseGroup: {
         type: Boolean,
         default: true
     },
-    isDeleted : {
+    isDeleted: {
         type: Boolean,
         default: false
     },
@@ -64,14 +68,14 @@ const purchaseGroup = new mongoose.Schema({
         ref: 'comment',
         default: []
     }],
-    isSuggestion : {
+    isSuggestion: {
         type: Boolean,
-        default : false
+        default: false
     }
 });
 
 purchaseGroup.pre('save', function (next) {
-    this.discount = (((this.originalPrice - this.priceForGroup) /  this.originalPrice)*100);
+    this.discount = (((this.originalPrice - this.priceForGroup) / this.originalPrice) * 100);
     next();
 });
 

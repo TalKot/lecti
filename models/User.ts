@@ -11,7 +11,7 @@ const PurchaseGroups = Schema({
         type: Number,
         default: 1
     },
-    time:{
+    time: {
         type: Date,
         default: Date.now()
     }
@@ -32,6 +32,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    address: String,
     // storeName: String,
     // storeAddress: String,
     // rank: Number,
@@ -51,11 +52,11 @@ const userSchema = new mongoose.Schema({
         ref: 'comments',
         default: []
     }],
-    notRelevantTypes:{
+    notRelevantTypes: {
         type: [String],
         default: []
     },
-    typesAttempts :{
+    typesAttempts: {
         type: Number,
         default: 0
     }

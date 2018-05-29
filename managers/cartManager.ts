@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+
 const User = mongoose.model('users');
 
 export default class CartManager {
@@ -8,6 +9,7 @@ export default class CartManager {
     public static get Instance() {
         return this._instance || (this._instance = new this());
     }
+
     /************************************/
 
 

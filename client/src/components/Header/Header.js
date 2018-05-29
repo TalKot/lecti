@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Link, Redirect} from 'react-router-dom';
 import Payments from '../Payments/Payments';
 import SearchBar from '../SearchBar/SearchBar';
 import Types from '../../utils/types';
-import { Button, Icon, Dropdown, Menu, Segment, Image, Input } from 'semantic-ui-react'
+import {Button, Icon, Dropdown, Menu, Segment, Image, Input} from 'semantic-ui-react'
 import logo from '../img/logo.png';
 import lecti from '../img/logo.png';
-import { BrowserRouter, Route } from 'react-router-dom'
-import { withRouter } from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 
 
 class Header extends Component {
 
-    state = { activeItem: 'home' }
+    state = {activeItem: 'home'}
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    handleItemClick = (e, {name}) => this.setState({activeItem: name})
 
     renderRedirect = target => {
         this.props.history.push(target);
@@ -30,26 +30,33 @@ class Header extends Component {
                 return [
                     <Menu.Item key="1">
                         <Button color='google plus' href="/auth/google">
-                            <Icon name='google plus' /> Google Plus
+                            <Icon name='google plus'/> Google Plus
                         </Button>
                     </Menu.Item>,
                     <Menu.Item key="2">
                         <Button color='facebook' href="/auth/facebook">
-                            <Icon name='facebook' /> Facebook
+                            <Icon name='facebook'/> Facebook
                         </Button>
                     </Menu.Item>
                 ];
             default:
                 let headers = [
-                    <Menu.Item key="2" name='Credits' active={activeItem === 'Credits'} onClick={this.handleItemClick}> Credits: {this.props.auth.credits}</Menu.Item>,
-                    <Menu.Item key="3" name='Profile' href={`/profile/${this.props.auth._id}`} active={activeItem === 'Profile'} onClick={this.handleItemClick} />,
-                    <Menu.Item key="4" name='Shopping Cart' href={'/cart'} active={activeItem === 'Shopping Cart'} onClick={this.handleItemClick}> <i className="material-icons">shopping_cart</i></Menu.Item>,
-                    <Menu.Item key="5" name='Payments' active={activeItem === 'Payments'} onClick={this.handleItemClick}> <Payments /> </Menu.Item>,
-                    <Menu.Item key="6" name='Logout' href={'/api/logout'} active={activeItem === 'Logout'} onClick={this.handleItemClick} />
+                    <Menu.Item key="2" name='Credits' active={activeItem === 'Credits'}
+                               onClick={this.handleItemClick}> Credits: {this.props.auth.credits}</Menu.Item>,
+                    <Menu.Item key="3" name='Profile' href={`/profile/${this.props.auth._id}`}
+                               active={activeItem === 'Profile'} onClick={this.handleItemClick}/>,
+                    <Menu.Item key="4" name='Shopping Cart' href={'/cart'} active={activeItem === 'Shopping Cart'}
+                               onClick={this.handleItemClick}> <i
+                        className="material-icons">shopping_cart</i></Menu.Item>,
+                    <Menu.Item key="5" name='Payments' active={activeItem === 'Payments'}
+                               onClick={this.handleItemClick}> <Payments/> </Menu.Item>,
+                    <Menu.Item key="6" name='Logout' href={'/api/logout'} active={activeItem === 'Logout'}
+                               onClick={this.handleItemClick}/>
                 ];
 
                 if (this.props.auth.isSeller) {
-                    headers.splice(2, 0, <Menu.Item key="7" name='Sales' href={'/sales'} active={activeItem === 'Sales'} onClick={this.handleItemClick} />);
+                    headers.splice(2, 0, <Menu.Item key="7" name='Sales' href={'/sales'} active={activeItem === 'Sales'}
+                                                    onClick={this.handleItemClick}/>);
                 }
 
                 return headers;
@@ -57,14 +64,14 @@ class Header extends Component {
     }
 
     render() {
-        const { activeItem } = this.state
+        const {activeItem} = this.state
 
         return (
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{marginBottom: '20px'}}>
                 <Menu size='huge'>
-                    <Menu.Item key="234532" style={{ backgroundColor: 'black' }}>
+                    <Menu.Item key="234532" style={{backgroundColor: 'black'}}>
                         <Link to={'/home'}>
-                            <Image src={lecti} size='tiny' verticalAlign='top' />
+                            <Image src={lecti} size='tiny' verticalAlign='top'/>
                         </Link>
                     </Menu.Item>
                     <Menu.Menu position='right' key="1234125">
@@ -73,26 +80,33 @@ class Header extends Component {
                 </Menu>
                 <Menu pointing secondary>
                     {
-                        Types.categories.map(({ name, value }) => {
+                        Types.categories.map(({name, value}) => {
                             if (value === 'search') {
                                 return (
-                                    <Menu.Item key={value} name={name}><SearchBar /> </Menu.Item>
+                                    <Menu.Item key={value} name={name}><SearchBar/> </Menu.Item>
                                 );
-                            }else if (value === 'other') {
+                            } else if (value === 'other') {
                                 return (
-                                    <Menu.Item key={value} name={name} onClick={()=>{this.renderRedirect(`/purchasegroups/${value}`)}}/>
+                                    <Menu.Item key={value} name={name} onClick={() => {
+                                        this.renderRedirect(`/purchasegroups/${value}`)
+                                    }}/>
                                 );
                             } else if (value === 'suggestions') {
                                 return (
-                                    <Menu.Item key={value} name={name} onClick={()=>{this.renderRedirect(`/suggestions/`)}}/>
+                                    <Menu.Item key={value} name={name} onClick={() => {
+                                        this.renderRedirect(`/suggestions/`)
+                                    }}/>
                                 );
                             } else {
                                 return (
                                     <Dropdown item key={value} text={name}>
                                         <Dropdown.Menu>
                                             {
-                                                Types.subCategories[value].map(({ name, value }) => {
-                                                    return <Menu.Item key={value} name={name} active={activeItem === { value }} onClick={()=>{this.renderRedirect(`/purchasegroups/${value}`)}} content={name}/>;
+                                                Types.subCategories[value].map(({name, value}) => {
+                                                    return <Menu.Item key={value} name={name}
+                                                                      active={activeItem === {value}} onClick={() => {
+                                                        this.renderRedirect(`/purchasegroups/${value}`)
+                                                    }} content={name}/>;
                                                 })
                                             }
                                         </Dropdown.Menu>
@@ -102,14 +116,14 @@ class Header extends Component {
                         })
                     }
                 </Menu>
-            </div >
+            </div>
         );
     }
 }
 
 
-function mapStateToProps({ auth, history }) {
-    return { auth, history };
+function mapStateToProps({auth, history}) {
+    return {auth, history};
 }
 
 export default connect(mapStateToProps)(withRouter(Header));
