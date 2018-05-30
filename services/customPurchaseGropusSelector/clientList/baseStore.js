@@ -6,7 +6,7 @@ const surveyTemplate = require('../../emailsNotifications/emailTemplates/customP
 const PurchaseGroup = require('../../../managers/purchaseGroupManager');
 class BaseStore {
     constructor() {
-        this.mailingList = ['talkot123@gmail.com', 'lougassi@gmail.com'];
+        this.mailingList = ['talkot123@gmail.com', 'lougassi@gmail.com', 'Lecti99@gmail.com'];
         this.notify = (message, purchaseGroupsByType) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const customPurchaseGroup = {
                 body: message,

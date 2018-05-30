@@ -215,7 +215,7 @@ class Home extends Component {
         const {alignTextCenter, fullWidth, marginLeftGreetingSection} = styles;
 
         return (
-            <div style={alignTextCenter}>
+            <div className='HomeDiv' style={alignTextCenter}>
                 <section>
                     {this.getIntro()}
                 </section>

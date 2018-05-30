@@ -5,7 +5,7 @@ const PurchaseGroup = require('../../../managers/purchaseGroupManager');
 export default abstract class BaseStore {
 
     public abstract readonly STORE: string;
-    public abstract readonly mailingList: string[] = ['talkot123@gmail.com', 'lougassi@gmail.com'] ;
+    public abstract readonly mailingList: string[] = ['talkot123@gmail.com', 'lougassi@gmail.com','Lecti99@gmail.com'] ;
 
     public notify = async (message, purchaseGroupsByType) => {
 

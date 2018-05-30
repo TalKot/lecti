@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import reduxThunk from 'redux-thunk';
-
+import './index.css';
+import './components/Header/Header.css';
+import './components/Home/Home.css';
+//import './components/PurchaseGroups/PurchaseGroup/PurchaseGroup.css'
 import App from './components/App';
 import reducers from './reducers';
 

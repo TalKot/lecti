@@ -6,15 +6,15 @@ import {connect} from 'react-redux';
 class Footer extends Component {
     state = {activeItem: 'Home'}
 
-    handleItemClick = (e, {name}) => this.setState({activeItem: name})
+    handleItemClick = (e, {name}) => this.setState({activeItem: name});
     getSocialMediaLinks = () => {
         return (
             <div style={{margin: ' 10px 10px 0px 100px'}}>
                 The Best Purchase Group Buying Platform In The World.
-                <Button circular color='facebook' icon='facebook'/>
+                <Button circular color='facebook' icon='facebook' href='https://www.facebook.com/Lecti-2096383947304229' target="_blank" />
                 <Button circular color='twitter' icon='twitter'/>
-                <Button circular color='linkedin' icon='linkedin'/>
-                <Button circular color='google plus' icon='google plus'/>
+                <Button circular color='linkedin' icon='linkedin' href='https://www.linkedin.com/in/shopping-collective-044089165' target="_blank" />
+                <Button circular color='google plus' icon='google plus' href='https://plus.google.com/u/1/111288502224844859394' target="_blank" />
             </div>
 
         );

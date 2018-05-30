@@ -64,10 +64,10 @@ class Header extends Component {
     }
 
     render() {
-        const {activeItem} = this.state
+        const {activeItem} = this.state;
 
         return (
-            <div style={{marginBottom: '20px'}}>
+            <div className="Header" style={{marginBottom: '20px'}}>
                 <Menu size='huge'>
                     <Menu.Item key="234532" style={{backgroundColor: 'black'}}>
                         <Link to={'/home'}>
@@ -78,7 +78,7 @@ class Header extends Component {
                         {this.renderContent(activeItem)}
                     </Menu.Menu>
                 </Menu>
-                <Menu pointing secondary>
+                <Menu pointing secondary className="nav">
                     {
                         Types.categories.map(({name, value}) => {
                             if (value === 'search') {

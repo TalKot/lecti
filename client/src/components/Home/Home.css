@@ -1,0 +1,22 @@
+.HomeDiv .cardImage {
+    maxHeight: 290px;
+    maxWidth: 290px;
+    margin: auto
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .HomeDiv > section > div  > div.ui.cards{
+        width:200px;
+        display: -webkit-box;
+        margin-left: 24px;
+        margin-top: 10px;
+
+    }
+
+    .HomeDiv > section > div > div.ui.cards > div > a > img {
+        max-height: 130px;
+        max-width: 100px;
+    }
+
+}

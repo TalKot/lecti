@@ -5,9 +5,9 @@ import src from '../../img/hero-bg.png';
 
 const PurchaseGroup = ({ purchaseGroup }) => {
     return (
-        <Card >
+        <Card>
             <Link to={`/purchasegroup/${purchaseGroup._id}`}>
-                <Image src={purchaseGroup.picture} style={{ maxHeight: '290px', maxWidth: '290px', margin: 'auto' }} />
+                <Image src={purchaseGroup.picture} className='cardImage'/>
             </Link>
             <Card.Content>
                 <Card.Header>{purchaseGroup.name}</Card.Header>

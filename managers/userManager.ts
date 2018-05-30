@@ -151,7 +151,7 @@ export default class UserManager {
 
     async alertAdminsNewSellerRequest(userID, body) {
         try {
-            const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com'];
+            const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com','Lecti99@gmail.com'];
             const message = `New Seller Request!`;
 
             const newSellerRequest = {

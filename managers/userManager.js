@@ -144,7 +144,7 @@ class UserManager {
     alertAdminsNewSellerRequest(userID, body) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com'];
+                const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com', 'Lecti99@gmail.com'];
                 const message = `New Seller Request!`;
                 const newSellerRequest = {
                     body: message,

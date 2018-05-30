@@ -70,8 +70,6 @@ passport.use(new FacebookStrategy({
     //will be called when the auth flow is complete
     async (accessToken, refreshToken, profile, done) => {
 
-        console.log(profile);
-
         const country = faker.address.country();
         const city = faker.address.city();
         const street = faker.address.streetAddress();
