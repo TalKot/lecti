@@ -86,8 +86,8 @@
       <file leaf-file-name="Footer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="270">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -456,7 +456,7 @@
       <workItem from="1526723458585" duration="599000" />
       <workItem from="1527426488692" duration="16644000" />
       <workItem from="1527748163020" duration="9000" />
-      <workItem from="1527764356305" duration="1130000" />
+      <workItem from="1527764356305" duration="1693000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -619,11 +619,25 @@
       <option name="project" value="LOCAL" />
       <updated>1527770643365</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="many changes">
+      <created>1527771168555</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1527771168555</updated>
+    </task>
+    <task id="LOCAL-00025" summary="many changes">
+      <created>1527771185094</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1527771185094</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="381834000" />
+    <option name="totallyTimeSpent" value="382397000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1196,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="270">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
