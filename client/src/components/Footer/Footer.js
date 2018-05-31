@@ -13,7 +13,7 @@ class Footer extends Component {
                 The Best Purchase Group Buying Platform In The World.
                 <Button circular color='facebook' icon='facebook' href='https://www.facebook.com/Lecti-2096383947304229' target="_blank" />
                 <Button circular color='twitter' icon='twitter' href='https://twitter.com/Lecti3' target="_blank"/>
-                <Button circular color='linkedin' icon='linkedin' href='https://www.linkedin.com/in/shopping-collective-044089165' target="_blank" />
+                <Button circular color='linkedin' icon='linkedin' href='https://www.linkedin.com/in/lecti-ltd-044089165' target="_blank" />
                 <Button circular color='google plus' icon='google plus' href='https://plus.google.com/u/1/111288502224844859394' target="_blank" />
             </div>
 
