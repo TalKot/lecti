@@ -21,6 +21,7 @@ class Footer extends Component {
     }
 
 
+
     render() {
         const {activeItem} = this.state;
 
