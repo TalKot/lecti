@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Header/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Home/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/userManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/managers/userManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/userManager.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/managers/userManager.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/userManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/managers/userManager.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/baseStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passportLogin/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/passportLogin/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passportLogin/passport.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/services/passportLogin/passport.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/passportLogin/passport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/passportLogin/passport.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,8 +25,8 @@
       <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state relative-caret-position="105">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -61,16 +35,7 @@
         <entry file="file://$PROJECT_DIR$/client/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PurchaseGroupItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="112" column="46" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="46" />
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -78,7 +43,7 @@
       <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
+            <state relative-caret-position="3045">
               <caret line="217" column="35" selection-start-line="217" selection-start-column="28" selection-end-line="217" selection-end-column="35" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -90,7 +55,7 @@
       <file leaf-file-name="PurchaseGroup.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="60">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -110,11 +75,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="300">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Footer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -127,7 +101,7 @@
       <file leaf-file-name="Header.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="75">
               <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
@@ -136,7 +110,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="15">
               <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
@@ -254,7 +228,6 @@
         <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js" />
         <option value="$PROJECT_DIR$/models/User.ts" />
         <option value="$PROJECT_DIR$/services/passportLogin/passport.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/Footer/Footer.js" />
         <option value="$PROJECT_DIR$/managers/userManager.ts" />
         <option value="$PROJECT_DIR$/client/src/main.css.html" />
         <option value="$PROJECT_DIR$/client/src/main.css" />
@@ -274,6 +247,7 @@
         <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.css" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/Home/Home.css" />
+        <option value="$PROJECT_DIR$/client/src/components/Footer/Footer.js" />
       </list>
     </option>
   </component>
@@ -304,9 +278,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1177" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -342,6 +315,14 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Footer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
@@ -474,6 +455,8 @@
       <workItem from="1526553225799" duration="10815000" />
       <workItem from="1526723458585" duration="599000" />
       <workItem from="1527426488692" duration="16644000" />
+      <workItem from="1527748163020" duration="9000" />
+      <workItem from="1527764356305" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -633,7 +616,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380695000" />
+    <option name="totallyTimeSpent" value="380788000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,29 +628,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info anchor="bottom" id="TypeScript" order="2" weight="0.3271795" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.17324908" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49753347" weight="0.32839224" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32923076" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5024665" side_tool="true" weight="0.32889965" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.248" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.33333334" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" visible="true" weight="0.23282051" />
-      <window_info anchor="bottom" id="TypeScript" order="2" weight="0.3271795" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.17359856" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32889965" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24960339" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" visible="true" weight="0.232" />
       <window_info id="Favorites" order="3" sideWeight="0.5072202" side_tool="true" weight="0.18816067" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.2769231" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.27644444" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32923076" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32889965" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3922463" />
@@ -675,17 +658,17 @@
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32839224" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.18032786" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49753347" weight="0.32889965" />
       <window_info anchor="bottom" id="TypeScript" order="0" weight="0.3275862" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32889965" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.34663627" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" weight="0.22234891" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5024665" side_tool="true" weight="0.32889965" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Messages" order="8" />
@@ -827,19 +810,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/userRoutes.ts</url>
           <line>7</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="717" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/userRoutes.ts</url>
           <line>14</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="718" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/services/passportLogin/passport.ts</url>
           <line>96</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="721" />
         </line-breakpoint>
       </breakpoints>
@@ -907,9 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -917,9 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -934,9 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1063,13 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managers/userManager.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -1081,22 +1045,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main.css.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main.scss" />
+    <entry file="file://$PROJECT_DIR$/client/src/main.css.html" />
     <entry file="file://$PROJECT_DIR$/client/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1104,13 +1057,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main.css" />
     <entry file="file://$PROJECT_DIR$/client/public/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1118,13 +1065,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.sass" />
     <entry file="file://$PROJECT_DIR$/client/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -1132,9 +1073,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.scss" />
     <entry file="file://$PROJECT_DIR$/client/node_modules/react-scripts/config/webpack.config.dev.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1172,25 +1111,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="1575">
           <caret line="112" column="46" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.scss" />
     <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="105">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1205,7 +1142,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="60">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1219,13 +1156,13 @@
     <entry file="file://$PROJECT_DIR$/client/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="15">
           <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
@@ -1236,7 +1173,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
+        <state relative-caret-position="3045">
           <caret line="217" column="35" selection-start-line="217" selection-start-column="28" selection-end-line="217" selection-end-column="35" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -1246,8 +1183,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
         </state>
       </provider>
     </entry>
