@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes">
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.js" afterDir="false" />
-    </list>
+    <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -86,7 +84,7 @@
       <file leaf-file-name="Footer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
+            <state relative-caret-position="177">
               <caret line="15" column="119" selection-start-line="15" selection-start-column="119" selection-end-line="15" selection-end-column="119" />
             </state>
           </provider>
@@ -456,7 +454,7 @@
       <workItem from="1526723458585" duration="599000" />
       <workItem from="1527426488692" duration="16644000" />
       <workItem from="1527748163020" duration="9000" />
-      <workItem from="1527764356305" duration="298000" />
+      <workItem from="1527764356305" duration="479000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -616,7 +614,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="381002000" />
+    <option name="totallyTimeSpent" value="381183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,7 +627,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="2" weight="0.3271795" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.17324908" />
@@ -1190,7 +1187,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Footer/Footer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="177">
           <caret line="15" column="119" selection-start-line="15" selection-start-column="119" selection-end-line="15" selection-end-column="119" />
         </state>
       </provider>
