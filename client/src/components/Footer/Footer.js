@@ -42,6 +42,7 @@ class Footer extends Component {
             );
         }
 
+
         return (
             <Grid style={{marginTop: '20px'}}>
                 <Grid.Column stretched width={12}>
