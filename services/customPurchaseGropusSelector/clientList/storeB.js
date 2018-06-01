@@ -6,7 +6,7 @@ class storeB extends baseStore_1.default {
     constructor() {
         super(...arguments);
         this.STORE = "store B";
-        this.mailingList = ['talkot123@gmail.com', 'lougassi@gmail.com','Lecti99@gmail.com'];
+        this.mailingList = ['talkot123@gmail.com', 'lougassi@gmail.com', 'Lecti99@gmail.com'];
         this.notify = (message, purchaseGroupsKeyBySubType) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             console.log(`${this.STORE}! - to the following mailing list ${this.mailingList}`);
         });
