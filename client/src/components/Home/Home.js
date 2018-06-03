@@ -20,7 +20,7 @@ class Home extends Component {
 
     componentDidMount() {
         this.props.fetchCustomPurchaseGroups();
-    }
+    };
 
     onChangeRelevant = async status => {
         const options = {
@@ -60,7 +60,7 @@ class Home extends Component {
                 </div>
             </div>
         );
-    }
+    };
 
     getImageProp = () => {
         return (
@@ -79,9 +79,9 @@ class Home extends Component {
     };
 
     getGreeting = () => {
-        const {marginLeftGreetingSection} = styles;
+
         return (
-            <div style={marginLeftGreetingSection}>
+            <div className="marginLeftGreetingSection">
 
                 <Card.Group>
                     {
@@ -114,7 +114,7 @@ class Home extends Component {
                 </div>
             </div>
         );
-    }
+    };
 
     handleChange = (e, {value}) => this.setState({value});
 
@@ -123,7 +123,7 @@ class Home extends Component {
         this.setState({formStatus: true});
         await axios.post('/api/newseller/', this.state);
         swal("Thank You!", `You will become a seller soon. Exicted?`, "success");
-    }
+    };
 
     getContactSection = () => {
 
@@ -166,7 +166,8 @@ class Home extends Component {
             </div>
         );
 
-    }
+    };
+
     getStatus = (formStatus) => {
         if (formStatus) {
             return (
@@ -178,14 +179,14 @@ class Home extends Component {
                 />
             );
         }
+    };
 
-    }
     getIntro = () => {
-        const {fullWidth} = styles;
+        // const {fullWidth} = styles;
 
         return (
             <div className="mySlides w3-display-container w3-center">
-                <img src={src1} style={fullWidth}/>
+                <img src={src1} className="fullWidth"/>
                 <div className="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
                     <h1>Greetings {this.props.auth.displayName}!</h1>
                     <p><b>Lecti - The best purchase group payments platform in the world!</b></p>
@@ -212,10 +213,8 @@ class Home extends Component {
             axios.post('/api/purchaseGroup/types/increase', options);
         })();
 
-        const {alignTextCenter, fullWidth, marginLeftGreetingSection} = styles;
-
         return (
-            <div className='HomeDiv' style={alignTextCenter}>
+            <div className='HomeDiv' style={{textAlign: 'center'}}>
                 <section>
                     {this.getIntro()}
                 </section>
@@ -241,19 +240,6 @@ class Home extends Component {
                 </section>
             </div>
         )
-    }
-};
-
-
-const styles = {
-    alignTextCenter: {
-        textAlign: 'center'
-    },
-    fullWidth: {
-        width: "100%"
-    },
-    marginLeftGreetingSection: {
-        marginLeft: "50px"
     }
 };
 

@@ -6,12 +6,9 @@ const userManager_1 = require("../managers/userManager");
 const cartManager_1 = require("../managers/cartManager");
 const httpResponse_1 = require("../common/httpResponse");
 class CartController {
-    static get Instance() {
-        return this._instance || (this._instance = new this());
-    }
-    /************************************/
-    addToCart(res, purchaseGroupID, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+    constructor() {
+        /************************************/
+        this.addToCart = (res, purchaseGroupID, amount, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const purchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
                 const cartManagerInstance = cartManager_1.default.Instance;
@@ -34,9 +31,7 @@ class CartController {
                 httpResponse_1.default.sendError(res, e);
             }
         });
-    }
-    removeFromCart(res, purchaseGroupID, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.removeFromCart = (res, purchaseGroupID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const cartManagerInstance = cartManager_1.default.Instance;
                 // update records values & return updated user data
@@ -47,6 +42,9 @@ class CartController {
                 httpResponse_1.default.sendError(res, e);
             }
         });
+    }
+    static get Instance() {
+        return this._instance || (this._instance = new this());
     }
 }
 exports.default = CartController;

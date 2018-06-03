@@ -9,12 +9,9 @@ const liveEmailNotificationTemplte = require('../services/emailsNotifications/em
 const newSellerTemplte = require('../services/emailsNotifications/emailTemplates/newSellerTemplate');
 const Mailer = require('../services/emailsNotifications/livePurchaseGroupsMailer');
 class UserManager {
-    static get Instance() {
-        return this._instance || (this._instance = new this());
-    }
-    /************************************/
-    getUser(userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+    constructor() {
+        /************************************/
+        this.getUser = (userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const user = yield User.findById(userID)
                 .populate({
                 path: 'purchaseGroupsSell',
@@ -22,9 +19,7 @@ class UserManager {
             });
             return user ? user : null;
         });
-    }
-    getUserSeller(userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getUserSeller = (userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const user = yield User.findById(userID, {
                 comments: 1,
                 displayName: 1,
@@ -48,15 +43,11 @@ class UserManager {
             });
             return user ? user : null;
         });
-    }
-    getPurchaseGroupsBoughtByUserID(userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getPurchaseGroupsBoughtByUserID = (userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const { purchaseGroupsBought } = yield User.findById(userID);
             return purchaseGroupsBought ? purchaseGroupsBought : null;
         });
-    }
-    addPurchaseGroupToUser(purchaseGroup, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.addPurchaseGroupToUser = (purchaseGroup, amount, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const cost = amount * purchaseGroup.priceForGroup;
             yield User.findByIdAndUpdate(userID, {
                 $push: {
@@ -71,9 +62,7 @@ class UserManager {
                 }
             });
         });
-    }
-    updatePurchaseGroupToUser(purchaseGroupID, price, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.updatePurchaseGroupToUser = (purchaseGroupID, price, amount, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             //fetch user from DB
             let user = yield this.getUser(userID);
             // fetch purchase group to change from list
@@ -87,9 +76,7 @@ class UserManager {
             //save record to DB
             yield user.save();
         });
-    }
-    removePurchaseGroupFromUser(userID, purchaseGroupID, amount, price) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.removePurchaseGroupFromUser = (userID, purchaseGroupID, amount, price) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             amount = Number(amount);
             const cost = amount * price;
             yield User.findByIdAndUpdate(userID, {
@@ -105,18 +92,14 @@ class UserManager {
                 }
             });
         });
-    }
-    takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.takeSuggestionsPurchaseGroupOwnershi = (suggestionID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield User.findByIdAndUpdate(userID, {
                 $push: {
                     purchaseGroupsSell: suggestionID
                 }
             });
         });
-    }
-    notifyClientsOnClosedPurchaseGroup(purchaseGroup) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.notifyClientsOnClosedPurchaseGroup = (purchaseGroup) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             let clientList = purchaseGroup.potentialBuyers.map(client => client.user);
             clientList = yield User.find({
                 _id: {
@@ -140,9 +123,7 @@ class UserManager {
                 throw e;
             }
         });
-    }
-    alertAdminsNewSellerRequest(userID, body) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.alertAdminsNewSellerRequest = (userID, body) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com', 'Lecti99@gmail.com'];
                 const message = `New Seller Request!`;
@@ -160,6 +141,9 @@ class UserManager {
                 throw e;
             }
         });
+    }
+    static get Instance() {
+        return this._instance || (this._instance = new this());
     }
 }
 exports.default = UserManager;

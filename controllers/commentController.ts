@@ -11,7 +11,7 @@ export default class CommentController {
     }
     /************************************/
 
-    async postComment(res, rating, seller, comment, userID){
+    postComment =async (res, rating, seller, comment, userID)=> {
         try {
             await CommentManager.Instance.postComment(rating, seller, comment, userID);
             httpResponse.sendOk(res);

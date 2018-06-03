@@ -18,26 +18,26 @@ export default class PurchaseGroupManager {
 
     /************************************/
 
-    async getAllPurchaseGroups() {
+    getAllPurchaseGroups = async()=> {
         return await PurchaseGroup.find({});
     }
 
-    async getSuggestionsPurchaseGroups() {
+    getSuggestionsPurchaseGroups= async() =>{
         const purchaseGroups = await PurchaseGroup.find({isSuggestion: true});
         return purchaseGroups ? purchaseGroups : null;
     }
 
-    async getAllNewPurchaseGroups() {
+    getAllNewPurchaseGroups = async () =>{
         const res = await PurchaseGroup.find({newPurchaseGroup: true});
         return res;
     }
 
-    async getSuggestionsPurchaseGroupByID(ID) {
+     getSuggestionsPurchaseGroupByID = async ID => {
         const purchaseGroup = await PurchaseGroup.findById(ID);
         return purchaseGroup ? purchaseGroup : null;
     }
 
-    async getPurchaseGroupById(id: string) {
+     getPurchaseGroupById = async (id: string) => {
         const purchaseGroup = await PurchaseGroup.findById(id)
             .populate({
                 path: 'seller',
@@ -47,7 +47,7 @@ export default class PurchaseGroupManager {
         return purchaseGroup ? purchaseGroup : null;
     }
 
-    async getPurchaseGroupsByType(subCategory: string, page: string, amount?: number) {
+     getPurchaseGroupsByType = async (subCategory: string, page: string, amount?: number) =>{
         let pageNumber = Number(page);
 
         const maxPurchaseGroup = pageNumber * 12;
@@ -80,7 +80,7 @@ export default class PurchaseGroupManager {
         return purchaseGroup ? {count, purchaseGroup} : null;
     }
 
-    async getSubPurchaseGroupsByType(type: string, page: string, amount?: number) {
+    getSubPurchaseGroupsByType = async (type: string, page: string, amount?: number) =>{
         let pageNumber = Number(page);
 
         const maxPurchaseGroup = pageNumber * 12;
@@ -114,12 +114,12 @@ export default class PurchaseGroupManager {
 
     }
 
-    async updatePurchaseGroupById(purchaseGroupId, value) {
+    updatePurchaseGroupById = async (purchaseGroupId, value) =>{
         return await PurchaseGroup.findByIdAndUpdate(purchaseGroupId, value);
     }
 
     //user by profile page
-    async getPurchaseGroupsByUserId(userId: string) {
+    getPurchaseGroupsByUserId = async (userId: string) =>{
         //finds the user from the DB
         const user = await User.findById(userId);
         //get user purchaseGroups ids
@@ -148,7 +148,7 @@ export default class PurchaseGroupManager {
     }
 
 
-    async getViewedPurchaseGroupsByUserId(userId: string) {
+    getViewedPurchaseGroupsByUserId = async(userId: string) =>{
         try {
             const user = await User.findById(userId);
             return user.toObject().purchaseGroupsViewed;
@@ -157,7 +157,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async getSalesPurchaseGroupsByUserId(userId: string) {
+    getSalesPurchaseGroupsByUserId = async (userId: string) =>{
         try {
             const {purchaseGroupsSell} = await User.findById(userId)
                 .populate({
@@ -172,7 +172,7 @@ export default class PurchaseGroupManager {
     }
 
 
-    async addUserToPurchaseGroup(purchaseGroupID: string, amount: number, userID: string) {
+     addUserToPurchaseGroup =async (purchaseGroupID: string, amount: number, userID: string) =>{
         const {address,email} = await User.findById(userID);
 
         await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
@@ -190,7 +190,7 @@ export default class PurchaseGroupManager {
         });
     }
 
-    async purchaseGroupsViewed(userID, purchaseGroupsViewed) {
+    purchaseGroupsViewed = async (userID, purchaseGroupsViewed) =>{
 
         let [{subCategory}, user] = await Promise.all([
             PurchaseGroup.findById(purchaseGroupsViewed),
@@ -217,7 +217,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
+     updateUserOnPurchaseGroup = async (purchaseGroupID, price, amount, userID) =>{
 
         let purchaseGroup = await this.getPurchaseGroupById(purchaseGroupID);
         const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
@@ -230,7 +230,7 @@ export default class PurchaseGroupManager {
     }
 
 
-    async removeUserFromPurchaseGroup(userID, purchaseGroupID, amount) {
+     removeUserFromPurchaseGroup = async (userID, purchaseGroupID, amount) =>{
         amount = Number(amount);
 
         await PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
@@ -247,7 +247,7 @@ export default class PurchaseGroupManager {
         });
     }
 
-    async removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove) {
+    removeSellPurchaseGroupsFromUser = async (userID, purchaseGroupToRemove) =>{
         const purchaseGroup = await this.getPurchaseGroupById(purchaseGroupToRemove);
 
         purchaseGroup.potentialBuyers.forEach(async userData => {
@@ -278,9 +278,9 @@ export default class PurchaseGroupManager {
 
     }
 
-    async searchPurchaseGroup(searchValue) {
+    searchPurchaseGroup = async searchValue =>{
         try {
-            let res = await PurchaseGroup.find({
+            const res = await PurchaseGroup.find({
                 $text: {
                     $search: searchValue
                 }
@@ -292,7 +292,7 @@ export default class PurchaseGroupManager {
     }
 
     //todo - need to check what to do in here
-    async getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
+    getSimilarGroupByName = async (purchaseGroupsSimilarName, userType) => {
         try {
 
             const res = await PurchaseGroup.findOne({
@@ -308,7 +308,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async addTypeToNotRelevantList(userID, type) {
+    addTypeToNotRelevantList = async (userID, type) => {
         //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
         const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
 
@@ -325,7 +325,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async removeTypeToNotRelevantList(userID, type) {
+    removeTypeToNotRelevantList = async (userID, type) =>{
         await User.findByIdAndUpdate(userID, {
             $pull: {
                 notRelevantTypes: type
@@ -334,7 +334,7 @@ export default class PurchaseGroupManager {
     }
 
 
-    async increaseAttemptsAndCheck(userID, type) {
+    increaseAttemptsAndCheck= async(userID, type) =>{
 
         const user = await User.findById(userID);
 
@@ -352,7 +352,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async createPurchaseGroup(data) {
+    createPurchaseGroup = async (data) =>{
         try {
             let purchaseGroupObject = new PurchaseGroupSchema(data);
             purchaseGroupObject = await purchaseGroupObject.save();
@@ -367,7 +367,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async createSuggestionsPurchaseGroup(data) {
+    createSuggestionsPurchaseGroup = async (data) =>{
         try {
             let purchaseGroupObject = new PurchaseGroupSchema(data);
             return await purchaseGroupObject.save();
@@ -376,7 +376,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
+    takeSuggestionsPurchaseGroupOwnership = async (suggestionID, userID) =>{
         try {
             //update potential buyers that group is now live and can be bought
             const {potentialBuyers, name} = await PurchaseGroup.findById(suggestionID);
@@ -396,7 +396,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async notifyForTakingOwnerForPurchaseGroup(potentialBuyers, name) {
+     notifyForTakingOwnerForPurchaseGroup = async (potentialBuyers, name) =>{
         const ids = potentialBuyers.map(user => user.user);
         const userToNotifyForPurchaeGroupBecomeLive = await User.find({"_id": {"$in": ids}});
         const emails = userToNotifyForPurchaeGroupBecomeLive.map(user => user.email);
@@ -413,7 +413,7 @@ export default class PurchaseGroupManager {
         await mailer.send();
     }
 
-    async joinSuggestionGroup(groupID, userID) {
+    joinSuggestionGroup = async (groupID, userID) => {
         try {
             let suggestionGroup = await PurchaseGroup.findById(groupID);
             let buyers = suggestionGroup.potentialBuyers;
@@ -431,7 +431,7 @@ export default class PurchaseGroupManager {
         }
     }
 
-    async leaveSuggestionGroup(groupID, userID) {
+    leaveSuggestionGroup = async (groupID, userID) =>{
         try {
 
             await PurchaseGroup.findByIdAndUpdate(groupID, {

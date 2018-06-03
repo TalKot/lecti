@@ -60,32 +60,32 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
-
-// will call start notify once.
-_.once(async () => {
-
-    //load and store user data to DB
-    const user = new userSchema(UserData);
-    await user.save();
-
-    //load and store purchase group data to DB
-    PurchaseGroupData.forEach(async purchaseGroup => {
-        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
-
-
-        if (!purchaseGroupObject.isSuggestion) {
-            purchaseGroupObject.seller = user;
-            user.purchaseGroupsSell.push(purchaseGroupObject);
-        }
-
-        purchaseGroupObject.save()
-    });
-    await user.save();
-
-    //notifications system
-    const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
-    customPurchaseGroupsSelector.notify();
-})();
+//
+// // will call start notify once.
+// _.once(async () => {
+//
+//     //load and store user data to DB
+//     const user = new userSchema(UserData);
+//     await user.save();
+//
+//     //load and store purchase group data to DB
+//     PurchaseGroupData.forEach(async purchaseGroup => {
+//         let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+//
+//
+//         if (!purchaseGroupObject.isSuggestion) {
+//             purchaseGroupObject.seller = user;
+//             user.purchaseGroupsSell.push(purchaseGroupObject);
+//         }
+//
+//         purchaseGroupObject.save()
+//     });
+//     await user.save();
+//
+//     //notifications system
+//     const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+//     customPurchaseGroupsSelector.notify();
+// })();
 
 
 //setting up port with Heroku and locally

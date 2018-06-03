@@ -15,7 +15,7 @@ export default class PurchaseGroupController {
     /************************************/
 
 
-    async getAllPurchaseGroups(res) {
+    getAllPurchaseGroups = async res => {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getAllPurchaseGroups();
@@ -26,7 +26,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getPurchaseGroupById(res, id: string) {
+    getPurchaseGroupById = async (res, id: string) => {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupById(id);
@@ -37,7 +37,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getPurchaseGroupByType(res, type: string, page: string) {
+     getPurchaseGroupByType= async (res, type: string, page: string) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByType(type, page);
@@ -48,7 +48,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getSuggestionsPurchaseGroups(res) {
+     getSuggestionsPurchaseGroups = async (res) => {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getSuggestionsPurchaseGroups();
@@ -59,7 +59,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getSuggestionsPurchaseGroupByID(res, ID) {
+    getSuggestionsPurchaseGroupByID= async (res, ID) => {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroup = await PurchaseGroupManagerInstance.getSuggestionsPurchaseGroupByID(ID);
@@ -70,7 +70,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getPurchaseGroupsByUserId(res, userId: string) {
+    getPurchaseGroupsByUserId = async (res, userId: string) => {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getPurchaseGroupsByUserId(userId);
@@ -81,7 +81,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getSalesPurchaseGroupsByUserId(res, userId: string) {
+     getSalesPurchaseGroupsByUserId = async (res, userId: string) => {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.getSalesPurchaseGroupsByUserId(userId);
@@ -92,8 +92,8 @@ export default class PurchaseGroupController {
         }
     }
 
-    //todo - remove this code to manager
-    async buyPurchaseGroup(res, purchaseGroupID: string, amount: number, userID: string) {
+
+    buyPurchaseGroup = async (res, purchaseGroupID: string, amount: number, userID: string) => {
         try {
             amount = Number(amount);
             let purchaseGroupShouldClose: boolean = false;
@@ -168,7 +168,6 @@ export default class PurchaseGroupController {
             } else {
                 //new purchase group for this user
                 // update records values
-                //TODO - SHOULD WORK BELOW?
                 await Promise.all([
                     PurchaseGroupManagerInstance.addUserToPurchaseGroup(purchaseGroup.id, amount, userID),
                     UserManagerInstance.addPurchaseGroupToUser(purchaseGroup, amount, userID)
@@ -176,7 +175,6 @@ export default class PurchaseGroupController {
             }
             // check and update purchase group active status if needed
             if (purchaseGroupShouldClose) {
-                //todo - user Promise.all
                 const updatedPurchaseGroup = await PurchaseGroupManagerInstance.updatePurchaseGroupById(purchaseGroup.id, { isActive: false })
                 await UserManagerInstance.notifyClientsOnClosedPurchaseGroup(updatedPurchaseGroup);
             }
@@ -187,7 +185,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getCustomPurchaseGroupsByUserId(res, userId: string) {
+    getCustomPurchaseGroupsByUserId= async (res, userId: string)=> {
 
         const TYPE_DEFAULT: string = 'cheapest';
         let type: string;
@@ -221,7 +219,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async removePurchaseGroupsFromUser(res, userID, purchaseGroupToRemove, amount, price) {
+    removePurchaseGroupsFromUser = async (res, userID, purchaseGroupToRemove, amount, price) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let UserManagerInstance = UserManager.Instance;
@@ -239,7 +237,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async removeSellPurchaseGroupsFromUser(res, userID, purchaseGroupToRemove) {
+    removeSellPurchaseGroupsFromUser = async (res, userID, purchaseGroupToRemove) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             await PurchaseGroupManagerInstance.removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove)
@@ -250,7 +248,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async purchaseGroupsViewed(res, userID, purchaseGroupsViewed) {
+    purchaseGroupsViewed= async(res, userID, purchaseGroupsViewed) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             await PurchaseGroupManagerInstance.purchaseGroupsViewed(userID, purchaseGroupsViewed);
@@ -261,7 +259,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async getSimilarGroupByName(res, purchaseGroupsSimilarName, userType) {
+     getSimilarGroupByName = async (res, purchaseGroupsSimilarName, userType) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             const similarPurchaseGroup = await PurchaseGroupManagerInstance.getSimilarGroupByName(purchaseGroupsSimilarName, userType);
@@ -272,7 +270,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async searchPurchaseGroup(res, searchValue) {
+    searchPurchaseGroup = async (res, searchValue) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let purchaseGroups = await PurchaseGroupManagerInstance.searchPurchaseGroup(searchValue);
@@ -283,7 +281,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async typeOnNotRelevantList(res, userID, type, status) {
+    typeOnNotRelevantList = async (res, userID, type, status) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
 
@@ -300,7 +298,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async increaseAttemptsAndCheck(res, userID, type) {
+     increaseAttemptsAndCheck = async (res, userID, type)  =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             await PurchaseGroupManagerInstance.increaseAttemptsAndCheck(userID, type);
@@ -311,7 +309,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async createPurchaseGroup(res, data, userID) {
+    createPurchaseGroup = async (res, data, userID) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             let UserManagerInstance = UserManager.Instance;
@@ -338,7 +336,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async takeSuggestionsPurchaseGroupOwnership(res, suggestionID, userID) {
+     takeSuggestionsPurchaseGroupOwnership = async (res, suggestionID, userID) =>{
         try {
             let UserManagerInstance = UserManager.Instance;
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
@@ -354,7 +352,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async joinSuggestionGroup(res, groupID, userID) {
+    joinSuggestionGroup = async (res, groupID, userID) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             PurchaseGroupManagerInstance.joinSuggestionGroup(groupID, userID);
@@ -365,7 +363,7 @@ export default class PurchaseGroupController {
         }
     }
 
-    async leaveSuggestionGroup(res, groupID, userID) {
+    leaveSuggestionGroup = async (res, groupID, userID) =>{
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             PurchaseGroupManagerInstance.leaveSuggestionGroup(groupID, userID);

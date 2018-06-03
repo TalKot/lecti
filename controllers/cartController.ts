@@ -13,7 +13,7 @@ export default class CartController {
     }
     /************************************/
 
-    async addToCart(res, purchaseGroupID: string, amount: number, userID: string) {
+    addToCart = async (res, purchaseGroupID: string, amount: number, userID: string) => {
         try {
             const purchaseGroupManagerInstance = PurchaseGroupManager.Instance;
             const cartManagerInstance = CartManager.Instance;
@@ -41,7 +41,7 @@ export default class CartController {
         }
     }
 
-    async removeFromCart(res, purchaseGroupID, userID) {
+    removeFromCart= async (res, purchaseGroupID, userID)=> {
         try {
             const cartManagerInstance = CartManager.Instance;
             // update records values & return updated user data

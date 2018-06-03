@@ -13,7 +13,7 @@ export default class UserController {
 
 
 
-    async getUserByID(res,userID) {
+    getUserByID = async (res,userID) =>{
         try {
             let userManagerInstance = UserManager.Instance;
 
@@ -25,7 +25,7 @@ export default class UserController {
         }
     }
 
-    async getSellerById(res,userID) {
+     getSellerById = async (res,userID) =>{
         try {
             let userManagerInstance = UserManager.Instance;
             let userSeller = await userManagerInstance.getUserSeller(userID);
@@ -36,7 +36,7 @@ export default class UserController {
         }
     }
 
-    async alertAdminsNewSellerRequest(res,userID,body) {
+    alertAdminsNewSellerRequest = async (res,userID,body) =>{
         try {
             let userManagerInstance = UserManager.Instance;
             await userManagerInstance.alertAdminsNewSellerRequest(userID,body);

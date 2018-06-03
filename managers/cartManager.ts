@@ -13,7 +13,7 @@ export default class CartManager {
     /************************************/
 
 
-    async addToCart(purchaseGroupID: string, amount: number, userID: string) {
+    addToCart = async (purchaseGroupID: string, amount: number, userID: string) => {
         await User.findByIdAndUpdate(userID, {
             $push: {
                 cart: {
@@ -24,7 +24,7 @@ export default class CartManager {
         });
     }
 
-    async removeFromCart(purchaseGroupID, userID) {
+    removeFromCart = async (purchaseGroupID, userID) =>{
 
         await User.findByIdAndUpdate(userID, {
             $pull: {

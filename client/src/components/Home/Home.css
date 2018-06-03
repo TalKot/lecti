@@ -4,6 +4,16 @@
     margin: auto
 }
 
+.HomeDiv > section > div  > div.ui.cards{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.HomeDiv .fullWidth {
+    width: 100%;
+}
+
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
     .HomeDiv > section > div  > div.ui.cards{
@@ -11,12 +21,10 @@
         display: -webkit-box;
         margin-left: 24px;
         margin-top: 10px;
-
     }
 
     .HomeDiv > section > div > div.ui.cards > div > a > img {
         max-height: 130px;
         max-width: 100px;
     }
-
 }

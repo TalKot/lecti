@@ -14,7 +14,7 @@ export default class CommentManager {
 
     /************************************/
 
-    async postComment(rating, seller, comment, userID) {
+    postComment =async (rating, seller, comment, userID) =>{
         let commentObject = new commentSchema({rating, comment, seller, user: userID});
         commentObject = await commentObject.save();
         await User.findByIdAndUpdate(seller, {

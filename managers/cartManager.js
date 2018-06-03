@@ -4,12 +4,9 @@ const tslib_1 = require("tslib");
 const mongoose = require("mongoose");
 const User = mongoose.model('users');
 class CartManager {
-    static get Instance() {
-        return this._instance || (this._instance = new this());
-    }
-    /************************************/
-    addToCart(purchaseGroupID, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+    constructor() {
+        /************************************/
+        this.addToCart = (purchaseGroupID, amount, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield User.findByIdAndUpdate(userID, {
                 $push: {
                     cart: {
@@ -19,9 +16,7 @@ class CartManager {
                 }
             });
         });
-    }
-    removeFromCart(purchaseGroupID, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.removeFromCart = (purchaseGroupID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield User.findByIdAndUpdate(userID, {
                 $pull: {
                     cart: {
@@ -31,6 +26,9 @@ class CartManager {
             });
             return yield User.findByIdAndUpdate(userID);
         });
+    }
+    static get Instance() {
+        return this._instance || (this._instance = new this());
     }
 }
 exports.default = CartManager;

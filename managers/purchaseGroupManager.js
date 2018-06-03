@@ -10,35 +10,24 @@ const { attempts, timeIntervalRemoveNotRelevent } = require('../config/keys');
 const Mailer = require('../services/emailsNotifications/tookOwnershipPurchaseGroupMailer');
 const tookOwnershipTemplate = require('../services/emailsNotifications/emailTemplates/tookOwnershipTemplate');
 class PurchaseGroupManager {
-    static get Instance() {
-        return this._instance || (this._instance = new this());
-    }
-    /************************************/
-    getAllPurchaseGroups() {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+    constructor() {
+        /************************************/
+        this.getAllPurchaseGroups = () => tslib_1.__awaiter(this, void 0, void 0, function* () {
             return yield PurchaseGroup.find({});
         });
-    }
-    getSuggestionsPurchaseGroups() {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getSuggestionsPurchaseGroups = () => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroups = yield PurchaseGroup.find({ isSuggestion: true });
             return purchaseGroups ? purchaseGroups : null;
         });
-    }
-    getAllNewPurchaseGroups() {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getAllNewPurchaseGroups = () => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const res = yield PurchaseGroup.find({ newPurchaseGroup: true });
             return res;
         });
-    }
-    getSuggestionsPurchaseGroupByID(ID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getSuggestionsPurchaseGroupByID = (ID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroup = yield PurchaseGroup.findById(ID);
             return purchaseGroup ? purchaseGroup : null;
         });
-    }
-    getPurchaseGroupById(id) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getPurchaseGroupById = (id) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroup = yield PurchaseGroup.findById(id)
                 .populate({
                 path: 'seller',
@@ -47,9 +36,7 @@ class PurchaseGroupManager {
             });
             return purchaseGroup ? purchaseGroup : null;
         });
-    }
-    getPurchaseGroupsByType(subCategory, page, amount) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getPurchaseGroupsByType = (subCategory, page, amount) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             let pageNumber = Number(page);
             const maxPurchaseGroup = pageNumber * 12;
             const minPurchaseGroup = maxPurchaseGroup - 12;
@@ -80,9 +67,7 @@ class PurchaseGroupManager {
                 .count();
             return purchaseGroup ? { count, purchaseGroup } : null;
         });
-    }
-    getSubPurchaseGroupsByType(type, page, amount) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getSubPurchaseGroupsByType = (type, page, amount) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             let pageNumber = Number(page);
             const maxPurchaseGroup = pageNumber * 12;
             const minPurchaseGroup = maxPurchaseGroup - 12;
@@ -113,15 +98,11 @@ class PurchaseGroupManager {
                 .count();
             return purchaseGroup ? { count, purchaseGroup } : null;
         });
-    }
-    updatePurchaseGroupById(purchaseGroupId, value) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.updatePurchaseGroupById = (purchaseGroupId, value) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             return yield PurchaseGroup.findByIdAndUpdate(purchaseGroupId, value);
         });
-    }
-    //user by profile page
-    getPurchaseGroupsByUserId(userId) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        //user by profile page
+        this.getPurchaseGroupsByUserId = (userId) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             //finds the user from the DB
             const user = yield User.findById(userId);
             //get user purchaseGroups ids
@@ -148,9 +129,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    getViewedPurchaseGroupsByUserId(userId) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getViewedPurchaseGroupsByUserId = (userId) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const user = yield User.findById(userId);
                 return user.toObject().purchaseGroupsViewed;
@@ -159,9 +138,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    getSalesPurchaseGroupsByUserId(userId) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.getSalesPurchaseGroupsByUserId = (userId) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const { purchaseGroupsSell } = yield User.findById(userId)
                     .populate({
@@ -174,9 +151,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    addUserToPurchaseGroup(purchaseGroupID, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.addUserToPurchaseGroup = (purchaseGroupID, amount, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const { address, email } = yield User.findById(userID);
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $push: {
@@ -192,9 +167,7 @@ class PurchaseGroupManager {
                 }
             });
         });
-    }
-    purchaseGroupsViewed(userID, purchaseGroupsViewed) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.purchaseGroupsViewed = (userID, purchaseGroupsViewed) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             let [{ subCategory }, user] = yield Promise.all([
                 PurchaseGroup.findById(purchaseGroupsViewed),
                 User.findById(userID)
@@ -218,9 +191,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    updateUserOnPurchaseGroup(purchaseGroupID, price, amount, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.updateUserOnPurchaseGroup = (purchaseGroupID, price, amount, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             let purchaseGroup = yield this.getPurchaseGroupById(purchaseGroupID);
             const userFromPotentialBuyers = _.find(purchaseGroup.potentialBuyers, obj => {
                 return obj.user.toString() === userID;
@@ -230,9 +201,7 @@ class PurchaseGroupManager {
             userFromPotentialBuyers.time = Date.now();
             yield purchaseGroup.save();
         });
-    }
-    removeUserFromPurchaseGroup(userID, purchaseGroupID, amount) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.removeUserFromPurchaseGroup = (userID, purchaseGroupID, amount) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             amount = Number(amount);
             yield PurchaseGroup.findByIdAndUpdate(purchaseGroupID, {
                 $pull: {
@@ -247,9 +216,7 @@ class PurchaseGroupManager {
                 }
             });
         });
-    }
-    removeSellPurchaseGroupsFromUser(userID, purchaseGroupToRemove) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.removeSellPurchaseGroupsFromUser = (userID, purchaseGroupToRemove) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const purchaseGroup = yield this.getPurchaseGroupById(purchaseGroupToRemove);
             purchaseGroup.potentialBuyers.forEach((userData) => tslib_1.__awaiter(this, void 0, void 0, function* () {
                 const refund = (userData.amount * purchaseGroup.priceForGroup);
@@ -272,11 +239,9 @@ class PurchaseGroupManager {
                 sales: 0
             });
         });
-    }
-    searchPurchaseGroup(searchValue) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.searchPurchaseGroup = (searchValue) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                let res = yield PurchaseGroup.find({
+                const res = yield PurchaseGroup.find({
                     $text: {
                         $search: searchValue
                     }
@@ -287,10 +252,8 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    //todo - need to check what to do in here
-    getSimilarGroupByName(purchaseGroupsSimilarName, userType) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        //todo - need to check what to do in here
+        this.getSimilarGroupByName = (purchaseGroupsSimilarName, userType) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const res = yield PurchaseGroup.findOne({
                     // isSuggestion: userType,
@@ -304,9 +267,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    addTypeToNotRelevantList(userID, type) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.addTypeToNotRelevantList = (userID, type) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
             const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
             //if type not in array already - eneter to notRelevent array
@@ -321,18 +282,14 @@ class PurchaseGroupManager {
                 setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
             }
         });
-    }
-    removeTypeToNotRelevantList(userID, type) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.removeTypeToNotRelevantList = (userID, type) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield User.findByIdAndUpdate(userID, {
                 $pull: {
                     notRelevantTypes: type
                 }
             });
         });
-    }
-    increaseAttemptsAndCheck(userID, type) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.increaseAttemptsAndCheck = (userID, type) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const user = yield User.findById(userID);
             if (user.typesAttempts < attempts) {
                 user.typesAttempts += 1;
@@ -346,9 +303,7 @@ class PurchaseGroupManager {
                 ]);
             }
         });
-    }
-    createPurchaseGroup(data) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.createPurchaseGroup = (data) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 let purchaseGroupObject = new PurchaseGroupSchema(data);
                 purchaseGroupObject = yield purchaseGroupObject.save();
@@ -363,9 +318,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    createSuggestionsPurchaseGroup(data) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.createSuggestionsPurchaseGroup = (data) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 let purchaseGroupObject = new PurchaseGroupSchema(data);
                 return yield purchaseGroupObject.save();
@@ -374,9 +327,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.takeSuggestionsPurchaseGroupOwnership = (suggestionID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 //update potential buyers that group is now live and can be bought
                 const { potentialBuyers, name } = yield PurchaseGroup.findById(suggestionID);
@@ -394,9 +345,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    notifyForTakingOwnerForPurchaseGroup(potentialBuyers, name) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.notifyForTakingOwnerForPurchaseGroup = (potentialBuyers, name) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const ids = potentialBuyers.map(user => user.user);
             const userToNotifyForPurchaeGroupBecomeLive = yield User.find({ "_id": { "$in": ids } });
             const emails = userToNotifyForPurchaeGroupBecomeLive.map(user => user.email);
@@ -409,9 +358,7 @@ class PurchaseGroupManager {
             const mailer = new Mailer(options, tookOwnershipTemplate(name));
             yield mailer.send();
         });
-    }
-    joinSuggestionGroup(groupID, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.joinSuggestionGroup = (groupID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 let suggestionGroup = yield PurchaseGroup.findById(groupID);
                 let buyers = suggestionGroup.potentialBuyers;
@@ -429,9 +376,7 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
-    }
-    leaveSuggestionGroup(groupID, userID) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.leaveSuggestionGroup = (groupID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 yield PurchaseGroup.findByIdAndUpdate(groupID, {
                     $pull: {
@@ -447,6 +392,9 @@ class PurchaseGroupManager {
                 throw e;
             }
         });
+    }
+    static get Instance() {
+        return this._instance || (this._instance = new this());
     }
 }
 exports.default = PurchaseGroupManager;

@@ -17,7 +17,7 @@ export default class UserManager {
 
     /************************************/
 
-    async getUser(userID: string) {
+    getUser =  async (userID: string) => {
         const user = await User.findById(userID)
             .populate({
                 path: 'purchaseGroupsSell',
@@ -27,7 +27,7 @@ export default class UserManager {
         return user ? user : null;
     }
 
-    async getUserSeller(userID: string) {
+    getUserSeller= async (userID: string) =>{
         const user = await User.findById(userID, {
             comments: 1,
             displayName: 1,
@@ -54,13 +54,13 @@ export default class UserManager {
         return user ? user : null;
     }
 
-    async getPurchaseGroupsBoughtByUserID(userID: string) {
+    getPurchaseGroupsBoughtByUserID = async (userID: string) => {
         const {purchaseGroupsBought} = await User.findById(userID);
         return purchaseGroupsBought ? purchaseGroupsBought : null;
     }
 
 
-    async addPurchaseGroupToUser(purchaseGroup, amount: number, userID: string) {
+     addPurchaseGroupToUser = async (purchaseGroup, amount: number, userID: string) =>{
 
         const cost = amount * purchaseGroup.priceForGroup;
 
@@ -78,7 +78,7 @@ export default class UserManager {
         });
     }
 
-    async updatePurchaseGroupToUser(purchaseGroupID, price: number, amount: number, userID: string) {
+    updatePurchaseGroupToUser = async (purchaseGroupID, price: number, amount: number, userID: string) => {
 
         //fetch user from DB
         let user = await this.getUser(userID);
@@ -94,7 +94,7 @@ export default class UserManager {
         await user.save();
     }
 
-    async removePurchaseGroupFromUser(userID, purchaseGroupID, amount, price) {
+     removePurchaseGroupFromUser = async (userID, purchaseGroupID, amount, price) => {
         amount = Number(amount);
         const cost = amount * price;
 
@@ -112,7 +112,7 @@ export default class UserManager {
         });
     }
 
-    async takeSuggestionsPurchaseGroupOwnership(suggestionID, userID) {
+    takeSuggestionsPurchaseGroupOwnershi = async (suggestionID, userID) => {
 
         await User.findByIdAndUpdate(userID, {
             $push: {
@@ -121,7 +121,7 @@ export default class UserManager {
         });
     }
 
-    async notifyClientsOnClosedPurchaseGroup(purchaseGroup) {
+     notifyClientsOnClosedPurchaseGroup = async(purchaseGroup) => {
         let clientList = purchaseGroup.potentialBuyers.map(client => client.user);
         clientList = await User.find({
             _id: {
@@ -149,7 +149,7 @@ export default class UserManager {
     }
 
 
-    async alertAdminsNewSellerRequest(userID, body) {
+    alertAdminsNewSellerRequest = async (userID, body) => {
         try {
             const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com','Lecti99@gmail.com'];
             const message = `New Seller Request!`;
