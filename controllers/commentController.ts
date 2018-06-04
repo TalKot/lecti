@@ -9,9 +9,10 @@ export default class CommentController {
     public static get Instance() {
         return this._instance || (this._instance = new this());
     }
+
     /************************************/
 
-    postComment =async (res, rating, seller, comment, userID)=> {
+    postComment = async (res, rating, seller, comment, userID) => {
         try {
             await CommentManager.Instance.postComment(rating, seller, comment, userID);
             httpResponse.sendOk(res);

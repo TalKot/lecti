@@ -24,7 +24,7 @@ export default class CartManager {
         });
     }
 
-    removeFromCart = async (purchaseGroupID, userID) =>{
+    removeFromCart = async (purchaseGroupID, userID) => {
 
         await User.findByIdAndUpdate(userID, {
             $pull: {

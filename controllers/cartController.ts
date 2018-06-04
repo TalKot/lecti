@@ -11,6 +11,7 @@ export default class CartController {
     public static get Instance() {
         return this._instance || (this._instance = new this());
     }
+
     /************************************/
 
     addToCart = async (res, purchaseGroupID: string, amount: number, userID: string) => {
@@ -39,9 +40,9 @@ export default class CartController {
         catch (e) {
             httpResponse.sendError(res, e);
         }
-    }
+    };
 
-    removeFromCart= async (res, purchaseGroupID, userID)=> {
+    removeFromCart = async (res, purchaseGroupID, userID) => {
         try {
             const cartManagerInstance = CartManager.Instance;
             // update records values & return updated user data

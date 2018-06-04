@@ -17,7 +17,7 @@ export default class UserManager {
 
     /************************************/
 
-    getUser =  async (userID: string) => {
+    getUser = async (userID: string) => {
         const user = await User.findById(userID)
             .populate({
                 path: 'purchaseGroupsSell',
@@ -27,7 +27,7 @@ export default class UserManager {
         return user ? user : null;
     }
 
-    getUserSeller= async (userID: string) =>{
+    getUserSeller = async (userID: string) => {
         const user = await User.findById(userID, {
             comments: 1,
             displayName: 1,
@@ -60,7 +60,7 @@ export default class UserManager {
     }
 
 
-     addPurchaseGroupToUser = async (purchaseGroup, amount: number, userID: string) =>{
+    addPurchaseGroupToUser = async (purchaseGroup, amount: number, userID: string) => {
 
         const cost = amount * purchaseGroup.priceForGroup;
 
@@ -94,7 +94,7 @@ export default class UserManager {
         await user.save();
     }
 
-     removePurchaseGroupFromUser = async (userID, purchaseGroupID, amount, price) => {
+    removePurchaseGroupFromUser = async (userID, purchaseGroupID, amount, price) => {
         amount = Number(amount);
         const cost = amount * price;
 
@@ -121,7 +121,7 @@ export default class UserManager {
         });
     }
 
-     notifyClientsOnClosedPurchaseGroup = async(purchaseGroup) => {
+    notifyClientsOnClosedPurchaseGroup = async (purchaseGroup) => {
         let clientList = purchaseGroup.potentialBuyers.map(client => client.user);
         clientList = await User.find({
             _id: {
@@ -151,7 +151,7 @@ export default class UserManager {
 
     alertAdminsNewSellerRequest = async (userID, body) => {
         try {
-            const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com','Lecti99@gmail.com'];
+            const emailsToNotify = ['talkot123@gmail.com', 'lougassi@gmail.com', 'Lecti99@gmail.com'];
             const message = `New Seller Request!`;
 
             const newSellerRequest = {
