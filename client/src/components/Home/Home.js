@@ -3,12 +3,13 @@ import {connect} from "react-redux";
 import * as actions from '../../actions';
 import PurchaseGroup from '../PurchaseGroups/PurchaseGroup/PurchaseGroup';
 import axios from "axios/index";
-import {Slide} from 'react-slideshow-image';
 import * as _ from 'lodash';
+import { Carousel } from 'react-responsive-carousel';
 import img1 from '../img/col-1-img.png'
 import img2 from '../img/col-2-img.png'
 import img3 from '../img/col-3-img.png'
-import src1 from '../img/hero-bg.png'
+import src1 from '../img/hero-bg.jpg'
+import src3 from '../img/hero-bg.jpg'
 import src2 from '../img/group1.png'
 import {Segment, Image, Card, Header, Icon, Message, Input, Form, TextArea, Button} from 'semantic-ui-react'
 import Loder from '../Loader/Loader';
@@ -19,6 +20,7 @@ class Home extends Component {
 
 
     componentDidMount() {
+
         this.props.fetchCustomPurchaseGroups();
     };
 
@@ -64,41 +66,53 @@ class Home extends Component {
 
     getImageProp = () => {
         return (
-            <Segment style={{backgroundColor: '#fafafa'}}>
-                <Image src={src2} size='huge' centered/>
-                <p>
-                    <h3>This is this week's recommened purchase group.</h3>
-                    Condition:<br/>
-                    New without box: A brand-new, unused, and unworn item (including handmade items) that is not in
-                    original packaging or may be missing original packaging materials (such as the original box or bag).<br/>
-                    The original tags may not be attached. For example, new shoes (with absolutely no signs of wear)
-                    that are no longer in their original box fall into this category.<br/>
-                </p>
-            </Segment>
+            <Carousel>
+                <div>
+                    <img src={src1}/>
+                    <p >Legend 1</p>
+                </div>
+                <div>
+                    <img src={src3}/>
+                </div>
+            </Carousel>
         );
     };
 
+    // getImageProp = () => {
+    //     return (
+    //         <Segment style={{backgroundColor: '#fafafa'}}>
+    //             <Image src={src2} size='huge' centered/>
+    //             <p>
+    //                 <h3>This is this week's recommened purchase group.</h3>
+    //                 Condition:<br/>
+    //                 New without box: A brand-new, unused, and unworn item (including handmade items) that is not in
+    //                 original packaging or may be missing original packaging materials (such as the original box or bag).<br/>
+    //                 The original tags may not be attached. For example, new shoes (with absolutely no signs of wear)
+    //                 that are no longer in their original box fall into this category.<br/>
+    //             </p>
+    //         </Segment>
+    //     );
+    // };
+    //
     getGreeting = () => {
 
         return (
             <div className="marginLeftGreetingSection">
 
-                <Card.Group>
-                    {
-                        this.props.customPurchaseGroupsPerUser.purchaseGroups.purchaseGroup.map(purchaseGroup =>
-                            <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
-                        )
-                    }
-                </Card.Group> <br/>
                 <div>
                     <Header as='h2' icon textAlign='center'>
-                        <Icon name='users' circular/>
                         <Header.Content>
                             Custom Purchase Group's Type Algorithem Result
                             - {this.props.customPurchaseGroupsPerUser.type[0].toUpperCase() + this.props.customPurchaseGroupsPerUser.type.substring(1)}
                         </Header.Content>
                     </Header>
-
+                    <Card.Group>
+                        {
+                            this.props.customPurchaseGroupsPerUser.purchaseGroups.purchaseGroup.map(purchaseGroup =>
+                                <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
+                            )
+                        }
+                    </Card.Group> <br/>
                     <Message visible>
                         <p>
                             We ran our alogithem and figure out that the most valuble purchase groups types for you are
@@ -181,15 +195,30 @@ class Home extends Component {
         }
     };
 
+    // getIntro = () => {
+    //
+    //     return (
+    //         <div className="mySlides w3-display-container w3-center">
+    //             <img src={src1} className="fullWidth"/>
+    //             <div className="grettings">
+    //                 <h1>Hi.{this.props.auth.displayName}!</h1>
+    //                 <p><b>Lecti - The best purchase group payments platform in the world!</b></p>
+    //             </div>
+    //         </div>
+    //     );
+    // }
+
+
     getIntro = () => {
-        // const {fullWidth} = styles;
 
         return (
-            <div className="mySlides w3-display-container w3-center">
-                <img src={src1} className="fullWidth"/>
-                <div className="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-                    <h1>Greetings {this.props.auth.displayName}!</h1>
-                    <p><b>Lecti - The best purchase group payments platform in the world!</b></p>
+            <div>
+                <div className="grettings">
+                    <img src={this.props.auth.photoURL} className="pictureAvatar"/>
+                    <div className="text">
+                        <h1>Hi.{this.props.auth.displayName}!</h1>
+                        <p><b>Lecti - The best purchase group payments platform in the world!</b></p>
+                    </div>
                 </div>
             </div>
         );
@@ -217,11 +246,11 @@ class Home extends Component {
             <div className='HomeDiv' style={{textAlign: 'center'}}>
                 <section>
                     {this.getIntro()}
+                    <hr/><br/>
                 </section>
                 <section>
                     {this.getGreeting()}
-                    <hr/>
-                    <br/>
+                    <hr/><br/>
                 </section>
                 <section>
                     {this.getExperience()}

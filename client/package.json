@@ -26,8 +26,10 @@
     "react-emotion": "^9.1.2",
     "react-materialize": "^2.2.0",
     "react-redux": "^5.0.5",
+    "react-responsive-carousel": "^3.1.39",
     "react-router-dom": "^4.1.1",
     "react-scripts": "1.0.10",
+    "react-slick": "^0.23.1",
     "react-slideshow-image": "^0.2.2",
     "react-stripe-checkout": "^2.4.0",
     "redux": "^3.7.1",
@@ -40,7 +42,7 @@
     "sweetalert": "^2.1.0"
   },
   "scripts": {
-    "start-js":"react-scripts start",
+    "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",

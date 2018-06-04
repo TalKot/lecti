@@ -4,7 +4,7 @@
     margin: auto
 }
 
-.HomeDiv > section > div  > div.ui.cards{
+.HomeDiv > section > div > div.ui.cards {
     margin-top: 10px;
     margin-left: 50px;
 }
@@ -13,11 +13,71 @@
     width: 100%;
 }
 
+.HomeDiv > section > hr{
+    margin-top: 70px;
+}
+
+.HomeDiv .grettings h1 {
+    /*font-size: 50px;*/
+    /*font-weight: 600;*/
+    /*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    color: #5e5e5e;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 35px;
+    line-height: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.HomeDiv .grettings{
+
+    display: flex;
+    flex-direction: row;
+    margin: 46px auto;
+    justify-content: center;
+}
+
+.HomeDiv .grettings .text{
+    margin-top: 146px;
+    margin-left: 40px;
+}
+
+
+
+.HomeDiv .grettings .text h1{
+    display: block;
+    color:#000000;
+    margin-right: 20px;
+    font-size: 56px;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.HomeDiv .grettings .text p b {
+    color: #000000;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+.HomeDiv .grettings .pictureAvatar {
+    vertical-align: middle;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.HomeDiv > section:nth-child(2) > div > div > h2 > div{
+    font-size: 36px;
+    margin-bottom: 40px;
+}
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
-    .HomeDiv > section > div  > div.ui.cards{
-        width:200px;
+    .HomeDiv > section > div > div.ui.cards {
+        width: 200px;
         display: -webkit-box;
         margin-left: 24px;
         margin-top: 10px;
