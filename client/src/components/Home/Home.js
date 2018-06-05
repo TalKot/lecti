@@ -31,7 +31,7 @@ class Home extends Component {
         await axios.post(`/api/purchaseGroup/types/`, options);
     };
 
-    getExperience = () => {
+    getUserExperience = () => {
         return (
             <div className="row">
                 <div className="col s4">
@@ -63,7 +63,7 @@ class Home extends Component {
         );
     };
 
-    getImageProp = () => {
+    getCarouselImages = () => {
         return (
             <div>
                 <Carousel style={{width:'100%', height:'300px'}}/>
@@ -71,23 +71,7 @@ class Home extends Component {
         );
     };
 
-    // getImageProp = () => {
-    //     return (
-    //         <Segment style={{backgroundColor: '#fafafa'}}>
-    //             <Image src={src2} size='huge' centered/>
-    //             <p>
-    //                 <h3>This is this week's recommened purchase group.</h3>
-    //                 Condition:<br/>
-    //                 New without box: A brand-new, unused, and unworn item (including handmade items) that is not in
-    //                 original packaging or may be missing original packaging materials (such as the original box or bag).<br/>
-    //                 The original tags may not be attached. For example, new shoes (with absolutely no signs of wear)
-    //                 that are no longer in their original box fall into this category.<br/>
-    //             </p>
-    //         </Segment>
-    //     );
-    // };
-    //
-    getGreeting = () => {
+    getCustomPurchaseGroupsSelector = () => {
 
         return (
             <div className="marginLeftGreetingSection">
@@ -132,7 +116,7 @@ class Home extends Component {
         swal("Thank You!", `You will become a seller soon. Exicted?`, "success");
     };
 
-    getContactSection = () => {
+    getBecomeSellerForm = () => {
 
         const options = [
             {key: 'm', text: 'Male', value: 'male'},
@@ -188,22 +172,8 @@ class Home extends Component {
         }
     };
 
-    // getIntro = () => {
-    //
-    //     return (
-    //         <div className="mySlides w3-display-container w3-center">
-    //             <img src={src1} className="fullWidth"/>
-    //             <div className="grettings">
-    //                 <h1>Hi.{this.props.auth.displayName}!</h1>
-    //                 <p><b>Lecti - The best purchase group payments platform in the world!</b></p>
-    //             </div>
-    //         </div>
-    //     );
-    // }
 
-
-    getIntro = () => {
-
+    getCustomAvatar = () => {
         return (
             <div>
                 <div className="grettings">
@@ -215,7 +185,7 @@ class Home extends Component {
                 </div>
             </div>
         );
-    }
+    };
 
     render() {
 
@@ -238,25 +208,25 @@ class Home extends Component {
         return (
             <div className='HomeDiv' style={{textAlign: 'center'}}>
                 <section>
-                    {this.getIntro()}
+                    {this.getCustomAvatar()}
                     <hr/><br/>
                 </section>
                 <section>
-                    {this.getGreeting()}
+                    {this.getCustomPurchaseGroupsSelector()}
                     <hr/><br/>
                 </section>
                 <section>
-                    {this.getExperience()}
+                    {this.getUserExperience()}
                     <hr/>
                     <br/>
                 </section>
                 <section>
-                    {this.getContactSection()}
+                    {this.getBecomeSellerForm()}
                     <hr/>
                     <br/>
                 </section>
                 <section>
-                    {this.getImageProp()}
+                    {this.getCarouselImages()}
                     <hr/>
                     <br/>
                 </section>
