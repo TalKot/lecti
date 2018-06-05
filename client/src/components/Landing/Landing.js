@@ -45,13 +45,13 @@ class Landing extends Component {
         );
     };
 
-    getCarouselImages = () => {
-        return (
-            <div>
-                <Carousel style={{width:'100%', height:'300px'}}/>
-            </div>
-        );
-    };
+    // getCarouselImages = () => {
+    //     return (
+    //         <div>
+    //             <Carousel style={{width:'100%', height:'300px'}}/>
+    //         </div>
+    //     );
+    // };
 
     render() {
 

@@ -34,6 +34,7 @@ class Home extends Component {
     getUserExperience = () => {
         return (
             <div className="row">
+                <h2> User Experience </h2>
                 <div className="col s4">
                     <div className="center promo promo-example">
                         <img src={img3}/>
@@ -66,6 +67,7 @@ class Home extends Component {
     getCarouselImages = () => {
         return (
             <div>
+                <h2> Best Live On Site </h2>
                 <Carousel style={{width:'100%', height:'300px'}}/>
             </div>
         );
@@ -75,11 +77,11 @@ class Home extends Component {
 
         return (
             <div className="marginLeftGreetingSection">
-
+                <h2> Custom Purchase Groups Selector </h2>
                 <div>
-                    <Header as='h2' icon textAlign='center'>
+                    <Header as='h3' icon textAlign='center'>
                         <Header.Content>
-                            Custom Purchase Group's Type Algorithem Result
+                            Custom Purchase Group's Type Algorithm Result
                             - {this.props.customPurchaseGroupsPerUser.type[0].toUpperCase() + this.props.customPurchaseGroupsPerUser.type.substring(1)}
                         </Header.Content>
                     </Header>
@@ -127,6 +129,7 @@ class Home extends Component {
 
         return (
             <div>
+                <h2> Become a Seller Form </h2>
                 <Message
                     info
                     header='Want To Become A Seller?'
@@ -176,10 +179,11 @@ class Home extends Component {
     getCustomAvatar = () => {
         return (
             <div>
+                <span className="logo">LECTI Platform</span>
                 <div className="grettings">
                     <img src={this.props.auth.photoURL} className="pictureAvatar"/>
                     <div className="text">
-                        <h1>Hi.{this.props.auth.displayName}!</h1>
+                        <h1>Hi, {this.props.auth.displayName}!</h1>
                         <p><b>Lecti - The best purchase group payments platform in the world!</b></p>
                     </div>
                 </div>
