@@ -4,16 +4,15 @@ import * as actions from '../../actions';
 import PurchaseGroup from '../PurchaseGroups/PurchaseGroup/PurchaseGroup';
 import axios from "axios/index";
 import * as _ from 'lodash';
-import { Carousel } from 'react-responsive-carousel';
 import img1 from '../img/col-1-img.png'
 import img2 from '../img/col-2-img.png'
 import img3 from '../img/col-3-img.png'
-import src1 from '../img/hero-bg.jpg'
-import src3 from '../img/hero-bg.jpg'
-import src2 from '../img/group1.png'
 import {Segment, Image, Card, Header, Icon, Message, Input, Form, TextArea, Button} from 'semantic-ui-react'
 import Loder from '../Loader/Loader';
 import swal from 'sweetalert';
+import Carousel from "./Carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 class Home extends Component {
     state = {formStatus: false};
@@ -66,15 +65,9 @@ class Home extends Component {
 
     getImageProp = () => {
         return (
-            <Carousel>
-                <div>
-                    <img src={src1}/>
-                    <p >Legend 1</p>
-                </div>
-                <div>
-                    <img src={src3}/>
-                </div>
-            </Carousel>
+            <div>
+                <Carousel style={{width:'100%', height:'300px'}}/>
+            </div>
         );
     };
 
