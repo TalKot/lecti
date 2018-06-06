@@ -67,7 +67,6 @@ class Home extends Component {
     getCarouselImages = () => {
         return (
             <div>
-                <h2> Best Live On Site </h2>
                 <Carousel style={{width:'100%', height:'300px'}}/>
             </div>
         );
@@ -179,7 +178,7 @@ class Home extends Component {
     getCustomAvatar = () => {
         return (
             <div>
-                <span className="logo">LECTI Platform</span>
+                <h2 className="logo">LECTI Platform</h2>
                 <div className="grettings">
                     <img src={this.props.auth.photoURL} className="pictureAvatar"/>
                     <div className="text">
@@ -212,6 +211,11 @@ class Home extends Component {
         return (
             <div className='HomeDiv' style={{textAlign: 'center'}}>
                 <section>
+                    {this.getCarouselImages()}
+                    <hr/>
+                    <br/>
+                </section>
+                <section>
                     {this.getCustomAvatar()}
                     <hr/><br/>
                 </section>
@@ -229,11 +233,7 @@ class Home extends Component {
                     <hr/>
                     <br/>
                 </section>
-                <section>
-                    {this.getCarouselImages()}
-                    <hr/>
-                    <br/>
-                </section>
+
             </div>
         )
     }

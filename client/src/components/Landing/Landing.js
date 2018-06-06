@@ -45,18 +45,23 @@ class Landing extends Component {
         );
     };
 
-    // getCarouselImages = () => {
-    //     return (
-    //         <div>
-    //             <Carousel style={{width:'100%', height:'300px'}}/>
-    //         </div>
-    //     );
-    // };
+    getCarouselImages = () => {
+        return (
+            <div>
+                <Carousel style={{width:'100%', height:'300px'}}/>
+            </div>
+        );
+    };
 
     render() {
 
         return (
             <div className='HomeDiv' style={{textAlign: 'center'}}>
+                <section>
+                    {this.getCarouselImages()}
+                    <hr/>
+                    <br/>
+                </section>
                 {/*<section>*/}
                     {/*{this.getCustomAvatar()}*/}
                     {/*<hr/><br/>*/}
@@ -66,11 +71,7 @@ class Landing extends Component {
                     <hr/>
                     <br/>
                 </section>
-                <section>
-                    {this.getCarouselImages()}
-                    <hr/>
-                    <br/>
-                </section>
+
             </div>
         )
     }
