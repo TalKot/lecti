@@ -285,7 +285,7 @@ export default class PurchaseGroupController {
     typeOnNotRelevantList = async (res, userID, type, status) => {
         try {
             const PurchaseGroupManagerInstance = PurchaseGroupManager.Instance;
-
+        console.log('status' + status)
             if (status) {
                 //add purchase group type to not relevant list
                 await PurchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);

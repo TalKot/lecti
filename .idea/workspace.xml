@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="purchaseGroupController.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="purchaseGroupController.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4275">
-              <caret line="285" column="13" selection-start-line="285" selection-start-column="13" selection-end-line="285" selection-end-column="13" />
+            <state relative-caret-position="252">
+              <caret line="287" column="37" selection-start-line="287" selection-start-column="37" selection-end-line="287" selection-end-column="37" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -63,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="purchaseGroupManager.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="purchaseGroupManager.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="326" column="58" lean-forward="true" selection-start-line="326" selection-start-column="58" selection-end-line="326" selection-end-column="58" />
+            <state relative-caret-position="432">
+              <caret line="331" column="36" selection-start-line="331" selection-start-column="20" selection-end-line="331" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -199,7 +198,6 @@
         <option value="$PROJECT_DIR$/managers/commentManager.ts" />
         <option value="$PROJECT_DIR$/controllers/commentController.ts" />
         <option value="$PROJECT_DIR$/controllers/userController.ts" />
-        <option value="$PROJECT_DIR$/controllers/purchaseGroupController.ts" />
         <option value="$PROJECT_DIR$/controllers/cartController.ts" />
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.js" />
@@ -215,6 +213,7 @@
         <option value="$PROJECT_DIR$/client/src/components/Suggestions/SuggestionItem/SuggestionItem.js" />
         <option value="$PROJECT_DIR$/config/prod.ts" />
         <option value="$PROJECT_DIR$/managers/purchaseGroupManager.ts" />
+        <option value="$PROJECT_DIR$/controllers/purchaseGroupController.ts" />
       </list>
     </option>
   </component>
@@ -381,7 +380,7 @@
       <workItem from="1528046189935" duration="3026000" />
       <workItem from="1528134659866" duration="13258000" />
       <workItem from="1528270356139" duration="6575000" />
-      <workItem from="1528306685921" duration="43000" />
+      <workItem from="1528306685921" duration="147000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -562,7 +561,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="408578000" />
+    <option name="totallyTimeSpent" value="408682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1108,20 +1107,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
+    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4275">
-          <caret line="285" column="13" selection-start-line="285" selection-start-column="13" selection-end-line="285" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="432">
+          <caret line="331" column="36" selection-start-line="331" selection-start-column="20" selection-end-line="331" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
+    <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="326" column="58" lean-forward="true" selection-start-line="326" selection-start-column="58" selection-end-line="326" selection-end-column="58" />
+        <state relative-caret-position="252">
+          <caret line="287" column="37" selection-start-line="287" selection-start-column="37" selection-end-line="287" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
