@@ -92,7 +92,7 @@ class UserManager {
                 }
             });
         });
-        this.takeSuggestionsPurchaseGroupOwnershi = (suggestionID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        this.takeSuggestionsPurchaseGroupOwnership = (suggestionID, userID) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             yield User.findByIdAndUpdate(userID, {
                 $push: {
                     purchaseGroupsSell: suggestionID

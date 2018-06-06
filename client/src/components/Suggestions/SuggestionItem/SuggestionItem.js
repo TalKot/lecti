@@ -14,7 +14,7 @@ class SuggestionPurchaseGroupItem extends Component {
         const ID = this.props.match.params.id;
         const {data} = await axios.get(`/api/purchaseGroup/getsuggestions/${ID}`);
         this.setState({suggestion: data});
-    }
+    };
 
     async componentDidMount() {
         await this.fetchData();
@@ -85,6 +85,10 @@ class SuggestionPurchaseGroupItem extends Component {
                     <div className="row" style={{textAlign: 'center', margin: '0'}}>
                         <div className="col s8 m5">
                             <div className="card">
+                                <div className="card-image">
+                                    <img src={this.state.suggestion.picture}
+                                         alt={this.state.suggestion.picture}/>
+                                </div>
                                 <div className="card-content">
                                     <h6>Name - <strong>{this.state.suggestion.name}</strong></h6>
                                     <h6>Type - {this.state.suggestion.type}</h6>

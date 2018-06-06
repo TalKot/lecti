@@ -25,7 +25,7 @@ export default class UserManager {
             });
 
         return user ? user : null;
-    }
+    };
 
     getUserSeller = async (userID: string) => {
         const user = await User.findById(userID, {
@@ -52,12 +52,12 @@ export default class UserManager {
             });
 
         return user ? user : null;
-    }
+    };
 
     getPurchaseGroupsBoughtByUserID = async (userID: string) => {
         const {purchaseGroupsBought} = await User.findById(userID);
         return purchaseGroupsBought ? purchaseGroupsBought : null;
-    }
+    };
 
 
     addPurchaseGroupToUser = async (purchaseGroup, amount: number, userID: string) => {
@@ -76,7 +76,7 @@ export default class UserManager {
                 credits: -cost
             }
         });
-    }
+    };
 
     updatePurchaseGroupToUser = async (purchaseGroupID, price: number, amount: number, userID: string) => {
 
@@ -110,16 +110,16 @@ export default class UserManager {
                 credits: cost
             }
         });
-    }
+    };
 
-    takeSuggestionsPurchaseGroupOwnershi = async (suggestionID, userID) => {
+    takeSuggestionsPurchaseGroupOwnership = async (suggestionID, userID) => {
 
         await User.findByIdAndUpdate(userID, {
             $push: {
                 purchaseGroupsSell: suggestionID
             }
         });
-    }
+    };
 
     notifyClientsOnClosedPurchaseGroup = async (purchaseGroup) => {
         let clientList = purchaseGroup.potentialBuyers.map(client => client.user);
@@ -146,7 +146,7 @@ export default class UserManager {
             console.error(e);
             throw e;
         }
-    }
+    };
 
 
     alertAdminsNewSellerRequest = async (userID, body) => {
