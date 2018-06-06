@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import img1 from '../img/col-1-img.png'
 import img2 from '../img/col-2-img.png'
 import img3 from '../img/col-3-img.png'
+import img4 from '../img/face1.png'
 import Carousel from "../Home/Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -10,12 +11,22 @@ class Landing extends Component {
     getCustomAvatar = () => {
         return (
             <div>
+                <h2 className="logo">LECTI Platform</h2>
+                <div className="grettings">
+                    <img src={img4} className="pictureAvatar"/>
+                    <div className="text">
+                        <h1>Hi Friend,</h1>
+                        <p><b>Lecti - The best purchase group payments platform in the world.<br/> Click loggin above with Google or Facebook and enjoy.</b></p>
+                    </div>
+                </div>
+
             </div>
         );
     };
     getUserExperience = () => {
         return (
             <div className="row">
+                <h2> User Experience </h2>
                 <div className="col s4">
                     <div className="center promo promo-example">
                         <img src={img3}/>
@@ -62,10 +73,10 @@ class Landing extends Component {
                     <hr/>
                     <br/>
                 </section>
-                {/*<section>*/}
-                    {/*{this.getCustomAvatar()}*/}
-                    {/*<hr/><br/>*/}
-                {/*</section>*/}
+                <section>
+                    {this.getCustomAvatar()}
+                    <hr/><br/>
+                </section>
                 <section>
                     {this.getUserExperience()}
                     <hr/>
