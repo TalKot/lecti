@@ -198,6 +198,7 @@ export default class PurchaseGroupManager {
 
     purchaseGroupsViewed = async (userID, purchaseGroupsViewed) => {
 
+
         let [{subCategory}, user] = await Promise.all([
             PurchaseGroup.findById(purchaseGroupsViewed),
             User.findById(userID)
@@ -343,7 +344,8 @@ export default class PurchaseGroupManager {
     increaseAttemptsAndCheck = async (userID, type) => {
 
         const user = await User.findById(userID);
-
+        console.log('sjdhgfjksdagfkjdsahfkdsahfkadshkfhsadfhjasdjfhadskgfdjkshghjkdasgfkjdsagfkjadshk')
+        console.log(attempts);
         if (user.typesAttempts < attempts) {
 
             user.typesAttempts += 1;
