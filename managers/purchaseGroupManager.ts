@@ -69,7 +69,13 @@ export default class PurchaseGroupManager {
             purchaseGroup = await PurchaseGroup.find({subCategory, isSuggestion: false, isActive: true})
                 .sort({discount: -1})
                 .limit(amount);
-        } else {
+        }
+        else if (!subCategory){
+            purchaseGroup = await PurchaseGroup.find({isSuggestion: false, isActive: true})
+                .sort({discount: -1})
+                .limit(4);
+        }
+        else {
             purchaseGroup = await PurchaseGroup.find({subCategory, isSuggestion: false, isActive: true})
                 .sort({discount: -1})
                 .skip(minPurchaseGroup)

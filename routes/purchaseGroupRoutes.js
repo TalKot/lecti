@@ -20,6 +20,11 @@ module.exports = app => {
         const purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
         yield purchaseGroupControllerInstance.getPurchaseGroupByType(res, type, page);
     }));
+    app.get('/api/purchaseGroup/getgroup/type/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const { page } = req.query;
+        const purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
+        yield purchaseGroupControllerInstance.getPurchaseGroupByType(res, null, page);
+    }));
     app.get('/api/purchaseGroup/getsuggestions/', (req, res) => tslib_1.__awaiter(this, void 0, void 0, function* () {
         let purchaseGroupControllerInstance = purchaseGroupController_1.default.Instance;
         yield purchaseGroupControllerInstance.getSuggestionsPurchaseGroups(res);

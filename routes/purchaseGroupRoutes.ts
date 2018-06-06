@@ -23,6 +23,12 @@ module.exports = app => {
         await purchaseGroupControllerInstance.getPurchaseGroupByType(res, type, page);
     });
 
+    app.get('/api/purchaseGroup/getgroup/type/', async (req, res) => {
+        const {page} = req.query;
+        const purchaseGroupControllerInstance = PurchaseGroupController.Instance;
+        await purchaseGroupControllerInstance.getPurchaseGroupByType(res, null, page);
+    });
+
     app.get('/api/purchaseGroup/getsuggestions/', async (req, res) => {
         let purchaseGroupControllerInstance = PurchaseGroupController.Instance;
         await purchaseGroupControllerInstance.getSuggestionsPurchaseGroups(res);

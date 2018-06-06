@@ -57,6 +57,11 @@ class PurchaseGroupManager {
                     .sort({ discount: -1 })
                     .limit(amount);
             }
+            else if (!subCategory) {
+                purchaseGroup = yield PurchaseGroup.find({ isSuggestion: false, isActive: true })
+                    .sort({ discount: -1 })
+                    .limit(4);
+            }
             else {
                 purchaseGroup = yield PurchaseGroup.find({ subCategory, isSuggestion: false, isActive: true })
                     .sort({ discount: -1 })
