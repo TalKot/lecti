@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes">
-      <change afterPath="$PROJECT_DIR$/client/src/components/img/Tshirt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/img/iphone.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/purchaseGroupController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/managers/purchaseGroupManager.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,8 +47,8 @@
       <file leaf-file-name="purchaseGroupController.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="287" column="12" selection-start-line="287" selection-start-column="12" selection-end-line="287" selection-end-column="12" />
+            <state relative-caret-position="424">
+              <caret line="287" selection-start-line="287" selection-end-line="287" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -61,8 +59,8 @@
       <file leaf-file-name="purchaseGroupManager.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="370" column="18" selection-start-line="370" selection-start-column="18" selection-end-line="370" selection-end-column="18" />
+            <state relative-caret-position="319">
+              <caret line="366" column="30" selection-start-line="366" selection-start-column="30" selection-end-line="366" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -109,8 +107,8 @@
       <find>attempts</find>
       <find>שאא</find>
       <find>sjdhgfjksdagfkjdsahfkdsahfkadshkfhsadfhjasdjfhadskgfdjkshghjkdasgfkjdsagfkjadshk</find>
-      <find>+=</find>
       <find>render</find>
+      <find>+=</find>
     </findStrings>
     <replaceStrings>
       <replace>purchaseGroup</replace>
@@ -197,10 +195,10 @@
         <option value="$PROJECT_DIR$/managers/userManager.ts" />
         <option value="$PROJECT_DIR$/client/src/components/Suggestions/SuggestionItem/SuggestionItem.js" />
         <option value="$PROJECT_DIR$/config/prod.ts" />
-        <option value="$PROJECT_DIR$/managers/purchaseGroupManager.ts" />
         <option value="$PROJECT_DIR$/client/src/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/client/src/components/Home/Carousel.js" />
         <option value="$PROJECT_DIR$/controllers/purchaseGroupController.ts" />
+        <option value="$PROJECT_DIR$/managers/purchaseGroupManager.ts" />
       </list>
     </option>
   </component>
@@ -410,7 +408,7 @@
       <workItem from="1528046189935" duration="3026000" />
       <workItem from="1528134659866" duration="13258000" />
       <workItem from="1528270356139" duration="6575000" />
-      <workItem from="1528306685921" duration="2545000" />
+      <workItem from="1528306685921" duration="2811000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -591,7 +589,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411080000" />
+    <option name="totallyTimeSpent" value="411346000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -607,14 +605,14 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="2" weight="0.3271795" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.17324908" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.17324908" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49753347" weight="0.32839224" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50331527" side_tool="true" weight="0.2676923" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.33333334" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.24615385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24960339" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49668476" visible="true" weight="0.248" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49668476" visible="true" weight="0.248" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.27384615" />
       <window_info id="Favorites" order="3" sideWeight="0.5072202" side_tool="true" weight="0.18816067" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -769,7 +767,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/managers/purchaseGroupManager.ts</url>
-          <line>379</line>
+          <line>374</line>
           <option name="timeStamp" value="477" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1135,13 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="370" column="18" selection-start-line="370" selection-start-column="18" selection-end-line="370" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1159,10 +1150,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="366" column="30" selection-start-line="366" selection-start-column="30" selection-end-line="366" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="287" column="12" selection-start-line="287" selection-start-column="12" selection-end-line="287" selection-end-column="12" />
+        <state relative-caret-position="424">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
