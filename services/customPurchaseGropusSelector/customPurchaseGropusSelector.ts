@@ -160,9 +160,9 @@ export default class CustomPurchaseGroupsSelector {
 
         //notify clients groups
         clientListSlim.forEach(client => {
-            if (this.message.length) {
+            // if (this.message.length) {
                 clientNotify[client](this.message, purchaseGroupsKeyBySubType);
-            }
+            // }
         });
         //update new purchasegroup's new flag to false - next time will not show those groups
         newPurchaseGroups.forEach(purchasegroup => {

@@ -16,6 +16,9 @@ module.exports = {
     amount: process.env.AMOUNT || 0.3,
     attempts: process.env.ATTEMPTS || 3,
     timeIntervalRemoveNotRelevent: process.env.TimeIntervalRemoveNotRelevent || 1000 * 60 * 10,
-    loadData: process.env.LOAD_DATA || true
+    loadData: process.env.LOAD_DATA || true,
+    groupA: process.env.GROUP_A,
+    groupB: process.env.GROUP_B,
+    groupC: process.env.GROUP_C
 };
 //# sourceMappingURL=prod.js.map
