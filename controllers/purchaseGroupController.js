@@ -243,7 +243,6 @@ class PurchaseGroupController {
         this.typeOnNotRelevantList = (res, userID, type, status) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
                 const PurchaseGroupManagerInstance = purchaseGroupManager_1.default.Instance;
-                console.log('status' + status);
                 if (status) {
                     //add purchase group type to not relevant list
                     yield PurchaseGroupManagerInstance.addTypeToNotRelevantList(userID, type);

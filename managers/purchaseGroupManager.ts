@@ -355,11 +355,9 @@ export default class PurchaseGroupManager {
     increaseAttemptsAndCheck = async (userID, type) => {
 
         const user = await User.findById(userID);
-        console.log('sjdhgfjksdagfkjdsahfkdsahfkadshkfhsadfhjasdjfhadskgfdjkshghjkdasgfkjdsagfkjadshk')
-        console.log('attempts' + attempts);
-        console.log('user.typesAttempts' + user.typesAttempts);
+
         if (user.typesAttempts < attempts) {
-            console.log('need to add it..')
+
             user.typesAttempts += 1;
             await user.save();
 
