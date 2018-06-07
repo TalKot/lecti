@@ -57,7 +57,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 // will call start notify once.
 _.once(() => __awaiter(this, void 0, void 0, function* () {
-    if (keys.loadData) {
+    const isTrueSet = (keys.loadData == 'true');
+    if (isTrueSet) {
         console.log('Loading data...');
         //load and store user data to DB
         const user = new userSchema(UserData);
