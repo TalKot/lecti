@@ -307,8 +307,10 @@ class PurchaseGroupManager {
         this.increaseAttemptsAndCheck = (userID, type) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             const user = yield User.findById(userID);
             console.log('sjdhgfjksdagfkjdsahfkdsahfkadshkfhsadfhjasdjfhadskgfdjkshghjkdasgfkjdsagfkjadshk');
-            console.log(attempts);
+            console.log('attempts' + attempts);
+            console.log('user.typesAttempts' + user.typesAttempts);
             if (user.typesAttempts < attempts) {
+                console.log('need to add it..');
                 user.typesAttempts += 1;
                 yield user.save();
             }
