@@ -14,6 +14,7 @@ export = {
     priority: process.env.PRIORITY || 0.4 ,
     amount: process.env.AMOUNT || 0.3,
     attempts : process.env.ATTEMPTS || 3,
-    timeIntervalRemoveNotRelevent : process.env.ATTEMPTS || 1000 * 60 * 10
+    timeIntervalRemoveNotRelevent : process.env.TimeIntervalRemoveNotRelevent || 1000 * 60 * 10,
+    loadData : process.env.LOAD_DATA || true
 };
 

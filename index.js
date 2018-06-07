@@ -57,22 +57,25 @@ if (process.env.NODE_ENV === 'production') {
 }
 // will call start notify once.
 _.once(() => __awaiter(this, void 0, void 0, function* () {
-    //load and store user data to DB
-    const user = new userSchema(UserData);
-    yield user.save();
-    //load and store purchase group data to DB
-    PurchaseGroupData.forEach((purchaseGroup) => __awaiter(this, void 0, void 0, function* () {
-        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
-        if (!purchaseGroupObject.isSuggestion) {
-            purchaseGroupObject.seller = user;
-            user.purchaseGroupsSell.push(purchaseGroupObject);
-        }
-        purchaseGroupObject.save();
-    }));
-    yield user.save();
-    //notifications system
-    const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
-    customPurchaseGroupsSelector.notify();
+    if (keys.loadData) {
+        console.log('Loading data...');
+        //load and store user data to DB
+        const user = new userSchema(UserData);
+        yield user.save();
+        //load and store purchase group data to DB
+        PurchaseGroupData.forEach((purchaseGroup) => __awaiter(this, void 0, void 0, function* () {
+            let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+            if (!purchaseGroupObject.isSuggestion) {
+                purchaseGroupObject.seller = user;
+                user.purchaseGroupsSell.push(purchaseGroupObject);
+            }
+            purchaseGroupObject.save();
+        }));
+        yield user.save();
+        //notifications system
+        const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+        customPurchaseGroupsSelector.notify();
+    }
 }))();
 //setting up port with Heroku and locally
 const PORT = process.env.PORT || 5000;

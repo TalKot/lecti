@@ -64,27 +64,30 @@ if (process.env.NODE_ENV === 'production') {
 // will call start notify once.
 _.once(async () => {
 
-    //load and store user data to DB
-    const user = new userSchema(UserData);
-    await user.save();
+    if (keys.loadData) {
+        console.log('Loading data...');
+        //load and store user data to DB
+        const user = new userSchema(UserData);
+        await user.save();
 
-    //load and store purchase group data to DB
-    PurchaseGroupData.forEach(async purchaseGroup => {
-        let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
+        //load and store purchase group data to DB
+        PurchaseGroupData.forEach(async purchaseGroup => {
+            let purchaseGroupObject = new purchaseGroupSchema(purchaseGroup);
 
 
-        if (!purchaseGroupObject.isSuggestion) {
-            purchaseGroupObject.seller = user;
-            user.purchaseGroupsSell.push(purchaseGroupObject);
-        }
+            if (!purchaseGroupObject.isSuggestion) {
+                purchaseGroupObject.seller = user;
+                user.purchaseGroupsSell.push(purchaseGroupObject);
+            }
 
-        purchaseGroupObject.save()
-    });
-    await user.save();
+            purchaseGroupObject.save()
+        });
+        await user.save();
 
-    //notifications system
-    const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
-    customPurchaseGroupsSelector.notify();
+        //notifications system
+        const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+        customPurchaseGroupsSelector.notify();
+    }
 })();
 
 
