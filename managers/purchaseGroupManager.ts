@@ -70,7 +70,7 @@ export default class PurchaseGroupManager {
                 .sort({discount: -1})
                 .limit(amount);
         }
-        else if (!subCategory){
+        else if (!subCategory) {
             purchaseGroup = await PurchaseGroup.find({isSuggestion: false, isActive: true})
                 .sort({discount: -1})
                 .limit(4);
@@ -325,15 +325,21 @@ export default class PurchaseGroupManager {
         console.log('user id is ' + userID)
         console.log("TIME_INTERVAL" + TIME_INTERVAL)
         console.log("notRelevantTypes" + notRelevantTypes)
+        console.log("type" + type)
+        try {
+            if (notRelevantTypes.indexOf(type) === -1) {
 
-        if (notRelevantTypes.indexOf(type) === -1) {
-            await User.findByIdAndUpdate(userID, {
-                $push: {
-                    notRelevantTypes: type
-                },
-                typesAttempts: 0
-            });
-            setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
+                await User.findByIdAndUpdate(userID, {
+                    $push: {
+                        notRelevantTypes: type
+                    },
+                    typesAttempts: 0
+                });
+                setTimeout(this.removeTypeToNotRelevantList, TIME_INTERVAL, userID, type);
+            }
+
+        } catch (e) {
+            console.error(e)
         }
     };
 
