@@ -1,7 +1,7 @@
 import React from "react";
 import src1 from '../img/group1.png';
-import src2 from '../img/Tshirt.png.png';
-import src3 from '../img/iphone.png.png';
+import src2 from '../img/Tshirt.png';
+import src3 from '../img/iphone.png';
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
 
