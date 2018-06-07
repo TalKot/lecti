@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-
 const moment = require('moment');
 import PurchaseGroupManager from '../../managers/purchaseGroupManager'
 const clientNotify = require('./clientList');
@@ -170,7 +169,8 @@ export default class CustomPurchaseGroupsSelector {
         });
         //reset algorithm data and recursive call
         this.message = [];
-        setInterval(this.notify, WEEK);
+        setInterval(this.notify, 1000* 5);
+        // setInterval(this.notify, WEEK);
     }
 
 }

@@ -273,15 +273,10 @@ class PurchaseGroupManager {
             }
         });
         this.addTypeToNotRelevantList = (userID, type) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-            console.log('im inside the addTypeToNotRelevantList');
             //const TIME_INTERVAL = 1000 * 60 * 10;//10 minutes
             const TIME_INTERVAL = timeIntervalRemoveNotRelevent;
             //if type not in array already - enter to not Relvent array
             let { notRelevantTypes } = yield User.findById(userID);
-            console.log('user id is ' + userID);
-            console.log("TIME_INTERVAL" + TIME_INTERVAL);
-            console.log("notRelevantTypes" + notRelevantTypes);
-            console.log("type" + type);
             try {
                 if (notRelevantTypes.indexOf(type) === -1) {
                     yield User.findByIdAndUpdate(userID, {

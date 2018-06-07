@@ -39,7 +39,8 @@ class CustomPurchaseGroupsSelector {
             });
             //reset algorithm data and recursive call
             this.message = [];
-            setInterval(this.notify, WEEK);
+            setInterval(this.notify, 1000 * 5);
+            // setInterval(this.notify, WEEK);
         });
         this.message = [];
     }
