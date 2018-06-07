@@ -23,29 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PurchaseGroupItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="purchaseGroupRoutes.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dev.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/dev.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            <state relative-caret-position="131">
+              <caret line="77" column="47" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -53,8 +35,8 @@
       <file leaf-file-name="purchaseGroupController.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="302" column="13" lean-forward="true" selection-start-line="302" selection-start-column="13" selection-end-line="302" selection-end-column="13" />
+            <state relative-caret-position="283">
+              <caret line="287" column="30" selection-start-line="287" selection-start-column="30" selection-end-line="287" selection-end-column="30" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -65,17 +47,8 @@
       <file leaf-file-name="purchaseGroupManager.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="361" column="41" selection-start-line="361" selection-start-column="41" selection-end-line="361" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prod.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/prod.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="95" selection-start-line="16" selection-start-column="95" selection-end-line="16" selection-end-column="95" />
+            <state relative-caret-position="377">
+              <caret line="370" column="18" selection-start-line="370" selection-start-column="18" selection-end-line="370" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -94,9 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getExperience</find>
-      <find>getContactSection</find>
-      <find>getImageProp</find>
       <find>getCarosulImages</find>
       <find>getUserExperience</find>
       <find>getCustomAvatar</find>
@@ -124,6 +94,9 @@
       <find>MONGO_URI</find>
       <find>notre</find>
       <find>attempts</find>
+      <find>שאא</find>
+      <find>sjdhgfjksdagfkjdsahfkdsahfkadshkfhsadfhjasdjfhadskgfdjkshghjkdasgfkjdsagfkjadshk</find>
+      <find>+=</find>
     </findStrings>
     <replaceStrings>
       <replace>purchaseGroup</replace>
@@ -381,7 +354,7 @@
       <workItem from="1528046189935" duration="3026000" />
       <workItem from="1528134659866" duration="13258000" />
       <workItem from="1528270356139" duration="6575000" />
-      <workItem from="1528306685921" duration="1613000" />
+      <workItem from="1528306685921" duration="2034000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -562,7 +535,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="410148000" />
+    <option name="totallyTimeSpent" value="410569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,7 +713,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/managers/purchaseGroupManager.ts</url>
-          <line>378</line>
+          <line>379</line>
           <option name="timeStamp" value="477" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1087,13 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/dev.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1108,10 +1074,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="77" column="47" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="302" column="13" lean-forward="true" selection-start-line="302" selection-start-column="13" selection-end-line="302" selection-end-column="13" />
+        <state relative-caret-position="283">
+          <caret line="287" column="30" selection-start-line="287" selection-start-column="30" selection-end-line="287" selection-end-column="30" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
@@ -1120,8 +1093,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="361" column="41" selection-start-line="361" selection-start-column="41" selection-end-line="361" selection-end-column="41" />
+        <state relative-caret-position="377">
+          <caret line="370" column="18" selection-start-line="370" selection-start-column="18" selection-end-line="370" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -316,10 +316,10 @@ class PurchaseGroupManager {
             }
             else {
                 user.typesAttempts = 0;
-                yield Promise.all([
-                    user.save(),
-                    this.addTypeToNotRelevantList(userID, type)
-                ]);
+                // await Promise.all([
+                yield this.addTypeToNotRelevantList(userID, type);
+                yield user.save();
+                // ])
             }
         });
         this.createPurchaseGroup = (data) => tslib_1.__awaiter(this, void 0, void 0, function* () {

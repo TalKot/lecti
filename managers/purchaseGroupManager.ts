@@ -365,10 +365,11 @@ export default class PurchaseGroupManager {
 
         } else {
             user.typesAttempts = 0;
-            await Promise.all([
-                user.save(),
-                this.addTypeToNotRelevantList(userID, type)
-            ])
+            // await Promise.all([
+
+            await this.addTypeToNotRelevantList(userID, type)
+            await user.save()
+            // ])
         }
     };
 
