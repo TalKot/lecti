@@ -86,6 +86,7 @@ _.once(async () => {
 
         //notifications system
         const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+        console.log('starting the notify process')
         customPurchaseGroupsSelector.notify();
     }
 })();

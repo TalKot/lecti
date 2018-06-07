@@ -75,6 +75,7 @@ _.once(() => __awaiter(this, void 0, void 0, function* () {
         yield user.save();
         //notifications system
         const customPurchaseGroupsSelector = CustomPurchaseGroupsSelector.default.Instance;
+        console.log('starting the notify process');
         customPurchaseGroupsSelector.notify();
     }
 }))();
