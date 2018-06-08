@@ -5,10 +5,10 @@ const mongoose = require("mongoose");
 const moment = require('moment');
 const purchaseGroupManager_1 = require("../../managers/purchaseGroupManager");
 const clientNotify = require('./clientList');
-const purchaseGroupsTypesValue = require("./purcahseGroupsTypesValueList");
 const CategoryCalculationWeight = require('../../config/keys');
 const User = mongoose.model('users');
 const PurchaseGroup = mongoose.model('purchaseGroups');
+const prioritySettings = process.env.PRIORITY_SETTINGS;
 const WEEK = 1000 * 60 * 60 * 24 * 7;
 class CustomPurchaseGroupsSelector {
     constructor() {
@@ -59,7 +59,13 @@ class CustomPurchaseGroupsSelector {
                 let purchaseGroupsTimes = {};
                 let purchaseGroupsViews = {};
                 let purchaseGroupsAmount = {};
-                let purchaseGroupsPriority = purchaseGroupsTypesValue;
+                let purchaseGroupsPriority = {};
+                try {
+                    purchaseGroupsPriority = JSON.parse(prioritySettings);
+                }
+                catch (e) {
+                    console.log(e);
+                }
                 // getting amount of each purchase group viewed by current user
                 user.purchaseGroupsViewed.forEach(type => {
                     if (purchaseGroupsViews[type]) {

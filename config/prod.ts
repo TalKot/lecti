@@ -18,5 +18,6 @@ export =  {
     loadData : process.env.LOAD_DATA || true,
     groupA: process.env.GROUP_A,
     groupB: process.env.GROUP_B,
-    groupC: process.env.GROUP_C
+    groupC: process.env.GROUP_C,
+    prioritySettings: process.env.PRIORITY_SETTINGS
 };
