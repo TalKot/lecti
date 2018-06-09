@@ -12,7 +12,8 @@ class PurchaseGroupItem extends Component {
     async componentDidMount() {
         const purchaseGroupID = this.props.match.params.item;
         const {data} = await axios.get(`/api/purchaseGroup/getgroup/id/${purchaseGroupID}`);
-        this.setState({purchaseGroupData: data, open: false, amount: 0})
+        this.setState({purchaseGroupData: data, open: false, amount: 0});
+        this.notify();
     }
 
     notify() {
@@ -105,7 +106,6 @@ class PurchaseGroupItem extends Component {
             )
         }
 
-        this.notify();
 
         return (
             <div>

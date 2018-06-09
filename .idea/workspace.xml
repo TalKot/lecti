@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes">
-      <change beforePath="$PROJECT_DIR$/config/dev.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dev.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,29 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="customPurchaseGropusSelector.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customPurchaseGropusSelector.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="storeB.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="31" selection-start-line="1" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="373">
+              <caret line="172" column="22" selection-start-line="172" selection-start-column="22" selection-end-line="172" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -58,17 +34,8 @@
       <file leaf-file-name="keys.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/keys.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dev.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/dev.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="51" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="51" />
+            <state relative-caret-position="75">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -76,8 +43,59 @@
       <file leaf-file-name="prod.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/prod.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="437">
+              <caret line="23" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchaseGroupRoutes.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="104" column="62" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchaseGroupController.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="253" column="49" selection-start-line="253" selection-start-column="49" selection-end-line="253" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#68#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PurchaseGroupItem.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="57" column="47" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchaseGroupManager.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="183" column="8" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -96,15 +114,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>customPurchaseGroupsPerUser</find>
-      <find>getgroup</find>
-      <find>TYPE_DEFAULT</find>
-      <find>custo</find>
-      <find>subCategory</find>
-      <find>Owner</find>
-      <find>takeSuggestionsPurchaseGroupOwnership</find>
       <find>im</find>
-      <find />
+      <find>Name -</find>
       <find>buinpm</find>
       <find>custom</find>
       <find>amount</find>
@@ -122,23 +133,30 @@
       <find>marginLeftGreetingSection</find>
       <find>WEEK</find>
       <find>clientListSlim</find>
-      <find>notify</find>
       <find>console</find>
       <find>clientNotify</find>
       <find>prioritySettings</find>
+      <find>shoes</find>
+      <find>bought</find>
+      <find>buyPurchaseGroup</find>
+      <find>addUserToPurchaseGroup</find>
+      <find>buy</find>
+      <find>purchase</find>
+      <find>view</find>
+      <find>notify</find>
     </findStrings>
     <replaceStrings>
       <replace>purchaseGroup</replace>
       <replace>obj</replace>
       <replace>this.state.seller</replace>
       <replace>this.state.suggestion</replace>
-      <replace />
+      <replace>const purchaseGroupManagerInstance = purchaseGroupManager.Instance;</replace>
       <replace>className</replace>
       <replace>UserManager</replace>
       <replace>PurchaseGroupController.Instance;</replace>
       <replace>computers;</replace>
       <replace>computers</replace>
-      <replace />
+      <replace>cell phones</replace>
       <replace>men</replace>
       <replace>electronics</replace>
       <replace>women</replace>
@@ -155,7 +173,7 @@
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
-      <dir />
+      <dir>C:\Users\shomi_l\Documents\shenkar\Final Project\lecti</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -171,7 +189,6 @@
         <option value="$PROJECT_DIR$/routes/cartRoutes.ts" />
         <option value="$PROJECT_DIR$/models/Comment.ts" />
         <option value="$PROJECT_DIR$/models/PurchaseGroup.ts" />
-        <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js" />
         <option value="$PROJECT_DIR$/models/User.ts" />
         <option value="$PROJECT_DIR$/services/passportLogin/passport.ts" />
         <option value="$PROJECT_DIR$/client/src/main.css.html" />
@@ -214,8 +231,9 @@
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/config/dev.ts" />
         <option value="$PROJECT_DIR$/config/prod.ts" />
-        <option value="$PROJECT_DIR$/client/src/utils/types.js" />
         <option value="$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts" />
+        <option value="$PROJECT_DIR$/client/src/utils/types.js" />
+        <option value="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js" />
       </list>
     </option>
   </component>
@@ -245,7 +263,7 @@
     <dismissed value="$PROJECT_DIR$/client/package.json" />
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="423" />
     <option name="y" value="225" />
     <option name="width" value="1448" />
@@ -260,13 +278,54 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
               <item name="lecti" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="PurchaseGroups" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lecti" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="PurchaseGroups" type="462c0819:PsiDirectoryNode" />
+              <item name="PurchaseGroupItem" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
@@ -281,25 +340,18 @@
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
               <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
               <item name="lecti" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lecti" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lecti" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="customPurchaseGropusSelector" type="462c0819:PsiDirectoryNode" />
-              <item name="clientList" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,7 +449,8 @@
       <workItem from="1528134659866" duration="13258000" />
       <workItem from="1528270356139" duration="6575000" />
       <workItem from="1528306685921" duration="6365000" />
-      <workItem from="1528380893036" duration="3306000" />
+      <workItem from="1528380893036" duration="4298000" />
+      <workItem from="1528547401510" duration="727000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -578,7 +631,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418206000" />
+    <option name="totallyTimeSpent" value="419925000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,20 +643,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="2" weight="0.3271795" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.19831224" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.19831224" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49753347" weight="0.32839224" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50331527" side_tool="true" weight="0.2676923" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.24533333" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.33333334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24960339" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49668476" weight="0.41538462" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49668476" weight="0.28410256" />
       <window_info id="Favorites" order="3" sideWeight="0.5072202" side_tool="true" weight="0.18816067" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.3025641" />
+      <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.3025641" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -615,24 +668,24 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32889965" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3922463" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32839224" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.18032786" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49753347" weight="0.32889965" />
       <window_info anchor="bottom" id="TypeScript" order="0" weight="0.3275862" />
-      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32889965" />
       <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.34663627" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49753347" weight="0.22234891" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5024665" side_tool="true" weight="0.32889965" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3922463" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32889965" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Messages" order="8" />
       <window_info id="Favorites" order="3" sideWeight="0.5072202" side_tool="true" weight="0.18816067" />
     </layout-to-restore>
@@ -770,37 +823,63 @@
           <option name="timeStamp" value="721" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts</url>
-          <line>50</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="768" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.ts</url>
           <line>67</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="769" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts</url>
-          <line>45</line>
+          <url>file://$PROJECT_DIR$/managers/purchaseGroupManager.ts</url>
+          <line>183</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="771" />
+          <option name="timeStamp" value="773" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts</url>
-          <line>41</line>
+          <url>file://$PROJECT_DIR$/controllers/purchaseGroupController.ts</url>
+          <line>159</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="772" />
+          <option name="timeStamp" value="774" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/purchaseGroupController.ts</url>
+          <line>163</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="775" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/purchaseGroupController.ts</url>
+          <line>98</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="776" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/purchaseGroupController.ts</url>
+          <line>253</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="777" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="773" />
+      <option name="time" value="778" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>JSON.parse(prioritySettings);</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>prioritySettings</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>JSON.parse(prioritySettings)</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>e</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -820,27 +899,12 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>JSON.parse('{ &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;city&quot;:&quot;New York&quot;}')</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
-        <language-id>TypeScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>JSON.parse('{computers:3,shoes:2,shirts:5}')</expression-string>
-        <language-id>TypeScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>JSON.parse({'computers':3,'shoes':2,'shirts':5})</expression-string>
-        <language-id>TypeScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>JSON.parse(computers:3,shoes:2,shirts:5)</expression-string>
+        <expression-string>JSON.parse('{ name:John, age:30, city:New York}')</expression-string>
         <language-id>TypeScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -848,13 +912,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroup/PurchaseGroup.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -979,13 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="105" column="69" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/purcahseGroupsTypesValueList.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1034,13 +1085,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Header/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -1048,27 +1092,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="287" selection-start-line="287" selection-end-line="287" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Home/Carousel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1093,23 +1120,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeC.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,9 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,45 +1141,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="335" lean-forward="true" selection-start-line="335" selection-end-line="335" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/prod.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/utils/types.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="31" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/keys.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -1179,10 +1155,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="31" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/clientList/storeA.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/services/customPurchaseGropusSelector/customPurchaseGropusSelector.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        <state relative-caret-position="373">
+          <caret line="172" column="22" selection-start-line="172" selection-start-column="22" selection-end-line="172" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/keys.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/prod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/purchaseGroupRoutes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="104" column="62" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managers/purchaseGroupManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="183" column="8" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="57" column="47" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/purchaseGroupController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="253" column="49" selection-start-line="253" selection-start-column="49" selection-end-line="253" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroupItem/PurchaseGroupItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
