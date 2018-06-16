@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="94d86926-4716-4435-84b1-e338fc0951e1" name="Default" comment="many changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/association_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/association_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/create_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/create_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fakerPurchaseGroups.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fakerPurchaseGroups.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fakerPurchaseGroups.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/reading_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/reading_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/subdocument_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/subdocument_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/update_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/update_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/validation_test.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
-              <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+              <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -380,7 +369,7 @@
       <workItem from="1528306685921" duration="6365000" />
       <workItem from="1528380893036" duration="4298000" />
       <workItem from="1528547401510" duration="1525000" />
-      <workItem from="1529151275401" duration="2593000" />
+      <workItem from="1529151275401" duration="3207000" />
     </task>
     <task id="LOCAL-00001" summary="new heroku">
       <created>1517684851468</created>
@@ -561,7 +550,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="423316000" />
+    <option name="totallyTimeSpent" value="423930000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -574,7 +563,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="2" weight="0.3271795" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4927798" visible="true" weight="0.19831224" />
@@ -1150,7 +1138,7 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/PurchaseGroups/PurchaseGroups.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
-          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
