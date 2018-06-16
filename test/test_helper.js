@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
+const User = require('../models/User');
 mongoose.Promise = global.Promise;
 
 before((done) => {
@@ -15,13 +16,12 @@ before((done) => {
             console.warn('Warning', error);
         });
 });
-
-// beforeEach(async () => {
-//     const { users, comments, purchasegroups,sellercomments } = mongoose.connection.collections;
-//     try {
-//         await Promise.all([users.drop(), comments.drop(), purchasegroups.drop(),sellercomments.drop()])
-//     }catch (e){
-//         console.error(e)
-//     }
+//
+//
+// afterEach(() => {
+//     let usersToRemove = User.find({name: 'leo Messi'});
+//     usersToRemove.forEach(async user => {
+//         await User.findOneAndRemove(user)
+//     });
+//
 // });
-

@@ -42,8 +42,8 @@ describe('Subdocuments', () => {
                 path: 'purchaseGroups'
             });
         //asserts
-        console.log(user.purchaseGroupsBought[0].name);
-        console.log(leoMessiPurchaseGroup.name);
+        // console.log(user.purchaseGroupsBought[0].name);
+        // console.log(leoMessiPurchaseGroup.name);
 
         assert(user.purchaseGroupsBought[0].name === leoMessiPurchaseGroup.name);
     });

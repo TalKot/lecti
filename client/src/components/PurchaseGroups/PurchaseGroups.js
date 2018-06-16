@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import PurchaseGroup from './PurchaseGroup/PurchaseGroup'
 import {Link} from 'react-router-dom';
 import Loader from '../Loader/Loader';
-import {Card, Message, Pagination} from 'semantic-ui-react'
+import {Card, Message, Pagination, Grid } from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom';
 
 
@@ -63,14 +63,15 @@ class PurchaseGroups extends Component {
 
                 {this.getWelcomeMessage()}
 
-                <Card.Group>
-                    {
-                        this.props.purchaseGroups.map(purchaseGroup => {
-                            return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
-                        })
-                    }
-                </Card.Group>
-
+                <Grid>
+                    <Card.Group>
+                        {
+                            this.props.purchaseGroups.map(purchaseGroup => {
+                                return <PurchaseGroup key={Math.random()} purchaseGroup={purchaseGroup}/>
+                            })
+                        }
+                    </Card.Group>
+                </Grid>
                 <div className="fixed-action-btn">
                     <Link to="/new/purchasegroup" className="btn-floating btn-large red">
                         <i className="material-icons">add</i>

@@ -54,6 +54,6 @@ describe('Updating records from DB', () => {
             {multi: true}
         );
         let fetchedPurcahseGroup = await PurchaseGroup.find({});
-        console.log(fetchedPurcahseGroup);
+        // console.log(fetchedPurcahseGroup);
     });
 });
